@@ -1464,7 +1464,7 @@ const handleSubmit = async () => {
 
     const response = await $fetch("/api/contact", {
       method: "POST",
-      body: { ...form.value, source: "landing_page" },
+      body: { ...form.value, source: "4es_hub" },
     });
 
     if (response.status === 200) {
