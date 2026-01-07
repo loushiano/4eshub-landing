@@ -15,14 +15,13 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      title: "Your Next Generation Platform",
+      title: "Your ISO certification partner",
       meta: [
         { charset: "utf-8" },
         { name: "viewport", content: "width=device-width, initial-scale=1" },
         {
           name: "description",
-          content:
-            "Experience the future of digital solutions with our cutting-edge platform.",
+          content: "Become ISO Audit Ready with 4ES Hub.",
         },
       ],
       link: [{ rel: "icon", type: "image/png", href: "/4es-favi.png" }],
