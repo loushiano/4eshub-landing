@@ -90,7 +90,7 @@
                 class="bg-white rounded-lg shadow-xl border border-gray-100 py-2 min-w-[180px]"
               >
                 <a
-                  href="#"
+                  href="#blog-section"
                   class="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600"
                   >Blog</a
                 >
@@ -915,6 +915,59 @@
         </div>
       </section>
 
+      <!-- Blog Section -->
+      <section id="blog-section" class="py-20 md:py-28 bg-gray-50">
+        <div class="container mx-auto px-6">
+          <div class="text-center max-w-3xl mx-auto mb-16">
+            <span
+              class="inline-block px-4 py-1.5 bg-blue-50 text-blue-700 rounded-full text-sm font-medium mb-4"
+            >
+              Blog
+            </span>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Practical compliance advice for audit-ready teams
+            </h2>
+            <p class="text-lg text-gray-600">
+              Field notes on simplifying documentation, quality workflows, and
+              certification readiness.
+            </p>
+          </div>
+          <div class="max-w-4xl mx-auto">
+            <article
+              class="bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden"
+            >
+              <div class="p-8 md:p-10">
+                <div class="flex flex-wrap items-center gap-3 mb-5">
+                  <span
+                    class="inline-flex items-center px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold"
+                  >
+                    Document Control
+                  </span>
+                  <span class="text-sm text-gray-500">6 min read</span>
+                </div>
+                <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                  Why managing organizational documentation gets so painful
+                  before an audit
+                </h3>
+                <p class="text-gray-600 leading-relaxed mb-6">
+                  Policies live in shared drives, evidence hides in email
+                  threads, and every audit request becomes a scramble. Here is
+                  why documentation feels so annoying to manage, and how to turn
+                  it into a system that is ready before auditors arrive.
+                </p>
+                <NuxtLink
+                  to="/blog/documentation-audit-readiness"
+                  class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold"
+                >
+                  Read the first article
+                  <i class="fa-solid fa-arrow-right ml-2"></i>
+                </NuxtLink>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <!-- Certification Partners Section -->
       <section id="partners-section" class="py-20 md:py-28 bg-gray-50">
         <div class="container mx-auto px-6">
@@ -1339,7 +1392,9 @@
               <h4 class="text-white font-semibold mb-4">Resources</h4>
               <ul class="space-y-3 text-sm">
                 <li>
-                  <a href="#" class="hover:text-white transition-colors"
+                  <a
+                    href="#blog-section"
+                    class="hover:text-white transition-colors"
                     >Blog</a
                   >
                 </li>
@@ -1451,6 +1506,55 @@ const isSubmitting = ref(false);
 const submitStatus = ref({
   success: false,
   message: "",
+});
+
+const siteUrl = useRuntimeConfig().public.siteUrl.replace(/\/$/, "");
+const homeUrl = `${siteUrl}/`;
+
+useSeoMeta({
+  title: "ISO Certification Software for Audit-Ready Teams",
+  description:
+    "4ES Hub centralizes compliance documentation, supplier quality workflows, and ISO audit readiness in one connected platform.",
+  ogTitle: "4ES Hub | ISO Certification Software for Audit-Ready Teams",
+  ogDescription:
+    "Stay audit-ready every day with centralized documentation, AI-assisted compliance workflows, and complete audit trails.",
+  ogUrl: homeUrl,
+  ogImage: `${siteUrl}/4es-logo.png`,
+  twitterCard: "summary_large_image",
+  twitterTitle: "4ES Hub | ISO Certification Software",
+  twitterDescription:
+    "Centralize compliance documentation and stay ready for ISO audits.",
+  twitterImage: `${siteUrl}/4es-logo.png`,
+});
+
+useHead({
+  link: [{ rel: "canonical", href: homeUrl }],
+  script: [
+    {
+      type: "application/ld+json",
+      innerHTML: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        name: "4ES Hub",
+        url: homeUrl,
+        logo: `${siteUrl}/4es-logo.png`,
+        sameAs: [
+          "https://www.linkedin.com/company/smartclick-solutions-inc",
+        ],
+      }),
+    },
+    {
+      type: "application/ld+json",
+      innerHTML: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        name: "4ES Hub",
+        url: homeUrl,
+        description:
+          "Compliance management and ISO audit readiness software for growing organizations.",
+      }),
+    },
+  ],
 });
 
 const handleSubmit = async () => {
