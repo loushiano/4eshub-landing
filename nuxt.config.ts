@@ -24,7 +24,7 @@ export default defineNuxtConfig({
           content: "Become ISO Audit Ready with 4ES Hub.",
         },
       ],
-      link: [{ rel: "icon", type: "image/png", href: "/4es-favi.png" }],
+      link: [{ rel: "icon", type: "image/ico", href: "/favicon.ico" }],
     },
   },
 });

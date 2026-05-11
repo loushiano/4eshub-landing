@@ -3,14 +3,14 @@
     <!-- Header/Navigation -->
     <header
       id="header"
-      class="sticky top-0 bg-white border-b border-gray-100 z-50"
+      class="sticky top-0  bg-white border-b border-gray-100 z-50"
     >
       <div
         class="container mx-auto flex items-center justify-between px-6 py-4"
       >
         <div class="flex items-center">
           <NuxtLink to="/" class="flex items-center cursor-pointer">
-            <img src="/4es-logo.png" alt="4ES Hub" class="h-14" />
+            <img src="/4es.ico" alt="4ES Hub" class="h-14" />
           </NuxtLink>
         </div>
         <nav class="hidden md:flex items-center space-x-8">
