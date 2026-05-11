@@ -10,7 +10,7 @@
       >
         <div class="flex items-center">
           <NuxtLink to="/" class="flex items-center cursor-pointer">
-            <img src="/4es-full.png" alt="4ES Hub" class="h-14" />
+            <img src="/4es-logo.png" alt="4ES Hub" class="h-14" />
           </NuxtLink>
         </div>
         <nav class="hidden md:flex items-center space-x-8">
@@ -1282,7 +1282,7 @@
           <div class="grid grid-cols-1 md:grid-cols-5 gap-12 mb-12">
             <div class="col-span-1">
               <img
-                src="/4es-full.png"
+                src="/4es-logo.png"
                 alt="4ES Hub"
                 class="h-10 mb-4 brightness-200"
               />
@@ -1515,5 +1515,59 @@ onMounted(() => {
 
 .animate-scroll {
   animation: scroll 20s linear infinite;
+}
+
+.text-green-100 {
+  color: #dbeafe;
+}
+
+.text-green-600,
+.hover\:text-green-600:hover {
+  color: #2563eb;
+}
+
+.text-green-700 {
+  color: #1d4ed8;
+}
+
+.bg-green-50,
+.hover\:bg-green-50:hover {
+  background-color: #eff6ff;
+}
+
+.bg-green-100,
+.hover\:bg-green-100:hover {
+  background-color: #dbeafe;
+}
+
+.bg-green-400 {
+  background-color: #60a5fa;
+}
+
+.bg-green-600,
+.hover\:bg-green-600:hover {
+  background-color: #2563eb;
+}
+
+.hover\:bg-green-700:hover {
+  background-color: #1d4ed8;
+}
+
+.hover\:border-green-300:hover {
+  border-color: #93c5fd;
+}
+
+.hover\:border-green-600:hover,
+.focus\:border-green-500:focus {
+  border-color: #2563eb;
+}
+
+.focus\:ring-green-500:focus {
+  --tw-ring-color: #3b82f6;
+}
+
+.shadow-green-600\/20 {
+  --tw-shadow-color: rgb(37 99 235 / 0.2);
+  --tw-shadow: var(--tw-shadow-colored);
 }
 </style>
