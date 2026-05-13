@@ -9,6 +9,11 @@ const routes = [
     priority: "0.8",
     changefreq: "monthly",
   },
+  {
+    path: "/blog/iso-audit-tracking-value",
+    priority: "0.8",
+    changefreq: "monthly",
+  },
 ];
 
 const escapeXml = (value: string) =>

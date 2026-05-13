@@ -932,7 +932,7 @@
               certification readiness.
             </p>
           </div>
-          <div class="max-w-4xl mx-auto">
+          <div class="max-w-4xl mx-auto space-y-8">
             <article
               class="bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden"
             >
@@ -959,7 +959,38 @@
                   to="/blog/documentation-audit-readiness"
                   class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold"
                 >
-                  Read the first article
+                  Read article
+                  <i class="fa-solid fa-arrow-right ml-2"></i>
+                </NuxtLink>
+              </div>
+            </article>
+            <article
+              class="bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden"
+            >
+              <div class="p-8 md:p-10">
+                <div class="flex flex-wrap items-center gap-3 mb-5">
+                  <span
+                    class="inline-flex items-center px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold"
+                  >
+                    Audit Management
+                  </span>
+                  <span class="text-sm text-gray-500">10 min read</span>
+                </div>
+                <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                  Why tracking audits in one platform matters for ISO-certified
+                  teams
+                </h3>
+                <p class="text-gray-600 leading-relaxed mb-6">
+                  Certification is a milestone; the audit trail is the job.
+                  Here is how a structured audit program reduces surveillance
+                  stress, helps first-time certification, and how 4ES Hub
+                  connects programs, scheduling, findings, and reporting.
+                </p>
+                <NuxtLink
+                  to="/blog/iso-audit-tracking-value"
+                  class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold"
+                >
+                  Read article
                   <i class="fa-solid fa-arrow-right ml-2"></i>
                 </NuxtLink>
               </div>
