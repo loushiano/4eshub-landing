@@ -136,6 +136,11 @@
                   >Partners</a
                 >
                 <a
+                  href="#pricing-section"
+                  class="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600"
+                  >Pricing</a
+                >
+                <a
                   href="#contact-section"
                   class="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600"
                   >Contact</a
@@ -222,6 +227,11 @@
           >
           <a href="#" class="text-gray-700 hover:text-green-600 py-2"
             >Company</a
+          >
+          <a
+            href="#pricing-section"
+            class="text-gray-700 hover:text-green-600 py-2"
+            >Pricing</a
           >
           <a href="#" class="text-gray-700 hover:text-green-600 py-2">Login</a>
           <a
@@ -915,8 +925,209 @@
         </div>
       </section>
 
+      <!-- Pricing Section -->
+      <section id="pricing-section" class="py-20 md:py-28 bg-gray-50">
+        <div class="container mx-auto px-6">
+          <div class="text-center max-w-3xl mx-auto mb-16">
+            <span
+              class="inline-block px-4 py-1.5 bg-green-50 text-green-700 rounded-full text-sm font-medium mb-4"
+            >
+              Pricing
+            </span>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Plans that scale with your compliance program
+            </h2>
+            <p class="text-lg text-gray-600">
+              Start with the modules you need, or unlock the full platform with
+              AI and premium support.
+            </p>
+          </div>
+          <div
+            class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch"
+          >
+            <!-- Per-module -->
+            <div
+              class="flex flex-col bg-white p-8 rounded-2xl border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300"
+            >
+              <h3 class="text-xl font-bold text-gray-900 mb-2">Module access</h3>
+              <p class="text-gray-600 text-sm mb-6">
+                Pay per module—core QMS workflows without AI.
+              </p>
+              <div class="mb-6">
+                <span class="text-4xl font-bold text-gray-900">$100</span>
+                <span class="text-gray-600"> / module</span>
+              </div>
+              <p class="text-sm text-gray-500 mb-4">
+                Includes access only to the modules you choose. No AI features.
+              </p>
+              <ul class="text-sm text-gray-700 space-y-2 mb-8 flex-1">
+                <li class="flex gap-2">
+                  <i
+                    class="fa-solid fa-check text-green-600 mt-0.5 flex-shrink-0"
+                  ></i>
+                  <span>Documents</span>
+                </li>
+                <li class="flex gap-2">
+                  <i
+                    class="fa-solid fa-check text-green-600 mt-0.5 flex-shrink-0"
+                  ></i>
+                  <span>Risk management</span>
+                </li>
+                <li class="flex gap-2">
+                  <i
+                    class="fa-solid fa-check text-green-600 mt-0.5 flex-shrink-0"
+                  ></i>
+                  <span>Knowledge</span>
+                </li>
+                <li class="flex gap-2">
+                  <i
+                    class="fa-solid fa-check text-green-600 mt-0.5 flex-shrink-0"
+                  ></i>
+                  <span>Trainings</span>
+                </li>
+                <li class="flex gap-2">
+                  <i
+                    class="fa-solid fa-check text-green-600 mt-0.5 flex-shrink-0"
+                  ></i>
+                  <span>Audit</span>
+                </li>
+                <li class="flex gap-2">
+                  <i
+                    class="fa-solid fa-check text-green-600 mt-0.5 flex-shrink-0"
+                  ></i>
+                  <span>Survey</span>
+                </li>
+                <li class="flex gap-2">
+                  <i
+                    class="fa-solid fa-check text-green-600 mt-0.5 flex-shrink-0"
+                  ></i>
+                  <span>Management review</span>
+                </li>
+                <li class="flex gap-2">
+                  <i
+                    class="fa-solid fa-check text-green-600 mt-0.5 flex-shrink-0"
+                  ></i>
+                  <span>Performance indicators</span>
+                </li>
+                <li class="flex gap-2">
+                  <i
+                    class="fa-solid fa-check text-green-600 mt-0.5 flex-shrink-0"
+                  ></i>
+                  <span>Non-conformities &amp; OFI</span>
+                </li>
+              </ul>
+              <a
+                href="#contact-section"
+                class="inline-flex justify-center items-center w-full border-2 border-gray-300 hover:border-green-600 text-gray-800 hover:text-green-700 font-semibold rounded-lg px-6 py-3 transition-all duration-200"
+              >
+                Get started
+              </a>
+            </div>
+
+            <!-- Platform -->
+            <div
+              class="flex flex-col bg-white p-8 rounded-2xl border-2 border-green-600 shadow-lg shadow-green-600/10 relative lg:scale-[1.02] lg:z-10"
+            >
+              <span
+                class="absolute top-0 right-6 -translate-y-1/2 inline-block px-3 py-1 bg-green-600 text-white text-xs font-semibold rounded-full"
+                >Most popular</span
+              >
+              <h3 class="text-xl font-bold text-gray-900 mb-2">
+                Full platform
+              </h3>
+              <p class="text-gray-600 text-sm mb-6">
+                Every module, AI included, with support and ongoing enhancements.
+              </p>
+              <div class="mb-2">
+                <span class="text-4xl font-bold text-gray-900">$799</span>
+                <span class="text-gray-600"> / month</span>
+              </div>
+              <p class="text-sm text-gray-600 mb-6">
+                AI usage included up to
+                <strong class="text-gray-800">10M tokens</strong>
+                ; then
+                <strong class="text-gray-800">$0.50 per million</strong>
+                tokens.
+              </p>
+              <ul class="text-sm text-gray-700 space-y-3 mb-8 flex-1">
+                <li class="flex gap-2">
+                  <i
+                    class="fa-solid fa-check text-green-600 mt-0.5 flex-shrink-0"
+                  ></i>
+                  <span>All modules and AI features</span>
+                </li>
+                <li class="flex gap-2">
+                  <i
+                    class="fa-solid fa-check text-green-600 mt-0.5 flex-shrink-0"
+                  ></i>
+                  <span>Dedicated support</span>
+                </li>
+                <li class="flex gap-2">
+                  <i
+                    class="fa-solid fa-check text-green-600 mt-0.5 flex-shrink-0"
+                  ></i>
+                  <span>One custom feature per month</span>
+                </li>
+              </ul>
+              <a
+                href="#contact-section"
+                class="inline-flex justify-center items-center w-full bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg px-6 py-3 transition-all duration-200"
+              >
+                Book a demo
+              </a>
+            </div>
+
+            <!-- Enterprise / custom -->
+            <div
+              class="flex flex-col bg-white p-8 rounded-2xl border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300"
+            >
+              <h3 class="text-xl font-bold text-gray-900 mb-2">
+                Custom &amp; AI agents
+              </h3>
+              <p class="text-gray-600 text-sm mb-6">
+                Everything in Full platform, plus tailored AI agents across your
+                workflows.
+              </p>
+              <div class="mb-6">
+                <span class="text-3xl font-bold text-gray-900">Custom</span>
+                <p class="text-gray-600 text-sm mt-2">Let's scope your rollout.</p>
+              </div>
+              <ul class="text-sm text-gray-700 space-y-3 mb-8 flex-1">
+                <li class="flex gap-2">
+                  <i
+                    class="fa-solid fa-check text-green-600 mt-0.5 flex-shrink-0"
+                  ></i>
+                  <span>Everything in the $799 / mo plan</span>
+                </li>
+                <li class="flex gap-2">
+                  <i
+                    class="fa-solid fa-check text-green-600 mt-0.5 flex-shrink-0"
+                  ></i>
+                  <span
+                    >Implementation of AI agents to help your team use every
+                    tool in the app</span
+                  >
+                </li>
+                <li class="flex gap-2">
+                  <i
+                    class="fa-solid fa-check text-green-600 mt-0.5 flex-shrink-0"
+                  ></i>
+                  <span>Volume pricing &amp; enterprise terms</span>
+                </li>
+              </ul>
+              <a
+                href="#contact-section"
+                class="inline-flex justify-center items-center w-full border-2 border-gray-300 hover:border-green-600 text-gray-800 hover:text-green-700 font-semibold rounded-lg px-6 py-3 transition-all duration-200"
+              >
+                Talk to sales
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- Blog Section -->
-      <section id="blog-section" class="py-20 md:py-28 bg-gray-50">
+      <section id="blog-section" class="py-20 md:py-28 bg-white">
         <div class="container mx-auto px-6">
           <div class="text-center max-w-3xl mx-auto mb-16">
             <span
@@ -933,6 +1144,37 @@
             </p>
           </div>
           <div class="max-w-4xl mx-auto space-y-8">
+            <article
+              class="bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden"
+            >
+              <div class="p-8 md:p-10">
+                <div class="flex flex-wrap items-center gap-3 mb-5">
+                  <span
+                    class="inline-flex items-center px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold"
+                  >
+                    Training &amp; competence
+                  </span>
+                  <span class="text-sm text-gray-500">12 min read</span>
+                </div>
+                <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                  Why training records are the backbone of competence—and
+                  audit-ready QMS operations
+                </h3>
+                <p class="text-gray-600 leading-relaxed mb-6">
+                  ISO frameworks expect competence and proof. Without governed
+                  training records, audits get painful and operational risk rises.
+                  Here is how to structure enterprise-grade competence management
+                  and how 4ES Hub connects training to documents and oversight.
+                </p>
+                <NuxtLink
+                  to="/blog/training-records-qms"
+                  class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold"
+                >
+                  Read article
+                  <i class="fa-solid fa-arrow-right ml-2"></i>
+                </NuxtLink>
+              </div>
+            </article>
             <article
               class="bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden"
             >
@@ -1449,6 +1691,13 @@
             <div>
               <h4 class="text-white font-semibold mb-4">Company</h4>
               <ul class="space-y-3 text-sm">
+                <li>
+                  <a
+                    href="#pricing-section"
+                    class="hover:text-white transition-colors"
+                    >Pricing</a
+                  >
+                </li>
                 <li>
                   <a href="#" class="hover:text-white transition-colors"
                     >About Us</a

@@ -14,6 +14,11 @@ const routes = [
     priority: "0.8",
     changefreq: "monthly",
   },
+  {
+    path: "/blog/training-records-qms",
+    priority: "0.8",
+    changefreq: "monthly",
+  },
 ];
 
 const escapeXml = (value: string) =>
