@@ -19,6 +19,11 @@ const routes = [
     priority: "0.8",
     changefreq: "monthly",
   },
+  {
+    path: "/blog/mastering-non-conformity-iso-9001",
+    priority: "0.8",
+    changefreq: "monthly",
+  },
 ];
 
 const escapeXml = (value: string) =>

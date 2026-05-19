@@ -1152,6 +1152,37 @@
                   <span
                     class="inline-flex items-center px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold"
                   >
+                    Non-conformities &amp; corrective action
+                  </span>
+                  <span class="text-sm text-gray-500">8 min read</span>
+                </div>
+                <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                  Mastering non-conformity: how 4ES Hub empowers your ISO
+                  9001:2015 journey
+                </h3>
+                <p class="text-gray-600 leading-relaxed mb-6">
+                  ISO 9001:2015 expects containment, root cause analysis, and
+                  documented corrective action—not quick fixes. Learn how a
+                  structured non-conformity workflow drives continual improvement
+                  and how 4ES Hub keeps evidence audit-ready.
+                </p>
+                <NuxtLink
+                  to="/blog/mastering-non-conformity-iso-9001"
+                  class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold"
+                >
+                  Read article
+                  <i class="fa-solid fa-arrow-right ml-2"></i>
+                </NuxtLink>
+              </div>
+            </article>
+            <article
+              class="bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden"
+            >
+              <div class="p-8 md:p-10">
+                <div class="flex flex-wrap items-center gap-3 mb-5">
+                  <span
+                    class="inline-flex items-center px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold"
+                  >
                     Training &amp; competence
                   </span>
                   <span class="text-sm text-gray-500">12 min read</span>
