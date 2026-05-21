@@ -20,6 +20,11 @@ const routes = [
     changefreq: "monthly",
   },
   {
+    path: "/blog/importance-of-iso-training",
+    priority: "0.8",
+    changefreq: "monthly",
+  },
+  {
     path: "/blog/mastering-non-conformity-iso-9001",
     priority: "0.8",
     changefreq: "monthly",

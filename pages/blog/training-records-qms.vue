@@ -68,7 +68,15 @@
                 executed by qualified personnel and that competence is managed in
                 a controlled and repeatable way. Fragmented spreadsheets and local
                 files are no longer sufficient for multi-site and growing
-                organizations.
+                organizations. For the broader case for structured ISO training
+                programs—and how training fits into the 4ES Hub platform—see our
+                guide on
+                <NuxtLink
+                  to="/blog/importance-of-iso-training"
+                  class="text-blue-600 hover:text-blue-700 font-semibold"
+                >
+                  why ISO training matters for compliance
+                </NuxtLink>.
               </p>
 
               <h2>What are training records in a Quality Management System?</h2>
