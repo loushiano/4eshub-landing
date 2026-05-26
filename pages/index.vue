@@ -1152,6 +1152,37 @@
                   <span
                     class="inline-flex items-center px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold"
                   >
+                    Customer feedback &amp; VoC
+                  </span>
+                  <span class="text-sm text-gray-500">11 min read</span>
+                </div>
+                <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                  Customer feedback in quality management: Voice of the Customer,
+                  ISO 9.1.2, and structured surveys in 4ES Hub
+                </h3>
+                <p class="text-gray-600 leading-relaxed mb-6">
+                  ISO 9001 expects you to monitor customer perceptions—not just
+                  collect NPS scores. Learn how VoC governance, review cadence,
+                  and closed-loop action fit a QMS, and how the 4ES Hub Survey
+                  module turns feedback into audit-ready evidence.
+                </p>
+                <NuxtLink
+                  to="/blog/customer-feedback-quality-management"
+                  class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold"
+                >
+                  Read article
+                  <i class="fa-solid fa-arrow-right ml-2"></i>
+                </NuxtLink>
+              </div>
+            </article>
+            <article
+              class="bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden"
+            >
+              <div class="p-8 md:p-10">
+                <div class="flex flex-wrap items-center gap-3 mb-5">
+                  <span
+                    class="inline-flex items-center px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold"
+                  >
                     Training &amp; competence
                   </span>
                   <span class="text-sm text-gray-500">11 min read</span>

@@ -5,6 +5,11 @@ const routes = [
     changefreq: "weekly",
   },
   {
+    path: "/blog/customer-feedback-quality-management",
+    priority: "0.8",
+    changefreq: "monthly",
+  },
+  {
     path: "/blog/documentation-audit-readiness",
     priority: "0.8",
     changefreq: "monthly",
