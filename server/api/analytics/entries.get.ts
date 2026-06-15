@@ -14,12 +14,16 @@ export default defineEventHandler(async (event) => {
 
   const pageCounts: Record<string, number> = {}
   const referrerCounts: Record<string, number> = {}
+  const countryCounts: Record<string, number> = {}
 
   for (const entry of entries) {
     pageCounts[entry.path] = (pageCounts[entry.path] || 0) + 1
 
     const referrer = entry.referrer || '(direct)'
     referrerCounts[referrer] = (referrerCounts[referrer] || 0) + 1
+
+    const country = entry.country || 'Unknown'
+    countryCounts[country] = (countryCounts[country] || 0) + 1
   }
 
   const topPages = Object.entries(pageCounts)
@@ -32,11 +36,17 @@ export default defineEventHandler(async (event) => {
     .slice(0, 10)
     .map(([referrer, count]) => ({ referrer, count }))
 
+  const topCountries = Object.entries(countryCounts)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 10)
+    .map(([country, count]) => ({ country, count }))
+
   return {
     total: entries.length,
     uniqueVisitors,
     topPages,
     topReferrers,
+    topCountries,
     entries,
     dataFile: getAnalyticsDataLocation(),
   }

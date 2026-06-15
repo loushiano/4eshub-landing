@@ -1,5 +1,6 @@
 import { readBody } from 'h3'
 import { appendVisit } from '../../utils/analyticsStore'
+import { getVisitorGeo } from '../../utils/visitorGeo'
 
 const MAX_FIELD_LENGTH = 2048
 
@@ -27,6 +28,8 @@ export default defineEventHandler(async (event) => {
     })
   }
 
+  const geo = getVisitorGeo(event)
+
   const entry = await appendVisit({
     path,
     fullUrl: trim(body?.fullUrl, MAX_FIELD_LENGTH),
@@ -43,6 +46,9 @@ export default defineEventHandler(async (event) => {
         ? Math.round(body.screenWidth)
         : null,
     visitorId: trim(body?.visitorId, 64) || 'anonymous',
+    country: geo.country,
+    region: geo.region,
+    city: geo.city,
   })
 
   return { ok: true, id: entry.id }

@@ -21,6 +21,9 @@ export interface VisitEntry {
   language: string
   screenWidth: number | null
   visitorId: string
+  country: string | null
+  region: string | null
+  city: string | null
 }
 
 interface AnalyticsS3Config {

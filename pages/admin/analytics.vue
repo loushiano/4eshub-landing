@@ -84,7 +84,7 @@
           </div>
         </div>
 
-        <div class="grid gap-6 lg:grid-cols-2">
+        <div class="grid gap-6 lg:grid-cols-3">
           <div class="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
             <h2 class="mb-4 text-lg font-semibold">Top pages</h2>
             <ul class="space-y-2">
@@ -112,6 +112,20 @@
               </li>
             </ul>
           </div>
+
+          <div class="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+            <h2 class="mb-4 text-lg font-semibold">Top countries</h2>
+            <ul class="space-y-2">
+              <li
+                v-for="item in data?.topCountries || []"
+                :key="item.country"
+                class="flex items-center justify-between gap-4 text-sm"
+              >
+                <span class="truncate">{{ item.country }}</span>
+                <span class="font-medium text-gray-700">{{ item.count }}</span>
+              </li>
+            </ul>
+          </div>
         </div>
 
         <div class="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
@@ -121,6 +135,7 @@
                 <tr>
                   <th class="px-4 py-3 text-left font-medium text-gray-500">Time</th>
                   <th class="px-4 py-3 text-left font-medium text-gray-500">Page</th>
+                  <th class="px-4 py-3 text-left font-medium text-gray-500">Location</th>
                   <th class="px-4 py-3 text-left font-medium text-gray-500">Referrer</th>
                   <th class="px-4 py-3 text-left font-medium text-gray-500">Source</th>
                   <th class="px-4 py-3 text-left font-medium text-gray-500">Visitor</th>
@@ -133,6 +148,9 @@
                   </td>
                   <td class="max-w-xs truncate px-4 py-3 font-medium">
                     {{ entry.path }}
+                  </td>
+                  <td class="max-w-xs truncate px-4 py-3 text-gray-600">
+                    {{ formatLocation(entry) }}
                   </td>
                   <td class="max-w-xs truncate px-4 py-3 text-gray-600">
                     {{ entry.referrer || '(direct)' }}
@@ -189,6 +207,11 @@ function formatSource(entry) {
   }
 
   return '—'
+}
+
+function formatLocation(entry) {
+  const parts = [entry.city, entry.region, entry.country].filter(Boolean)
+  return parts.join(', ') || 'Unknown'
 }
 
 async function loadData() {
