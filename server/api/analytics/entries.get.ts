@@ -1,5 +1,5 @@
 import { getQuery } from 'h3'
-import { readVisits } from '../../utils/analyticsStore'
+import { getAnalyticsDataLocation, readVisits } from '../../utils/analyticsStore'
 import { verifyAnalyticsPassword } from '../../utils/analyticsAuth'
 
 export default defineEventHandler(async (event) => {
@@ -38,6 +38,6 @@ export default defineEventHandler(async (event) => {
     topPages,
     topReferrers,
     entries,
-    dataFile: '.data/analytics/visits.jsonl',
+    dataFile: getAnalyticsDataLocation(),
   }
 })

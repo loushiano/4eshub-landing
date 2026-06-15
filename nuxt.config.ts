@@ -10,6 +10,8 @@ export default defineNuxtConfig({
     publicKey: process.env.PUBLIC_KEY,
     secretKey: process.env.SECRET_KEY,
     analyticsPassword: process.env.ANALYTICS_PASSWORD || "",
+    analyticsS3Bucket: process.env.ANALYTICS_S3_BUCKET || "",
+    analyticsS3Key: process.env.ANALYTICS_S3_KEY || "analytics/visits.jsonl",
     public: {
       siteUrl: process.env.NUXT_PUBLIC_SITE_URL || "https://4eshub.com",
     },

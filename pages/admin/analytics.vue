@@ -6,7 +6,7 @@
           <h1 class="text-3xl font-bold text-gray-900">Site Analytics</h1>
           <p class="mt-1 text-sm text-gray-500">
             Visits are stored in
-            <code class="rounded bg-gray-200 px-1.5 py-0.5">.data/analytics/visits.jsonl</code>
+            <code class="rounded bg-gray-200 px-1.5 py-0.5 break-all">{{ dataLocation }}</code>
           </p>
         </div>
         <NuxtLink
@@ -161,6 +161,7 @@ const storedPassword = ref('')
 const loading = ref(false)
 const error = ref('')
 const data = ref(null)
+const dataLocation = ref('S3 analytics file')
 
 const isAuthenticated = computed(() => Boolean(storedPassword.value))
 
@@ -204,6 +205,7 @@ async function loadData() {
         'X-Analytics-Password': storedPassword.value,
       },
     })
+    dataLocation.value = data.value?.dataFile || dataLocation.value
   } catch (err) {
     error.value = err?.data?.message || 'Failed to load analytics'
     storedPassword.value = ''
