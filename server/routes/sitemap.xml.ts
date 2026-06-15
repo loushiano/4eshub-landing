@@ -5,6 +5,11 @@ const routes = [
     changefreq: "weekly",
   },
   {
+    path: "/iso-9001",
+    priority: "0.9",
+    changefreq: "monthly",
+  },
+  {
     path: "/blog/single-platform-quality-management",
     priority: "0.8",
     changefreq: "monthly",

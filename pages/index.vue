@@ -10,72 +10,16 @@
       >
         <div class="flex items-center">
           <NuxtLink to="/" class="flex items-center cursor-pointer">
-            <img src="/4es.ico" alt="4ES Hub" class="h-14" />
+            <img src="/logo-color.png" alt="4ES Hub" class="h-14" />
           </NuxtLink>
         </div>
         <nav class="hidden md:flex items-center space-x-8">
-          <div class="relative group">
-            <a
-              class="text-gray-700 hover:text-green-600 cursor-pointer font-medium flex items-center gap-1 py-2"
-            >
-              Products
-              <i class="fa-solid fa-chevron-down text-xs"></i>
-            </a>
-            <div
-              class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
-            >
-              <div
-                class="bg-white rounded-lg shadow-xl border border-gray-100 py-2 min-w-[200px]"
-              >
-                <a
-                  href="#features-section"
-                  class="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600"
-                  >Compliance Module</a
-                >
-                <a
-                  href="#features-section"
-                  class="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600"
-                  >Operations Module</a
-                >
-                <a
-                  href="#ai-section"
-                  class="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600"
-                  >AI QCG</a
-                >
-                <a
-                  href="#ai-section"
-                  class="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600"
-                  >AI SQM</a
-                >
-              </div>
-            </div>
-          </div>
-          <div class="relative group">
-            <a
-              class="text-gray-700 hover:text-green-600 cursor-pointer font-medium flex items-center gap-1 py-2"
-            >
-              Industries
-              <i class="fa-solid fa-chevron-down text-xs"></i>
-            </a>
-            <div
-              class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
-            >
-              <div
-                class="bg-white rounded-lg shadow-xl border border-gray-100 py-2 min-w-[180px]"
-              >
-                <a
-                  href="#"
-                  class="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600"
-                  >Aerospace</a
-                >
-                <a
-                  href="#"
-                  class="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600"
-                  >Automotive</a
-                >
-              </div>
-            </div>
-          </div>
+          <NuxtLink
+            to="/iso-9001"
+            class="text-gray-700 hover:text-green-600 font-medium py-2"
+          >
+            ISO 9001
+          </NuxtLink>
           <div class="relative group">
             <a
               class="text-gray-700 hover:text-green-600 cursor-pointer font-medium flex items-center gap-1 py-2"
@@ -94,21 +38,6 @@
                   class="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600"
                   >Blog</a
                 >
-                <a
-                  href="#"
-                  class="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600"
-                  >Whitepaper</a
-                >
-                <a
-                  href="#"
-                  class="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600"
-                  >Glossary</a
-                >
-                <a
-                  href="#"
-                  class="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600"
-                  >Case Study</a
-                >
               </div>
             </div>
           </div>
@@ -126,16 +55,6 @@
                 class="bg-white rounded-lg shadow-xl border border-gray-100 py-2 min-w-[180px]"
               >
                 <a
-                  href="#"
-                  class="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600"
-                  >About Us</a
-                >
-                <a
-                  href="#"
-                  class="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600"
-                  >Partners</a
-                >
-                <a
                   href="#pricing-section"
                   class="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600"
                   >Pricing</a
@@ -144,16 +63,6 @@
                   href="#contact-section"
                   class="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600"
                   >Contact</a
-                >
-                <a
-                  href="#"
-                  class="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600"
-                  >Integrations</a
-                >
-                <a
-                  href="#"
-                  class="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600"
-                  >Careers</a
                 >
               </div>
             </div>
@@ -174,19 +83,18 @@
                 class="bg-white rounded-lg shadow-xl border border-gray-100 py-2 min-w-[140px]"
               >
                 <a
-                  href="#"
+                  href="https://app.4eshub.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   class="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600"
-                  >USA</a
+                  >North America</a
                 >
                 <a
-                  href="#"
+                  href="https://4es.smartclick.solutions"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   class="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600"
-                  >Canada</a
-                >
-                <a
-                  href="#"
-                  class="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600"
-                  >India</a
+                  >Middle East</a
                 >
               </div>
             </div>
@@ -214,26 +122,40 @@
         class="md:hidden bg-white border-t border-gray-100 px-6 py-4"
       >
         <nav class="flex flex-col space-y-3">
-          <a
-            href="#features-section"
+          <NuxtLink
+            to="/iso-9001"
             class="text-gray-700 hover:text-green-600 py-2"
-            >Products</a
+            >ISO 9001</NuxtLink
           >
-          <a href="#" class="text-gray-700 hover:text-green-600 py-2"
-            >Industries</a
-          >
-          <a href="#" class="text-gray-700 hover:text-green-600 py-2"
-            >Resources</a
-          >
-          <a href="#" class="text-gray-700 hover:text-green-600 py-2"
-            >Company</a
+          <a
+            href="#blog-section"
+            class="text-gray-700 hover:text-green-600 py-2"
+            >Blog</a
           >
           <a
             href="#pricing-section"
             class="text-gray-700 hover:text-green-600 py-2"
             >Pricing</a
           >
-          <a href="#" class="text-gray-700 hover:text-green-600 py-2">Login</a>
+          <a
+            href="#contact-section"
+            class="text-gray-700 hover:text-green-600 py-2"
+            >Contact</a
+          >
+          <a
+            href="https://app.4eshub.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-gray-700 hover:text-green-600 py-2"
+            >Login — North America</a
+          >
+          <a
+            href="https://4es.smartclick.solutions"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-gray-700 hover:text-green-600 py-2"
+            >Login — Middle East</a
+          >
           <a
             href="#contact-section"
             class="bg-green-600 text-white text-center rounded-lg px-6 py-2.5 mt-2"
@@ -376,8 +298,9 @@
           <div
             class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-7xl mx-auto"
           >
-            <div
-              class="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:border-green-300 hover:shadow-lg transition-all duration-300 text-center"
+            <NuxtLink
+              to="/iso-9001"
+              class="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:border-green-300 hover:shadow-lg transition-all duration-300 text-center block"
             >
               <div
                 class="w-16 h-16 flex items-center justify-center mx-auto mb-3"
@@ -385,7 +308,7 @@
                 <img src="/iso-9001.svg" alt="ISO 9001" class="w-full h-full" />
               </div>
               <h4 class="font-semibold text-gray-900">ISO 9001</h4>
-            </div>
+            </NuxtLink>
             <div
               class="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:border-green-300 hover:shadow-lg transition-all duration-300 text-center"
             >
@@ -551,65 +474,6 @@
             </div>
           </div>
 
-          <!-- Operations Module Features -->
-          <div>
-            <h3 class="text-2xl font-bold text-gray-900 mb-8 text-center">
-              Operations Module
-            </h3>
-            <div
-              class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto"
-            >
-              <div
-                class="bg-white p-6 rounded-xl border border-gray-200 hover:border-green-300 hover:shadow-lg transition-all duration-300"
-              >
-                <div
-                  class="w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center mb-4"
-                >
-                  <i class="fa-solid fa-chart-line text-cyan-600 text-xl"></i>
-                </div>
-                <h4 class="text-lg font-semibold text-gray-900 mb-2">
-                  Product Lifecycle Monitoring
-                </h4>
-                <p class="text-gray-600 text-sm">
-                  Monitor the entire product lifecycle with detailed lists,
-                  process overviews, assigned responsibilities, and real-time
-                  production data.
-                </p>
-              </div>
-              <div
-                class="bg-white p-6 rounded-xl border border-gray-200 hover:border-green-300 hover:shadow-lg transition-all duration-300"
-              >
-                <div
-                  class="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center mb-4"
-                >
-                  <i class="fa-solid fa-file-lines text-teal-600 text-xl"></i>
-                </div>
-                <h4 class="text-lg font-semibold text-gray-900 mb-2">
-                  eLogs & BMR
-                </h4>
-                <p class="text-gray-600 text-sm">
-                  Record eLogs and create Batch Manufacturing Records (BMR) that
-                  ensure traceability and a single source of truth.
-                </p>
-              </div>
-              <div
-                class="bg-white p-6 rounded-xl border border-gray-200 hover:border-green-300 hover:shadow-lg transition-all duration-300"
-              >
-                <div
-                  class="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center mb-4"
-                >
-                  <i class="fa-solid fa-gauge-high text-amber-600 text-xl"></i>
-                </div>
-                <h4 class="text-lg font-semibold text-gray-900 mb-2">
-                  Dynamic Dashboards
-                </h4>
-                <p class="text-gray-600 text-sm">
-                  Stay on top of asset maintenance, inventory, and vendor
-                  performance with dynamic dashboards.
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -1585,7 +1449,7 @@
                   </div>
                   <div>
                     <h4 class="font-semibold text-gray-900 mb-1">Email Us</h4>
-                    <p class="text-gray-600">hello@4eshub.com</p>
+                    <p class="text-gray-600">afawaz@4eshub.com</p>
                   </div>
                 </div>
                 <div class="flex items-start gap-4">
@@ -1621,7 +1485,7 @@
                 <p class="text-gray-600 font-medium mb-4">Follow us</p>
                 <div class="flex gap-3">
                   <a
-                    href="https://www.linkedin.com/company/smartclick-solutions-inc"
+                    href="https://www.linkedin.com/company/4es-hub"
                     target="_blank"
                     class="w-10 h-10 bg-gray-100 hover:bg-green-100 rounded-lg flex items-center justify-center text-gray-600 hover:text-green-600 transition-all"
                   >
@@ -1729,7 +1593,7 @@
       <!-- Footer -->
       <footer class="bg-gray-900 text-gray-400 py-16">
         <div class="container mx-auto px-6">
-          <div class="grid grid-cols-1 md:grid-cols-5 gap-12 mb-12">
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
             <div class="col-span-1">
               <img
                 src="/4es-logo.png"
@@ -1741,46 +1605,13 @@
               </p>
             </div>
             <div>
-              <h4 class="text-white font-semibold mb-4">Products</h4>
+              <h4 class="text-white font-semibold mb-4">Standards</h4>
               <ul class="space-y-3 text-sm">
                 <li>
-                  <a href="#" class="hover:text-white transition-colors"
-                    >Compliance Module</a
-                  >
-                </li>
-                <li>
-                  <a href="#" class="hover:text-white transition-colors"
-                    >Operations Module</a
-                  >
-                </li>
-                <li>
-                  <a href="#" class="hover:text-white transition-colors"
-                    >AI QCG</a
-                  >
-                </li>
-                <li>
-                  <a href="#" class="hover:text-white transition-colors"
-                    >AI SQM</a
-                  >
-                </li>
-                <li>
-                  <a href="#" class="hover:text-white transition-colors"
-                    >OCTO</a
-                  >
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4 class="text-white font-semibold mb-4">Industries</h4>
-              <ul class="space-y-3 text-sm">
-                <li>
-                  <a href="#" class="hover:text-white transition-colors"
-                    >Aerospace</a
-                  >
-                </li>
-                <li>
-                  <a href="#" class="hover:text-white transition-colors"
-                    >Automotive</a
+                  <NuxtLink
+                    to="/iso-9001"
+                    class="hover:text-white transition-colors"
+                    >ISO 9001</NuxtLink
                   >
                 </li>
               </ul>
@@ -1793,21 +1624,6 @@
                     href="#blog-section"
                     class="hover:text-white transition-colors"
                     >Blog</a
-                  >
-                </li>
-                <li>
-                  <a href="#" class="hover:text-white transition-colors"
-                    >Whitepaper</a
-                  >
-                </li>
-                <li>
-                  <a href="#" class="hover:text-white transition-colors"
-                    >Glossary</a
-                  >
-                </li>
-                <li>
-                  <a href="#" class="hover:text-white transition-colors"
-                    >Case Study</a
                   >
                 </li>
               </ul>
@@ -1823,30 +1639,10 @@
                   >
                 </li>
                 <li>
-                  <a href="#" class="hover:text-white transition-colors"
-                    >About Us</a
-                  >
-                </li>
-                <li>
-                  <a href="#" class="hover:text-white transition-colors"
-                    >Partners</a
-                  >
-                </li>
-                <li>
                   <a
                     href="#contact-section"
                     class="hover:text-white transition-colors"
                     >Contact</a
-                  >
-                </li>
-                <li>
-                  <a href="#" class="hover:text-white transition-colors"
-                    >Integrations</a
-                  >
-                </li>
-                <li>
-                  <a href="#" class="hover:text-white transition-colors"
-                    >Careers</a
                   >
                 </li>
               </ul>
@@ -1870,7 +1666,7 @@
               </div>
               <div class="flex gap-4">
                 <a
-                  href="https://www.linkedin.com/company/smartclick-solutions-inc"
+                  href="https://www.linkedin.com/company/4es-hub"
                   target="_blank"
                   class="w-10 h-10 bg-gray-800 hover:bg-green-600 rounded-lg flex items-center justify-center transition-all"
                 >
@@ -1943,7 +1739,7 @@ useHead({
         url: homeUrl,
         logo: `${siteUrl}/4es-logo.png`,
         sameAs: [
-          "https://www.linkedin.com/company/smartclick-solutions-inc",
+          "https://www.linkedin.com/company/4es-hub",
         ],
       }),
     },
