@@ -201,78 +201,8 @@
               </div>
             </div>
             <div class="relative hidden lg:block">
-              <div
-                class="relative z-10 bg-white rounded-2xl shadow-2xl p-6 border border-gray-100"
-              >
-                <div class="flex items-center gap-3 mb-4">
-                  <div class="w-3 h-3 rounded-full bg-red-400"></div>
-                  <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
-                  <div class="w-3 h-3 rounded-full bg-green-400"></div>
-                </div>
-                <div class="space-y-3">
-                  <div class="flex items-center gap-3">
-                    <div
-                      class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center"
-                    >
-                      <i class="fa-solid fa-shield-halved text-green-600"></i>
-                    </div>
-                    <div class="flex-1">
-                      <div class="h-3 bg-gray-200 rounded w-3/4 mb-2"></div>
-                      <div class="h-2 bg-gray-100 rounded w-1/2"></div>
-                    </div>
-                    <div
-                      class="w-20 h-6 bg-green-100 rounded-full flex items-center justify-center"
-                    >
-                      <span class="text-green-600 text-xs font-medium"
-                        >Compliant</span
-                      >
-                    </div>
-                  </div>
-                  <div class="flex items-center gap-3">
-                    <div
-                      class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center"
-                    >
-                      <i class="fa-solid fa-clipboard-check text-blue-600"></i>
-                    </div>
-                    <div class="flex-1">
-                      <div class="h-3 bg-gray-200 rounded w-2/3 mb-2"></div>
-                      <div class="h-2 bg-gray-100 rounded w-2/5"></div>
-                    </div>
-                    <div
-                      class="w-20 h-6 bg-blue-100 rounded-full flex items-center justify-center"
-                    >
-                      <span class="text-blue-600 text-xs font-medium"
-                        >Audit Ready</span
-                      >
-                    </div>
-                  </div>
-                  <div class="flex items-center gap-3">
-                    <div
-                      class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center"
-                    >
-                      <i class="fa-solid fa-robot text-purple-600"></i>
-                    </div>
-                    <div class="flex-1">
-                      <div class="h-3 bg-gray-200 rounded w-4/5 mb-2"></div>
-                      <div class="h-2 bg-gray-100 rounded w-3/5"></div>
-                    </div>
-                    <div
-                      class="w-20 h-6 bg-purple-100 rounded-full flex items-center justify-center"
-                    >
-                      <span class="text-purple-600 text-xs font-medium"
-                        >AI Powered</span
-                      >
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- Background decoration -->
-              <div
-                class="absolute -top-4 -right-4 w-72 h-72 bg-green-100 rounded-full blur-3xl opacity-60"
-              ></div>
-              <div
-                class="absolute -bottom-8 -left-8 w-64 h-64 bg-blue-100 rounded-full blur-3xl opacity-60"
-              ></div>
+            
+             <img src="/screen.png" alt="4ES Hub" class="w-full h-full" />
             </div>
           </div>
         </div>
