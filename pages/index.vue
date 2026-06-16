@@ -686,7 +686,7 @@
                 </div>
               </div>
             </div>
-            <div
+            <!-- <div
               class="bg-white p-8 rounded-xl border border-gray-200 hover:shadow-lg transition-all duration-300"
             >
               <div class="flex gap-1 mb-4">
@@ -714,7 +714,7 @@
                   <p class="text-sm text-gray-500">CTO, Railz AI</p>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </section>
