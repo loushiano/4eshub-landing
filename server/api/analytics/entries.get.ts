@@ -1,5 +1,6 @@
 import { getQuery } from 'h3'
 import { getAnalyticsDataLocation, readVisits } from '../../utils/analyticsStore'
+import { isExcludedAnalyticsPath } from '../../utils/analyticsFilters'
 import { verifyAnalyticsPassword } from '../../utils/analyticsAuth'
 
 export default defineEventHandler(async (event) => {
@@ -8,7 +9,9 @@ export default defineEventHandler(async (event) => {
 
   const query = getQuery(event)
   const limit = Math.min(Number(query.limit) || 500, 2000)
-  const entries = await readVisits(limit)
+  const entries = (await readVisits(limit)).filter(
+    (entry) => !isExcludedAnalyticsPath(entry.path),
+  )
 
   const uniqueVisitors = new Set(entries.map((entry) => entry.visitorId)).size
 

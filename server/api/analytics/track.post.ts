@@ -1,5 +1,6 @@
 import { readBody } from 'h3'
 import { appendVisit } from '../../utils/analyticsStore'
+import { isExcludedAnalyticsPath } from '../../utils/analyticsFilters'
 import { getVisitorGeo } from '../../utils/visitorGeo'
 
 const MAX_FIELD_LENGTH = 2048
@@ -26,6 +27,10 @@ export default defineEventHandler(async (event) => {
       statusCode: 400,
       message: 'Invalid path',
     })
+  }
+
+  if (isExcludedAnalyticsPath(path)) {
+    return { ok: true, skipped: true }
   }
 
   const geo = getVisitorGeo(event)

@@ -25,6 +25,11 @@ function getUtmParams(search: string) {
 
 async function trackPageView() {
   const { pathname, search, href } = window.location
+
+  if (pathname.startsWith('/admin/analytics')) {
+    return
+  }
+
   const utm = getUtmParams(search)
 
   try {
