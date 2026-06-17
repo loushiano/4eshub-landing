@@ -10,6 +10,16 @@ const routes = [
     changefreq: "monthly",
   },
   {
+    path: "/blog",
+    priority: "0.8",
+    changefreq: "weekly",
+  },
+  {
+    path: "/blog/enterprise-risk-management-software",
+    priority: "0.8",
+    changefreq: "monthly",
+  },
+  {
     path: "/blog/single-platform-quality-management",
     priority: "0.8",
     changefreq: "monthly",

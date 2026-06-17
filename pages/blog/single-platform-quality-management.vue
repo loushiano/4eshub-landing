@@ -21,7 +21,7 @@
           <div class="container mx-auto px-6">
             <div class="max-w-4xl mx-auto">
               <NuxtLink
-                to="/#blog-section"
+                to="/blog"
                 class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold mb-8"
               >
                 <i class="fa-solid fa-arrow-left mr-2"></i>
@@ -633,7 +633,7 @@ useHead({
             "@type": "ListItem",
             position: 2,
             name: "Blog",
-            item: `${siteUrl}/#blog-section`,
+            item: `${siteUrl}/blog`,
           },
           {
             "@type": "ListItem",

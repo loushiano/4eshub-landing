@@ -33,10 +33,10 @@
               <div
                 class="bg-white rounded-lg shadow-xl border border-gray-100 py-2 min-w-[180px]"
               >
-                <a
-                  href="#blog-section"
+                <NuxtLink
+                  to="/blog"
                   class="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600"
-                  >Blog</a
+                  >Blog</NuxtLink
                 >
               </div>
             </div>
@@ -127,10 +127,10 @@
             class="text-gray-700 hover:text-green-600 py-2"
             >ISO 9001</NuxtLink
           >
-          <a
-            href="#blog-section"
+          <NuxtLink
+            to="/blog"
             class="text-gray-700 hover:text-green-600 py-2"
-            >Blog</a
+            >Blog</NuxtLink
           >
           <a
             href="#pricing-section"
@@ -939,6 +939,8 @@
           </div>
           <div class="max-w-4xl mx-auto space-y-8">
             <article
+              v-for="post in recentBlogPosts"
+              :key="post.slug"
               class="bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden"
             >
               <div class="p-8 md:p-10">
@@ -946,22 +948,18 @@
                   <span
                     class="inline-flex items-center px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold"
                   >
-                    Unified QMS &amp; efficiency
+                    {{ post.category }}
                   </span>
-                  <span class="text-sm text-gray-500">12 min read</span>
+                  <span class="text-sm text-gray-500">{{ post.readTime }}</span>
                 </div>
                 <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-                  One platform for quality: how managing every ISO standard in
-                  one place saves thousands of hours a year
+                  {{ post.title }}
                 </h3>
                 <p class="text-gray-600 leading-relaxed mb-6">
-                  Scattered spreadsheets and tools cost the average quality team
-                  ~3,200 hours a year. Learn why a single source of truth across
-                  ISO 9001, 14001, 45001 and 27001 cuts admin time 30–50%, and
-                  how 4ES Hub unifies every standard in one audit-ready platform.
+                  {{ post.excerpt }}
                 </p>
                 <NuxtLink
-                  to="/blog/single-platform-quality-management"
+                  :to="`/blog/${post.slug}`"
                   class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold"
                 >
                   Read article
@@ -969,192 +967,15 @@
                 </NuxtLink>
               </div>
             </article>
-            <article
-              class="bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden"
+          </div>
+          <div class="text-center mt-12">
+            <NuxtLink
+              to="/blog"
+              class="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg px-8 py-3 transition-all duration-200"
             >
-              <div class="p-8 md:p-10">
-                <div class="flex flex-wrap items-center gap-3 mb-5">
-                  <span
-                    class="inline-flex items-center px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold"
-                  >
-                    Customer feedback &amp; VoC
-                  </span>
-                  <span class="text-sm text-gray-500">11 min read</span>
-                </div>
-                <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-                  Customer feedback in quality management: Voice of the Customer,
-                  ISO 9.1.2, and structured surveys in 4ES Hub
-                </h3>
-                <p class="text-gray-600 leading-relaxed mb-6">
-                  ISO 9001 expects you to monitor customer perceptions—not just
-                  collect NPS scores. Learn how VoC governance, review cadence,
-                  and closed-loop action fit a QMS, and how the 4ES Hub Survey
-                  module turns feedback into audit-ready evidence.
-                </p>
-                <NuxtLink
-                  to="/blog/customer-feedback-quality-management"
-                  class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold"
-                >
-                  Read article
-                  <i class="fa-solid fa-arrow-right ml-2"></i>
-                </NuxtLink>
-              </div>
-            </article>
-            <article
-              class="bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden"
-            >
-              <div class="p-8 md:p-10">
-                <div class="flex flex-wrap items-center gap-3 mb-5">
-                  <span
-                    class="inline-flex items-center px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold"
-                  >
-                    Training &amp; competence
-                  </span>
-                  <span class="text-sm text-gray-500">11 min read</span>
-                </div>
-                <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-                  Why ISO training matters for compliance—and how 4ES Hub makes
-                  competence part of everyday operations
-                </h3>
-                <p class="text-gray-600 leading-relaxed mb-6">
-                  ISO training turns standards into behavior. Learn why competence
-                  programs reduce audit risk, what types of training organizations
-                  need, and how 4ES Hub connects training to documents, audits, and
-                  corrective actions.
-                </p>
-                <NuxtLink
-                  to="/blog/importance-of-iso-training"
-                  class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold"
-                >
-                  Read article
-                  <i class="fa-solid fa-arrow-right ml-2"></i>
-                </NuxtLink>
-              </div>
-            </article>
-            <article
-              class="bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden"
-            >
-              <div class="p-8 md:p-10">
-                <div class="flex flex-wrap items-center gap-3 mb-5">
-                  <span
-                    class="inline-flex items-center px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold"
-                  >
-                    Non-conformities &amp; corrective action
-                  </span>
-                  <span class="text-sm text-gray-500">8 min read</span>
-                </div>
-                <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-                  Mastering non-conformity: how 4ES Hub empowers your ISO
-                  9001:2015 journey
-                </h3>
-                <p class="text-gray-600 leading-relaxed mb-6">
-                  ISO 9001:2015 expects containment, root cause analysis, and
-                  documented corrective action—not quick fixes. Learn how a
-                  structured non-conformity workflow drives continual improvement
-                  and how 4ES Hub keeps evidence audit-ready.
-                </p>
-                <NuxtLink
-                  to="/blog/mastering-non-conformity-iso-9001"
-                  class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold"
-                >
-                  Read article
-                  <i class="fa-solid fa-arrow-right ml-2"></i>
-                </NuxtLink>
-              </div>
-            </article>
-            <article
-              class="bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden"
-            >
-              <div class="p-8 md:p-10">
-                <div class="flex flex-wrap items-center gap-3 mb-5">
-                  <span
-                    class="inline-flex items-center px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold"
-                  >
-                    Training &amp; competence
-                  </span>
-                  <span class="text-sm text-gray-500">12 min read</span>
-                </div>
-                <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-                  Why training records are the backbone of competence—and
-                  audit-ready QMS operations
-                </h3>
-                <p class="text-gray-600 leading-relaxed mb-6">
-                  ISO frameworks expect competence and proof. Without governed
-                  training records, audits get painful and operational risk rises.
-                  Here is how to structure enterprise-grade competence management
-                  and how 4ES Hub connects training to documents and oversight.
-                </p>
-                <NuxtLink
-                  to="/blog/training-records-qms"
-                  class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold"
-                >
-                  Read article
-                  <i class="fa-solid fa-arrow-right ml-2"></i>
-                </NuxtLink>
-              </div>
-            </article>
-            <article
-              class="bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden"
-            >
-              <div class="p-8 md:p-10">
-                <div class="flex flex-wrap items-center gap-3 mb-5">
-                  <span
-                    class="inline-flex items-center px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold"
-                  >
-                    Document Control
-                  </span>
-                  <span class="text-sm text-gray-500">6 min read</span>
-                </div>
-                <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-                  Why managing organizational documentation gets so painful
-                  before an audit
-                </h3>
-                <p class="text-gray-600 leading-relaxed mb-6">
-                  Policies live in shared drives, evidence hides in email
-                  threads, and every audit request becomes a scramble. Here is
-                  why documentation feels so annoying to manage, and how to turn
-                  it into a system that is ready before auditors arrive.
-                </p>
-                <NuxtLink
-                  to="/blog/documentation-audit-readiness"
-                  class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold"
-                >
-                  Read article
-                  <i class="fa-solid fa-arrow-right ml-2"></i>
-                </NuxtLink>
-              </div>
-            </article>
-            <article
-              class="bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden"
-            >
-              <div class="p-8 md:p-10">
-                <div class="flex flex-wrap items-center gap-3 mb-5">
-                  <span
-                    class="inline-flex items-center px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold"
-                  >
-                    Audit Management
-                  </span>
-                  <span class="text-sm text-gray-500">10 min read</span>
-                </div>
-                <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-                  Why tracking audits in one platform matters for ISO-certified
-                  teams
-                </h3>
-                <p class="text-gray-600 leading-relaxed mb-6">
-                  Certification is a milestone; the audit trail is the job.
-                  Here is how a structured audit program reduces surveillance
-                  stress, helps first-time certification, and how 4ES Hub
-                  connects programs, scheduling, findings, and reporting.
-                </p>
-                <NuxtLink
-                  to="/blog/iso-audit-tracking-value"
-                  class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold"
-                >
-                  Read article
-                  <i class="fa-solid fa-arrow-right ml-2"></i>
-                </NuxtLink>
-              </div>
-            </article>
+              View all articles
+              <i class="fa-solid fa-arrow-right ml-2"></i>
+            </NuxtLink>
           </div>
         </div>
       </section>
@@ -1550,10 +1371,10 @@
               <h4 class="text-white font-semibold mb-4">Resources</h4>
               <ul class="space-y-3 text-sm">
                 <li>
-                  <a
-                    href="#blog-section"
+                  <NuxtLink
+                    to="/blog"
                     class="hover:text-white transition-colors"
-                    >Blog</a
+                    >Blog</NuxtLink
                   >
                 </li>
               </ul>
@@ -1622,6 +1443,9 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
+import { getRecentBlogPosts } from "~/utils/blogPosts";
+
+const recentBlogPosts = getRecentBlogPosts(3);
 
 const mobileMenuOpen = ref(false);
 
