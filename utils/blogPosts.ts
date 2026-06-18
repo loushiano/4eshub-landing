@@ -9,6 +9,16 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "iso-9001-certification-help-consultant-qms-software",
+    title:
+      "ISO 9001 certification help: consultants, certification bodies, QMS implementation, and software",
+    excerpt:
+      "A practical guide for people searching ISO 9001 certification help, ISO 9001 consultant, certification body, QMS implementation, or ISO 9001 software—and how 4ES Hub brings expert support and QMS workflows together.",
+    category: "ISO 9001 Help",
+    readTime: "7 min read",
+    published: "2026-06-17",
+  },
+  {
     slug: "iso-9001-certification-from-zero-to-certified",
     title:
       "From zero to ISO 9001 certification: expert guidance, a working QMS, and 4ES Hub in one path",
