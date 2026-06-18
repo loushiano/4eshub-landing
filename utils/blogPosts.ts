@@ -9,6 +9,16 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "iso-9001-certification-from-zero-to-certified",
+    title:
+      "From zero to ISO 9001 certification: expert guidance, a working QMS, and 4ES Hub in one path",
+    excerpt:
+      "Starting ISO 9001 from scratch can feel overwhelming. Learn how 4ES Hub helps connect organizations with certification and consulting partners while implementing the QMS directly in software, from gap assessment to audit-ready evidence.",
+    category: "ISO 9001 Certification",
+    readTime: "8 min read",
+    published: "2026-06-17",
+  },
+  {
     slug: "enterprise-risk-management-software",
     title:
       "Why enterprise risk management software matters—and how 4ES Hub turns ISO risk requirements into everyday practice",
