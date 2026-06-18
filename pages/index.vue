@@ -182,7 +182,7 @@
               <h1
                 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight"
               >
-                From zero to ISO certification.
+                From no QMS to ISO certification.
                 <span class="text-green-600">Stay audit-ready every day.</span>
               </h1>
               <p class="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed">
@@ -202,7 +202,7 @@
                   href="#partners-section"
                   class="inline-flex items-center border-2 border-gray-300 hover:border-green-600 text-gray-700 hover:text-green-600 font-semibold rounded-lg px-8 py-4 transition-all duration-200"
                 >
-                  See zero-to-certified path
+                  See the certification path
                 </a>
               </div>
               <div
@@ -1012,7 +1012,7 @@
               <span
                 class="inline-block px-4 py-1.5 bg-blue-50 text-blue-700 rounded-full text-sm font-medium mb-4"
               >
-                Zero to Certified
+                Certification Journey
               </span>
               <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                 Experts, certification partners, and QMS software in one path
@@ -1073,7 +1073,7 @@
                 href="#contact-section"
                 class="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg px-8 py-4 transition-all duration-200"
               >
-                Start from zero to certified
+                Start your certification journey
                 <i class="fa-solid fa-arrow-right ml-2"></i>
               </a>
               <p class="text-xs text-gray-500 mt-4">
@@ -1182,7 +1182,7 @@
       <section class="py-20 md:py-28 bg-green-600">
         <div class="container mx-auto px-6 text-center">
           <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
-            Ready to move from zero to certified?
+            Ready to start your certification journey?
           </h2>
           <p class="text-lg text-green-100 mb-8 max-w-2xl mx-auto">
             Book a free consultation and see how 4ES Hub can help you build your
@@ -1494,8 +1494,8 @@ const homeUrl = `${siteUrl}/`;
 useSeoMeta({
   title: "ISO 9001 Certification Help & QMS Software | 4ES Hub",
   description:
-    "4ES Hub helps organizations move from zero to ISO certification with QMS software, audit-ready workflows, and certification body and consultant partner introductions.",
-  ogTitle: "4ES Hub | From Zero to ISO Certification",
+    "4ES Hub helps organizations achieve ISO certification with QMS software, audit-ready workflows, and certification body and consultant partner introductions.",
+  ogTitle: "4ES Hub | Your Path to ISO Certification",
   ogDescription:
     "Build your QMS in software, connect with certification and consultant partners, and prepare for ISO audits with organized evidence.",
   ogUrl: homeUrl,
@@ -1503,7 +1503,7 @@ useSeoMeta({
   twitterCard: "summary_large_image",
   twitterTitle: "4ES Hub | ISO 9001 Certification Help",
   twitterDescription:
-    "QMS software plus partner support to move from zero to certification-ready.",
+    "QMS software plus partner support to become certification-ready.",
   twitterImage: `${siteUrl}/4es-logo.png`,
 });
 
