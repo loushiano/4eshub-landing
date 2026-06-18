@@ -174,15 +174,21 @@
         <div class="container mx-auto px-6">
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div class="max-w-xl">
+              <span
+                class="inline-flex items-center px-4 py-1.5 bg-green-50 text-green-700 rounded-full text-sm font-semibold mb-5"
+              >
+                ISO 9001 experts + QMS software
+              </span>
               <h1
                 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight"
               >
-                Compliance made effortless.
+                From zero to ISO certification.
                 <span class="text-green-600">Stay audit-ready every day.</span>
               </h1>
               <p class="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed">
-                4ES Hub helps organizations become audit-ready and prepared for
-                ISO certification.
+                4ES Hub helps you build your QMS in software, get connected with
+                certification body and consultant partners, and move from no
+                formal system to audit-ready evidence.
               </p>
               <div class="flex flex-wrap gap-4">
                 <a
@@ -193,11 +199,27 @@
                   <i class="fa-solid fa-arrow-right ml-2"></i>
                 </a>
                 <a
-                  href="#ai-section"
+                  href="#partners-section"
                   class="inline-flex items-center border-2 border-gray-300 hover:border-green-600 text-gray-700 hover:text-green-600 font-semibold rounded-lg px-8 py-4 transition-all duration-200"
                 >
-                  See AI in Action
+                  See zero-to-certified path
                 </a>
+              </div>
+              <div
+                class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm text-gray-700"
+              >
+                <div class="bg-white border border-gray-200 rounded-xl p-4 shadow-sm">
+                  <i class="fa-solid fa-user-tie text-green-600 mb-2"></i>
+                  <p class="font-semibold">Consultant support</p>
+                </div>
+                <div class="bg-white border border-gray-200 rounded-xl p-4 shadow-sm">
+                  <i class="fa-solid fa-certificate text-blue-600 mb-2"></i>
+                  <p class="font-semibold">Certification body access</p>
+                </div>
+                <div class="bg-white border border-gray-200 rounded-xl p-4 shadow-sm">
+                  <i class="fa-solid fa-list-check text-purple-600 mb-2"></i>
+                  <p class="font-semibold">QMS built in 4ES Hub</p>
+                </div>
               </div>
             </div>
             <div class="relative hidden lg:block">
@@ -990,16 +1012,17 @@
               <span
                 class="inline-block px-4 py-1.5 bg-blue-50 text-blue-700 rounded-full text-sm font-medium mb-4"
               >
-                Certification Partners
+                Zero to Certified
               </span>
               <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Get certified with our trusted partners
+                Experts, certification partners, and QMS software in one path
               </h2>
               <p class="text-lg text-gray-600 mb-6">
-                We've partnered with accredited certification bodies worldwide.
-                Once you're audit-ready with 4ES Hub, we'll connect you with the
-                right certifier to validate your compliance and issue your
-                official ISO certificate.
+                If you are starting ISO 9001 from scratch, 4ES Hub can help you
+                get the right support from day one. We connect organizations with
+                certification body and consultant partners, then help implement
+                the QMS inside 4ES Hub so documents, audits, training, risks,
+                nonconformities, and management review evidence stay organized.
               </p>
               <ul class="space-y-4 mb-8">
                 <li class="flex items-start gap-3">
@@ -1009,7 +1032,8 @@
                     <i class="fa-solid fa-check text-blue-600 text-xs"></i>
                   </div>
                   <span class="text-gray-700"
-                    >Access to accredited certification bodies</span
+                    >Introductions to ISO 9001 consultant and certification body
+                    partners</span
                   >
                 </li>
                 <li class="flex items-start gap-3">
@@ -1019,8 +1043,8 @@
                     <i class="fa-solid fa-check text-blue-600 text-xs"></i>
                   </div>
                   <span class="text-gray-700"
-                    >Streamlined audit process with pre-shared
-                    documentation</span
+                    >QMS implementation workflows for documents, audits,
+                    training, risks, and corrective actions</span
                   >
                 </li>
                 <li class="flex items-start gap-3">
@@ -1030,7 +1054,7 @@
                     <i class="fa-solid fa-check text-blue-600 text-xs"></i>
                   </div>
                   <span class="text-gray-700"
-                    >Faster certification timelines</span
+                    >Audit-ready evidence created as your team works</span
                   >
                 </li>
                 <li class="flex items-start gap-3">
@@ -1040,7 +1064,8 @@
                     <i class="fa-solid fa-check text-blue-600 text-xs"></i>
                   </div>
                   <span class="text-gray-700"
-                    >Support throughout the entire certification journey</span
+                    >Support from initial gap assessment through certification
+                    readiness and ongoing surveillance audits</span
                   >
                 </li>
               </ul>
@@ -1048,14 +1073,14 @@
                 href="#contact-section"
                 class="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg px-8 py-4 transition-all duration-200"
               >
-                Connect with a certifier
+                Start from zero to certified
                 <i class="fa-solid fa-arrow-right ml-2"></i>
               </a>
               <p class="text-xs text-gray-500 mt-4">
                 <i class="fa-solid fa-info-circle mr-1"></i>
-                Note: 4ES Hub connects you with certification bodies but does
-                not guarantee certification. Certification decisions are made
-                independently by accredited auditors.
+                Note: 4ES Hub provides software and partner introductions but
+                does not guarantee certification. Certification decisions are
+                made independently by the certification body.
               </p>
             </div>
             <div class="relative">
@@ -1074,7 +1099,7 @@
                     How it works
                   </h3>
                   <p class="text-gray-600 text-sm">
-                    From preparation to certification
+                    From no formal QMS to certification-ready
                   </p>
                 </div>
                 <div class="space-y-4">
@@ -1088,10 +1113,10 @@
                     </div>
                     <div>
                       <h4 class="font-semibold text-gray-900">
-                        Prepare with 4ES Hub
+                        Assess the gap
                       </h4>
                       <p class="text-sm text-gray-600">
-                        Build your QMS and become audit-ready
+                        Understand your scope, timeline, and missing QMS pieces
                       </p>
                     </div>
                   </div>
@@ -1105,10 +1130,10 @@
                     </div>
                     <div>
                       <h4 class="font-semibold text-gray-900">
-                        Connect with certifier
+                        Build in 4ES Hub
                       </h4>
                       <p class="text-sm text-gray-600">
-                        We match you with an accredited body
+                        Set up documents, owners, training, audits, and actions
                       </p>
                     </div>
                   </div>
@@ -1122,10 +1147,10 @@
                     </div>
                     <div>
                       <h4 class="font-semibold text-gray-900">
-                        Pass your audit
+                        Connect with experts
                       </h4>
                       <p class="text-sm text-gray-600">
-                        Auditors verify your compliance
+                        Work with consultant and certification body partners
                       </p>
                     </div>
                   </div>
@@ -1139,10 +1164,10 @@
                     </div>
                     <div>
                       <h4 class="font-semibold text-gray-900">
-                        Get certified!
+                        Get certification-ready
                       </h4>
                       <p class="text-sm text-gray-600">
-                        Receive your official ISO certificate
+                        Go into the audit with organized evidence and workflows
                       </p>
                     </div>
                   </div>
@@ -1157,17 +1182,17 @@
       <section class="py-20 md:py-28 bg-green-600">
         <div class="container mx-auto px-6 text-center">
           <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
-            Ready to get started?
+            Ready to move from zero to certified?
           </h2>
           <p class="text-lg text-green-100 mb-8 max-w-2xl mx-auto">
-            Book a free consultation and discover how 4ES Hub can transform your
-            compliance management.
+            Book a free consultation and see how 4ES Hub can help you build your
+            QMS, connect with experts, and prepare for ISO certification.
           </p>
           <a
             href="#contact-section"
             class="inline-flex items-center bg-white hover:bg-gray-100 text-green-600 font-semibold rounded-lg px-8 py-4 transition-all duration-200 shadow-lg"
           >
-            Book a free demo
+            Start your certification path
             <i class="fa-solid fa-arrow-right ml-2"></i>
           </a>
         </div>
@@ -1183,10 +1208,11 @@
               Contact Us
             </span>
             <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Get in Touch
+              Talk to us about ISO certification
             </h2>
             <p class="text-lg text-gray-600">
-              Ready to transform your compliance management? Contact us today.
+              Tell us where you are today, and we will help map the path from
+              QMS implementation to certification readiness.
             </p>
           </div>
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
@@ -1312,7 +1338,7 @@
                       rows="4"
                       v-model="form.message"
                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all"
-                      placeholder="Tell us about your compliance needs"
+                      placeholder="Tell us whether you are starting ISO 9001 from scratch, preparing for audit, or looking for certification support"
                       required
                     ></textarea>
                   </div>
@@ -1466,18 +1492,18 @@ const siteUrl = useRuntimeConfig().public.siteUrl.replace(/\/$/, "");
 const homeUrl = `${siteUrl}/`;
 
 useSeoMeta({
-  title: "ISO Certification Software for Audit-Ready Teams",
+  title: "ISO 9001 Certification Help & QMS Software | 4ES Hub",
   description:
-    "4ES Hub centralizes compliance documentation, supplier quality workflows, and ISO audit readiness in one connected platform.",
-  ogTitle: "4ES Hub | ISO Certification Software for Audit-Ready Teams",
+    "4ES Hub helps organizations move from zero to ISO certification with QMS software, audit-ready workflows, and certification body and consultant partner introductions.",
+  ogTitle: "4ES Hub | From Zero to ISO Certification",
   ogDescription:
-    "Stay audit-ready every day with centralized documentation, AI-assisted compliance workflows, and complete audit trails.",
+    "Build your QMS in software, connect with certification and consultant partners, and prepare for ISO audits with organized evidence.",
   ogUrl: homeUrl,
   ogImage: `${siteUrl}/4es-logo.png`,
   twitterCard: "summary_large_image",
-  twitterTitle: "4ES Hub | ISO Certification Software",
+  twitterTitle: "4ES Hub | ISO 9001 Certification Help",
   twitterDescription:
-    "Centralize compliance documentation and stay ready for ISO audits.",
+    "QMS software plus partner support to move from zero to certification-ready.",
   twitterImage: `${siteUrl}/4es-logo.png`,
 });
 
@@ -1492,6 +1518,8 @@ useHead({
         name: "4ES Hub",
         url: homeUrl,
         logo: `${siteUrl}/4es-logo.png`,
+        description:
+          "4ES Hub provides QMS software and partner introductions for organizations working toward ISO certification.",
         sameAs: [
           "https://www.linkedin.com/company/4es-hub",
         ],
@@ -1505,7 +1533,7 @@ useHead({
         name: "4ES Hub",
         url: homeUrl,
         description:
-          "Compliance management and ISO audit readiness software for growing organizations.",
+          "ISO certification help, QMS implementation software, and audit readiness workflows for growing organizations.",
       }),
     },
   ],
