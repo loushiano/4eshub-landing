@@ -1,6 +1,6 @@
 <template>
   <div class="min-h-screen bg-white">
-    <header class="sticky top-0 bg-white border-b border-gray-100 z-50">
+    <header class="sticky top-0 bg-white/80 backdrop-blur-xl border-b border-gray-200/70 z-50">
       <div class="container mx-auto flex items-center justify-between px-6 py-4">
         <NuxtLink to="/" class="flex items-center cursor-pointer">
           <img src="/4es-logo.png" alt="4ES Hub" class="h-14" />
@@ -8,32 +8,32 @@
         <nav class="hidden md:flex items-center space-x-8">
           <NuxtLink
             to="/iso-9001"
-            class="text-gray-700 hover:text-blue-600 font-medium"
+            class="text-[#1d1d1f] hover:text-primary-600 text-sm font-normal tracking-snug"
           >
             ISO 9001
           </NuxtLink>
           <NuxtLink
             to="/partners"
-            class="text-blue-600 font-medium"
+            class="text-primary-600 text-sm font-normal tracking-snug"
           >
             Partners
           </NuxtLink>
           <NuxtLink
             to="/blog"
-            class="text-gray-700 hover:text-blue-600 font-medium"
+            class="text-[#1d1d1f] hover:text-primary-600 text-sm font-normal tracking-snug"
           >
             Blog
           </NuxtLink>
           <NuxtLink
             to="/#contact-section"
-            class="text-gray-700 hover:text-blue-600 font-medium"
+            class="text-[#1d1d1f] hover:text-primary-600 text-sm font-normal tracking-snug"
           >
             Contact
           </NuxtLink>
         </nav>
         <NuxtLink
           to="/#contact-section"
-          class="hidden md:inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg px-6 py-2.5 transition-all duration-200"
+          class="hidden md:inline-flex btn-primary !py-2.5 !px-5 !text-sm"
         >
           Book a free demo
         </NuxtLink>
@@ -42,25 +42,25 @@
 
     <main id="main-content">
       <section
-        class="bg-gradient-to-br from-blue-50 via-white to-white py-20"
+        class="bg-gradient-to-br from-primary-50 via-white to-white py-20"
         aria-labelledby="partners-page-title"
       >
         <div class="container mx-auto px-6">
           <div class="max-w-4xl mx-auto">
          
             <span
-              class="inline-block px-4 py-1.5 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mb-4"
+              class="inline-block px-4 py-1.5 bg-primary-100 text-primary-700 rounded-full text-sm font-medium mb-4"
             >
               Certification network
             </span>
             <h1
               id="partners-page-title"
-              class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6"
+              class="text-4xl md:text-5xl font-semibold tracking-tight text-[#1d1d1f] leading-tight mb-6"
             >
               ISO certification partners: consultants, certification bodies, and
               training providers
             </h1>
-            <p class="text-xl text-gray-600 leading-relaxed">
+            <p class="text-xl text-[#6e6e73] tracking-snug leading-relaxed">
               4ES Hub connects organizations with vetted ISO 9001 consultants,
               accredited certification bodies, and training partners. Browse by
               standard, language, city, and partner type to find the right
@@ -80,11 +80,11 @@
             <div class="text-center max-w-3xl mx-auto mb-12">
               <h2
                 id="partners-directory-title"
-                class="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
+                class="text-3xl md:text-4xl font-semibold tracking-tight text-[#1d1d1f] mb-4"
               >
                 Partner directory
               </h2>
-              <p class="text-lg text-gray-600">
+              <p class="text-lg text-[#6e6e73] tracking-snug">
                 Each partner profile includes supported ISO standards, service
                 languages, office locations, and whether they act as a
                 consultant, certification body, or training provider.
@@ -153,7 +153,7 @@
                           </span>
                         </span>
                         <span
-                          class="inline-flex items-center text-xs font-semibold text-blue-600 hover:text-blue-700 shrink-0"
+                          class="inline-flex items-center text-xs font-semibold text-primary-600 hover:text-primary-700 shrink-0"
                         >
                           <span class="group-open:hidden">
                             Show all
@@ -180,7 +180,7 @@
                           :key="`${partner.id}-standard-${standard}`"
                         >
                           <span
-                            class="inline-flex items-center px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-medium border border-blue-100"
+                            class="inline-flex items-center px-3 py-1 bg-primary-50 text-primary-700 rounded-full text-xs font-medium border border-primary-100"
                           >
                             {{ standard }}
                           </span>
@@ -227,7 +227,7 @@
                             itemprop="areaServed"
                           >
                             <i
-                              class="fa-solid fa-location-dot text-blue-600 text-[10px]"
+                              class="fa-solid fa-location-dot text-primary-600 text-[10px]"
                             ></i>
                             {{ location }}
                           </span>
@@ -250,7 +250,7 @@
                       :href="partner.website"
                       target="_blank"
                       rel="noopener noreferrer"
-                      class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold text-sm"
+                      class="inline-flex items-center text-link text-sm"
                       itemprop="url"
                     >
                       Visit partner website
@@ -263,7 +263,7 @@
                       :href="partner.linkedin"
                       target="_blank"
                       rel="noopener noreferrer"
-                      class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold text-sm"
+                      class="inline-flex items-center text-link text-sm"
                     >
                       LinkedIn
                       <i
@@ -275,7 +275,7 @@
                       :href="partner.portfolio"
                       target="_blank"
                       rel="noopener noreferrer"
-                      class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold text-sm"
+                      class="inline-flex items-center text-link text-sm"
                     >
                       Credly portfolio
                       <i
@@ -285,7 +285,7 @@
                     <a
                       v-if="partner.email"
                       :href="`mailto:${partner.email}`"
-                      class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold text-sm"
+                      class="inline-flex items-center text-link text-sm"
                     >
                       Email
                       <i class="fa-solid fa-envelope ml-2 text-xs"></i>
@@ -333,19 +333,19 @@
         </div>
       </section>
 
-      <section class="py-16 bg-blue-600">
+      <section class="py-16 bg-primary-600">
         <div class="container mx-auto px-6 text-center">
-          <h2 class="text-3xl font-bold text-white mb-4">
+          <h2 class="text-3xl font-semibold tracking-tight text-white mb-4">
             Need help choosing the right partner?
           </h2>
-          <p class="text-lg text-blue-100 mb-8 max-w-2xl mx-auto">
+          <p class="text-lg text-primary-100 mb-8 max-w-2xl mx-auto">
             Tell us your target standard, timeline, and location. We will match
             you with consultant or certification partners and help implement
             your QMS in 4ES Hub.
           </p>
           <NuxtLink
             to="/#contact-section"
-            class="inline-flex items-center bg-white hover:bg-gray-100 text-blue-600 font-semibold rounded-lg px-8 py-4 transition-all duration-200 shadow-lg"
+            class="btn-primary !bg-white !text-primary-600 hover:!bg-gray-50"
           >
             Request a partner introduction
             <i class="fa-solid fa-arrow-right ml-2"></i>

@@ -1,6 +1,6 @@
 <template>
   <div class="min-h-screen bg-white">
-    <header class="sticky top-0 bg-white border-b border-gray-100 z-50">
+    <header class="sticky top-0 bg-white/80 backdrop-blur-xl border-b border-gray-200/70 z-50">
       <div class="container mx-auto flex items-center justify-between px-6 py-4">
         <NuxtLink to="/" class="flex items-center cursor-pointer">
           <img src="/4es-logo.png" alt="4ES Hub" class="h-14" />
@@ -8,32 +8,32 @@
         <nav class="hidden md:flex items-center space-x-8">
           <NuxtLink
             to="/iso-9001"
-            class="text-blue-600 font-medium"
+            class="text-primary-600 text-sm font-normal tracking-snug"
           >
             ISO 9001
           </NuxtLink>
           <a
             href="/#blog-section"
-            class="text-gray-700 hover:text-blue-600 font-medium"
+            class="text-[#1d1d1f] hover:text-primary-600 text-sm font-normal tracking-snug"
           >
             Blog
           </a>
           <a
             href="/#pricing-section"
-            class="text-gray-700 hover:text-blue-600 font-medium"
+            class="text-[#1d1d1f] hover:text-primary-600 text-sm font-normal tracking-snug"
           >
             Pricing
           </a>
           <a
             href="/#contact-section"
-            class="text-gray-700 hover:text-blue-600 font-medium"
+            class="text-[#1d1d1f] hover:text-primary-600 text-sm font-normal tracking-snug"
           >
             Contact
           </a>
         </nav>
         <NuxtLink
           to="/#contact-section"
-          class="hidden md:inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg px-6 py-2.5 transition-all duration-200"
+          class="hidden md:inline-flex btn-primary !py-2.5 !px-5 !text-sm"
         >
           Book a free demo
         </NuxtLink>
@@ -41,30 +41,30 @@
     </header>
 
     <main>
-      <section class="bg-gradient-to-br from-blue-50 via-white to-white py-20">
+      <section class="bg-gradient-to-br from-primary-50 via-white to-white py-20">
         <div class="container mx-auto px-6">
           <div class="max-w-4xl mx-auto">
             <NuxtLink
               to="/"
-              class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold mb-8"
+              class="inline-flex items-center text-primary-600 hover:text-primary-700 font-semibold mb-8"
             >
               <i class="fa-solid fa-arrow-left mr-2"></i>
               Back to home
             </NuxtLink>
             <div class="flex flex-wrap items-center gap-3 mb-6">
               <span
-                class="inline-flex items-center px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold"
+                class="inline-flex items-center px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-xs font-semibold"
               >
                 ISO 9001:2015
               </span>
               <span class="text-sm text-gray-500">Quality Management System</span>
             </div>
             <h1
-              class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6"
+              class="text-4xl md:text-5xl font-semibold tracking-tight text-[#1d1d1f] leading-tight mb-6"
             >
               ISO 9001 support in 4ES Hub
             </h1>
-            <p class="text-xl text-gray-600 leading-relaxed">
+            <p class="text-xl text-[#6e6e73] tracking-snug leading-relaxed">
               4ES Hub is built around the requirements of ISO 9001:2015. Clauses 4
               through 8 cover how your organization defines its QMS, leads the
               system, plans for risk and objectives, provides support, and runs
@@ -120,7 +120,7 @@
               </p>
               <NuxtLink
                 to="/#contact-section"
-                class="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg px-8 py-4 transition-all duration-200"
+                class="btn-primary"
               >
                 Book a free demo
                 <i class="fa-solid fa-arrow-right ml-2"></i>
@@ -313,8 +313,8 @@ useHead({
 .module-tag {
   display: inline-block;
   padding: 0.25rem 0.75rem;
-  background-color: #eff6ff;
-  color: #2563eb;
+  background-color: #eef1fb;
+  color: #253fa2;
   border-radius: 9999px;
   font-size: 0.875rem;
   font-weight: 500;
@@ -323,8 +323,8 @@ useHead({
 .cta-box {
   margin-top: 3rem;
   padding: 2rem;
-  background: linear-gradient(to bottom right, #eff6ff, #ffffff);
-  border: 1px solid #dbeafe;
+  background: linear-gradient(to bottom right, #eef1fb, #ffffff);
+  border: 1px solid #dce2f6;
   border-radius: 1rem;
   text-align: center;
 }

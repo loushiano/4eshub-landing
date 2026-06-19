@@ -44,7 +44,7 @@ export default defineNuxtConfig({
           name: "robots",
           content: "index, follow, max-image-preview:large",
         },
-        { name: "theme-color", content: "#2563eb" },
+        { name: "theme-color", content: "#253fa2" },
         { property: "og:site_name", content: "4ES Hub" },
         { property: "og:type", content: "website" },
         { property: "og:image", content: "https://4eshub.com/4es-logo.png" },

@@ -7,7 +7,7 @@
         </NuxtLink>
         <NuxtLink
           to="/#contact-section"
-          class="hidden md:inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg px-6 py-2.5 transition-all duration-200"
+          class="hidden md:inline-flex items-center bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg px-6 py-2.5 transition-all duration-200"
         >
           Book a free demo
         </NuxtLink>
@@ -17,19 +17,19 @@
     <main>
       <article itemscope itemtype="https://schema.org/BlogPosting">
         <meta itemprop="headline" content="Customer feedback in quality management: from scattered surveys to a Voice of the Customer program that auditors trust" />
-        <section class="bg-gradient-to-br from-blue-50 via-white to-white py-20">
+        <section class="bg-gradient-to-br from-primary-50 via-white to-white py-20">
           <div class="container mx-auto px-6">
             <div class="max-w-4xl mx-auto">
               <NuxtLink
                 to="/blog"
-                class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold mb-8"
+                class="inline-flex items-center text-primary-600 hover:text-primary-700 font-semibold mb-8"
               >
                 <i class="fa-solid fa-arrow-left mr-2"></i>
                 Back to blog
               </NuxtLink>
               <div class="flex flex-wrap items-center gap-3 mb-6">
                 <span
-                  class="inline-flex items-center px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold"
+                  class="inline-flex items-center px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-xs font-semibold"
                 >
                   Customer feedback &amp; VoC
                 </span>
@@ -62,13 +62,13 @@
               >
                 <p class="text-sm font-semibold text-gray-900 mb-3">On this page</p>
                 <ul class="text-sm text-gray-600 space-y-2 list-none pl-0 mb-0">
-                  <li><a href="#what-is-customer-feedback-qms" class="text-blue-600 hover:text-blue-700">What is customer feedback in a QMS?</a></li>
-                  <li><a href="#iso-9001-clause-9-1-2" class="text-blue-600 hover:text-blue-700">ISO 9001 Clause 9.1.2 explained</a></li>
-                  <li><a href="#voice-of-customer" class="text-blue-600 hover:text-blue-700">Voice of the Customer (VoC)</a></li>
-                  <li><a href="#why-programs-fail" class="text-blue-600 hover:text-blue-700">Why feedback programs fail</a></li>
-                  <li><a href="#designing-feedback" class="text-blue-600 hover:text-blue-700">Designing feedback for your QMS</a></li>
-                  <li><a href="#4es-survey-module" class="text-blue-600 hover:text-blue-700">4ES Hub Survey module</a></li>
-                  <li><a href="#faq" class="text-blue-600 hover:text-blue-700">Frequently asked questions</a></li>
+                  <li><a href="#what-is-customer-feedback-qms" class="text-primary-600 hover:text-primary-700">What is customer feedback in a QMS?</a></li>
+                  <li><a href="#iso-9001-clause-9-1-2" class="text-primary-600 hover:text-primary-700">ISO 9001 Clause 9.1.2 explained</a></li>
+                  <li><a href="#voice-of-customer" class="text-primary-600 hover:text-primary-700">Voice of the Customer (VoC)</a></li>
+                  <li><a href="#why-programs-fail" class="text-primary-600 hover:text-primary-700">Why feedback programs fail</a></li>
+                  <li><a href="#designing-feedback" class="text-primary-600 hover:text-primary-700">Designing feedback for your QMS</a></li>
+                  <li><a href="#4es-survey-module" class="text-primary-600 hover:text-primary-700">4ES Hub Survey module</a></li>
+                  <li><a href="#faq" class="text-primary-600 hover:text-primary-700">Frequently asked questions</a></li>
                 </ul>
               </nav>
 
@@ -261,10 +261,10 @@
               </p>
 
               <div
-                class="bg-gradient-to-br from-blue-50 to-white border border-blue-100 rounded-2xl p-8 my-10"
+                class="bg-gradient-to-br from-primary-50 to-white border border-primary-100 rounded-2xl p-8 my-10"
               >
                 <p
-                  class="inline-flex items-center px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-semibold mb-4"
+                  class="inline-flex items-center px-3 py-1 bg-primary-100 text-primary-800 rounded-full text-xs font-semibold mb-4"
                 >
                   ISO 9.1.2 &amp; 9.3
                 </p>
@@ -279,7 +279,7 @@
                 </p>
                 <NuxtLink
                   to="/#contact-section"
-                  class="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg px-6 py-3 transition-all duration-200"
+                  class="inline-flex items-center bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg px-6 py-3 transition-all duration-200"
                 >
                   See how 4ES Hub connects the pieces
                   <i class="fa-solid fa-arrow-right ml-2"></i>
@@ -438,7 +438,7 @@
                 a story you can tell in one place.
               </p>
 
-              <div class="bg-blue-50 border border-blue-100 rounded-2xl p-8 mt-10">
+              <div class="bg-primary-50 border border-primary-100 rounded-2xl p-8 mt-10">
                 <h2 class="mt-0">Run structured customer feedback in 4ES Hub</h2>
                 <p>
                   See how survey templates, recipient campaigns, and response
@@ -447,7 +447,7 @@
                 </p>
                 <NuxtLink
                   to="/#contact-section"
-                  class="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg px-6 py-3 transition-all duration-200 mt-2"
+                  class="inline-flex items-center bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg px-6 py-3 transition-all duration-200 mt-2"
                 >
                   Book a free demo
                   <i class="fa-solid fa-arrow-right ml-2"></i>

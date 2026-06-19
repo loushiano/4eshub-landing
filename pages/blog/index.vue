@@ -7,7 +7,7 @@
         </NuxtLink>
         <NuxtLink
           to="/#contact-section"
-          class="hidden md:inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg px-6 py-2.5 transition-all duration-200"
+          class="hidden md:inline-flex items-center bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg px-6 py-2.5 transition-all duration-200"
         >
           Book a free demo
         </NuxtLink>
@@ -15,18 +15,18 @@
     </header>
 
     <main>
-      <section class="bg-gradient-to-br from-blue-50 via-white to-white py-20">
+      <section class="bg-gradient-to-br from-primary-50 via-white to-white py-20">
         <div class="container mx-auto px-6">
           <div class="max-w-4xl mx-auto">
             <NuxtLink
               to="/"
-              class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold mb-8"
+              class="inline-flex items-center text-primary-600 hover:text-primary-700 font-semibold mb-8"
             >
               <i class="fa-solid fa-arrow-left mr-2"></i>
               Back to home
             </NuxtLink>
             <span
-              class="inline-block px-4 py-1.5 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mb-4"
+              class="inline-block px-4 py-1.5 bg-primary-100 text-primary-700 rounded-full text-sm font-medium mb-4"
             >
               Blog
             </span>
@@ -52,7 +52,7 @@
               <div class="p-8 md:p-10">
                 <div class="flex flex-wrap items-center gap-3 mb-5">
                   <span
-                    class="inline-flex items-center px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold"
+                    class="inline-flex items-center px-3 py-1 bg-primary-50 text-primary-700 rounded-full text-xs font-semibold"
                   >
                     {{ post.category }}
                   </span>
@@ -69,7 +69,7 @@
                 </p>
                 <NuxtLink
                   :to="`/blog/${post.slug}`"
-                  class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold"
+                  class="inline-flex items-center text-primary-600 hover:text-primary-700 font-semibold"
                 >
                   Read article
                   <i class="fa-solid fa-arrow-right ml-2"></i>

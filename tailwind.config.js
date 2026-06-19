@@ -59,7 +59,21 @@ module.exports = {
         // Add other color schemes as needed
       },
       fontFamily: {
-        inter: ['Inter', 'sans-serif'],
+        sans: [
+          '-apple-system',
+          'BlinkMacSystemFont',
+          '"SF Pro Text"',
+          '"SF Pro Display"',
+          '"Segoe UI"',
+          'Roboto',
+          '"Helvetica Neue"',
+          'Arial',
+          'sans-serif',
+        ],
+      },
+      letterSpacing: {
+        tight: '-0.022em',
+        snug: '-0.011em',
       },
     },
   },

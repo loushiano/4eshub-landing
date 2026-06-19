@@ -3,7 +3,7 @@
     <!-- Header/Navigation -->
     <header
       id="header"
-      class="sticky top-0  bg-white border-b border-gray-100 z-50"
+      class="sticky top-0 bg-white/80 backdrop-blur-xl border-b border-gray-200/70 z-50"
     >
       <div
         class="container mx-auto flex items-center justify-between px-6 py-4"
@@ -16,7 +16,7 @@
         <nav class="hidden md:flex items-center space-x-8">
           <div class="relative group">
             <a
-              class="text-gray-700 hover:text-green-600 cursor-pointer font-medium flex items-center gap-1 py-2"
+              class="text-gray-700 hover:text-primary-600 cursor-pointer text-sm font-normal tracking-snug flex items-center gap-1 py-2"
             >
               Solutions
               <i class="fa-solid fa-chevron-down text-xs"></i>
@@ -29,17 +29,17 @@
               >
                 <NuxtLink
                   to="/iso-9001"
-                  class="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600"
+                  class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600"
                   >ISO 9001 (Quality Management System)</NuxtLink
                 >
                 <a
                   href="#standards-section"
-                  class="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600"
+                  class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600"
                   >ISO 14001 (Environmental Management)</a
                 >
                 <a
                   href="#standards-section"
-                  class="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600"
+                  class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600"
                   >ISO 45001 (Health &amp; Safety Management)</a
                 >
               </div>
@@ -47,7 +47,7 @@
           </div>
           <div class="relative group">
             <a
-              class="text-gray-700 hover:text-green-600 cursor-pointer font-medium flex items-center gap-1 py-2"
+              class="text-gray-700 hover:text-primary-600 cursor-pointer text-sm font-normal tracking-snug flex items-center gap-1 py-2"
             >
               Resources
               <i class="fa-solid fa-chevron-down text-xs"></i>
@@ -60,7 +60,7 @@
               >
                 <NuxtLink
                   to="/blog"
-                  class="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600"
+                  class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600"
                   >Blog</NuxtLink
                 >
               </div>
@@ -68,7 +68,7 @@
           </div>
           <div class="relative group">
             <a
-              class="text-gray-700 hover:text-green-600 cursor-pointer font-medium flex items-center gap-1 py-2"
+              class="text-gray-700 hover:text-primary-600 cursor-pointer text-sm font-normal tracking-snug flex items-center gap-1 py-2"
             >
               Company
               <i class="fa-solid fa-chevron-down text-xs"></i>
@@ -81,17 +81,17 @@
               >
                 <NuxtLink
                   to="/partners"
-                  class="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600"
+                  class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600"
                   >Partners</NuxtLink
                 >
                 <a
                   href="#pricing-section"
-                  class="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600"
+                  class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600"
                   >Pricing</a
                 >
                 <a
                   href="#contact-section"
-                  class="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600"
+                  class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600"
                   >Contact</a
                 >
               </div>
@@ -101,7 +101,7 @@
         <div class="flex items-center gap-4">
           <div class="relative group hidden md:block">
             <a
-              class="text-gray-700 hover:text-green-600 cursor-pointer font-medium flex items-center gap-1 py-2"
+              class="text-gray-700 hover:text-primary-600 cursor-pointer text-sm font-normal tracking-snug flex items-center gap-1 py-2"
             >
               Login
               <i class="fa-solid fa-chevron-down text-xs"></i>
@@ -116,14 +116,14 @@
                   href="https://app.4eshub.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600"
+                  class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600"
                   >North America</a
                 >
                 <a
                   href="https://4es.smartclick.solutions"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600"
+                  class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600"
                   >Middle East</a
                 >
               </div>
@@ -152,51 +152,51 @@
           >
           <NuxtLink
             to="/iso-9001"
-            class="text-gray-700 hover:text-green-600 py-2 pl-2"
+            class="text-gray-700 hover:text-primary-600 py-2 pl-2"
             >ISO 9001 (Quality Management System)</NuxtLink
           >
           <a
             href="#standards-section"
-            class="text-gray-700 hover:text-green-600 py-2 pl-2"
+            class="text-gray-700 hover:text-primary-600 py-2 pl-2"
             >ISO 14001 (Environmental Management)</a
           >
           <a
             href="#standards-section"
-            class="text-gray-700 hover:text-green-600 py-2 pl-2"
+            class="text-gray-700 hover:text-primary-600 py-2 pl-2"
             >ISO 45001 (Health &amp; Safety Management)</a
           >
           <NuxtLink
             to="/blog"
-            class="text-gray-700 hover:text-green-600 py-2"
+            class="text-gray-700 hover:text-primary-600 py-2"
             >Blog</NuxtLink
           >
           <NuxtLink
             to="/partners"
-            class="text-gray-700 hover:text-green-600 py-2"
+            class="text-gray-700 hover:text-primary-600 py-2"
             >Partners</NuxtLink
           >
           <a
             href="#pricing-section"
-            class="text-gray-700 hover:text-green-600 py-2"
+            class="text-gray-700 hover:text-primary-600 py-2"
             >Pricing</a
           >
           <a
             href="#contact-section"
-            class="text-gray-700 hover:text-green-600 py-2"
+            class="text-gray-700 hover:text-primary-600 py-2"
             >Contact</a
           >
           <a
             href="https://app.4eshub.com"
             target="_blank"
             rel="noopener noreferrer"
-            class="text-gray-700 hover:text-green-600 py-2"
+            class="text-gray-700 hover:text-primary-600 py-2"
             >Login — North America</a
           >
           <a
             href="https://4es.smartclick.solutions"
             target="_blank"
             rel="noopener noreferrer"
-            class="text-gray-700 hover:text-green-600 py-2"
+            class="text-gray-700 hover:text-primary-600 py-2"
             >Login — Middle East</a
           >
     
@@ -213,18 +213,16 @@
         <div class="container mx-auto px-6">
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div class="max-w-xl">
-              <span
-                class="inline-flex items-center px-4 py-1.5 bg-green-50 text-green-700 rounded-full text-sm font-semibold mb-5"
-              >
+              <span class="section-label mb-5">
                 Certification &amp; compliance platform
               </span>
               <h1
-                class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight"
+                class="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-[#1d1d1f] mb-6 leading-[1.05]"
               >
                 Get to certification.
-                <span class="text-green-600">Stay certified every day.</span>
+                <span class="text-primary-600">Stay certified every day.</span>
               </h1>
-              <p class="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed">
+              <p class="text-lg md:text-xl text-[#6e6e73] mb-8 leading-relaxed tracking-snug">
                 4ES Hub helps you build your management system in software,
                 connect with certification and consultant partners, achieve ISO
                 certification, and maintain audit-ready compliance long after the
@@ -233,14 +231,14 @@
               <div class="flex flex-wrap gap-4">
                 <a
                   href="#contact-section"
-                  class="inline-flex items-center bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg px-8 py-4 transition-all duration-200 shadow-lg shadow-green-600/20"
+                  class="btn-primary"
                 >
                   Book a free demo
                   <i class="fa-solid fa-arrow-right ml-2"></i>
                 </a>
                 <NuxtLink
                   to="/partners"
-                  class="inline-flex items-center border-2 border-gray-300 hover:border-green-600 text-gray-700 hover:text-green-600 font-semibold rounded-lg px-8 py-4 transition-all duration-200"
+                  class="btn-secondary"
                 >
                   Browse certification partners
                 </NuxtLink>
@@ -249,11 +247,11 @@
                 class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm text-gray-700"
               >
                 <div class="bg-white border border-gray-200 rounded-xl p-4 shadow-sm">
-                  <i class="fa-solid fa-user-tie text-green-600 mb-2"></i>
+                  <i class="fa-solid fa-user-tie text-primary-600 mb-2"></i>
                   <p class="font-semibold">Consultant support</p>
                 </div>
                 <div class="bg-white border border-gray-200 rounded-xl p-4 shadow-sm">
-                  <i class="fa-solid fa-certificate text-blue-600 mb-2"></i>
+                  <i class="fa-solid fa-certificate text-primary-600 mb-2"></i>
                   <p class="font-semibold">Certification body access</p>
                 </div>
                 <div class="bg-white border border-gray-200 rounded-xl p-4 shadow-sm">
@@ -275,14 +273,14 @@
         <div class="container mx-auto px-6">
           <div class="text-center max-w-3xl mx-auto mb-16">
             <span
-              class="inline-block px-4 py-1.5 bg-green-50 text-green-700 rounded-full text-sm font-medium mb-4"
+              class="section-label mb-4"
             >
               Multi-Standard Support
             </span>
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-[#1d1d1f] mb-4">
               30+ standards. One platform.
             </h2>
-            <p class="text-lg text-gray-600">
+            <p class="text-lg text-[#6e6e73] tracking-snug">
               Multiple standards don't have to mean 2x the chaos. Manage all
               your certifications from a single connected dashboard.
             </p>
@@ -292,7 +290,7 @@
           >
             <NuxtLink
               to="/iso-9001"
-              class="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:border-green-300 hover:shadow-lg transition-all duration-300 text-center block"
+              class="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:border-primary-300 hover:shadow-lg transition-all duration-300 text-center block"
             >
               <div
                 class="w-16 h-16 flex items-center justify-center mx-auto mb-3"
@@ -302,7 +300,7 @@
               <h4 class="font-semibold text-gray-900">ISO 9001</h4>
             </NuxtLink>
             <div
-              class="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:border-green-300 hover:shadow-lg transition-all duration-300 text-center"
+              class="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:border-primary-300 hover:shadow-lg transition-all duration-300 text-center"
             >
               <div
                 class="w-16 h-16 flex items-center justify-center mx-auto mb-3"
@@ -316,7 +314,7 @@
               <h4 class="font-semibold text-gray-900">ISO 45001:2018</h4>
             </div>
             <div
-              class="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:border-green-300 hover:shadow-lg transition-all duration-300 text-center"
+              class="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:border-primary-300 hover:shadow-lg transition-all duration-300 text-center"
             >
               <div
                 class="w-16 h-16 flex items-center justify-center mx-auto mb-3"
@@ -330,7 +328,7 @@
               <h4 class="font-semibold text-gray-900">ISO 14001:2015</h4>
             </div>
             <div
-              class="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:border-green-300 hover:shadow-lg transition-all duration-300 text-center"
+              class="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:border-primary-300 hover:shadow-lg transition-all duration-300 text-center"
             >
               <div
                 class="w-16 h-16 flex items-center justify-center mx-auto mb-3"
@@ -344,7 +342,7 @@
               <h4 class="font-semibold text-gray-900">ISO 13485</h4>
             </div>
             <div
-              class="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:border-green-300 hover:shadow-lg transition-all duration-300 text-center"
+              class="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:border-primary-300 hover:shadow-lg transition-all duration-300 text-center"
             >
               <div
                 class="w-16 h-16 flex items-center justify-center mx-auto mb-3"
@@ -354,7 +352,7 @@
               <h4 class="font-semibold text-gray-900">AS9100D</h4>
             </div>
             <div
-              class="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:border-green-300 hover:shadow-lg transition-all duration-300 text-center"
+              class="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:border-primary-300 hover:shadow-lg transition-all duration-300 text-center"
             >
               <div
                 class="w-16 h-16 flex items-center justify-center mx-auto mb-3"
@@ -376,14 +374,14 @@
         <div class="container mx-auto px-6">
           <div class="text-center max-w-3xl mx-auto mb-16">
             <span
-              class="inline-block px-4 py-1.5 bg-green-50 text-green-700 rounded-full text-sm font-medium mb-4"
+              class="section-label mb-4"
             >
               Platform modules
             </span>
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-[#1d1d1f] mb-4">
               Our modules
             </h2>
-            <p class="text-lg text-gray-600">
+            <p class="text-lg text-[#6e6e73] tracking-snug">
               Everything you need to implement, certify, and maintain your
               management system—connected in one platform.
             </p>
@@ -400,8 +398,8 @@
                 class="w-full text-left p-5 rounded-xl border transition-all duration-200 flex items-center gap-4"
                 :class="
                   activeModuleId === module.id
-                    ? 'bg-white border-green-600 shadow-md shadow-green-600/10'
-                    : 'bg-white border-gray-200 hover:border-green-300 hover:shadow-sm'
+                    ? 'bg-white border-primary-600 shadow-md shadow-primary-600/10'
+                    : 'bg-white border-gray-200 hover:border-primary-300 hover:shadow-sm'
                 "
                 :aria-pressed="activeModuleId === module.id"
                 @click="activeModuleId = module.id"
@@ -456,9 +454,9 @@
                   class="flex items-start gap-3"
                 >
                   <div
-                    class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
+                    class="w-5 h-5 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
                   >
-                    <i class="fa-solid fa-check text-green-600 text-[10px]"></i>
+                    <i class="fa-solid fa-check text-primary-600 text-[10px]"></i>
                   </div>
                   <span class="text-gray-700 text-sm leading-relaxed">{{
                     point
@@ -478,24 +476,24 @@
           >
             <div>
               <span
-                class="inline-block px-4 py-1.5 bg-green-50 text-green-700 rounded-full text-sm font-medium mb-4"
+                class="section-label mb-4"
               >
                 Why 4ES Hub
               </span>
-              <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-[#1d1d1f] mb-6">
                 Make your quality unbeatable. Win projects over your biggest
                 competitors.
               </h2>
-              <p class="text-lg text-gray-600 mb-8">
+              <p class="text-lg text-[#6e6e73] tracking-snug mb-8">
                 Compliance without the complexity. Unify quality and supplier
                 performance with one platform.
               </p>
               <ul class="space-y-4">
                 <li class="flex items-start gap-3">
                   <div
-                    class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
+                    class="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
                   >
-                    <i class="fa-solid fa-check text-green-600 text-xs"></i>
+                    <i class="fa-solid fa-check text-primary-600 text-xs"></i>
                   </div>
                   <span class="text-gray-700"
                     >Centralized compliance management across all
@@ -504,9 +502,9 @@
                 </li>
                 <li class="flex items-start gap-3">
                   <div
-                    class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
+                    class="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
                   >
-                    <i class="fa-solid fa-check text-green-600 text-xs"></i>
+                    <i class="fa-solid fa-check text-primary-600 text-xs"></i>
                   </div>
                   <span class="text-gray-700"
                     >Structured risk registers linked to controls and
@@ -515,9 +513,9 @@
                 </li>
                 <li class="flex items-start gap-3">
                   <div
-                    class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
+                    class="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
                   >
-                    <i class="fa-solid fa-check text-green-600 text-xs"></i>
+                    <i class="fa-solid fa-check text-primary-600 text-xs"></i>
                   </div>
                   <span class="text-gray-700"
                     >Real-time supplier performance tracking</span
@@ -525,9 +523,9 @@
                 </li>
                 <li class="flex items-start gap-3">
                   <div
-                    class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
+                    class="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
                   >
-                    <i class="fa-solid fa-check text-green-600 text-xs"></i>
+                    <i class="fa-solid fa-check text-primary-600 text-xs"></i>
                   </div>
                   <span class="text-gray-700"
                     >Automated audit trails and documentation</span
@@ -536,7 +534,7 @@
               </ul>
               <a
                 href="#contact-section"
-                class="inline-flex items-center bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg px-8 py-4 transition-all duration-200 mt-8"
+                class="btn-primary mt-8"
               >
                 Talk to our team
                 <i class="fa-solid fa-arrow-right ml-2"></i>
@@ -546,13 +544,13 @@
               <div class="bg-gray-50 rounded-2xl p-8 border border-gray-200">
                 <div class="grid grid-cols-2 gap-4">
                   <div class="bg-white p-4 rounded-xl border border-gray-100">
-                    <div class="text-3xl font-bold text-green-600 mb-1">
+                    <div class="text-3xl font-bold text-primary-600 mb-1">
                       30+
                     </div>
                     <div class="text-sm text-gray-600">Standards Supported</div>
                   </div>
                   <div class="bg-white p-4 rounded-xl border border-gray-100">
-                    <div class="text-3xl font-bold text-blue-600 mb-1">
+                    <div class="text-3xl font-bold text-primary-600 mb-1">
                       100%
                     </div>
                     <div class="text-sm text-gray-600">
@@ -587,14 +585,14 @@
         <div class="container mx-auto px-6">
           <div class="text-center max-w-3xl mx-auto mb-16">
             <span
-              class="inline-block px-4 py-1.5 bg-green-50 text-green-700 rounded-full text-sm font-medium mb-4"
+              class="section-label mb-4"
             >
               Pricing
             </span>
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-[#1d1d1f] mb-4">
               Plans that scale with your compliance program
             </h2>
-            <p class="text-lg text-gray-600">
+            <p class="text-lg text-[#6e6e73] tracking-snug">
               Start with the modules you need, or unlock the full platform with
               AI and premium support.
             </p>
@@ -620,62 +618,62 @@
               <ul class="text-sm text-gray-700 space-y-2 mb-8 flex-1">
                 <li class="flex gap-2">
                   <i
-                    class="fa-solid fa-check text-green-600 mt-0.5 flex-shrink-0"
+                    class="fa-solid fa-check text-primary-600 mt-0.5 flex-shrink-0"
                   ></i>
                   <span>Documents</span>
                 </li>
                 <li class="flex gap-2">
                   <i
-                    class="fa-solid fa-check text-green-600 mt-0.5 flex-shrink-0"
+                    class="fa-solid fa-check text-primary-600 mt-0.5 flex-shrink-0"
                   ></i>
                   <span>Risk management</span>
                 </li>
                 <li class="flex gap-2">
                   <i
-                    class="fa-solid fa-check text-green-600 mt-0.5 flex-shrink-0"
+                    class="fa-solid fa-check text-primary-600 mt-0.5 flex-shrink-0"
                   ></i>
                   <span>Knowledge</span>
                 </li>
                 <li class="flex gap-2">
                   <i
-                    class="fa-solid fa-check text-green-600 mt-0.5 flex-shrink-0"
+                    class="fa-solid fa-check text-primary-600 mt-0.5 flex-shrink-0"
                   ></i>
                   <span>Trainings</span>
                 </li>
                 <li class="flex gap-2">
                   <i
-                    class="fa-solid fa-check text-green-600 mt-0.5 flex-shrink-0"
+                    class="fa-solid fa-check text-primary-600 mt-0.5 flex-shrink-0"
                   ></i>
                   <span>Audit</span>
                 </li>
                 <li class="flex gap-2">
                   <i
-                    class="fa-solid fa-check text-green-600 mt-0.5 flex-shrink-0"
+                    class="fa-solid fa-check text-primary-600 mt-0.5 flex-shrink-0"
                   ></i>
                   <span>Survey</span>
                 </li>
                 <li class="flex gap-2">
                   <i
-                    class="fa-solid fa-check text-green-600 mt-0.5 flex-shrink-0"
+                    class="fa-solid fa-check text-primary-600 mt-0.5 flex-shrink-0"
                   ></i>
                   <span>Management review</span>
                 </li>
                 <li class="flex gap-2">
                   <i
-                    class="fa-solid fa-check text-green-600 mt-0.5 flex-shrink-0"
+                    class="fa-solid fa-check text-primary-600 mt-0.5 flex-shrink-0"
                   ></i>
                   <span>Performance indicators</span>
                 </li>
                 <li class="flex gap-2">
                   <i
-                    class="fa-solid fa-check text-green-600 mt-0.5 flex-shrink-0"
+                    class="fa-solid fa-check text-primary-600 mt-0.5 flex-shrink-0"
                   ></i>
                   <span>Non-conformities &amp; OFI</span>
                 </li>
               </ul>
               <a
                 href="#contact-section"
-                class="inline-flex justify-center items-center w-full border-2 border-gray-300 hover:border-green-600 text-gray-800 hover:text-green-700 font-semibold rounded-lg px-6 py-3 transition-all duration-200"
+                class="btn-secondary w-full"
               >
                 Get started
               </a>
@@ -683,10 +681,10 @@
 
             <!-- Platform -->
             <div
-              class="flex flex-col bg-white p-8 rounded-2xl border-2 border-green-600 shadow-lg shadow-green-600/10 relative lg:scale-[1.02] lg:z-10"
+              class="flex flex-col bg-white p-8 rounded-2xl border-2 border-primary-600 shadow-lg shadow-primary-600/10 relative lg:scale-[1.02] lg:z-10"
             >
               <span
-                class="absolute top-0 right-6 -translate-y-1/2 inline-block px-3 py-1 bg-green-600 text-white text-xs font-semibold rounded-full"
+                class="absolute top-0 right-6 -translate-y-1/2 inline-block px-3 py-1 bg-primary-600 text-white text-xs font-semibold rounded-full"
                 >Most popular</span
               >
               <h3 class="text-xl font-bold text-gray-900 mb-2">
@@ -709,26 +707,26 @@
               <ul class="text-sm text-gray-700 space-y-3 mb-8 flex-1">
                 <li class="flex gap-2">
                   <i
-                    class="fa-solid fa-check text-green-600 mt-0.5 flex-shrink-0"
+                    class="fa-solid fa-check text-primary-600 mt-0.5 flex-shrink-0"
                   ></i>
                   <span>All modules and AI features</span>
                 </li>
                 <li class="flex gap-2">
                   <i
-                    class="fa-solid fa-check text-green-600 mt-0.5 flex-shrink-0"
+                    class="fa-solid fa-check text-primary-600 mt-0.5 flex-shrink-0"
                   ></i>
                   <span>Dedicated support</span>
                 </li>
                 <li class="flex gap-2">
                   <i
-                    class="fa-solid fa-check text-green-600 mt-0.5 flex-shrink-0"
+                    class="fa-solid fa-check text-primary-600 mt-0.5 flex-shrink-0"
                   ></i>
                   <span>2 Custom AI agents for automation</span>
                 </li>
               </ul>
               <a
                 href="#contact-section"
-                class="inline-flex justify-center items-center w-full bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg px-6 py-3 transition-all duration-200"
+                class="btn-primary w-full"
               >
                 Book a demo
               </a>
@@ -752,13 +750,13 @@
               <ul class="text-sm text-gray-700 space-y-3 mb-8 flex-1">
                 <li class="flex gap-2">
                   <i
-                    class="fa-solid fa-check text-green-600 mt-0.5 flex-shrink-0"
+                    class="fa-solid fa-check text-primary-600 mt-0.5 flex-shrink-0"
                   ></i>
                   <span>Everything in the $799 / mo plan</span>
                 </li>
                 <li class="flex gap-2">
                   <i
-                    class="fa-solid fa-check text-green-600 mt-0.5 flex-shrink-0"
+                    class="fa-solid fa-check text-primary-600 mt-0.5 flex-shrink-0"
                   ></i>
                   <span
                     >Implementation of AI agents to help your team use every
@@ -767,14 +765,14 @@
                 </li>
                 <li class="flex gap-2">
                   <i
-                    class="fa-solid fa-check text-green-600 mt-0.5 flex-shrink-0"
+                    class="fa-solid fa-check text-primary-600 mt-0.5 flex-shrink-0"
                   ></i>
                   <span>Volume pricing &amp; enterprise terms</span>
                 </li>
               </ul>
               <a
                 href="#contact-section"
-                class="inline-flex justify-center items-center w-full border-2 border-gray-300 hover:border-green-600 text-gray-800 hover:text-green-700 font-semibold rounded-lg px-6 py-3 transition-all duration-200"
+                class="btn-secondary w-full"
               >
                 Talk to sales
               </a>
@@ -788,14 +786,14 @@
         <div class="container mx-auto px-6">
           <div class="text-center max-w-3xl mx-auto mb-16">
             <span
-              class="inline-block px-4 py-1.5 bg-blue-50 text-blue-700 rounded-full text-sm font-medium mb-4"
+              class="section-label mb-4"
             >
               Blog
             </span>
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-[#1d1d1f] mb-4">
               Practical compliance advice for audit-ready teams
             </h2>
-            <p class="text-lg text-gray-600">
+            <p class="text-lg text-[#6e6e73] tracking-snug">
               Field notes on simplifying documentation, quality workflows, and
               certification readiness.
             </p>
@@ -809,7 +807,7 @@
               <div class="p-8 md:p-10">
                 <div class="flex flex-wrap items-center gap-3 mb-5">
                   <span
-                    class="inline-flex items-center px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold"
+                    class="inline-flex items-center px-3 py-1 bg-primary-50 text-primary-700 rounded-full text-xs font-semibold"
                   >
                     {{ post.category }}
                   </span>
@@ -823,7 +821,7 @@
                 </p>
                 <NuxtLink
                   :to="`/blog/${post.slug}`"
-                  class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold"
+                  class="inline-flex items-center text-primary-600 hover:text-primary-700 font-semibold"
                 >
                   Read article
                   <i class="fa-solid fa-arrow-right ml-2"></i>
@@ -834,7 +832,7 @@
           <div class="text-center mt-12">
             <NuxtLink
               to="/blog"
-              class="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg px-8 py-3 transition-all duration-200"
+              class="btn-primary"
             >
               View all articles
               <i class="fa-solid fa-arrow-right ml-2"></i>
@@ -851,14 +849,14 @@
           >
             <div>
               <span
-                class="inline-block px-4 py-1.5 bg-blue-50 text-blue-700 rounded-full text-sm font-medium mb-4"
+                class="section-label mb-4"
               >
                 Certification Journey
               </span>
-              <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-[#1d1d1f] mb-6">
                 Experts, certification partners, and QMS software in one path
               </h2>
-              <p class="text-lg text-gray-600 mb-6">
+              <p class="text-lg text-[#6e6e73] tracking-snug mb-6">
                 If you are starting ISO 9001 from scratch, 4ES Hub can help you
                 get the right support from day one. We connect organizations with
                 certification body and consultant partners, then help implement
@@ -868,9 +866,9 @@
               <ul class="space-y-4 mb-8">
                 <li class="flex items-start gap-3">
                   <div
-                    class="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
+                    class="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
                   >
-                    <i class="fa-solid fa-check text-blue-600 text-xs"></i>
+                    <i class="fa-solid fa-check text-primary-600 text-xs"></i>
                   </div>
                   <span class="text-gray-700"
                     >Introductions to ISO 9001 consultant and certification body
@@ -879,9 +877,9 @@
                 </li>
                 <li class="flex items-start gap-3">
                   <div
-                    class="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
+                    class="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
                   >
-                    <i class="fa-solid fa-check text-blue-600 text-xs"></i>
+                    <i class="fa-solid fa-check text-primary-600 text-xs"></i>
                   </div>
                   <span class="text-gray-700"
                     >QMS implementation workflows for documents, audits,
@@ -890,9 +888,9 @@
                 </li>
                 <li class="flex items-start gap-3">
                   <div
-                    class="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
+                    class="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
                   >
-                    <i class="fa-solid fa-check text-blue-600 text-xs"></i>
+                    <i class="fa-solid fa-check text-primary-600 text-xs"></i>
                   </div>
                   <span class="text-gray-700"
                     >Audit-ready evidence created as your team works</span
@@ -900,9 +898,9 @@
                 </li>
                 <li class="flex items-start gap-3">
                   <div
-                    class="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
+                    class="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
                   >
-                    <i class="fa-solid fa-check text-blue-600 text-xs"></i>
+                    <i class="fa-solid fa-check text-primary-600 text-xs"></i>
                   </div>
                   <span class="text-gray-700"
                     >Support from initial gap assessment through certification
@@ -913,14 +911,14 @@
               <div class="flex flex-wrap gap-4">
                 <a
                   href="#contact-section"
-                  class="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg px-8 py-4 transition-all duration-200"
+                  class="btn-primary"
                 >
                   Start your certification journey
                   <i class="fa-solid fa-arrow-right ml-2"></i>
                 </a>
                 <NuxtLink
                   to="/partners"
-                  class="inline-flex items-center border-2 border-blue-200 hover:border-blue-600 text-blue-700 hover:text-blue-800 font-semibold rounded-lg px-8 py-4 transition-all duration-200"
+                  class="btn-secondary"
                 >
                   View partner directory
                   <i class="fa-solid fa-users ml-2"></i>
@@ -939,10 +937,10 @@
               >
                 <div class="text-center mb-8">
                   <div
-                    class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"
+                    class="w-20 h-20 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4"
                   >
                     <i
-                      class="fa-solid fa-certificate text-blue-600 text-3xl"
+                      class="fa-solid fa-certificate text-primary-600 text-3xl"
                     ></i>
                   </div>
                   <h3 class="text-xl font-semibold text-gray-900 mb-2">
@@ -957,7 +955,7 @@
                     class="flex items-center gap-4 p-4 bg-gray-50 rounded-xl"
                   >
                     <div
-                      class="w-10 h-10 bg-green-600 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0"
+                      class="w-10 h-10 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0"
                     >
                       1
                     </div>
@@ -974,7 +972,7 @@
                     class="flex items-center gap-4 p-4 bg-gray-50 rounded-xl"
                   >
                     <div
-                      class="w-10 h-10 bg-green-600 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0"
+                      class="w-10 h-10 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0"
                     >
                       2
                     </div>
@@ -991,7 +989,7 @@
                     class="flex items-center gap-4 p-4 bg-gray-50 rounded-xl"
                   >
                     <div
-                      class="w-10 h-10 bg-green-600 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0"
+                      class="w-10 h-10 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0"
                     >
                       3
                     </div>
@@ -1005,10 +1003,10 @@
                     </div>
                   </div>
                   <div
-                    class="flex items-center gap-4 p-4 bg-blue-50 rounded-xl border-2 border-blue-200"
+                    class="flex items-center gap-4 p-4 bg-primary-50 rounded-xl border-2 border-primary-200"
                   >
                     <div
-                      class="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0"
+                      class="w-10 h-10 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0"
                     >
                       <i class="fa-solid fa-trophy text-sm"></i>
                     </div>
@@ -1029,18 +1027,18 @@
       </section>
 
       <!-- CTA Section -->
-      <section class="py-20 md:py-28 bg-green-600">
+      <section class="py-20 md:py-28 bg-primary-600">
         <div class="container mx-auto px-6 text-center">
           <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
             Ready to start your certification journey?
           </h2>
-          <p class="text-lg text-green-100 mb-8 max-w-2xl mx-auto">
+          <p class="text-lg text-primary-100 mb-8 max-w-2xl mx-auto">
             Book a free consultation and see how 4ES Hub can help you build your
             QMS, connect with experts, and prepare for ISO certification.
           </p>
           <a
             href="#contact-section"
-            class="inline-flex items-center bg-white hover:bg-gray-100 text-green-600 font-semibold rounded-lg px-8 py-4 transition-all duration-200 shadow-lg"
+            class="btn-primary !bg-white !text-primary-600 hover:!bg-gray-50"
           >
             Start your certification path
             <i class="fa-solid fa-arrow-right ml-2"></i>
@@ -1053,14 +1051,14 @@
         <div class="container mx-auto px-6">
           <div class="text-center max-w-3xl mx-auto mb-16">
             <span
-              class="inline-block px-4 py-1.5 bg-green-50 text-green-700 rounded-full text-sm font-medium mb-4"
+              class="section-label mb-4"
             >
               Contact Us
             </span>
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-[#1d1d1f] mb-4">
               Talk to us about ISO certification
             </h2>
-            <p class="text-lg text-gray-600">
+            <p class="text-lg text-[#6e6e73] tracking-snug">
               Tell us where you are today, and we will help map the path from
               QMS implementation to certification readiness.
             </p>
@@ -1070,9 +1068,9 @@
               <div class="space-y-6">
                 <div class="flex items-start gap-4">
                   <div
-                    class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0"
+                    class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0"
                   >
-                    <i class="fa-solid fa-envelope text-green-600"></i>
+                    <i class="fa-solid fa-envelope text-primary-600"></i>
                   </div>
                   <div>
                     <h4 class="font-semibold text-gray-900 mb-1">Email Us</h4>
@@ -1081,9 +1079,9 @@
                 </div>
                 <div class="flex items-start gap-4">
                   <div
-                    class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0"
+                    class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0"
                   >
-                    <i class="fa-solid fa-calendar text-blue-600"></i>
+                    <i class="fa-solid fa-calendar text-primary-600"></i>
                   </div>
                   <div>
                     <h4 class="font-semibold text-gray-900 mb-1">
@@ -1114,13 +1112,13 @@
                   <a
                     href="https://www.linkedin.com/company/4es-hub"
                     target="_blank"
-                    class="w-10 h-10 bg-gray-100 hover:bg-green-100 rounded-lg flex items-center justify-center text-gray-600 hover:text-green-600 transition-all"
+                    class="w-10 h-10 bg-gray-100 hover:bg-primary-100 rounded-lg flex items-center justify-center text-gray-600 hover:text-primary-600 transition-all"
                   >
                     <i class="fa-brands fa-linkedin-in"></i>
                   </a>
                   <a
                     href="#"
-                    class="w-10 h-10 bg-gray-100 hover:bg-green-100 rounded-lg flex items-center justify-center text-gray-600 hover:text-green-600 transition-all"
+                    class="w-10 h-10 bg-gray-100 hover:bg-primary-100 rounded-lg flex items-center justify-center text-gray-600 hover:text-primary-600 transition-all"
                   >
                     <i class="fa-brands fa-twitter"></i>
                   </a>
@@ -1143,7 +1141,7 @@
                       id="name"
                       type="text"
                       v-model="form.name"
-                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all"
+                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all"
                       placeholder="Your name"
                       required
                     />
@@ -1158,7 +1156,7 @@
                       id="email"
                       type="email"
                       v-model="form.email"
-                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all"
+                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all"
                       placeholder="your@email.com"
                       required
                     />
@@ -1173,7 +1171,7 @@
                       id="company"
                       type="text"
                       v-model="form.company"
-                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all"
+                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all"
                       placeholder="Your company name"
                     />
                   </div>
@@ -1187,7 +1185,7 @@
                       id="message"
                       rows="4"
                       v-model="form.message"
-                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all"
+                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all"
                       placeholder="Tell us your target standard, timeline, and whether you need certification support or ongoing compliance maintenance"
                       required
                     ></textarea>
@@ -1195,7 +1193,7 @@
                   <div
                     v-if="submitStatus.message"
                     :class="{
-                      'text-green-700 bg-green-50 p-3 rounded-lg':
+                      'text-primary-700 bg-primary-50 p-3 rounded-lg':
                         submitStatus.success,
                       'text-red-700 bg-red-50 p-3 rounded-lg':
                         !submitStatus.success,
@@ -1205,7 +1203,7 @@
                   </div>
                   <button
                     type="submit"
-                    class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200"
+                    class="btn-primary w-full"
                     :disabled="isSubmitting"
                   >
                     {{ isSubmitting ? "Sending..." : "Send Message" }}
@@ -1316,13 +1314,13 @@
                 <a
                   href="https://www.linkedin.com/company/4es-hub"
                   target="_blank"
-                  class="w-10 h-10 bg-gray-800 hover:bg-green-600 rounded-lg flex items-center justify-center transition-all"
+                  class="w-10 h-10 bg-gray-800 hover:bg-primary-600 rounded-lg flex items-center justify-center transition-all"
                 >
                   <i class="fa-brands fa-linkedin-in"></i>
                 </a>
                 <a
                   href="#"
-                  class="w-10 h-10 bg-gray-800 hover:bg-green-600 rounded-lg flex items-center justify-center transition-all"
+                  class="w-10 h-10 bg-gray-800 hover:bg-primary-600 rounded-lg flex items-center justify-center transition-all"
                 >
                   <i class="fa-brands fa-twitter"></i>
                 </a>
@@ -1352,8 +1350,8 @@ const platformModules = [
     id: "documents",
     title: "Documents",
     icon: "fa-file-lines",
-    iconBg: "bg-green-100",
-    iconColor: "text-green-600",
+    iconBg: "bg-primary-100",
+    iconColor: "text-primary-600",
     description:
       "Centralize policies, procedures, work instructions, and evidence in one controlled library. Every document has a clear owner, version, approval path, and review schedule.",
     points: [
@@ -1382,8 +1380,8 @@ const platformModules = [
     id: "audits",
     title: "Audits",
     icon: "fa-clipboard-check",
-    iconBg: "bg-blue-100",
-    iconColor: "text-blue-600",
+    iconBg: "bg-primary-100",
+    iconColor: "text-primary-600",
     description:
       "Plan and run internal audits from agenda to closure. Build checklists, capture findings on-site, and drive corrective follow-up without rebuilding evidence before certification.",
     points: [
@@ -1587,59 +1585,5 @@ onMounted(() => {
 
 .animate-scroll {
   animation: scroll 20s linear infinite;
-}
-
-.text-green-100 {
-  color: #dbeafe;
-}
-
-.text-green-600,
-.hover\:text-green-600:hover {
-  color: #2563eb;
-}
-
-.text-green-700 {
-  color: #1d4ed8;
-}
-
-.bg-green-50,
-.hover\:bg-green-50:hover {
-  background-color: #eff6ff;
-}
-
-.bg-green-100,
-.hover\:bg-green-100:hover {
-  background-color: #dbeafe;
-}
-
-.bg-green-400 {
-  background-color: #60a5fa;
-}
-
-.bg-green-600,
-.hover\:bg-green-600:hover {
-  background-color: #2563eb;
-}
-
-.hover\:bg-green-700:hover {
-  background-color: #1d4ed8;
-}
-
-.hover\:border-green-300:hover {
-  border-color: #93c5fd;
-}
-
-.hover\:border-green-600:hover,
-.focus\:border-green-500:focus {
-  border-color: #2563eb;
-}
-
-.focus\:ring-green-500:focus {
-  --tw-ring-color: #3b82f6;
-}
-
-.shadow-green-600\/20 {
-  --tw-shadow-color: rgb(37 99 235 / 0.2);
-  --tw-shadow: var(--tw-shadow-colored);
 }
 </style>

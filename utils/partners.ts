@@ -101,9 +101,9 @@ export const partners: Partner[] = [
 export const getPartnerJobTypeClass = (jobType: PartnerJobType): string => {
   switch (jobType) {
     case "Certification Body":
-      return "bg-blue-50 text-blue-700 border-blue-200";
+      return "bg-primary-50 text-primary-700 border-primary-200";
     case "ISO Consultant":
-      return "bg-green-50 text-green-700 border-green-200";
+      return "bg-primary-50 text-primary-700 border-primary-200";
     case "Training Provider":
       return "bg-purple-50 text-purple-700 border-purple-200";
     default:

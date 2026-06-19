@@ -7,7 +7,7 @@
         </NuxtLink>
         <NuxtLink
           to="/#contact-section"
-          class="hidden md:inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg px-6 py-2.5 transition-all duration-200"
+          class="hidden md:inline-flex items-center bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg px-6 py-2.5 transition-all duration-200"
         >
           Book a free demo
         </NuxtLink>
@@ -17,19 +17,19 @@
     <main>
       <article itemscope itemtype="https://schema.org/BlogPosting">
         <meta itemprop="headline" :content="headline" />
-        <section class="bg-gradient-to-br from-blue-50 via-white to-white py-20">
+        <section class="bg-gradient-to-br from-primary-50 via-white to-white py-20">
           <div class="container mx-auto px-6">
             <div class="max-w-4xl mx-auto">
               <NuxtLink
                 to="/blog"
-                class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold mb-8"
+                class="inline-flex items-center text-primary-600 hover:text-primary-700 font-semibold mb-8"
               >
                 <i class="fa-solid fa-arrow-left mr-2"></i>
                 Back to blog
               </NuxtLink>
               <div class="flex flex-wrap items-center gap-3 mb-6">
                 <span
-                  class="inline-flex items-center px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold"
+                  class="inline-flex items-center px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-xs font-semibold"
                 >
                   ISO 9001 Certification
                 </span>
@@ -65,32 +65,32 @@
                 <p class="text-sm font-semibold text-gray-900 mb-3">On this page</p>
                 <ul class="text-sm text-gray-600 space-y-2 list-none pl-0 mb-0">
                   <li>
-                    <a href="#quick-answer" class="text-blue-600 hover:text-blue-700">
+                    <a href="#quick-answer" class="text-primary-600 hover:text-primary-700">
                       Can 4ES Hub help with ISO 9001 certification?
                     </a>
                   </li>
                   <li>
-                    <a href="#where-to-start" class="text-blue-600 hover:text-blue-700">
+                    <a href="#where-to-start" class="text-primary-600 hover:text-primary-700">
                       Where ISO 9001 projects usually get stuck
                     </a>
                   </li>
                   <li>
-                    <a href="#expert-network" class="text-blue-600 hover:text-blue-700">
+                    <a href="#expert-network" class="text-primary-600 hover:text-primary-700">
                       How our partner network helps
                     </a>
                   </li>
                   <li>
-                    <a href="#software-implementation" class="text-blue-600 hover:text-blue-700">
+                    <a href="#software-implementation" class="text-primary-600 hover:text-primary-700">
                       How 4ES Hub supports implementation
                     </a>
                   </li>
                   <li>
-                    <a href="#certification-path" class="text-blue-600 hover:text-blue-700">
+                    <a href="#certification-path" class="text-primary-600 hover:text-primary-700">
                       The path from zero to certification
                     </a>
                   </li>
                   <li>
-                    <a href="#faq" class="text-blue-600 hover:text-blue-700">
+                    <a href="#faq" class="text-primary-600 hover:text-primary-700">
                       Frequently asked questions
                     </a>
                   </li>
@@ -99,10 +99,10 @@
 
               <section
                 id="quick-answer"
-                class="bg-blue-50 border border-blue-100 rounded-2xl p-8 mb-10"
+                class="bg-primary-50 border border-primary-100 rounded-2xl p-8 mb-10"
               >
                 <p
-                  class="inline-flex items-center px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-semibold mb-4"
+                  class="inline-flex items-center px-3 py-1 bg-primary-100 text-primary-800 rounded-full text-xs font-semibold mb-4"
                 >
                   Quick answer
                 </p>
@@ -175,10 +175,10 @@
               </p>
 
               <div
-                class="bg-gradient-to-br from-blue-50 to-white border border-blue-100 rounded-2xl p-8 my-10"
+                class="bg-gradient-to-br from-primary-50 to-white border border-primary-100 rounded-2xl p-8 my-10"
               >
                 <p
-                  class="inline-flex items-center px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-semibold mb-4"
+                  class="inline-flex items-center px-3 py-1 bg-primary-100 text-primary-800 rounded-full text-xs font-semibold mb-4"
                 >
                   From advice to execution
                 </p>
@@ -193,7 +193,7 @@
                 </p>
                 <NuxtLink
                   to="/#contact-section"
-                  class="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg px-6 py-3 transition-all duration-200"
+                  class="inline-flex items-center bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg px-6 py-3 transition-all duration-200"
                 >
                   Start your ISO 9001 journey
                   <i class="fa-solid fa-arrow-right ml-2"></i>
@@ -316,7 +316,7 @@
                 before the certification audit happens.
               </p>
 
-              <div class="bg-blue-50 border border-blue-100 rounded-2xl p-8 mt-10">
+              <div class="bg-primary-50 border border-primary-100 rounded-2xl p-8 mt-10">
                 <h2 class="mt-0">Ready to build your ISO 9001 QMS?</h2>
                 <p>
                   Whether you are starting from scratch or preparing for
@@ -326,7 +326,7 @@
                 </p>
                 <NuxtLink
                   to="/#contact-section"
-                  class="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg px-6 py-3 transition-all duration-200 mt-2"
+                  class="inline-flex items-center bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg px-6 py-3 transition-all duration-200 mt-2"
                 >
                   Talk to 4ES Hub
                   <i class="fa-solid fa-arrow-right ml-2"></i>

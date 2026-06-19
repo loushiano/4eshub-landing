@@ -11,7 +11,7 @@
         </div>
         <NuxtLink
           to="/"
-          class="text-sm font-medium text-green-600 hover:text-green-700"
+          class="text-sm font-medium text-primary-600 hover:text-primary-700"
         >
           Back to site
         </NuxtLink>
@@ -33,13 +33,13 @@
             type="password"
             autocomplete="current-password"
             placeholder="Password"
-            class="w-full rounded-lg border border-gray-300 px-4 py-2.5 focus:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-200"
+            class="w-full rounded-lg border border-gray-300 px-4 py-2.5 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-200"
           />
           <p v-if="error" class="text-sm text-red-600">{{ error }}</p>
           <button
             type="submit"
             :disabled="loading"
-            class="w-full rounded-lg bg-green-600 px-4 py-2.5 font-medium text-white hover:bg-green-700 disabled:opacity-60"
+            class="w-full rounded-lg bg-primary-600 px-4 py-2.5 font-medium text-white hover:bg-primary-700 disabled:opacity-60"
           >
             {{ loading ? 'Checking...' : 'View analytics' }}
           </button>

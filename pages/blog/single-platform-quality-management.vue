@@ -7,7 +7,7 @@
         </NuxtLink>
         <NuxtLink
           to="/#contact-section"
-          class="hidden md:inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg px-6 py-2.5 transition-all duration-200"
+          class="hidden md:inline-flex items-center bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg px-6 py-2.5 transition-all duration-200"
         >
           Book a free demo
         </NuxtLink>
@@ -17,19 +17,19 @@
     <main>
       <article itemscope itemtype="https://schema.org/BlogPosting">
         <meta itemprop="headline" content="One platform for quality: how managing every ISO standard in one place saves thousands of hours a year" />
-        <section class="bg-gradient-to-br from-blue-50 via-white to-white py-20">
+        <section class="bg-gradient-to-br from-primary-50 via-white to-white py-20">
           <div class="container mx-auto px-6">
             <div class="max-w-4xl mx-auto">
               <NuxtLink
                 to="/blog"
-                class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold mb-8"
+                class="inline-flex items-center text-primary-600 hover:text-primary-700 font-semibold mb-8"
               >
                 <i class="fa-solid fa-arrow-left mr-2"></i>
                 Back to blog
               </NuxtLink>
               <div class="flex flex-wrap items-center gap-3 mb-6">
                 <span
-                  class="inline-flex items-center px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold"
+                  class="inline-flex items-center px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-xs font-semibold"
                 >
                   Unified QMS &amp; efficiency
                 </span>
@@ -63,14 +63,14 @@
               >
                 <p class="text-sm font-semibold text-gray-900 mb-3">On this page</p>
                 <ul class="text-sm text-gray-600 space-y-2 list-none pl-0 mb-0">
-                  <li><a href="#single-source-of-truth" class="text-blue-600 hover:text-blue-700">What "one place" really means</a></li>
-                  <li><a href="#hidden-cost" class="text-blue-600 hover:text-blue-700">The hidden cost of scattered quality</a></li>
-                  <li><a href="#why-fragmentation" class="text-blue-600 hover:text-blue-700">Why fragmentation happens</a></li>
-                  <li><a href="#harmonized-structure" class="text-blue-600 hover:text-blue-700">One framework for every standard</a></li>
-                  <li><a href="#effort-saved" class="text-blue-600 hover:text-blue-700">How much effort a single platform saves</a></li>
-                  <li><a href="#what-to-connect" class="text-blue-600 hover:text-blue-700">What one platform should connect</a></li>
-                  <li><a href="#4es-hub" class="text-blue-600 hover:text-blue-700">How 4ES Hub unifies quality</a></li>
-                  <li><a href="#faq" class="text-blue-600 hover:text-blue-700">Frequently asked questions</a></li>
+                  <li><a href="#single-source-of-truth" class="text-primary-600 hover:text-primary-700">What "one place" really means</a></li>
+                  <li><a href="#hidden-cost" class="text-primary-600 hover:text-primary-700">The hidden cost of scattered quality</a></li>
+                  <li><a href="#why-fragmentation" class="text-primary-600 hover:text-primary-700">Why fragmentation happens</a></li>
+                  <li><a href="#harmonized-structure" class="text-primary-600 hover:text-primary-700">One framework for every standard</a></li>
+                  <li><a href="#effort-saved" class="text-primary-600 hover:text-primary-700">How much effort a single platform saves</a></li>
+                  <li><a href="#what-to-connect" class="text-primary-600 hover:text-primary-700">What one platform should connect</a></li>
+                  <li><a href="#4es-hub" class="text-primary-600 hover:text-primary-700">How 4ES Hub unifies quality</a></li>
+                  <li><a href="#faq" class="text-primary-600 hover:text-primary-700">Frequently asked questions</a></li>
                 </ul>
               </nav>
 
@@ -171,10 +171,10 @@
               </p>
 
               <div
-                class="bg-gradient-to-br from-blue-50 to-white border border-blue-100 rounded-2xl p-8 my-10"
+                class="bg-gradient-to-br from-primary-50 to-white border border-primary-100 rounded-2xl p-8 my-10"
               >
                 <p
-                  class="inline-flex items-center px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-semibold mb-4"
+                  class="inline-flex items-center px-3 py-1 bg-primary-100 text-primary-800 rounded-full text-xs font-semibold mb-4"
                 >
                   The math
                 </p>
@@ -189,7 +189,7 @@
                 </p>
                 <NuxtLink
                   to="/#contact-section"
-                  class="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg px-6 py-3 transition-all duration-200"
+                  class="inline-flex items-center bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg px-6 py-3 transition-all duration-200"
                 >
                   See what 4ES Hub would save your team
                   <i class="fa-solid fa-arrow-right ml-2"></i>
@@ -456,7 +456,7 @@
                 time and can prove its quality in one place.
               </p>
 
-              <div class="bg-blue-50 border border-blue-100 rounded-2xl p-8 mt-10">
+              <div class="bg-primary-50 border border-primary-100 rounded-2xl p-8 mt-10">
                 <h2 class="mt-0">Bring all your quality into one platform</h2>
                 <p>
                   See how 4ES Hub unifies documents, audits, training, risk, and
@@ -465,7 +465,7 @@
                 </p>
                 <NuxtLink
                   to="/#contact-section"
-                  class="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg px-6 py-3 transition-all duration-200 mt-2"
+                  class="inline-flex items-center bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg px-6 py-3 transition-all duration-200 mt-2"
                 >
                   Book a free demo
                   <i class="fa-solid fa-arrow-right ml-2"></i>
