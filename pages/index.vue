@@ -14,12 +14,37 @@
           </NuxtLink>
         </div>
         <nav class="hidden md:flex items-center space-x-8">
-          <NuxtLink
-            to="/iso-9001"
-            class="text-gray-700 hover:text-green-600 font-medium py-2"
-          >
-            ISO 9001
-          </NuxtLink>
+          <div class="relative group">
+            <a
+              class="text-gray-700 hover:text-green-600 cursor-pointer font-medium flex items-center gap-1 py-2"
+            >
+              Solutions
+              <i class="fa-solid fa-chevron-down text-xs"></i>
+            </a>
+            <div
+              class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
+            >
+              <div
+                class="bg-white rounded-lg shadow-xl border border-gray-100 py-2 min-w-[280px]"
+              >
+                <NuxtLink
+                  to="/iso-9001"
+                  class="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600"
+                  >ISO 9001 (Quality Management System)</NuxtLink
+                >
+                <a
+                  href="#standards-section"
+                  class="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600"
+                  >ISO 14001 (Environmental Management)</a
+                >
+                <a
+                  href="#standards-section"
+                  class="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600"
+                  >ISO 45001 (Health &amp; Safety Management)</a
+                >
+              </div>
+            </div>
+          </div>
           <div class="relative group">
             <a
               class="text-gray-700 hover:text-green-600 cursor-pointer font-medium flex items-center gap-1 py-2"
@@ -54,6 +79,11 @@
               <div
                 class="bg-white rounded-lg shadow-xl border border-gray-100 py-2 min-w-[180px]"
               >
+                <NuxtLink
+                  to="/partners"
+                  class="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600"
+                  >Partners</NuxtLink
+                >
                 <a
                   href="#pricing-section"
                   class="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600"
@@ -99,12 +129,7 @@
               </div>
             </div>
           </div>
-          <a
-            href="#contact-section"
-            class="hidden md:inline-block bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg px-6 py-2.5 transition-all duration-200"
-          >
-            Book a free demo
-          </a>
+  
           <!-- Mobile menu button -->
           <ClientOnly>
             <button
@@ -122,15 +147,33 @@
         class="md:hidden bg-white border-t border-gray-100 px-6 py-4"
       >
         <nav class="flex flex-col space-y-3">
+          <span class="text-xs font-semibold uppercase tracking-wide text-gray-400 pt-1"
+            >Solutions</span
+          >
           <NuxtLink
             to="/iso-9001"
-            class="text-gray-700 hover:text-green-600 py-2"
-            >ISO 9001</NuxtLink
+            class="text-gray-700 hover:text-green-600 py-2 pl-2"
+            >ISO 9001 (Quality Management System)</NuxtLink
+          >
+          <a
+            href="#standards-section"
+            class="text-gray-700 hover:text-green-600 py-2 pl-2"
+            >ISO 14001 (Environmental Management)</a
+          >
+          <a
+            href="#standards-section"
+            class="text-gray-700 hover:text-green-600 py-2 pl-2"
+            >ISO 45001 (Health &amp; Safety Management)</a
           >
           <NuxtLink
             to="/blog"
             class="text-gray-700 hover:text-green-600 py-2"
             >Blog</NuxtLink
+          >
+          <NuxtLink
+            to="/partners"
+            class="text-gray-700 hover:text-green-600 py-2"
+            >Partners</NuxtLink
           >
           <a
             href="#pricing-section"
@@ -156,11 +199,7 @@
             class="text-gray-700 hover:text-green-600 py-2"
             >Login — Middle East</a
           >
-          <a
-            href="#contact-section"
-            class="bg-green-600 text-white text-center rounded-lg px-6 py-2.5 mt-2"
-            >Book a free demo</a
-          >
+    
         </nav>
       </div>
     </header>
@@ -177,18 +216,19 @@
               <span
                 class="inline-flex items-center px-4 py-1.5 bg-green-50 text-green-700 rounded-full text-sm font-semibold mb-5"
               >
-                ISO 9001 experts + QMS software
+                Certification &amp; compliance platform
               </span>
               <h1
                 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight"
               >
-                From no QMS to ISO certification.
-                <span class="text-green-600">Stay audit-ready every day.</span>
+                Get to certification.
+                <span class="text-green-600">Stay certified every day.</span>
               </h1>
               <p class="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed">
-                4ES Hub helps you build your QMS in software, get connected with
-                certification body and consultant partners, and move from no
-                formal system to audit-ready evidence.
+                4ES Hub helps you build your management system in software,
+                connect with certification and consultant partners, achieve ISO
+                certification, and maintain audit-ready compliance long after the
+                certificate is issued.
               </p>
               <div class="flex flex-wrap gap-4">
                 <a
@@ -198,12 +238,12 @@
                   Book a free demo
                   <i class="fa-solid fa-arrow-right ml-2"></i>
                 </a>
-                <a
-                  href="#partners-section"
+                <NuxtLink
+                  to="/partners"
                   class="inline-flex items-center border-2 border-gray-300 hover:border-green-600 text-gray-700 hover:text-green-600 font-semibold rounded-lg px-8 py-4 transition-all duration-200"
                 >
-                  See the certification path
-                </a>
+                  Browse certification partners
+                </NuxtLink>
               </div>
               <div
                 class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm text-gray-700"
@@ -218,7 +258,7 @@
                 </div>
                 <div class="bg-white border border-gray-200 rounded-xl p-4 shadow-sm">
                   <i class="fa-solid fa-list-check text-purple-600 mb-2"></i>
-                  <p class="font-semibold">QMS built in 4ES Hub</p>
+                  <p class="font-semibold">System built in 4ES Hub</p>
                 </div>
               </div>
             </div>
@@ -331,101 +371,102 @@
         </div>
       </section>
 
-      <!-- AI Features Section -->
-      <section id="ai-section" class="py-20 md:py-28 bg-gray-50">
+      <!-- Our Modules Section -->
+      <section id="modules-section" class="py-20 md:py-28 bg-gray-50">
         <div class="container mx-auto px-6">
           <div class="text-center max-w-3xl mx-auto mb-16">
             <span
               class="inline-block px-4 py-1.5 bg-green-50 text-green-700 rounded-full text-sm font-medium mb-4"
             >
-              AI-Powered
+              Platform modules
             </span>
             <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              AI QCG + 4es Compliance Intelligence That Works for You
+              Our modules
             </h2>
             <p class="text-lg text-gray-600">
-              The all-in-one platform for Quality, Compliance, and Governance
-              (QCG)
+              Everything you need to implement, certify, and maintain your
+              management system—connected in one platform.
             </p>
           </div>
 
-          <!-- AI SQM Features -->
-          <div class="mb-16">
-            <h3 class="text-2xl font-bold text-gray-900 mb-8 text-center">
-              AI SQM Features
-            </h3>
-            <div
-              class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto"
-            >
-              <div
-                class="bg-white p-6 rounded-xl border border-gray-200 hover:border-green-300 hover:shadow-lg transition-all duration-300"
+          <div
+            class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 max-w-6xl mx-auto items-start"
+          >
+            <div class="space-y-3">
+              <button
+                v-for="module in platformModules"
+                :key="module.id"
+                type="button"
+                class="w-full text-left p-5 rounded-xl border transition-all duration-200 flex items-center gap-4"
+                :class="
+                  activeModuleId === module.id
+                    ? 'bg-white border-green-600 shadow-md shadow-green-600/10'
+                    : 'bg-white border-gray-200 hover:border-green-300 hover:shadow-sm'
+                "
+                :aria-pressed="activeModuleId === module.id"
+                @click="activeModuleId = module.id"
               >
                 <div
-                  class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4"
-                >
-                  <i class="fa-solid fa-rotate text-green-600 text-xl"></i>
-                </div>
-                <h4 class="text-lg font-semibold text-gray-900 mb-2">
-                  Automate the audit cycle
-                </h4>
-                <p class="text-gray-600 text-sm">
-                  Create agendas, run desktop audits, capture evidence, and
-                  re-evaluate suppliers on cadence.
-                </p>
-              </div>
-              <div
-                class="bg-white p-6 rounded-xl border border-gray-200 hover:border-green-300 hover:shadow-lg transition-all duration-300"
-              >
-                <div
-                  class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4"
-                >
-                  <i class="fa-solid fa-circle-check text-blue-600 text-xl"></i>
-                </div>
-                <h4 class="text-lg font-semibold text-gray-900 mb-2">
-                  Close the loop on SCARs
-                </h4>
-                <p class="text-gray-600 text-sm">
-                  Standard workflows drive supplier accountability from Raised →
-                  Closure.
-                </p>
-              </div>
-              <div
-                class="bg-white p-6 rounded-xl border border-gray-200 hover:border-green-300 hover:shadow-lg transition-all duration-300"
-              >
-                <div
-                  class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4"
+                  class="w-11 h-11 rounded-lg flex items-center justify-center flex-shrink-0"
+                  :class="module.iconBg"
                 >
                   <i
-                    class="fa-solid fa-shield-halved text-purple-600 text-xl"
+                    :class="['fa-solid', module.icon, module.iconColor, 'text-lg']"
                   ></i>
                 </div>
-                <h4 class="text-lg font-semibold text-gray-900 mb-2">
-                  Stay compliant by default
-                </h4>
-                <p class="text-gray-600 text-sm">
-                  Certificate expiry alerts, version history, and complete audit
-                  trails.
-                </p>
-              </div>
-              <div
-                class="bg-white p-6 rounded-xl border border-gray-200 hover:border-green-300 hover:shadow-lg transition-all duration-300"
-              >
-                <div
-                  class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4"
+                <span
+                  class="font-semibold"
+                  :class="
+                    activeModuleId === module.id
+                      ? 'text-gray-900'
+                      : 'text-gray-700'
+                  "
                 >
-                  <i class="fa-solid fa-brain text-orange-600 text-xl"></i>
-                </div>
-                <h4 class="text-lg font-semibold text-gray-900 mb-2">
-                  See risks before they repeat
-                </h4>
-                <p class="text-gray-600 text-sm">
-                  AI drafts checklists/reports from notes and highlights likely
-                  nonconformities.
-                </p>
+                  {{ module.title }}
+                </span>
+              </button>
+            </div>
+
+            <div
+              class="bg-white rounded-2xl border border-gray-200 p-8 md:p-10 shadow-sm lg:sticky lg:top-28"
+            >
+              <div
+                class="w-14 h-14 rounded-xl flex items-center justify-center mb-6"
+                :class="activeModule.iconBg"
+              >
+                <i
+                  :class="[
+                    'fa-solid',
+                    activeModule.icon,
+                    activeModule.iconColor,
+                    'text-2xl',
+                  ]"
+                ></i>
               </div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">
+                {{ activeModule.title }}
+              </h3>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                {{ activeModule.description }}
+              </p>
+              <ul class="space-y-3">
+                <li
+                  v-for="point in activeModule.points"
+                  :key="point"
+                  class="flex items-start gap-3"
+                >
+                  <div
+                    class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
+                  >
+                    <i class="fa-solid fa-check text-green-600 text-[10px]"></i>
+                  </div>
+                  <span class="text-gray-700 text-sm leading-relaxed">{{
+                    point
+                  }}</span>
+                </li>
+              </ul>
             </div>
           </div>
-
         </div>
       </section>
 
@@ -468,8 +509,8 @@
                     <i class="fa-solid fa-check text-green-600 text-xs"></i>
                   </div>
                   <span class="text-gray-700"
-                    >AI-powered risk detection and nonconformity
-                    prevention</span
+                    >Structured risk registers linked to controls and
+                    ownership</span
                   >
                 </li>
                 <li class="flex items-start gap-3">
@@ -537,206 +578,6 @@
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Implementation Process Section -->
-      <section class="py-20 md:py-28 bg-gray-50">
-        <div class="container mx-auto px-6">
-          <div class="text-center max-w-3xl mx-auto mb-16">
-            <span
-              class="inline-block px-4 py-1.5 bg-green-50 text-green-700 rounded-full text-sm font-medium mb-4"
-            >
-              Implementation
-            </span>
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              5-Step Implementation Process
-            </h2>
-            <p class="text-lg text-gray-600">
-              Get started with 4ES Hub and achieve compliance readiness quickly.
-            </p>
-          </div>
-          <div class="grid grid-cols-1 md:grid-cols-5 gap-4 max-w-6xl mx-auto">
-            <div class="relative text-center">
-              <div
-                class="w-16 h-16 bg-green-600 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4"
-              >
-                1
-              </div>
-              <h4 class="font-semibold text-gray-900 mb-2">Gap Assessment</h4>
-              <p class="text-sm text-gray-600">
-                Review policies, procedures, and worksheets for non-compliance
-                opportunities
-              </p>
-              <div
-                class="hidden md:block absolute top-8 left-[60%] w-[80%] border-t-2 border-dashed border-gray-300"
-              ></div>
-            </div>
-            <div class="relative text-center">
-              <div
-                class="w-16 h-16 bg-green-600 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4"
-              >
-                2
-              </div>
-              <h4 class="font-semibold text-gray-900 mb-2">
-                Awareness Training
-              </h4>
-              <p class="text-sm text-gray-600">
-                Facilitate training to help teams understand required standards
-              </p>
-              <div
-                class="hidden md:block absolute top-8 left-[60%] w-[80%] border-t-2 border-dashed border-gray-300"
-              ></div>
-            </div>
-            <div class="relative text-center">
-              <div
-                class="w-16 h-16 bg-green-600 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4"
-              >
-                3
-              </div>
-              <h4 class="font-semibold text-gray-900 mb-2">Documentation</h4>
-              <p class="text-sm text-gray-600">
-                Centralize and automate document management with version control
-              </p>
-              <div
-                class="hidden md:block absolute top-8 left-[60%] w-[80%] border-t-2 border-dashed border-gray-300"
-              ></div>
-            </div>
-            <div class="relative text-center">
-              <div
-                class="w-16 h-16 bg-green-600 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4"
-              >
-                4
-              </div>
-              <h4 class="font-semibold text-gray-900 mb-2">Implementation</h4>
-              <p class="text-sm text-gray-600">
-                Support for implementing systems and maintaining compliance
-              </p>
-              <div
-                class="hidden md:block absolute top-8 left-[60%] w-[80%] border-t-2 border-dashed border-gray-300"
-              ></div>
-            </div>
-            <div class="relative text-center">
-              <div
-                class="w-16 h-16 bg-green-600 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4"
-              >
-                5
-              </div>
-              <h4 class="font-semibold text-gray-900 mb-2">Internal Audit</h4>
-              <p class="text-sm text-gray-600">
-                Conduct audits to ensure readiness for certification or
-                regulatory audits
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Testimonials Section -->
-      <section id="testimonials-section" class="py-20 md:py-28 bg-white">
-        <div class="container mx-auto px-6">
-          <div class="text-center max-w-3xl mx-auto mb-16">
-            <span
-              class="inline-block px-4 py-1.5 bg-green-50 text-green-700 rounded-full text-sm font-medium mb-4"
-            >
-              Testimonials
-            </span>
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Trusted by Industry Leaders Worldwide
-            </h2>
-            <p class="text-lg text-gray-600">
-              See what industry leaders are saying about 4ES Hub.
-            </p>
-          </div>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <div
-              class="bg-white p-8 rounded-xl border border-gray-200 hover:shadow-lg transition-all duration-300"
-            >
-              <div class="flex gap-1 mb-4">
-                <i class="fa-solid fa-star text-yellow-400"></i>
-                <i class="fa-solid fa-star text-yellow-400"></i>
-                <i class="fa-solid fa-star text-yellow-400"></i>
-                <i class="fa-solid fa-star text-yellow-400"></i>
-                <i class="fa-solid fa-star text-yellow-400"></i>
-              </div>
-              <p class="text-gray-600 mb-6 leading-relaxed">
-                "4ES Hub has revolutionized how we manage compliance in our
-                drone operations. The platform seamlessly tracks all our
-                certifications and regulatory requirements across multiple
-                jurisdictions. What used to take our team days now happens
-                automatically—we're always audit-ready."
-              </p>
-              <div class="flex items-center">
-                <div
-                  class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4"
-                >
-                  <span class="text-green-600 font-semibold">AT</span>
-                </div>
-                <div>
-                  <h4 class="font-semibold text-gray-900">Ali Taleb</h4>
-                  <p class="text-sm text-gray-500">CEO, Vigelon</p>
-                </div>
-              </div>
-            </div>
-            <div
-              class="bg-white p-8 rounded-xl border border-gray-200 hover:shadow-lg transition-all duration-300"
-            >
-              <div class="flex gap-1 mb-4">
-                <i class="fa-solid fa-star text-yellow-400"></i>
-                <i class="fa-solid fa-star text-yellow-400"></i>
-                <i class="fa-solid fa-star text-yellow-400"></i>
-                <i class="fa-solid fa-star text-yellow-400"></i>
-                <i class="fa-solid fa-star text-yellow-400"></i>
-              </div>
-              <p class="text-gray-600 mb-6 leading-relaxed">
-                "As a certification body, we've seen countless QMS platforms.
-                4ES Hub stands out with its comprehensive approach to
-                multi-standard compliance. It dramatically reduces the time we
-                spend on audits and gives us real-time visibility into our
-                clients' compliance status."
-              </p>
-              <div class="flex items-center">
-                <div
-                  class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4"
-                >
-                  <span class="text-blue-600 font-semibold">KF</span>
-                </div>
-                <div>
-                  <h4 class="font-semibold text-gray-900">Kassem Fawaz</h4>
-                  <p class="text-sm text-gray-500">Managing Partner, SMG</p>
-                </div>
-              </div>
-            </div>
-            <!-- <div
-              class="bg-white p-8 rounded-xl border border-gray-200 hover:shadow-lg transition-all duration-300"
-            >
-              <div class="flex gap-1 mb-4">
-                <i class="fa-solid fa-star text-yellow-400"></i>
-                <i class="fa-solid fa-star text-yellow-400"></i>
-                <i class="fa-solid fa-star text-yellow-400"></i>
-                <i class="fa-solid fa-star text-yellow-400"></i>
-                <i class="fa-solid fa-star text-yellow-400"></i>
-              </div>
-              <p class="text-gray-600 mb-6 leading-relaxed">
-                "In fintech, compliance isn't optional—it's existential. 4ES Hub
-                gave us the infrastructure to manage SOC 2, ISO 27001, and
-                multiple financial regulations from one dashboard. The
-                AI-powered risk detection has caught issues before they became
-                problems."
-              </p>
-              <div class="flex items-center">
-                <div
-                  class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4"
-                >
-                  <span class="text-purple-600 font-semibold">DM</span>
-                </div>
-                <div>
-                  <h4 class="font-semibold text-gray-900">Derek Manuge</h4>
-                  <p class="text-sm text-gray-500">CTO, Railz AI</p>
-                </div>
-              </div>
-            </div> -->
           </div>
         </div>
       </section>
@@ -1069,13 +910,22 @@
                   >
                 </li>
               </ul>
-              <a
-                href="#contact-section"
-                class="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg px-8 py-4 transition-all duration-200"
-              >
-                Start your certification journey
-                <i class="fa-solid fa-arrow-right ml-2"></i>
-              </a>
+              <div class="flex flex-wrap gap-4">
+                <a
+                  href="#contact-section"
+                  class="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg px-8 py-4 transition-all duration-200"
+                >
+                  Start your certification journey
+                  <i class="fa-solid fa-arrow-right ml-2"></i>
+                </a>
+                <NuxtLink
+                  to="/partners"
+                  class="inline-flex items-center border-2 border-blue-200 hover:border-blue-600 text-blue-700 hover:text-blue-800 font-semibold rounded-lg px-8 py-4 transition-all duration-200"
+                >
+                  View partner directory
+                  <i class="fa-solid fa-users ml-2"></i>
+                </NuxtLink>
+              </div>
               <p class="text-xs text-gray-500 mt-4">
                 <i class="fa-solid fa-info-circle mr-1"></i>
                 Note: 4ES Hub provides software and partner introductions but
@@ -1338,7 +1188,7 @@
                       rows="4"
                       v-model="form.message"
                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all"
-                      placeholder="Tell us whether you are starting ISO 9001 from scratch, preparing for audit, or looking for certification support"
+                      placeholder="Tell us your target standard, timeline, and whether you need certification support or ongoing compliance maintenance"
                       required
                     ></textarea>
                   </div>
@@ -1382,13 +1232,27 @@
               </p>
             </div>
             <div>
-              <h4 class="text-white font-semibold mb-4">Standards</h4>
+              <h4 class="text-white font-semibold mb-4">Solutions</h4>
               <ul class="space-y-3 text-sm">
                 <li>
                   <NuxtLink
                     to="/iso-9001"
                     class="hover:text-white transition-colors"
-                    >ISO 9001</NuxtLink
+                    >ISO 9001 (Quality Management System)</NuxtLink
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#standards-section"
+                    class="hover:text-white transition-colors"
+                    >ISO 14001 (Environmental Management)</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#standards-section"
+                    class="hover:text-white transition-colors"
+                    >ISO 45001 (Health &amp; Safety Management)</a
                   >
                 </li>
               </ul>
@@ -1408,6 +1272,13 @@
             <div>
               <h4 class="text-white font-semibold mb-4">Company</h4>
               <ul class="space-y-3 text-sm">
+                <li>
+                  <NuxtLink
+                    to="/partners"
+                    class="hover:text-white transition-colors"
+                    >Partners</NuxtLink
+                  >
+                </li>
                 <li>
                   <a
                     href="#pricing-section"
@@ -1468,12 +1339,127 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, computed, onMounted } from "vue";
 import { getRecentBlogPosts } from "~/utils/blogPosts";
 
 const recentBlogPosts = getRecentBlogPosts(3);
 
 const mobileMenuOpen = ref(false);
+const activeModuleId = ref("documents");
+
+const platformModules = [
+  {
+    id: "documents",
+    title: "Documents",
+    icon: "fa-file-lines",
+    iconBg: "bg-green-100",
+    iconColor: "text-green-600",
+    description:
+      "Centralize policies, procedures, work instructions, and evidence in one controlled library. Every document has a clear owner, version, approval path, and review schedule.",
+    points: [
+      "Version control with full revision history and audit trails",
+      "Structured approval workflows before documents go live",
+      "Review reminders so controlled documents stay current",
+      "Link documents to processes, standards, and training requirements",
+    ],
+  },
+  {
+    id: "risks",
+    title: "Risks",
+    icon: "fa-triangle-exclamation",
+    iconBg: "bg-orange-100",
+    iconColor: "text-orange-600",
+    description:
+      "Identify, assess, and monitor risks across your management system. Keep risk registers connected to controls, actions, and the people responsible for treatment.",
+    points: [
+      "Configurable risk matrices aligned to your methodology",
+      "Track risk owners, treatments, and residual levels over time",
+      "Connect risks to audits, nonconformities, and objectives",
+      "Support integrated risk views across quality, environment, and safety",
+    ],
+  },
+  {
+    id: "audits",
+    title: "Audits",
+    icon: "fa-clipboard-check",
+    iconBg: "bg-blue-100",
+    iconColor: "text-blue-600",
+    description:
+      "Plan and run internal audits from agenda to closure. Build checklists, capture findings on-site, and drive corrective follow-up without rebuilding evidence before certification.",
+    points: [
+      "Audit programs with schedules, scopes, and assigned auditors",
+      "Checklists linked to standard requirements and prior findings",
+      "Finding capture with severity, evidence, and follow-up tasks",
+      "Audit-ready history for surveillance and recertification visits",
+    ],
+  },
+  {
+    id: "training",
+    title: "Training",
+    icon: "fa-graduation-cap",
+    iconBg: "bg-purple-100",
+    iconColor: "text-purple-600",
+    description:
+      "Define competence requirements, assign training, and retain proof that people can perform their roles. Retraining triggers when procedures change.",
+    points: [
+      "Role-based competence requirements and training definitions",
+      "Scheduled sessions with roster tracking and completion records",
+      "Automatic retraining prompts when controlled documents revise",
+      "Evaluation and authorization records auditors expect to see",
+    ],
+  },
+  {
+    id: "surveys",
+    title: "Surveys and Feedback",
+    icon: "fa-comments",
+    iconBg: "bg-teal-100",
+    iconColor: "text-teal-600",
+    description:
+      "Collect customer and employee feedback, measure satisfaction, and turn responses into inputs for management review and continual improvement.",
+    points: [
+      "Customer and employee survey templates with structured responses",
+      "Track satisfaction trends and recurring feedback themes",
+      "Connect survey results to objectives and improvement actions",
+      "Feed feedback directly into management review evidence",
+    ],
+  },
+  {
+    id: "nonconformities",
+    title: "Non Conformities",
+    icon: "fa-circle-xmark",
+    iconBg: "bg-red-100",
+    iconColor: "text-red-600",
+    description:
+      "Log nonconformities and opportunities for improvement, assign root-cause analysis, and verify effectiveness before closing the loop.",
+    points: [
+      "Structured workflows from identification through closure",
+      "Root-cause analysis, corrective actions, and effectiveness checks",
+      "Separate tracking for OFIs alongside formal nonconformities",
+      "Full traceability linked to audits, risks, and documents",
+    ],
+  },
+  {
+    id: "performance",
+    title: "Performance Indicators",
+    icon: "fa-chart-line",
+    iconBg: "bg-indigo-100",
+    iconColor: "text-indigo-600",
+    description:
+      "Define KPIs, track targets, and review performance data so leadership can see whether the management system is delivering results.",
+    points: [
+      "Configurable indicators tied to objectives and processes",
+      "Target setting with periodic data capture and trend views",
+      "Dashboard visibility for management review and audit evidence",
+      "Connect performance gaps to corrective and improvement actions",
+    ],
+  },
+];
+
+const activeModule = computed(
+  () =>
+    platformModules.find((module) => module.id === activeModuleId.value) ||
+    platformModules[0],
+);
 
 const form = ref({
   name: "",
@@ -1492,18 +1478,18 @@ const siteUrl = useRuntimeConfig().public.siteUrl.replace(/\/$/, "");
 const homeUrl = `${siteUrl}/`;
 
 useSeoMeta({
-  title: "ISO 9001 Certification Help & QMS Software | 4ES Hub",
+  title: "ISO Certification & Compliance Software | 4ES Hub",
   description:
-    "4ES Hub helps organizations achieve ISO certification with QMS software, audit-ready workflows, and certification body and consultant partner introductions.",
-  ogTitle: "4ES Hub | Your Path to ISO Certification",
+    "4ES Hub helps organizations achieve ISO certification and maintain compliance with management system software, audit-ready workflows, and certification partner introductions.",
+  ogTitle: "4ES Hub | Get Certified. Stay Certified.",
   ogDescription:
-    "Build your QMS in software, connect with certification and consultant partners, and prepare for ISO audits with organized evidence.",
+    "Build your management system in software, connect with certification partners, achieve ISO certification, and maintain audit-ready compliance every day.",
   ogUrl: homeUrl,
   ogImage: `${siteUrl}/4es-logo.png`,
   twitterCard: "summary_large_image",
-  twitterTitle: "4ES Hub | ISO 9001 Certification Help",
+  twitterTitle: "4ES Hub | ISO Certification & Compliance Software",
   twitterDescription:
-    "QMS software plus partner support to become certification-ready.",
+    "Software and partner support to achieve certification and maintain it long term.",
   twitterImage: `${siteUrl}/4es-logo.png`,
 });
 
@@ -1519,7 +1505,7 @@ useHead({
         url: homeUrl,
         logo: `${siteUrl}/4es-logo.png`,
         description:
-          "4ES Hub provides QMS software and partner introductions for organizations working toward ISO certification.",
+          "4ES Hub provides management system software and partner introductions for organizations working toward ISO certification and ongoing compliance.",
         sameAs: [
           "https://www.linkedin.com/company/4es-hub",
         ],

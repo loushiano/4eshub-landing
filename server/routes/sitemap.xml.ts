@@ -15,8 +15,8 @@ const routes = [
     changefreq: "weekly",
   },
   {
-    path: "/blog/iso-9001-certification-help-consultant-qms-software",
-    priority: "0.8",
+    path: "/partners",
+    priority: "0.9",
     changefreq: "monthly",
   },
   {
