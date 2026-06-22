@@ -32,15 +32,15 @@
                   class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600"
                   >ISO 9001 (Quality Management System)</NuxtLink
                 >
-                <a
-                  href="#standards-section"
+                <NuxtLink
+                  to="/iso-14001"
                   class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600"
-                  >ISO 14001 (Environmental Management)</a
+                  >ISO 14001 (Environmental Management)</NuxtLink
                 >
-                <a
-                  href="#standards-section"
+                <NuxtLink
+                  to="/iso-45001"
                   class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600"
-                  >ISO 45001 (Health &amp; Safety Management)</a
+                  >ISO 45001 (Health &amp; Safety Management)</NuxtLink
                 >
               </div>
             </div>
@@ -155,15 +155,15 @@
             class="text-gray-700 hover:text-primary-600 py-2 pl-2"
             >ISO 9001 (Quality Management System)</NuxtLink
           >
-          <a
-            href="#standards-section"
+          <NuxtLink
+            to="/iso-14001"
             class="text-gray-700 hover:text-primary-600 py-2 pl-2"
-            >ISO 14001 (Environmental Management)</a
+            >ISO 14001 (Environmental Management)</NuxtLink
           >
-          <a
-            href="#standards-section"
+          <NuxtLink
+            to="/iso-45001"
             class="text-gray-700 hover:text-primary-600 py-2 pl-2"
-            >ISO 45001 (Health &amp; Safety Management)</a
+            >ISO 45001 (Health &amp; Safety Management)</NuxtLink
           >
           <NuxtLink
             to="/blog"
@@ -299,8 +299,9 @@
               </div>
               <h4 class="font-semibold text-gray-900">ISO 9001</h4>
             </NuxtLink>
-            <div
-              class="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:border-primary-300 hover:shadow-lg transition-all duration-300 text-center"
+            <NuxtLink
+              to="/iso-45001"
+              class="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:border-primary-300 hover:shadow-lg transition-all duration-300 text-center block"
             >
               <div
                 class="w-16 h-16 flex items-center justify-center mx-auto mb-3"
@@ -312,9 +313,10 @@
                 />
               </div>
               <h4 class="font-semibold text-gray-900">ISO 45001:2018</h4>
-            </div>
-            <div
-              class="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:border-primary-300 hover:shadow-lg transition-all duration-300 text-center"
+            </NuxtLink>
+            <NuxtLink
+              to="/iso-14001"
+              class="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:border-primary-300 hover:shadow-lg transition-all duration-300 text-center block"
             >
               <div
                 class="w-16 h-16 flex items-center justify-center mx-auto mb-3"
@@ -326,7 +328,7 @@
                 />
               </div>
               <h4 class="font-semibold text-gray-900">ISO 14001:2015</h4>
-            </div>
+            </NuxtLink>
             <div
               class="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:border-primary-300 hover:shadow-lg transition-all duration-300 text-center"
             >
@@ -1240,17 +1242,17 @@
                   >
                 </li>
                 <li>
-                  <a
-                    href="#standards-section"
+                  <NuxtLink
+                    to="/iso-14001"
                     class="hover:text-white transition-colors"
-                    >ISO 14001 (Environmental Management)</a
+                    >ISO 14001 (Environmental Management)</NuxtLink
                   >
                 </li>
                 <li>
-                  <a
-                    href="#standards-section"
+                  <NuxtLink
+                    to="/iso-45001"
                     class="hover:text-white transition-colors"
-                    >ISO 45001 (Health &amp; Safety Management)</a
+                    >ISO 45001 (Health &amp; Safety Management)</NuxtLink
                   >
                 </li>
               </ul>

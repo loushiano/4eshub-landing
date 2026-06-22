@@ -1,3 +1,5 @@
+import { getAllIsoCityPagePaths } from "../../utils/isoCities";
+
 const routes = [
   {
     path: "/",
@@ -9,6 +11,21 @@ const routes = [
     priority: "0.9",
     changefreq: "monthly",
   },
+  {
+    path: "/iso-14001",
+    priority: "0.9",
+    changefreq: "monthly",
+  },
+  {
+    path: "/iso-45001",
+    priority: "0.9",
+    changefreq: "monthly",
+  },
+  ...getAllIsoCityPagePaths().map((path) => ({
+    path,
+    priority: "0.7",
+    changefreq: "monthly",
+  })),
   {
     path: "/blog",
     priority: "0.8",
