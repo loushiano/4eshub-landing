@@ -31,12 +31,13 @@
             Contact
           </a>
         </nav>
-        <NuxtLink
-          to="/#contact-section"
+        <button
+          type="button"
           class="hidden md:inline-flex btn-primary !py-2.5 !px-5 !text-sm"
+          @click="showModal = true"
         >
-          Book a free demo
-        </NuxtLink>
+          Talk to a certification body
+        </button>
       </div>
     </header>
 
@@ -65,9 +66,17 @@
             >
               {{ h1 }}
             </h1>
-            <p class="text-xl text-[#6e6e73] tracking-snug leading-relaxed">
+            <p class="text-xl text-[#6e6e73] tracking-snug leading-relaxed mb-8">
               {{ heroIntro }}
             </p>
+            <button
+              type="button"
+              class="btn-primary"
+              @click="showModal = true"
+            >
+              Talk to a certification body
+              <i class="fa-solid fa-arrow-right ml-2"></i>
+            </button>
           </div>
         </div>
       </section>
@@ -75,60 +84,81 @@
       <section class="py-16">
         <div class="container mx-auto px-6">
           <div class="max-w-3xl mx-auto prose-content">
+            <p>{{ content.certificationIntro }}</p>
+
+            <h2>Your certification journey</h2>
             <p>
-              ISO {{ standard }} is structured around the Plan-Do-Check-Act cycle.
-              Clauses 4–8 are the foundation for any {{ content.shortName }}: they
-              define your context, leadership commitment, planning, resources, and
-              operational controls. 4ES Hub does not replace your management
-              system—it gives {{ city.name }} teams a connected platform to manage
-              evidence, workflows, and continual improvement across every clause.
+              Our partner certification bodies guide {{ city.name }} organizations
+              through a structured path from initial assessment to holding a valid
+              ISO {{ standard }} certificate.
             </p>
 
             <div
-              v-for="clause in content.clauses"
-              :key="clause.number"
-              class="clause-block"
+              v-for="step in content.certificationSteps"
+              :key="step.step"
+              class="step-block"
             >
-              <h2>Clause {{ clause.number }} — {{ clause.title }}</h2>
-              <p>{{ clause.summary }}</p>
-              <h3>How 4ES Hub supports this</h3>
-              <ul>
-                <li v-for="item in clause.support" :key="item">
-                  {{ item }}
-                </li>
-              </ul>
-              <div class="module-tags">
-                <span
-                  v-for="mod in clause.modules"
-                  :key="mod"
-                  class="module-tag"
-                >
-                  {{ mod }}
-                </span>
+              <div class="step-number">{{ step.step }}</div>
+              <div>
+                <h3>{{ step.title }}</h3>
+                <p>{{ step.description }}</p>
+                <ul>
+                  <li v-for="detail in step.details" :key="detail">
+                    {{ detail }}
+                  </li>
+                </ul>
               </div>
             </div>
 
+            <h2>{{ content.auditAreasHeading }}</h2>
+            <p>{{ content.auditAreasIntro }}</p>
+
+            <div
+              v-for="area in content.auditAreas"
+              :key="area.number"
+              class="audit-area-block"
+            >
+              <h3>Clause {{ area.number }} — {{ area.title }}</h3>
+              <p>{{ area.summary }}</p>
+            </div>
+
+            <div class="platform-note">
+              <p>{{ content.platformNote }}</p>
+            </div>
+
             <div class="local-section">
-              <h2>ISO {{ standard }} consultants and partners in {{ city.name }}</h2>
+              <h2>{{ content.partnerSectionHeading }} in {{ city.name }}</h2>
               <p>
-                4ES Hub connects {{ city.name }} organizations with vetted ISO
-                {{ standard }} consultants, certification bodies, and training
-                providers. Browse our
+                We work with vetted, accredited certification bodies and ISO
+                {{ standard }} consultants serving {{ city.name }} and
+                {{ city.region }}. Leave your email and we will connect you
+                with the right partner for your industry and location. Browse our
                 <NuxtLink to="/partners" class="text-primary-600 hover:text-primary-700 font-semibold">
                   partner directory
                 </NuxtLink>
-                to find experts who support ISO {{ standard }} in {{ city.region }}
-                and across {{ city.country }}.
+                for certification bodies and consultants in {{ city.name }}.
               </p>
+              <button
+                type="button"
+                class="btn-primary mt-4"
+                @click="showModal = true"
+              >
+                Talk to a certification body
+                <i class="fa-solid fa-arrow-right ml-2"></i>
+              </button>
             </div>
 
             <div class="cta-box">
               <h2>{{ content.ctaHeading }}</h2>
               <p>{{ content.ctaBody }}</p>
-              <NuxtLink to="/#contact-section" class="btn-primary">
-                Book a free demo
+              <button
+                type="button"
+                class="btn-primary"
+                @click="showModal = true"
+              >
+                Talk to a certification body
                 <i class="fa-solid fa-arrow-right ml-2"></i>
-              </NuxtLink>
+              </button>
             </div>
           </div>
         </div>
@@ -140,6 +170,12 @@
         <p>© 2024 4ES Hub. All rights reserved.</p>
       </div>
     </footer>
+
+    <CertificationInquiryModal
+      v-model="showModal"
+      :standard="standard"
+      :city="city.name"
+    />
   </div>
 </template>
 
@@ -159,6 +195,7 @@ import {
 
 const route = useRoute();
 const siteUrl = useRuntimeConfig().public.siteUrl.replace(/\/$/, "");
+const showModal = ref(false);
 
 const standardParam = route.params.standard as string;
 const cityParam = route.params.city as string;
@@ -203,7 +240,7 @@ useHead({
       innerHTML: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "Service",
-        name: `ISO ${standard} support in ${city.name}`,
+        name: `ISO ${standard} certification in ${city.name}`,
         description: pageDescription,
         provider: {
           "@type": "Organization",
@@ -218,7 +255,7 @@ useHead({
             name: city.region,
           },
         },
-        serviceType: content.systemName,
+        serviceType: `ISO ${standard} Certification`,
       }),
     },
   ],
@@ -245,7 +282,7 @@ useHead({
   color: #1f2937;
   font-size: 1.25rem;
   font-weight: 600;
-  margin-top: 1.5rem;
+  margin-top: 0;
   margin-bottom: 0.75rem;
 }
 
@@ -254,7 +291,7 @@ useHead({
 }
 
 .prose-content ul {
-  margin-bottom: 1.5rem;
+  margin-bottom: 0;
   padding-left: 1.5rem;
   list-style-type: disc;
 }
@@ -263,10 +300,48 @@ useHead({
   margin-bottom: 0.5rem;
 }
 
-.clause-block {
-  margin-bottom: 3rem;
+.step-block {
+  display: flex;
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
   padding-bottom: 2rem;
   border-bottom: 1px solid #e5e7eb;
+}
+
+.step-number {
+  flex-shrink: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #253fa2;
+  color: white;
+  border-radius: 9999px;
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+
+.audit-area-block {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.audit-area-block h3 {
+  margin-top: 0;
+}
+
+.platform-note {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+}
+
+.platform-note p {
+  margin-bottom: 0;
 }
 
 .local-section {
@@ -279,23 +354,6 @@ useHead({
 
 .local-section h2 {
   margin-top: 0;
-}
-
-.module-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 1rem;
-}
-
-.module-tag {
-  display: inline-block;
-  padding: 0.25rem 0.75rem;
-  background-color: #eef1fb;
-  color: #253fa2;
-  border-radius: 9999px;
-  font-size: 0.875rem;
-  font-weight: 500;
 }
 
 .cta-box {

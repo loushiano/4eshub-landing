@@ -1,11 +1,16 @@
 import type { IsoStandardSlug } from "./isoCities";
 
-export type IsoClause = {
+export type CertificationStep = {
+  step: string;
+  title: string;
+  description: string;
+  details: string[];
+};
+
+export type AuditArea = {
   number: string;
   title: string;
   summary: string;
-  support: string[];
-  modules: string[];
 };
 
 export type IsoStandardContent = {
@@ -15,303 +20,288 @@ export type IsoStandardContent = {
   shortName: string;
   overviewIntro: string;
   cityIntroSuffix: string;
+  certificationIntro: string;
+  certificationSteps: CertificationStep[];
+  auditAreasHeading: string;
+  auditAreasIntro: string;
+  auditAreas: AuditArea[];
+  platformNote: string;
+  partnerSectionHeading: string;
+  partnerSectionBody: string;
   ctaHeading: string;
   ctaBody: string;
-  clauses: IsoClause[];
 };
 
-const iso9001Clauses: IsoClause[] = [
+const iso9001Steps: CertificationStep[] = [
+  {
+    step: "1",
+    title: "Free consultation",
+    description:
+      "Tell us about your organization, current quality practices, and certification goals. We match you with an accredited certification body that understands your industry.",
+    details: [
+      "No-obligation scoping call to define your QMS boundaries",
+      "Timeline and cost estimate for your certification journey",
+      "Introduction to a vetted ISO 9001 certification partner",
+    ],
+  },
+  {
+    step: "2",
+    title: "Gap analysis & implementation",
+    description:
+      "Your certification partner assesses your current state against ISO 9001:2015 and guides you through building or strengthening your Quality Management System.",
+    details: [
+      "Structured gap analysis against clauses 4 through 10",
+      "Implementation roadmap with clear milestones and ownership",
+      "Document templates, process guidance, and expert support",
+    ],
+  },
+  {
+    step: "3",
+    title: "Internal audit & readiness review",
+    description:
+      "Before the official certification audit, your partner runs an internal audit to confirm your QMS is functioning and evidence is in place.",
+    details: [
+      "Mock audit against the same criteria certification auditors use",
+      "Corrective actions closed before Stage 1",
+      "Management review and leadership evidence verified",
+    ],
+  },
+  {
+    step: "4",
+    title: "Certification audit (Stage 1 & Stage 2)",
+    description:
+      "An accredited certification body conducts the official audit. Stage 1 reviews your documentation; Stage 2 verifies your QMS is implemented and effective.",
+    details: [
+      "Stage 1: documentation and readiness review",
+      "Stage 2: on-site audit of processes, records, and effectiveness",
+      "Non-conformities addressed with partner support",
+    ],
+  },
+  {
+    step: "5",
+    title: "Certification & ongoing compliance",
+    description:
+      "Receive your ISO 9001 certificate and maintain compliance with surveillance audits. Certified clients use 4ES Hub to manage documents, training, audits, and continual improvement day to day.",
+    details: [
+      "Certificate issued by an accredited certification body",
+      "Surveillance audit schedule planned in advance",
+      "4ES Hub platform for ongoing QMS management and audit readiness",
+    ],
+  },
+];
+
+const iso9001AuditAreas: AuditArea[] = [
   {
     number: "4",
     title: "Context of the organization",
     summary:
-      "Define why your QMS exists: understand internal and external issues, interested parties and their requirements, the scope of your system, and the processes that make it work.",
-    support: [
-      "Define and maintain your QMS scope with version-controlled scope statements linked to organizational units and applicable standards.",
-      "Map organizational units, roles, and process ownership so context and accountability are visible—not buried in spreadsheets.",
-      "Capture and review risks and external/internal issues that affect your QMS context, with full history and audit trails.",
-      "Centralize policies, context documents, and process maps in a controlled document library.",
-    ],
-    modules: ["Scopes", "Organization Units", "Risk", "Documents", "Dashboard"],
+      "Auditors verify that you understand internal and external issues, interested parties, QMS scope, and the processes that make your system work.",
   },
   {
     number: "5",
     title: "Leadership",
     summary:
-      "Top management must demonstrate commitment, establish a quality policy, and assign clear roles, responsibilities, and authorities throughout the organization.",
-    support: [
-      "Publish and control your quality policy and related leadership documents with approval workflows and version history.",
-      "Assign roles and authorities through organizational unit structures and permission-based access.",
-      "Provide evidence of leadership engagement through management review records, objectives, and action tracking.",
-      "Maintain a complete audit trail of policy changes, approvals, and leadership decisions.",
-    ],
-    modules: [
-      "Documents",
-      "Organization Units",
-      "Management Review",
-      "Permissions",
-      "History",
-    ],
+      "Top management must demonstrate commitment through a quality policy, assigned roles, and evidence of engagement with the QMS.",
   },
   {
     number: "6",
     title: "Planning",
     summary:
-      "Plan actions to address risks and opportunities, set quality objectives with measurable targets, and manage planned changes to the QMS.",
-    support: [
-      "Identify, assess, and treat risks and opportunities with structured risk registers and review cycles.",
-      "Define quality objectives and track performance indicators with targets, trends, and ownership.",
-      "Log opportunities for improvement and link them to objectives, audits, and management review inputs.",
-      "Track issues and planned changes with tasks, deadlines, and evidence of completion.",
-    ],
-    modules: [
-      "Risk",
-      "Performance Indicators",
-      "Opportunities for Improvement",
-      "Issues",
-      "User Tasks",
-    ],
+      "Your certification body will assess how you address risks and opportunities, set quality objectives, and manage planned changes.",
   },
   {
     number: "7",
     title: "Support",
     summary:
-      "Provide the resources, competence, awareness, communication, and documented information needed for the QMS to function effectively.",
-    support: [
-      "Manage assets and resources with maintenance records and assignment to processes or units.",
-      "Plan, deliver, and record training with competence matrices, expiry alerts, and linked job roles.",
-      "Maintain a knowledge base for procedures, work instructions, and awareness materials.",
-      "Control all documented information—create, review, approve, distribute, and retain records with full version control.",
-      "Schedule events, send notifications, and keep teams informed of QMS updates and requirements.",
-    ],
-    modules: [
-      "Assets",
-      "Training",
-      "Knowledge",
-      "Documents",
-      "Calendar",
-      "Notifications",
-      "Media",
-    ],
+      "Auditors check that resources, competence, awareness, communication, and documented information are in place and controlled.",
   },
   {
     number: "8",
     title: "Operation",
     summary:
-      "Plan and control operational processes, determine requirements for products and services, manage external providers, and control nonconforming outputs.",
-    support: [
-      "Document and control operational processes with linked work instructions and controlled forms.",
-      "Capture customer requirements and feedback through structured surveys and satisfaction monitoring.",
-      "Run internal audit programs with schedules, checklists, findings, and corrective action follow-up.",
-      "Record and manage non-conformities with containment, root cause analysis, and corrective actions.",
-      "Track operational tasks, issues, and reports with real-time dashboards and exportable evidence.",
+      "Operational planning, customer requirements, supplier control, and nonconforming output management are reviewed during the audit.",
+  },
+];
+
+const iso14001Steps: CertificationStep[] = [
+  {
+    step: "1",
+    title: "Free consultation",
+    description:
+      "Share your environmental goals, sites, and regulatory context. We connect you with an accredited certification body experienced in ISO 14001.",
+    details: [
+      "Scoping call to define EMS boundaries and significant aspects",
+      "Timeline and cost estimate for environmental certification",
+      "Introduction to a vetted ISO 14001 certification partner",
     ],
-    modules: [
-      "Documents",
-      "Survey",
-      "Audit",
-      "Non-conformities",
-      "Issues",
-      "User Tasks",
-      "Reports",
-      "Dashboard",
+  },
+  {
+    step: "2",
+    title: "Gap analysis & implementation",
+    description:
+      "Your partner evaluates your environmental practices against ISO 14001:2015 and guides implementation of your Environmental Management System.",
+    details: [
+      "Aspect and impact assessment with significance ratings",
+      "Compliance obligation register and control measures",
+      "Implementation roadmap with environmental objectives",
+    ],
+  },
+  {
+    step: "3",
+    title: "Internal audit & readiness review",
+    description:
+      "An internal environmental audit confirms your EMS is operational and evidence is ready before the certification audit.",
+    details: [
+      "Mock audit covering significant aspects and legal compliance",
+      "Emergency preparedness and response plans verified",
+      "Corrective actions closed before Stage 1",
+    ],
+  },
+  {
+    step: "4",
+    title: "Certification audit (Stage 1 & Stage 2)",
+    description:
+      "An accredited body audits your EMS. Stage 1 reviews documentation; Stage 2 verifies environmental controls are implemented and effective.",
+    details: [
+      "Stage 1: EMS documentation and readiness review",
+      "Stage 2: on-site verification of aspects, controls, and records",
+      "Non-conformities addressed with partner support",
+    ],
+  },
+  {
+    step: "5",
+    title: "Certification & ongoing compliance",
+    description:
+      "Receive your ISO 14001 certificate and plan surveillance audits. Certified clients use 4ES Hub to manage aspects, compliance, incidents, and environmental records.",
+    details: [
+      "Certificate issued by an accredited certification body",
+      "Surveillance audit schedule planned in advance",
+      "4ES Hub platform for ongoing EMS management and audit readiness",
     ],
   },
 ];
 
-const iso14001Clauses: IsoClause[] = [
+const iso14001AuditAreas: AuditArea[] = [
   {
     number: "4",
     title: "Context of the organization",
     summary:
-      "Understand the internal and external issues that affect your EMS, identify interested parties and their environmental requirements, define the scope of your system, and establish the processes needed for effective environmental management.",
-    support: [
-      "Document EMS scope with version-controlled statements linked to sites, activities, and applicable environmental regulations.",
-      "Map organizational units and assign environmental responsibilities so accountability is clear across locations.",
-      "Maintain a register of compliance obligations and track regulatory changes with review history.",
-      "Centralize environmental policies, aspect registers, and context documents in a controlled library.",
-    ],
-    modules: ["Scopes", "Organization Units", "Risk", "Documents", "Dashboard"],
+      "Auditors verify understanding of environmental issues, interested parties, EMS scope, and processes for environmental management.",
   },
   {
     number: "5",
     title: "Leadership",
     summary:
-      "Top management must demonstrate leadership and commitment to the EMS, establish an environmental policy, and assign roles, responsibilities, and authorities for environmental performance.",
-    support: [
-      "Publish and control your environmental policy with approval workflows and version history.",
-      "Assign environmental roles and authorities through organizational structures and permission-based access.",
-      "Capture management review inputs on environmental performance, objectives, and improvement opportunities.",
-      "Maintain audit trails of policy updates, leadership decisions, and environmental commitments.",
-    ],
-    modules: [
-      "Documents",
-      "Organization Units",
-      "Management Review",
-      "Permissions",
-      "History",
-    ],
+      "Top management must demonstrate environmental commitment through policy, roles, and evidence of engagement with the EMS.",
   },
   {
     number: "6",
     title: "Planning",
     summary:
-      "Identify environmental aspects and impacts, determine compliance obligations, plan actions to address risks and opportunities, and set environmental objectives with measurable targets.",
-    support: [
-      "Maintain environmental aspect and impact registers with significance ratings and control measures.",
-      "Track compliance obligations, permit conditions, and regulatory deadlines with automated alerts.",
-      "Set environmental objectives and monitor performance indicators with targets, trends, and ownership.",
-      "Plan and track actions to address significant aspects, risks, and opportunities for improvement.",
-    ],
-    modules: [
-      "Risk",
-      "Performance Indicators",
-      "Opportunities for Improvement",
-      "Issues",
-      "User Tasks",
-    ],
+      "Environmental aspects, compliance obligations, risks, opportunities, and objectives are assessed during certification.",
   },
   {
     number: "7",
     title: "Support",
     summary:
-      "Provide resources, competence, awareness, communication, and documented information needed for the EMS—including training on environmental responsibilities and emergency preparedness.",
-    support: [
-      "Manage environmental monitoring equipment and assets with calibration and maintenance records.",
-      "Deliver and record environmental awareness training with competence matrices and expiry tracking.",
-      "Maintain a knowledge base for environmental procedures, work instructions, and spill response guides.",
-      "Control all EMS documented information with version control, approval workflows, and retention rules.",
-      "Send notifications for permit renewals, training expirations, and environmental incident alerts.",
-    ],
-    modules: [
-      "Assets",
-      "Training",
-      "Knowledge",
-      "Documents",
-      "Calendar",
-      "Notifications",
-      "Media",
-    ],
+      "Resources, competence, awareness, communication, and documented information for the EMS are reviewed by auditors.",
   },
   {
     number: "8",
     title: "Operation",
     summary:
-      "Establish operational planning and control for significant environmental aspects, manage changes, control outsourced processes, and prepare for emergency situations.",
-    support: [
-      "Document and control operational procedures for significant environmental aspects and life-cycle considerations.",
-      "Track environmental incidents, spills, and non-conformities with containment and corrective action workflows.",
-      "Run internal environmental audit programs with schedules, checklists, and finding follow-up.",
-      "Maintain emergency preparedness and response plans with drills, exercises, and review records.",
-      "Monitor supplier and contractor environmental performance with structured evaluation records.",
+      "Operational controls for significant aspects, change management, emergency preparedness, and contractor oversight are verified.",
+  },
+];
+
+const iso45001Steps: CertificationStep[] = [
+  {
+    step: "1",
+    title: "Free consultation",
+    description:
+      "Tell us about your workplace, hazards, and safety goals. We match you with an accredited certification body experienced in ISO 45001.",
+    details: [
+      "Scoping call to define OH&S boundaries and work activities",
+      "Timeline and cost estimate for health and safety certification",
+      "Introduction to a vetted ISO 45001 certification partner",
     ],
-    modules: [
-      "Documents",
-      "Audit",
-      "Non-conformities",
-      "Issues",
-      "User Tasks",
-      "Reports",
-      "Dashboard",
+  },
+  {
+    step: "2",
+    title: "Gap analysis & implementation",
+    description:
+      "Your partner assesses your OH&S practices against ISO 45001:2018 and guides implementation of your health and safety management system.",
+    details: [
+      "Hazard identification and risk assessment with control hierarchy",
+      "Legal and regulatory requirement register",
+      "Implementation roadmap with OH&S objectives and worker participation",
+    ],
+  },
+  {
+    step: "3",
+    title: "Internal audit & readiness review",
+    description:
+      "An internal OH&S audit confirms your system is functioning and evidence is ready before the certification audit.",
+    details: [
+      "Mock audit covering hazards, controls, and worker consultation",
+      "Emergency preparedness plans and drill records verified",
+      "Corrective actions closed before Stage 1",
+    ],
+  },
+  {
+    step: "4",
+    title: "Certification audit (Stage 1 & Stage 2)",
+    description:
+      "An accredited body audits your OH&S MS. Stage 1 reviews documentation; Stage 2 verifies safety controls are implemented and effective.",
+    details: [
+      "Stage 1: OH&S documentation and readiness review",
+      "Stage 2: on-site verification of hazards, controls, and records",
+      "Non-conformities addressed with partner support",
+    ],
+  },
+  {
+    step: "5",
+    title: "Certification & ongoing compliance",
+    description:
+      "Receive your ISO 45001 certificate and plan surveillance audits. Certified clients use 4ES Hub to manage hazards, training, incidents, and safety records.",
+    details: [
+      "Certificate issued by an accredited certification body",
+      "Surveillance audit schedule planned in advance",
+      "4ES Hub platform for ongoing OH&S management and audit readiness",
     ],
   },
 ];
 
-const iso45001Clauses: IsoClause[] = [
+const iso45001AuditAreas: AuditArea[] = [
   {
     number: "4",
     title: "Context of the organization",
     summary:
-      "Understand internal and external issues affecting OH&S performance, identify workers and other interested parties, define EMS scope, and establish processes for a safe and healthy workplace.",
-    support: [
-      "Document OH&S scope with version-controlled statements linked to work activities, sites, and hazards.",
-      "Map organizational units and assign safety responsibilities across departments and locations.",
-      "Capture workplace context factors including contractor activities, remote work, and regulatory requirements.",
-      "Centralize OH&S policies, hazard registers, and context documents in a controlled library.",
-    ],
-    modules: ["Scopes", "Organization Units", "Risk", "Documents", "Dashboard"],
+      "Auditors verify understanding of OH&S issues, workers and interested parties, system scope, and workplace processes.",
   },
   {
     number: "5",
     title: "Leadership and worker participation",
     summary:
-      "Top management must demonstrate leadership, establish an OH&S policy, assign roles and responsibilities, and ensure worker consultation and participation in the OH&S management system.",
-    support: [
-      "Publish and control your OH&S policy with approval workflows and version history.",
-      "Assign safety roles and authorities with clear accountability across organizational units.",
-      "Document worker consultation, safety committee meetings, and participation in hazard identification.",
-      "Track management review inputs on OH&S performance, incidents, and improvement actions.",
-    ],
-    modules: [
-      "Documents",
-      "Organization Units",
-      "Management Review",
-      "Permissions",
-      "History",
-    ],
+      "Top management commitment, OH&S policy, roles, and evidence of worker consultation and participation are assessed.",
   },
   {
     number: "6",
     title: "Planning",
     summary:
-      "Identify hazards, assess risks and opportunities, determine legal and other requirements, and plan actions to address risks—including setting OH&S objectives with measurable targets.",
-    support: [
-      "Maintain hazard identification registers with risk assessments, control hierarchy, and review cycles.",
-      "Track legal and regulatory OH&S requirements with compliance obligation registers and alerts.",
-      "Set OH&S objectives and monitor safety performance indicators with targets and trend analysis.",
-      "Plan and track actions for risk treatment, opportunities for improvement, and change management.",
-    ],
-    modules: [
-      "Risk",
-      "Performance Indicators",
-      "Opportunities for Improvement",
-      "Issues",
-      "User Tasks",
-    ],
+      "Hazard identification, risk assessment, legal requirements, and OH&S objectives are reviewed during certification.",
   },
   {
     number: "7",
     title: "Support",
     summary:
-      "Provide resources, competence, awareness, communication, and documented information for the OH&S management system—including safety training and emergency preparedness awareness.",
-    support: [
-      "Manage safety equipment, PPE, and monitoring devices with inspection and maintenance records.",
-      "Deliver and record safety training with competence matrices, certifications, and expiry alerts.",
-      "Maintain a knowledge base for safe work procedures, JSA documents, and emergency response guides.",
-      "Control all OH&S documented information with version control and approval workflows.",
-      "Send notifications for training renewals, incident reports, and safety meeting schedules.",
-    ],
-    modules: [
-      "Assets",
-      "Training",
-      "Knowledge",
-      "Documents",
-      "Calendar",
-      "Notifications",
-      "Media",
-    ],
+      "Resources, competence, awareness, communication, and documented information for the OH&S MS are verified by auditors.",
   },
   {
     number: "8",
     title: "Operation",
     summary:
-      "Plan and control operational processes to eliminate hazards and reduce OH&S risks, manage change, procure safely, and prepare for emergency situations.",
-    support: [
-      "Document and control operational procedures with linked safe work instructions and permits.",
-      "Record and investigate incidents, near-misses, and non-conformities with root cause analysis.",
-      "Run internal OH&S audit programs with schedules, checklists, and corrective action follow-up.",
-      "Maintain emergency preparedness plans with drills, evacuation records, and post-exercise reviews.",
-      "Track contractor and supplier safety performance with pre-qualification and monitoring records.",
-    ],
-    modules: [
-      "Documents",
-      "Audit",
-      "Non-conformities",
-      "Issues",
-      "User Tasks",
-      "Reports",
-      "Dashboard",
-    ],
+      "Operational controls, change management, contractor safety, incident investigation, and emergency preparedness are audited on site.",
   },
 ];
 
@@ -322,13 +312,24 @@ export const ISO_STANDARD_CONTENT: Record<IsoStandardSlug, IsoStandardContent> =
     systemName: "Quality Management System",
     shortName: "QMS",
     overviewIntro:
-      "4ES Hub is built around the requirements of ISO 9001:2015. Clauses 4 through 8 cover how your organization defines its QMS, leads the system, plans for risk and objectives, provides support, and runs day-to-day operations.",
+      "Achieve ISO 9001 certification with support from our accredited certification partners. From gap analysis through Stage 1 and Stage 2 audits, we connect you with experts who guide your organization to a recognized quality certificate.",
     cityIntroSuffix:
-      "Whether you are starting from scratch or strengthening an existing QMS, 4ES Hub connects the evidence auditors expect—documents, training, audits, risks, and corrective actions—in one audit-ready platform.",
-    ctaHeading: "Ready to build an audit-ready QMS?",
+      "Our certification partners work with organizations across North America to achieve ISO 9001 certification—handling gap analysis, implementation support, internal audits, and the official certification audit.",
+    certificationIntro:
+      "ISO 9001 is the world's most recognized quality management standard. Certification demonstrates that your organization consistently meets customer requirements and drives continual improvement. Our partner certification bodies guide you through every step—from your first consultation to holding a valid certificate.",
+    certificationSteps: iso9001Steps,
+    auditAreasHeading: "What certification auditors assess",
+    auditAreasIntro:
+      "During your certification audit, auditors evaluate how your QMS addresses the core requirements of ISO 9001. Your certification partner prepares you for each of these areas:",
+    auditAreas: iso9001AuditAreas,
+    platformNote:
+      "Once certified, organizations use 4ES Hub to maintain their QMS—managing documents, training, internal audits, risks, non-conformities, and management review in one audit-ready platform.",
+    partnerSectionHeading: "Accredited certification partners",
+    partnerSectionBody:
+      "We work with vetted, accredited certification bodies and ISO 9001 consultants who guide organizations from initial assessment through certification. Leave your email and we will connect you with the right partner for your industry and location.",
+    ctaHeading: "Ready to get ISO 9001 certified?",
     ctaBody:
-      "See how 4ES Hub connects documents, training, audits, risks, non-conformities, and management review in one platform.",
-    clauses: iso9001Clauses,
+      "Talk to an accredited certification body today. We will match you with a partner who can assess your readiness, guide implementation, and conduct your certification audit.",
   },
   "14001": {
     slug: "14001",
@@ -336,13 +337,24 @@ export const ISO_STANDARD_CONTENT: Record<IsoStandardSlug, IsoStandardContent> =
     systemName: "Environmental Management System",
     shortName: "EMS",
     overviewIntro:
-      "4ES Hub supports ISO 14001:2015 across clauses 4 through 8—helping your organization understand environmental context, demonstrate leadership commitment, plan for aspects and compliance obligations, provide resources and competence, and control operational environmental performance.",
+      "Achieve ISO 14001 certification with support from our accredited certification partners. From environmental gap analysis through Stage 1 and Stage 2 audits, we connect you with experts who guide your organization to a recognized environmental certificate.",
     cityIntroSuffix:
-      "From aspect registers to emergency preparedness, 4ES Hub gives environmental teams a connected system to manage evidence, workflows, and continual improvement—without scattered spreadsheets and folder silos.",
-    ctaHeading: "Ready to build an audit-ready EMS?",
+      "Our certification partners work with organizations across North America to achieve ISO 14001 certification—handling aspect assessment, implementation support, internal audits, and the official certification audit.",
+    certificationIntro:
+      "ISO 14001 is the leading environmental management standard. Certification demonstrates that your organization manages environmental aspects, meets compliance obligations, and commits to continual environmental improvement. Our partner certification bodies guide you through every step of the journey.",
+    certificationSteps: iso14001Steps,
+    auditAreasHeading: "What certification auditors assess",
+    auditAreasIntro:
+      "During your certification audit, auditors evaluate how your EMS addresses the core requirements of ISO 14001. Your certification partner prepares you for each of these areas:",
+    auditAreas: iso14001AuditAreas,
+    platformNote:
+      "Once certified, organizations use 4ES Hub to maintain their EMS—managing aspects, compliance obligations, incidents, training, audits, and management review in one audit-ready platform.",
+    partnerSectionHeading: "Accredited certification partners",
+    partnerSectionBody:
+      "We work with vetted, accredited certification bodies and ISO 14001 consultants who guide organizations from initial assessment through certification. Leave your email and we will connect you with the right partner for your industry and location.",
+    ctaHeading: "Ready to get ISO 14001 certified?",
     ctaBody:
-      "See how 4ES Hub connects environmental aspects, compliance tracking, training, audits, incidents, and management review in one platform.",
-    clauses: iso14001Clauses,
+      "Talk to an accredited certification body today. We will match you with a partner who can assess your environmental readiness, guide implementation, and conduct your certification audit.",
   },
   "45001": {
     slug: "45001",
@@ -350,13 +362,24 @@ export const ISO_STANDARD_CONTENT: Record<IsoStandardSlug, IsoStandardContent> =
     systemName: "Occupational Health & Safety Management System",
     shortName: "OH&S MS",
     overviewIntro:
-      "4ES Hub supports ISO 45001:2018 across clauses 4 through 8—helping your organization establish OH&S context, demonstrate leadership and worker participation, plan hazard identification and risk assessment, provide safety competence and awareness, and control operational health and safety.",
+      "Achieve ISO 45001 certification with support from our accredited certification partners. From hazard assessment through Stage 1 and Stage 2 audits, we connect you with experts who guide your organization to a recognized health and safety certificate.",
     cityIntroSuffix:
-      "From hazard registers to incident investigation and emergency drills, 4ES Hub gives safety teams one place to manage OH&S evidence, worker participation records, and continual improvement.",
-    ctaHeading: "Ready to build an audit-ready OH&S management system?",
+      "Our certification partners work with organizations across North America to achieve ISO 45001 certification—handling hazard identification, implementation support, internal audits, and the official certification audit.",
+    certificationIntro:
+      "ISO 45001 is the international standard for occupational health and safety management. Certification demonstrates that your organization proactively manages workplace hazards, protects workers, and drives continual safety improvement. Our partner certification bodies guide you through every step.",
+    certificationSteps: iso45001Steps,
+    auditAreasHeading: "What certification auditors assess",
+    auditAreasIntro:
+      "During your certification audit, auditors evaluate how your OH&S management system addresses the core requirements of ISO 45001. Your certification partner prepares you for each of these areas:",
+    auditAreas: iso45001AuditAreas,
+    platformNote:
+      "Once certified, organizations use 4ES Hub to maintain their OH&S MS—managing hazards, safety training, incidents, audits, and management review in one audit-ready platform.",
+    partnerSectionHeading: "Accredited certification partners",
+    partnerSectionBody:
+      "We work with vetted, accredited certification bodies and ISO 45001 consultants who guide organizations from initial assessment through certification. Leave your email and we will connect you with the right partner for your industry and location.",
+    ctaHeading: "Ready to get ISO 45001 certified?",
     ctaBody:
-      "See how 4ES Hub connects hazard identification, safety training, audits, incidents, and management review in one platform.",
-    clauses: iso45001Clauses,
+      "Talk to an accredited certification body today. We will match you with a partner who can assess your safety readiness, guide implementation, and conduct your certification audit.",
   },
 };
 
@@ -368,7 +391,7 @@ export function buildCityPageTitle(
   standard: IsoStandardSlug,
   cityName: string,
 ): string {
-  return `ISO ${standard} in ${cityName} | 4ES Hub`;
+  return `ISO ${standard} Certification in ${cityName} | 4ES Hub`;
 }
 
 export function buildCityPageDescription(
@@ -376,11 +399,11 @@ export function buildCityPageDescription(
   cityName: string,
   systemName: string,
 ): string {
-  return `ISO ${standard} support in ${cityName}: see how 4ES Hub helps ${cityName} organizations implement and maintain their ${systemName} with connected modules for documents, training, audits, risk, and corrective actions.`;
+  return `Get ISO ${standard} certified in ${cityName}. Connect with accredited certification partners for gap analysis, implementation support, and certification audits for your ${systemName}.`;
 }
 
 export function buildCityH1(standard: IsoStandardSlug, cityName: string): string {
-  return `ISO ${standard} support in ${cityName}`;
+  return `ISO ${standard} certification in ${cityName}`;
 }
 
 export function buildCityHeroIntro(
@@ -388,5 +411,5 @@ export function buildCityHeroIntro(
   cityName: string,
   cityIntro: string,
 ): string {
-  return `${cityIntro} ${content.cityIntroSuffix} Here is how 4ES Hub modules map to ISO ${content.slug} clauses 4 through 8 for organizations in ${cityName}.`;
+  return `${cityIntro} ${content.cityIntroSuffix}`;
 }

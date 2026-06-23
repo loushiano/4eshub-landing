@@ -31,12 +31,13 @@
             Contact
           </a>
         </nav>
-        <NuxtLink
-          to="/#contact-section"
+        <button
+          type="button"
           class="hidden md:inline-flex btn-primary !py-2.5 !px-5 !text-sm"
+          @click="showModal = true"
         >
-          Book a free demo
-        </NuxtLink>
+          Talk to a certification body
+        </button>
       </div>
     </header>
 
@@ -62,13 +63,19 @@
             <h1
               class="text-4xl md:text-5xl font-semibold tracking-tight text-[#1d1d1f] leading-tight mb-6"
             >
-              ISO {{ standard }} support in 4ES Hub
+              ISO {{ standard }} certification
             </h1>
-            <p class="text-xl text-[#6e6e73] tracking-snug leading-relaxed">
-              {{ content.overviewIntro }} Here is how our platform modules map to
-              each clause—so you know exactly where compliance lives in the
-              software.
+            <p class="text-xl text-[#6e6e73] tracking-snug leading-relaxed mb-8">
+              {{ content.overviewIntro }}
             </p>
+            <button
+              type="button"
+              class="btn-primary"
+              @click="showModal = true"
+            >
+              Talk to a certification body
+              <i class="fa-solid fa-arrow-right ml-2"></i>
+            </button>
           </div>
         </div>
       </section>
@@ -76,46 +83,59 @@
       <section class="py-16">
         <div class="container mx-auto px-6">
           <div class="max-w-3xl mx-auto prose-content">
+            <p>{{ content.certificationIntro }}</p>
+
+            <h2>Your certification journey</h2>
             <p>
-              ISO {{ standard }} is structured around the Plan-Do-Check-Act cycle.
-              Clauses 4–8 are the foundation: they define your context, leadership
-              commitment, planning, resources, and operational controls. 4ES Hub
-              does not replace your {{ content.shortName }}—it gives you a connected
-              system to manage evidence, workflows, and continual improvement across
-              every clause.
+              Our partner certification bodies guide you through a structured
+              path from initial assessment to holding a valid ISO
+              {{ standard }} certificate.
             </p>
 
             <div
-              v-for="clause in content.clauses"
-              :key="clause.number"
-              class="clause-block"
+              v-for="step in content.certificationSteps"
+              :key="step.step"
+              class="step-block"
             >
-              <h2>Clause {{ clause.number }} — {{ clause.title }}</h2>
-              <p>{{ clause.summary }}</p>
-              <h3>How 4ES Hub supports this</h3>
-              <ul>
-                <li v-for="item in clause.support" :key="item">
-                  {{ item }}
-                </li>
-              </ul>
-              <div class="module-tags">
-                <span
-                  v-for="mod in clause.modules"
-                  :key="mod"
-                  class="module-tag"
-                >
-                  {{ mod }}
-                </span>
+              <div class="step-number">{{ step.step }}</div>
+              <div>
+                <h3>{{ step.title }}</h3>
+                <p>{{ step.description }}</p>
+                <ul>
+                  <li v-for="detail in step.details" :key="detail">
+                    {{ detail }}
+                  </li>
+                </ul>
               </div>
+            </div>
+
+            <h2>{{ content.auditAreasHeading }}</h2>
+            <p>{{ content.auditAreasIntro }}</p>
+
+            <div
+              v-for="area in content.auditAreas"
+              :key="area.number"
+              class="audit-area-block"
+            >
+              <h3>Clause {{ area.number }} — {{ area.title }}</h3>
+              <p>{{ area.summary }}</p>
+            </div>
+
+            <div class="platform-note">
+              <p>{{ content.platformNote }}</p>
             </div>
 
             <div class="cta-box">
               <h2>{{ content.ctaHeading }}</h2>
               <p>{{ content.ctaBody }}</p>
-              <NuxtLink to="/#contact-section" class="btn-primary">
-                Book a free demo
+              <button
+                type="button"
+                class="btn-primary"
+                @click="showModal = true"
+              >
+                Talk to a certification body
                 <i class="fa-solid fa-arrow-right ml-2"></i>
-              </NuxtLink>
+              </button>
             </div>
           </div>
         </div>
@@ -125,11 +145,12 @@
         <div class="container mx-auto px-6">
           <div class="max-w-4xl mx-auto">
             <h2 class="text-2xl font-semibold text-gray-900 mb-2">
-              ISO {{ standard }} by city
+              ISO {{ standard }} certification by city
             </h2>
             <p class="text-gray-600 mb-8">
-              Find ISO {{ standard }} support for organizations in major North
-              American cities across Canada and the United States.
+              Find ISO {{ standard }} certification support for organizations
+              in major North American cities across Canada and the United
+              States.
             </p>
             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
               <NuxtLink
@@ -151,6 +172,11 @@
         <p>© 2024 4ES Hub. All rights reserved.</p>
       </div>
     </footer>
+
+    <CertificationInquiryModal
+      v-model="showModal"
+      :standard="standard"
+    />
   </div>
 </template>
 
@@ -162,19 +188,20 @@ const props = defineProps<{
   standard: IsoStandardSlug;
 }>();
 
+const showModal = ref(false);
 const siteUrl = useRuntimeConfig().public.siteUrl.replace(/\/$/, "");
 const content = getStandardContent(props.standard);
 const overviewPath = `/iso-${props.standard}`;
 const pageUrl = `${siteUrl}${overviewPath}`;
 const cities = ISO_CITIES;
 
-const seoTitle = `ISO ${props.standard} Clause Support | 4ES Hub`;
-const seoDescription = `See how 4ES Hub supports ISO ${props.standard} clauses 4 through 8 with connected modules for documents, training, audits, risk, and corrective actions.`;
+const seoTitle = `ISO ${props.standard} Certification | 4ES Hub`;
+const seoDescription = `Get ISO ${props.standard} certified with accredited certification partners. Gap analysis, implementation support, internal audits, and certification audits for your ${content.systemName}.`;
 
 useSeoMeta({
   title: seoTitle,
   description: seoDescription,
-  ogTitle: `ISO ${props.standard} Support in 4ES Hub`,
+  ogTitle: `ISO ${props.standard} Certification`,
   ogDescription: seoDescription,
   ogUrl: pageUrl,
   ogImage: `${siteUrl}/4es-logo.png`,
@@ -206,7 +233,7 @@ useHead({
   color: #1f2937;
   font-size: 1.25rem;
   font-weight: 600;
-  margin-top: 1.5rem;
+  margin-top: 0;
   margin-bottom: 0.75rem;
 }
 
@@ -215,7 +242,7 @@ useHead({
 }
 
 .prose-content ul {
-  margin-bottom: 1.5rem;
+  margin-bottom: 0;
   padding-left: 1.5rem;
   list-style-type: disc;
 }
@@ -224,27 +251,48 @@ useHead({
   margin-bottom: 0.5rem;
 }
 
-.clause-block {
-  margin-bottom: 3rem;
+.step-block {
+  display: flex;
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
   padding-bottom: 2rem;
   border-bottom: 1px solid #e5e7eb;
 }
 
-.module-tags {
+.step-number {
+  flex-shrink: 0;
+  width: 2.5rem;
+  height: 2.5rem;
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 1rem;
+  align-items: center;
+  justify-content: center;
+  background-color: #253fa2;
+  color: white;
+  border-radius: 9999px;
+  font-weight: 700;
+  font-size: 1.125rem;
 }
 
-.module-tag {
-  display: inline-block;
-  padding: 0.25rem 0.75rem;
-  background-color: #eef1fb;
-  color: #253fa2;
-  border-radius: 9999px;
-  font-size: 0.875rem;
-  font-weight: 500;
+.audit-area-block {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.audit-area-block h3 {
+  margin-top: 0;
+}
+
+.platform-note {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+}
+
+.platform-note p {
+  margin-bottom: 0;
 }
 
 .cta-box {
