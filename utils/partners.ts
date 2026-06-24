@@ -87,7 +87,7 @@ export const partners: Partner[] = [
     imageAlt:
       "Andry Jean Marc Rakotomanjaka — ISO consultant and quality & compliance specialist",
     description:
-      "I am a Management Systems Implementation Consultant supporting organizations in implementing and improving management systems, compliance and sustainability initiatives. My experience includes ISO 9001, ISO 14001, ISO 45001 and other management system frameworks, with a focus on process improvement, document control, governance, risk management, audits and training. Working in both English and French, I could support 4ES Hub as a French-speaking implementation partner, helping organizations maximize the value of the platform while aligning their management systems and operational practices.",
+      "Management Systems Implementation Consultant with experience in ISO 9001, ISO 14001, ISO 45001, and related frameworks, focused on process improvement, document control, governance, risk, audits, and training. Bilingual (English/French), available as a French-speaking 4ES Hub implementation partner to help organizations get full value from the platform and align management systems with day-to-day operations.",
     standards: ["ISO 9001", "ISO 14001", "ISO 45001"],
     languages: ["English", "French"],
     locations: ["Canada", "Madagascar"],
