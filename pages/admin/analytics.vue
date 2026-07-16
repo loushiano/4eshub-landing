@@ -5,8 +5,10 @@
         <div>
           <h1 class="text-3xl font-bold text-gray-900">Site Analytics</h1>
           <p class="mt-1 text-sm text-gray-500">
-            Visits are stored in
-            <code class="rounded bg-gray-200 px-1.5 py-0.5 break-all">{{ dataLocation }}</code>
+            Stored in
+            <code class="rounded bg-gray-200 px-1.5 py-0.5 break-all">{{
+              activeDataLocation
+            }}</code>
           </p>
         </div>
         <NuxtLink
@@ -48,9 +50,29 @@
 
       <div v-else class="space-y-6">
         <div class="flex flex-wrap items-center justify-between gap-3">
-          <p class="text-sm text-gray-500">
-            Showing {{ data?.entries.length || 0 }} recent visits
-          </p>
+          <div
+            class="inline-flex rounded-lg border border-gray-200 bg-white p-1 shadow-sm"
+            role="tablist"
+          >
+            <button
+              type="button"
+              role="tab"
+              :aria-selected="activeTab === 'visits'"
+              :class="tabClass('visits')"
+              @click="activeTab = 'visits'"
+            >
+              Visits
+            </button>
+            <button
+              type="button"
+              role="tab"
+              :aria-selected="activeTab === 'checklist'"
+              :class="tabClass('checklist')"
+              @click="activeTab = 'checklist'"
+            >
+              Checklist fillings
+            </button>
+          </div>
           <div class="flex gap-2">
             <button
               class="rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-medium hover:bg-gray-50"
@@ -67,118 +89,119 @@
           </div>
         </div>
 
-        <div class="grid gap-4 md:grid-cols-3">
-          <div class="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
-            <p class="text-sm text-gray-500">Total visits</p>
-            <p class="mt-1 text-3xl font-bold">{{ data?.total || 0 }}</p>
+        <div v-if="activeTab === 'visits'" class="space-y-6">
+          <p class="text-sm text-gray-500">
+            Showing {{ data?.entries.length || 0 }} recent visits
+          </p>
+
+          <div class="grid gap-4 md:grid-cols-3">
+            <div class="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+              <p class="text-sm text-gray-500">Total visits</p>
+              <p class="mt-1 text-3xl font-bold">{{ data?.total || 0 }}</p>
+            </div>
+            <div class="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+              <p class="text-sm text-gray-500">Unique visitors</p>
+              <p class="mt-1 text-3xl font-bold">{{ data?.uniqueVisitors || 0 }}</p>
+            </div>
+            <div class="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+              <p class="text-sm text-gray-500">Top page</p>
+              <p class="mt-1 truncate text-lg font-semibold">
+                {{ data?.topPages[0]?.path || '—' }}
+              </p>
+            </div>
           </div>
-          <div class="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
-            <p class="text-sm text-gray-500">Unique visitors</p>
-            <p class="mt-1 text-3xl font-bold">{{ data?.uniqueVisitors || 0 }}</p>
+
+          <div class="grid gap-6 lg:grid-cols-3">
+            <div class="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+              <h2 class="mb-4 text-lg font-semibold">Top pages</h2>
+              <ul class="space-y-2">
+                <li
+                  v-for="page in data?.topPages || []"
+                  :key="page.path"
+                  class="flex items-center justify-between text-sm"
+                >
+                  <span class="truncate pr-4">{{ page.path }}</span>
+                  <span class="font-medium text-gray-700">{{ page.count }}</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+              <h2 class="mb-4 text-lg font-semibold">Top referrers</h2>
+              <ul class="space-y-2">
+                <li
+                  v-for="item in data?.topReferrers || []"
+                  :key="item.referrer"
+                  class="flex items-center justify-between gap-4 text-sm"
+                >
+                  <span class="truncate">{{ item.referrer }}</span>
+                  <span class="font-medium text-gray-700">{{ item.count }}</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+              <h2 class="mb-4 text-lg font-semibold">Top countries</h2>
+              <ul class="space-y-2">
+                <li
+                  v-for="item in data?.topCountries || []"
+                  :key="item.country"
+                  class="flex items-center justify-between gap-4 text-sm"
+                >
+                  <span class="truncate">{{ item.country }}</span>
+                  <span class="font-medium text-gray-700">{{ item.count }}</span>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div class="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
-            <p class="text-sm text-gray-500">Top page</p>
-            <p class="mt-1 truncate text-lg font-semibold">
-              {{ data?.topPages[0]?.path || '—' }}
-            </p>
+
+          <div class="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
+            <div class="overflow-x-auto">
+              <table class="min-w-full divide-y divide-gray-200 text-sm">
+                <thead class="bg-gray-50">
+                  <tr>
+                    <th class="px-4 py-3 text-left font-medium text-gray-500">Time</th>
+                    <th class="px-4 py-3 text-left font-medium text-gray-500">Page</th>
+                    <th class="px-4 py-3 text-left font-medium text-gray-500">Location</th>
+                    <th class="px-4 py-3 text-left font-medium text-gray-500">Referrer</th>
+                    <th class="px-4 py-3 text-left font-medium text-gray-500">Source</th>
+                    <th class="px-4 py-3 text-left font-medium text-gray-500">Visitor</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-100">
+                  <tr v-for="entry in data?.entries || []" :key="entry.id">
+                    <td class="whitespace-nowrap px-4 py-3 text-gray-600">
+                      {{ formatTime(entry.timestamp) }}
+                    </td>
+                    <td class="max-w-xs truncate px-4 py-3 font-medium">
+                      {{ entry.path }}
+                    </td>
+                    <td class="max-w-xs truncate px-4 py-3 text-gray-600">
+                      {{ formatLocation(entry) }}
+                    </td>
+                    <td class="max-w-xs truncate px-4 py-3 text-gray-600">
+                      {{ entry.referrer || '(direct)' }}
+                    </td>
+                    <td class="max-w-xs truncate px-4 py-3 text-gray-600">
+                      {{ formatSource(entry) }}
+                    </td>
+                    <td class="whitespace-nowrap px-4 py-3 font-mono text-xs text-gray-500">
+                      {{ entry.visitorId.slice(0, 8) }}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
 
-        <div class="grid gap-6 lg:grid-cols-3">
-          <div class="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
-            <h2 class="mb-4 text-lg font-semibold">Top pages</h2>
-            <ul class="space-y-2">
-              <li
-                v-for="page in data?.topPages || []"
-                :key="page.path"
-                class="flex items-center justify-between text-sm"
-              >
-                <span class="truncate pr-4">{{ page.path }}</span>
-                <span class="font-medium text-gray-700">{{ page.count }}</span>
-              </li>
-            </ul>
-          </div>
+        <div v-else class="space-y-6">
+          <p class="text-sm text-gray-500">
+            Showing {{ data?.checklist?.entries?.length || 0 }} recent checklist
+            steps
+          </p>
 
-          <div class="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
-            <h2 class="mb-4 text-lg font-semibold">Top referrers</h2>
-            <ul class="space-y-2">
-              <li
-                v-for="item in data?.topReferrers || []"
-                :key="item.referrer"
-                class="flex items-center justify-between gap-4 text-sm"
-              >
-                <span class="truncate">{{ item.referrer }}</span>
-                <span class="font-medium text-gray-700">{{ item.count }}</span>
-              </li>
-            </ul>
-          </div>
-
-          <div class="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
-            <h2 class="mb-4 text-lg font-semibold">Top countries</h2>
-            <ul class="space-y-2">
-              <li
-                v-for="item in data?.topCountries || []"
-                :key="item.country"
-                class="flex items-center justify-between gap-4 text-sm"
-              >
-                <span class="truncate">{{ item.country }}</span>
-                <span class="font-medium text-gray-700">{{ item.count }}</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
-          <div class="overflow-x-auto">
-            <table class="min-w-full divide-y divide-gray-200 text-sm">
-              <thead class="bg-gray-50">
-                <tr>
-                  <th class="px-4 py-3 text-left font-medium text-gray-500">Time</th>
-                  <th class="px-4 py-3 text-left font-medium text-gray-500">Page</th>
-                  <th class="px-4 py-3 text-left font-medium text-gray-500">Location</th>
-                  <th class="px-4 py-3 text-left font-medium text-gray-500">Referrer</th>
-                  <th class="px-4 py-3 text-left font-medium text-gray-500">Source</th>
-                  <th class="px-4 py-3 text-left font-medium text-gray-500">Visitor</th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-gray-100">
-                <tr v-for="entry in data?.entries || []" :key="entry.id">
-                  <td class="whitespace-nowrap px-4 py-3 text-gray-600">
-                    {{ formatTime(entry.timestamp) }}
-                  </td>
-                  <td class="max-w-xs truncate px-4 py-3 font-medium">
-                    {{ entry.path }}
-                  </td>
-                  <td class="max-w-xs truncate px-4 py-3 text-gray-600">
-                    {{ formatLocation(entry) }}
-                  </td>
-                  <td class="max-w-xs truncate px-4 py-3 text-gray-600">
-                    {{ entry.referrer || '(direct)' }}
-                  </td>
-                  <td class="max-w-xs truncate px-4 py-3 text-gray-600">
-                    {{ formatSource(entry) }}
-                  </td>
-                  <td class="whitespace-nowrap px-4 py-3 font-mono text-xs text-gray-500">
-                    {{ entry.visitorId.slice(0, 8) }}
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <div class="border-t border-gray-200 pt-8">
-          <div class="mb-4">
-            <h2 class="text-2xl font-bold text-gray-900">Checklist fillings</h2>
-            <p class="mt-1 text-sm text-gray-500">
-              Stored in
-              <code class="rounded bg-gray-200 px-1.5 py-0.5 break-all">{{
-                data?.checklist?.dataFile || 'S3 checklist file'
-              }}</code>
-            </p>
-          </div>
-
-          <div class="mb-6 grid gap-4 md:grid-cols-4">
+          <div class="grid gap-4 md:grid-cols-4">
             <div class="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
               <p class="text-sm text-gray-500">Sessions started</p>
               <p class="mt-1 text-3xl font-bold">
@@ -205,7 +228,7 @@
             </div>
           </div>
 
-          <div class="mb-6 grid gap-6 lg:grid-cols-3">
+          <div class="grid gap-6 lg:grid-cols-3">
             <div class="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
               <h3 class="mb-4 text-lg font-semibold">Top steps</h3>
               <ul class="space-y-2">
@@ -329,9 +352,16 @@ const storedPassword = ref('')
 const loading = ref(false)
 const error = ref('')
 const data = ref(null)
-const dataLocation = ref('S3 analytics file')
+const activeTab = ref('visits')
 
 const isAuthenticated = computed(() => Boolean(storedPassword.value))
+
+const activeDataLocation = computed(() => {
+  if (activeTab.value === 'checklist') {
+    return data.value?.checklist?.dataFile || 'S3 checklist file'
+  }
+  return data.value?.dataFile || 'S3 analytics file'
+})
 
 useHead({
   title: 'Analytics',
@@ -345,6 +375,16 @@ onMounted(() => {
     loadData()
   }
 })
+
+function tabClass(tab) {
+  const isActive = activeTab.value === tab
+  return [
+    'rounded-md px-4 py-2 text-sm font-medium transition-colors',
+    isActive
+      ? 'bg-primary-600 text-white'
+      : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900',
+  ]
+}
 
 function formatTime(timestamp) {
   return new Date(timestamp).toLocaleString()
@@ -387,7 +427,6 @@ async function loadData() {
         'X-Analytics-Password': storedPassword.value,
       },
     })
-    dataLocation.value = data.value?.dataFile || dataLocation.value
   } catch (err) {
     error.value = err?.data?.message || 'Failed to load analytics'
     storedPassword.value = ''
@@ -423,6 +462,7 @@ function logout() {
   password.value = ''
   data.value = null
   error.value = ''
+  activeTab.value = 'visits'
   sessionStorage.removeItem(PASSWORD_STORAGE_KEY)
 }
 </script>
