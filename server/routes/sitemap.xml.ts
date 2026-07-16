@@ -21,6 +21,26 @@ const routes = [
     priority: "0.9",
     changefreq: "monthly",
   },
+  {
+    path: "/are-you-ready-for-iso-certification",
+    priority: "0.9",
+    changefreq: "monthly",
+  },
+  {
+    path: "/are-you-ready-for-iso-9001-certification",
+    priority: "0.9",
+    changefreq: "monthly",
+  },
+  {
+    path: "/are-you-ready-for-iso-14001-certification",
+    priority: "0.9",
+    changefreq: "monthly",
+  },
+  {
+    path: "/are-you-ready-for-iso-45001-certification",
+    priority: "0.9",
+    changefreq: "monthly",
+  },
   ...getAllIsoCityPagePaths().map((path) => ({
     path,
     priority: "0.7",

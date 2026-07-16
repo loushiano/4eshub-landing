@@ -68,14 +68,22 @@
             <p class="text-xl text-[#6e6e73] tracking-snug leading-relaxed mb-8">
               {{ content.overviewIntro }}
             </p>
-            <button
-              type="button"
-              class="btn-primary"
-              @click="showModal = true"
-            >
-              Talk to a certification body
-              <i class="fa-solid fa-arrow-right ml-2"></i>
-            </button>
+            <div class="flex flex-wrap gap-4">
+              <NuxtLink
+                :to="readinessPath"
+                class="btn-primary"
+              >
+                Are you ready for ISO {{ standard }}?
+                <i class="fa-solid fa-arrow-right ml-2"></i>
+              </NuxtLink>
+              <button
+                type="button"
+                class="btn-secondary"
+                @click="showModal = true"
+              >
+                Talk to a certification body
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -192,6 +200,7 @@ const showModal = ref(false);
 const siteUrl = useRuntimeConfig().public.siteUrl.replace(/\/$/, "");
 const content = getStandardContent(props.standard);
 const overviewPath = `/iso-${props.standard}`;
+const readinessPath = `/are-you-ready-for-iso-${props.standard}-certification`;
 const pageUrl = `${siteUrl}${overviewPath}`;
 const cities = ISO_CITIES;
 

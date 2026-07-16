@@ -99,36 +99,20 @@
           </div>
         </nav>
         <div class="flex items-center gap-4">
-          <div class="relative group hidden md:block">
-            <a
-              class="text-gray-700 hover:text-primary-600 cursor-pointer text-sm font-normal tracking-snug flex items-center gap-1 py-2"
-            >
-              Login
-              <i class="fa-solid fa-chevron-down text-xs"></i>
-            </a>
-            <div
-              class="absolute top-full right-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
-            >
-              <div
-                class="bg-white rounded-lg shadow-xl border border-gray-100 py-2 min-w-[140px]"
-              >
-                <a
-                  href="https://app.4eshub.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600"
-                  >North America</a
-                >
-                <a
-                  href="https://4es.smartclick.solutions"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600"
-                  >Middle East</a
-                >
-              </div>
-            </div>
-          </div>
+          <NuxtLink
+            to="/are-you-ready-for-iso-certification"
+            class="hidden md:inline-flex btn-primary !py-2.5 !px-5 !text-sm"
+          >
+            Ready for certification?
+          </NuxtLink>
+          <a
+            href="https://app.4eshub.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hidden md:inline-flex text-gray-700 hover:text-primary-600 text-sm font-normal tracking-snug py-2"
+          >
+            Login
+          </a>
   
           <!-- Mobile menu button -->
           <ClientOnly>
@@ -185,19 +169,19 @@
             class="text-gray-700 hover:text-primary-600 py-2"
             >Contact</a
           >
+          <NuxtLink
+            to="/are-you-ready-for-iso-certification"
+            class="text-primary-600 font-medium py-2"
+            @click="mobileMenuOpen = false"
+          >
+            Ready for certification?
+          </NuxtLink>
           <a
             href="https://app.4eshub.com"
             target="_blank"
             rel="noopener noreferrer"
             class="text-gray-700 hover:text-primary-600 py-2"
-            >Login — North America</a
-          >
-          <a
-            href="https://4es.smartclick.solutions"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-gray-700 hover:text-primary-600 py-2"
-            >Login — Middle East</a
+            >Login</a
           >
     
         </nav>
@@ -229,12 +213,18 @@
                 certificate is issued.
               </p>
               <div class="flex flex-wrap gap-4">
-                <a
-                  href="#contact-section"
+                <NuxtLink
+                  to="/are-you-ready-for-iso-certification"
                   class="btn-primary"
                 >
-                  Book a free demo
+                  Ready for certification?
                   <i class="fa-solid fa-arrow-right ml-2"></i>
+                </NuxtLink>
+                <a
+                  href="#contact-section"
+                  class="btn-secondary"
+                >
+                  Book a free demo
                 </a>
                 <NuxtLink
                   to="/partners"
@@ -268,110 +258,6 @@
         </div>
       </section>
 
-      <!-- Standards Section -->
-      <section id="standards-section" class="py-20 md:py-28 bg-white">
-        <div class="container mx-auto px-6">
-          <div class="text-center max-w-3xl mx-auto mb-16">
-            <span
-              class="section-label mb-4"
-            >
-              Multi-Standard Support
-            </span>
-            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-[#1d1d1f] mb-4">
-              30+ standards. One platform.
-            </h2>
-            <p class="text-lg text-[#6e6e73] tracking-snug">
-              Multiple standards don't have to mean 2x the chaos. Manage all
-              your certifications from a single connected dashboard.
-            </p>
-          </div>
-          <div
-            class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-7xl mx-auto"
-          >
-            <NuxtLink
-              to="/iso-9001"
-              class="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:border-primary-300 hover:shadow-lg transition-all duration-300 text-center block"
-            >
-              <div
-                class="w-16 h-16 flex items-center justify-center mx-auto mb-3"
-              >
-                <img src="/iso-9001.svg" alt="ISO 9001" class="w-full h-full" />
-              </div>
-              <h4 class="font-semibold text-gray-900">ISO 9001</h4>
-            </NuxtLink>
-            <NuxtLink
-              to="/iso-45001"
-              class="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:border-primary-300 hover:shadow-lg transition-all duration-300 text-center block"
-            >
-              <div
-                class="w-16 h-16 flex items-center justify-center mx-auto mb-3"
-              >
-                <img
-                  src="/iso-45001.svg"
-                  alt="ISO 4501"
-                  class="w-full h-full"
-                />
-              </div>
-              <h4 class="font-semibold text-gray-900">ISO 45001:2018</h4>
-            </NuxtLink>
-            <NuxtLink
-              to="/iso-14001"
-              class="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:border-primary-300 hover:shadow-lg transition-all duration-300 text-center block"
-            >
-              <div
-                class="w-16 h-16 flex items-center justify-center mx-auto mb-3"
-              >
-                <img
-                  src="/iso14001.svg"
-                  alt="ISO 14001"
-                  class="w-full h-full"
-                />
-              </div>
-              <h4 class="font-semibold text-gray-900">ISO 14001:2015</h4>
-            </NuxtLink>
-            <div
-              class="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:border-primary-300 hover:shadow-lg transition-all duration-300 text-center"
-            >
-              <div
-                class="w-16 h-16 flex items-center justify-center mx-auto mb-3"
-              >
-                <img
-                  src="/iso13485.svg"
-                  alt="ISO 13485"
-                  class="w-full h-full"
-                />
-              </div>
-              <h4 class="font-semibold text-gray-900">ISO 13485</h4>
-            </div>
-            <div
-              class="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:border-primary-300 hover:shadow-lg transition-all duration-300 text-center"
-            >
-              <div
-                class="w-16 h-16 flex items-center justify-center mx-auto mb-3"
-              >
-                <img src="/AS9100D.svg" alt="AS9100D" class="w-full h-full" />
-              </div>
-              <h4 class="font-semibold text-gray-900">AS9100D</h4>
-            </div>
-            <div
-              class="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:border-primary-300 hover:shadow-lg transition-all duration-300 text-center"
-            >
-              <div
-                class="w-16 h-16 flex items-center justify-center mx-auto mb-3"
-              >
-                <img
-                  src="/iso-17025.svg"
-                  alt="ISO 17025"
-                  class="w-full h-full"
-                />
-              </div>
-              <h4 class="font-semibold text-gray-900">ISO 17025</h4>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Our Modules Section -->
       <section id="modules-section" class="py-20 md:py-28 bg-gray-50">
         <div class="container mx-auto px-6">
           <div class="text-center max-w-3xl mx-auto mb-16">
@@ -389,22 +275,23 @@
             </p>
           </div>
 
-          <div
-            class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 max-w-6xl mx-auto items-start"
-          >
-            <div class="space-y-3">
+          <div class="max-w-3xl mx-auto space-y-3">
+            <div
+              v-for="module in platformModules"
+              :key="module.id"
+              class="rounded-xl border bg-white transition-all duration-200 overflow-hidden"
+              :class="
+                activeModuleId === module.id
+                  ? 'border-primary-600 shadow-md shadow-primary-600/10'
+                  : 'border-gray-200 hover:border-primary-300 hover:shadow-sm'
+              "
+            >
               <button
-                v-for="module in platformModules"
-                :key="module.id"
                 type="button"
-                class="w-full text-left p-5 rounded-xl border transition-all duration-200 flex items-center gap-4"
-                :class="
-                  activeModuleId === module.id
-                    ? 'bg-white border-primary-600 shadow-md shadow-primary-600/10'
-                    : 'bg-white border-gray-200 hover:border-primary-300 hover:shadow-sm'
-                "
-                :aria-pressed="activeModuleId === module.id"
-                @click="activeModuleId = module.id"
+                class="w-full text-left p-5 flex items-center gap-4"
+                :aria-expanded="activeModuleId === module.id"
+                :aria-controls="`module-panel-${module.id}`"
+                @click="toggleModule(module.id)"
               >
                 <div
                   class="w-11 h-11 rounded-lg flex items-center justify-center flex-shrink-0"
@@ -415,7 +302,7 @@
                   ></i>
                 </div>
                 <span
-                  class="font-semibold"
+                  class="font-semibold flex-1"
                   :class="
                     activeModuleId === module.id
                       ? 'text-gray-900'
@@ -424,47 +311,49 @@
                 >
                   {{ module.title }}
                 </span>
-              </button>
-            </div>
-
-            <div
-              class="bg-white rounded-2xl border border-gray-200 p-8 md:p-10 shadow-sm lg:sticky lg:top-28"
-            >
-              <div
-                class="w-14 h-14 rounded-xl flex items-center justify-center mb-6"
-                :class="activeModule.iconBg"
-              >
                 <i
-                  :class="[
-                    'fa-solid',
-                    activeModule.icon,
-                    activeModule.iconColor,
-                    'text-2xl',
-                  ]"
+                  class="fa-solid fa-chevron-down text-gray-400 text-sm transition-transform duration-200"
+                  :class="{ 'rotate-180 text-primary-600': activeModuleId === module.id }"
                 ></i>
-              </div>
-              <h3 class="text-2xl font-bold text-gray-900 mb-4">
-                {{ activeModule.title }}
-              </h3>
-              <p class="text-gray-600 leading-relaxed mb-6">
-                {{ activeModule.description }}
-              </p>
-              <ul class="space-y-3">
-                <li
-                  v-for="point in activeModule.points"
-                  :key="point"
-                  class="flex items-start gap-3"
-                >
-                  <div
-                    class="w-5 h-5 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
-                  >
-                    <i class="fa-solid fa-check text-primary-600 text-[10px]"></i>
+              </button>
+
+              <div
+                :id="`module-panel-${module.id}`"
+                class="grid transition-[grid-template-rows] duration-300 ease-out"
+                :class="
+                  activeModuleId === module.id
+                    ? 'grid-rows-[1fr]'
+                    : 'grid-rows-[0fr]'
+                "
+              >
+                <div class="overflow-hidden">
+                  <div class="px-5 pb-6">
+                    <div class="border-t border-gray-100 pt-5">
+                      <p class="text-gray-600 leading-relaxed mb-5">
+                        {{ module.description }}
+                      </p>
+                      <ul class="space-y-3">
+                        <li
+                          v-for="point in module.points"
+                          :key="point"
+                          class="flex items-start gap-3"
+                        >
+                          <div
+                            class="w-5 h-5 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
+                          >
+                            <i
+                              class="fa-solid fa-check text-primary-600 text-[10px]"
+                            ></i>
+                          </div>
+                          <span class="text-gray-700 text-sm leading-relaxed">{{
+                            point
+                          }}</span>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
-                  <span class="text-gray-700 text-sm leading-relaxed">{{
-                    point
-                  }}</span>
-                </li>
-              </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1347,6 +1236,10 @@ const recentBlogPosts = getRecentBlogPosts(3);
 const mobileMenuOpen = ref(false);
 const activeModuleId = ref("documents");
 
+const toggleModule = (id) => {
+  activeModuleId.value = activeModuleId.value === id ? null : id;
+};
+
 const platformModules = [
   {
     id: "documents",
@@ -1379,6 +1272,21 @@ const platformModules = [
     ],
   },
   {
+    id: "controls",
+    title: "Controls",
+    icon: "fa-shield-halved",
+    iconBg: "bg-emerald-100",
+    iconColor: "text-emerald-600",
+    description:
+      "Define and monitor operational controls that keep risks and requirements under control. Assign owners, set monitoring frequency, and track status across your organization.",
+    points: [
+      "Link controls to risks, clauses, and responsible teams",
+      "Scheduled monitoring with clear ownership and due cadence",
+      "Track control status, evidence, and follow-up actions",
+      "Visibility by site or department so nothing falls through the cracks",
+    ],
+  },
+  {
     id: "audits",
     title: "Audits",
     icon: "fa-clipboard-check",
@@ -1391,6 +1299,21 @@ const platformModules = [
       "Checklists linked to standard requirements and prior findings",
       "Finding capture with severity, evidence, and follow-up tasks",
       "Audit-ready history for surveillance and recertification visits",
+    ],
+  },
+  {
+    id: "checklists",
+    title: "Checklists",
+    icon: "fa-list-check",
+    iconBg: "bg-sky-100",
+    iconColor: "text-sky-600",
+    description:
+      "Build reusable checklists for audits and inspections. Structure questions by section, version them as requirements change, and reuse the same templates across sites.",
+    points: [
+      "Reusable checklist templates with sections and questions",
+      "Versioned definitions so auditors always work from the latest set",
+      "Apply checklists across audit programs and organization units",
+      "Capture consistent responses that feed findings and evidence",
     ],
   },
   {
@@ -1454,12 +1377,6 @@ const platformModules = [
     ],
   },
 ];
-
-const activeModule = computed(
-  () =>
-    platformModules.find((module) => module.id === activeModuleId.value) ||
-    platformModules[0],
-);
 
 const form = ref({
   name: "",
