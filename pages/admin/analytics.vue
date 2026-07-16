@@ -166,6 +166,156 @@
             </table>
           </div>
         </div>
+
+        <div class="border-t border-gray-200 pt-8">
+          <div class="mb-4">
+            <h2 class="text-2xl font-bold text-gray-900">Checklist fillings</h2>
+            <p class="mt-1 text-sm text-gray-500">
+              Stored in
+              <code class="rounded bg-gray-200 px-1.5 py-0.5 break-all">{{
+                data?.checklist?.dataFile || 'S3 checklist file'
+              }}</code>
+            </p>
+          </div>
+
+          <div class="mb-6 grid gap-4 md:grid-cols-4">
+            <div class="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+              <p class="text-sm text-gray-500">Sessions started</p>
+              <p class="mt-1 text-3xl font-bold">
+                {{ data?.checklist?.sessionsStarted || 0 }}
+              </p>
+            </div>
+            <div class="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+              <p class="text-sm text-gray-500">Sessions completed</p>
+              <p class="mt-1 text-3xl font-bold">
+                {{ data?.checklist?.sessionsCompleted || 0 }}
+              </p>
+            </div>
+            <div class="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+              <p class="text-sm text-gray-500">Step events</p>
+              <p class="mt-1 text-3xl font-bold">
+                {{ data?.checklist?.totalEvents || 0 }}
+              </p>
+            </div>
+            <div class="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+              <p class="text-sm text-gray-500">Unique visitors</p>
+              <p class="mt-1 text-3xl font-bold">
+                {{ data?.checklist?.uniqueVisitors || 0 }}
+              </p>
+            </div>
+          </div>
+
+          <div class="mb-6 grid gap-6 lg:grid-cols-3">
+            <div class="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+              <h3 class="mb-4 text-lg font-semibold">Top steps</h3>
+              <ul class="space-y-2">
+                <li
+                  v-for="item in data?.checklist?.topSteps || []"
+                  :key="item.step"
+                  class="flex items-center justify-between text-sm"
+                >
+                  <span class="truncate pr-4">{{ item.step }}</span>
+                  <span class="font-medium text-gray-700">{{ item.count }}</span>
+                </li>
+              </ul>
+            </div>
+            <div class="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+              <h3 class="mb-4 text-lg font-semibold">Standards</h3>
+              <ul class="space-y-2">
+                <li
+                  v-for="item in data?.checklist?.topStandards || []"
+                  :key="item.standard"
+                  class="flex items-center justify-between text-sm"
+                >
+                  <span class="truncate pr-4">ISO {{ item.standard }}</span>
+                  <span class="font-medium text-gray-700">{{ item.count }}</span>
+                </li>
+                <li
+                  v-if="!(data?.checklist?.topStandards || []).length"
+                  class="text-sm text-gray-400"
+                >
+                  No data yet
+                </li>
+              </ul>
+            </div>
+            <div class="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+              <h3 class="mb-4 text-lg font-semibold">Intents</h3>
+              <ul class="space-y-2">
+                <li
+                  v-for="item in data?.checklist?.topIntents || []"
+                  :key="item.intent"
+                  class="flex items-center justify-between text-sm"
+                >
+                  <span class="truncate pr-4">{{ formatIntent(item.intent) }}</span>
+                  <span class="font-medium text-gray-700">{{ item.count }}</span>
+                </li>
+                <li
+                  v-if="!(data?.checklist?.topIntents || []).length"
+                  class="text-sm text-gray-400"
+                >
+                  No data yet
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
+            <div class="border-b border-gray-100 px-4 py-3">
+              <h3 class="font-semibold">Recent checklist steps</h3>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="min-w-full divide-y divide-gray-200 text-sm">
+                <thead class="bg-gray-50">
+                  <tr>
+                    <th class="px-4 py-3 text-left font-medium text-gray-500">Time</th>
+                    <th class="px-4 py-3 text-left font-medium text-gray-500">Step</th>
+                    <th class="px-4 py-3 text-left font-medium text-gray-500">Answer</th>
+                    <th class="px-4 py-3 text-left font-medium text-gray-500">Standard</th>
+                    <th class="px-4 py-3 text-left font-medium text-gray-500">Page</th>
+                    <th class="px-4 py-3 text-left font-medium text-gray-500">Session</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-100">
+                  <tr
+                    v-for="entry in data?.checklist?.entries || []"
+                    :key="entry.id"
+                  >
+                    <td class="whitespace-nowrap px-4 py-3 text-gray-600">
+                      {{ formatTime(entry.timestamp) }}
+                    </td>
+                    <td class="px-4 py-3 font-medium">
+                      <span>{{ entry.step }}</span>
+                      <span
+                        v-if="entry.clauseId"
+                        class="ml-1 text-xs text-gray-500"
+                      >
+                        ({{ entry.clauseId }})
+                      </span>
+                      <span class="ml-1 text-xs text-gray-400">{{ entry.action }}</span>
+                    </td>
+                    <td class="max-w-xs truncate px-4 py-3 text-gray-600">
+                      {{ entry.answer || '—' }}
+                    </td>
+                    <td class="whitespace-nowrap px-4 py-3 text-gray-600">
+                      {{ entry.standard ? `ISO ${entry.standard}` : '—' }}
+                    </td>
+                    <td class="max-w-xs truncate px-4 py-3 text-gray-600">
+                      {{ entry.path }}
+                    </td>
+                    <td class="whitespace-nowrap px-4 py-3 font-mono text-xs text-gray-500">
+                      {{ entry.sessionId.slice(0, 8) }}
+                    </td>
+                  </tr>
+                  <tr v-if="!(data?.checklist?.entries || []).length">
+                    <td colspan="6" class="px-4 py-8 text-center text-gray-400">
+                      No checklist fillings yet
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -212,6 +362,15 @@ function formatSource(entry) {
 function formatLocation(entry) {
   const parts = [entry.city, entry.region, entry.country].filter(Boolean)
   return parts.join(', ') || 'Unknown'
+}
+
+function formatIntent(intent) {
+  const map = {
+    certification_body: 'Certification body',
+    implementation_help: 'Implementation help',
+    management_help: 'Management help',
+  }
+  return map[intent] || intent
 }
 
 async function loadData() {

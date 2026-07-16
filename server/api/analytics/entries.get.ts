@@ -1,7 +1,77 @@
 import { getQuery } from 'h3'
-import { getAnalyticsDataLocation, readVisits } from '../../utils/analyticsStore'
+import {
+  getAnalyticsDataLocation,
+  getChecklistDataLocation,
+  readChecklistFillings,
+  readVisits,
+  type ChecklistFillingEntry,
+} from '../../utils/analyticsStore'
 import { isExcludedAnalyticsPath } from '../../utils/analyticsFilters'
 import { verifyAnalyticsPassword } from '../../utils/analyticsAuth'
+
+function buildChecklistSummary(entries: ChecklistFillingEntry[]) {
+  const sessions = new Set(entries.map((entry) => entry.sessionId))
+  const completedSessions = new Set(
+    entries
+      .filter(
+        (entry) =>
+          entry.step === 'thank_you' ||
+          (entry.step === 'email' && entry.action === 'submit'),
+      )
+      .map((entry) => entry.sessionId),
+  )
+  const startedSessions = new Set(
+    entries
+      .filter((entry) => entry.step === 'seeking_cert')
+      .map((entry) => entry.sessionId),
+  )
+
+  const stepCounts: Record<string, number> = {}
+  const standardCounts: Record<string, number> = {}
+  const intentCounts: Record<string, number> = {}
+
+  for (const entry of entries) {
+    const stepKey =
+      entry.step === 'clause_questions' && entry.clauseId
+        ? `clause_${entry.clauseId}`
+        : entry.step
+    stepCounts[stepKey] = (stepCounts[stepKey] || 0) + 1
+
+    if (entry.standard) {
+      standardCounts[entry.standard] =
+        (standardCounts[entry.standard] || 0) + 1
+    }
+
+    if (entry.intent && (entry.step === 'email' || entry.step === 'thank_you')) {
+      intentCounts[entry.intent] = (intentCounts[entry.intent] || 0) + 1
+    }
+  }
+
+  const topSteps = Object.entries(stepCounts)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 15)
+    .map(([step, count]) => ({ step, count }))
+
+  const topStandards = Object.entries(standardCounts)
+    .sort((a, b) => b[1] - a[1])
+    .map(([standard, count]) => ({ standard, count }))
+
+  const topIntents = Object.entries(intentCounts)
+    .sort((a, b) => b[1] - a[1])
+    .map(([intent, count]) => ({ intent, count }))
+
+  return {
+    totalEvents: entries.length,
+    sessionsStarted: startedSessions.size || sessions.size,
+    sessionsCompleted: completedSessions.size,
+    uniqueVisitors: new Set(entries.map((entry) => entry.visitorId)).size,
+    topSteps,
+    topStandards,
+    topIntents,
+    entries,
+    dataFile: getChecklistDataLocation(),
+  }
+}
 
 export default defineEventHandler(async (event) => {
   const config = useRuntimeConfig()
@@ -44,6 +114,9 @@ export default defineEventHandler(async (event) => {
     .slice(0, 10)
     .map(([country, count]) => ({ country, count }))
 
+  const checklistEntries = await readChecklistFillings(limit)
+  const checklist = buildChecklistSummary(checklistEntries)
+
   return {
     total: entries.length,
     uniqueVisitors,
@@ -52,5 +125,6 @@ export default defineEventHandler(async (event) => {
     topCountries,
     entries,
     dataFile: getAnalyticsDataLocation(),
+    checklist,
   }
 })

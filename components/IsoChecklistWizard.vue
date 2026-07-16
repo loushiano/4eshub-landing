@@ -215,6 +215,7 @@
 </template>
 
 <script setup lang="ts">
+import { useChecklistAnalytics } from "~/composables/useChecklistAnalytics";
 import {
   getChecklistContent,
   type ChecklistStandardSlug,
@@ -263,6 +264,8 @@ const props = withDefaults(
 const emit = defineEmits<{
   close: [];
 }>();
+
+const { trackChecklistStep, resetSession } = useChecklistAnalytics();
 
 const multiStandards = [
   { value: "9001", label: "ISO 9001 — Quality Management" },
@@ -427,6 +430,13 @@ function startClauseQuestions() {
 function answerSeekingCert(answer: Exclude<SeekingAnswer, null>) {
   pushHistory();
   seekingAnswer.value = answer;
+  void trackChecklistStep({
+    step: "seeking_cert",
+    action: "answer",
+    answer,
+    standard: props.standard || selectedStandard.value,
+    source: props.source,
+  });
   if (answer === "yes") {
     if (props.standard) {
       selectedStandard.value = props.standard;
@@ -442,6 +452,13 @@ function answerSeekingCert(answer: Exclude<SeekingAnswer, null>) {
 function answerStandard(value: string) {
   pushHistory();
   selectedStandard.value = value;
+  void trackChecklistStep({
+    step: "select_standard",
+    action: "answer",
+    answer: value,
+    standard: value,
+    source: props.source,
+  });
   startClauseQuestions();
 }
 
@@ -449,8 +466,10 @@ function answerClause(yes: boolean) {
   const question = currentQuestion.value;
   if (!question) return;
 
+  const index = clauseIndex.value;
+
   clauseAnswers.value = [
-    ...clauseAnswers.value.slice(0, clauseIndex.value),
+    ...clauseAnswers.value.slice(0, index),
     {
       clauseId: question.clauseId,
       clauseTitle: question.clauseTitle,
@@ -459,7 +478,19 @@ function answerClause(yes: boolean) {
     },
   ];
 
-  if (clauseIndex.value < questions.value.length - 1) {
+  void trackChecklistStep({
+    step: "clause_questions",
+    action: "answer",
+    answer: yes ? "yes" : "no",
+    standard: selectedStandard.value || props.standard,
+    clauseId: question.clauseId,
+    clauseTitle: question.clauseTitle,
+    question: question.question,
+    clauseIndex: index,
+    source: props.source,
+  });
+
+  if (index < questions.value.length - 1) {
     clauseIndex.value += 1;
     return;
   }
@@ -471,19 +502,50 @@ function answerClause(yes: boolean) {
       ? "certification_body"
       : "implementation_help";
   step.value = "email";
+
+  void trackChecklistStep({
+    step: "email",
+    action: "reached",
+    standard: selectedStandard.value || props.standard,
+    intent: intent.value,
+    yesCount: score,
+    questionCount: questions.value.length,
+    source: props.source,
+  });
 }
 
 function answerManageDifficulty(difficult: boolean) {
   pushHistory();
+  void trackChecklistStep({
+    step: "manage_difficulty",
+    action: "answer",
+    answer: difficult ? "yes" : "no",
+    standard: selectedStandard.value || props.standard,
+    source: props.source,
+  });
   if (difficult) {
     intent.value = "management_help";
     step.value = "email";
+    void trackChecklistStep({
+      step: "email",
+      action: "reached",
+      standard: selectedStandard.value || props.standard,
+      intent: intent.value,
+      source: props.source,
+    });
   } else {
     step.value = "good_luck";
+    void trackChecklistStep({
+      step: "good_luck",
+      action: "reached",
+      standard: selectedStandard.value || props.standard,
+      source: props.source,
+    });
   }
 }
 
 function reset() {
+  resetSession();
   step.value = "seeking_cert";
   seekingAnswer.value = null;
   selectedStandard.value = props.standard ?? null;
@@ -518,8 +580,26 @@ async function handleSubmit() {
     });
 
     if (response.status === 200) {
+      void trackChecklistStep({
+        step: "email",
+        action: "submit",
+        standard: selectedStandard.value || props.standard,
+        intent: intent.value,
+        yesCount: yesCount.value,
+        questionCount: questions.value.length,
+        source: props.source,
+      });
       email.value = "";
       step.value = "thank_you";
+      void trackChecklistStep({
+        step: "thank_you",
+        action: "reached",
+        standard: selectedStandard.value || props.standard,
+        intent: intent.value,
+        yesCount: yesCount.value,
+        questionCount: questions.value.length,
+        source: props.source,
+      });
     } else {
       throw new Error(response.message || "Something went wrong");
     }
@@ -535,6 +615,15 @@ async function handleSubmit() {
     isSubmitting.value = false;
   }
 }
+
+onMounted(() => {
+  void trackChecklistStep({
+    step: "seeking_cert",
+    action: "started",
+    standard: props.standard || null,
+    source: props.source,
+  });
+});
 
 defineExpose({ reset });
 </script>

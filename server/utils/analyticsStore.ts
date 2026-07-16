@@ -26,24 +26,46 @@ export interface VisitEntry {
   city: string | null
 }
 
+export interface ChecklistFillingEntry {
+  id: string
+  timestamp: string
+  sessionId: string
+  visitorId: string
+  path: string
+  standard: string | null
+  step: string
+  action: string
+  answer: string | null
+  clauseId: string | null
+  clauseTitle: string | null
+  question: string | null
+  clauseIndex: number | null
+  intent: string | null
+  yesCount: number | null
+  questionCount: number | null
+  source: string | null
+  country: string | null
+  region: string | null
+  city: string | null
+}
+
 interface AnalyticsS3Config {
   client: S3Client
   bucket: string
   key: string
 }
 
-function getAnalyticsS3Config(): AnalyticsS3Config {
+function getS3ClientConfig(): Omit<AnalyticsS3Config, 'key'> {
   const config = useRuntimeConfig()
   const bucket = config.analyticsS3Bucket as string | undefined
-  const key = config.analyticsS3Key as string | undefined
   const region = process.env.AWS_REGION
   const accessKeyId = process.env.AWS_ACCESS_KEY_ID
   const secretAccessKey = process.env.AWS_SECRET_ACCESS_KEY
 
-  if (!bucket || !key) {
+  if (!bucket) {
     throw createError({
       statusCode: 503,
-      message: 'ANALYTICS_S3_BUCKET and ANALYTICS_S3_KEY must be configured',
+      message: 'ANALYTICS_S3_BUCKET must be configured',
     })
   }
 
@@ -64,7 +86,6 @@ function getAnalyticsS3Config(): AnalyticsS3Config {
 
   return {
     bucket,
-    key,
     client: new S3Client({
       region,
       credentials: {
@@ -72,6 +93,40 @@ function getAnalyticsS3Config(): AnalyticsS3Config {
         secretAccessKey,
       },
     }),
+  }
+}
+
+function getAnalyticsS3Config(): AnalyticsS3Config {
+  const config = useRuntimeConfig()
+  const key = config.analyticsS3Key as string | undefined
+
+  if (!key) {
+    throw createError({
+      statusCode: 503,
+      message: 'ANALYTICS_S3_KEY must be configured',
+    })
+  }
+
+  return {
+    ...getS3ClientConfig(),
+    key,
+  }
+}
+
+function getChecklistS3Config(): AnalyticsS3Config {
+  const config = useRuntimeConfig()
+  const key = config.analyticsChecklistS3Key as string | undefined
+
+  if (!key) {
+    throw createError({
+      statusCode: 503,
+      message: 'ANALYTICS_CHECKLIST_S3_KEY must be configured',
+    })
+  }
+
+  return {
+    ...getS3ClientConfig(),
+    key,
   }
 }
 
@@ -115,17 +170,22 @@ async function writeJsonlToS3(
   )
 }
 
-function parseJsonl(content: string, limit: number): VisitEntry[] {
+function parseJsonl<T>(content: string, limit: number): T[] {
   const lines = content.trim().split('\n').filter(Boolean)
 
   return lines
     .slice(-limit)
-    .map((line) => JSON.parse(line) as VisitEntry)
+    .map((line) => JSON.parse(line) as T)
     .reverse()
 }
 
 export function getAnalyticsDataLocation(): string {
   const { bucket, key } = getAnalyticsS3Config()
+  return `s3://${bucket}/${key}`
+}
+
+export function getChecklistDataLocation(): string {
+  const { bucket, key } = getChecklistS3Config()
   return `s3://${bucket}/${key}`
 }
 
@@ -147,5 +207,28 @@ export async function appendVisit(
 
 export async function readVisits(limit = 2000): Promise<VisitEntry[]> {
   const content = await readJsonlFromS3(getAnalyticsS3Config())
-  return parseJsonl(content, limit)
+  return parseJsonl<VisitEntry>(content, limit)
+}
+
+export async function appendChecklistFilling(
+  entry: Omit<ChecklistFillingEntry, 'id' | 'timestamp'>,
+): Promise<ChecklistFillingEntry> {
+  const s3 = getChecklistS3Config()
+  const record: ChecklistFillingEntry = {
+    id: randomUUID(),
+    timestamp: new Date().toISOString(),
+    ...entry,
+  }
+
+  const existing = await readJsonlFromS3(s3)
+  await writeJsonlToS3(s3, `${existing}${JSON.stringify(record)}\n`)
+
+  return record
+}
+
+export async function readChecklistFillings(
+  limit = 2000,
+): Promise<ChecklistFillingEntry[]> {
+  const content = await readJsonlFromS3(getChecklistS3Config())
+  return parseJsonl<ChecklistFillingEntry>(content, limit)
 }
