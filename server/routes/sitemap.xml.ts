@@ -63,6 +63,11 @@ const routes = [
     changefreq: "monthly",
   },
   {
+    path: "/blog/iso-9001-14001-still-matter-age-of-ai",
+    priority: "0.8",
+    changefreq: "monthly",
+  },
+  {
     path: "/blog/iso-9001-certification-from-zero-to-certified",
     priority: "0.8",
     changefreq: "monthly",

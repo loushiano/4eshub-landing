@@ -9,6 +9,16 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "iso-9001-14001-still-matter-age-of-ai",
+    title:
+      "Why ISO 9001 and ISO 14001 still matter in the age of AI",
+    excerpt:
+      "AI is transforming how organizations work, but ISO 9001 and ISO 14001 remain essential for quality, sustainability, and responsible governance—especially as ISO 42001 enters the picture.",
+    category: "ISO & AI",
+    readTime: "8 min read",
+    published: "2026-07-20",
+  },
+  {
     slug: "iso-9001-certification-help-consultant-qms-software",
     title:
       "ISO 9001 certification help: consultants, certification bodies, QMS implementation, and software",
