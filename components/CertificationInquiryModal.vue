@@ -26,18 +26,16 @@
             <div
               class="w-14 h-14 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4"
             >
-              <i class="fa-solid fa-certificate text-primary-600 text-2xl"></i>
+              <i :class="['text-primary-600 text-2xl', intentIcon]"></i>
             </div>
             <h2
               :id="titleId"
               class="text-2xl font-semibold text-gray-900 mb-2"
             >
-              Talk to a certification body
+              {{ intentTitle }}
             </h2>
             <p class="text-gray-600">
-              Leave your email and we will connect you with an accredited
-              certification partner for ISO {{ standard
-              }}<span v-if="city"> in {{ city }}</span>.
+              {{ intentBody }}
             </p>
           </div>
 
@@ -93,11 +91,20 @@
 <script setup lang="ts">
 import type { IsoStandardSlug } from "~/utils/isoCities";
 
-const props = defineProps<{
-  modelValue: boolean;
-  standard: IsoStandardSlug;
-  city?: string;
-}>();
+type InquiryIntent = "certification_body" | "consultant" | "quote";
+
+const props = withDefaults(
+  defineProps<{
+    modelValue: boolean;
+    standard: IsoStandardSlug;
+    city?: string;
+    intent?: InquiryIntent;
+    source?: string;
+  }>(),
+  {
+    intent: "certification_body",
+  },
+);
 
 const emit = defineEmits<{
   "update:modelValue": [value: boolean];
@@ -109,6 +116,29 @@ const status = ref({ success: false, message: "" });
 
 const titleId = `cert-modal-title-${useId()}`;
 const emailId = `cert-modal-email-${useId()}`;
+
+const intentTitle = computed(() => {
+  if (props.intent === "consultant") return "Talk to a consultant";
+  if (props.intent === "quote") return "Get a cost estimate";
+  return "Talk to a certification body";
+});
+
+const intentBody = computed(() => {
+  const place = props.city ? ` in ${props.city}` : "";
+  if (props.intent === "consultant") {
+    return `Leave your email and we will connect you with an ISO ${props.standard} consultant to help you implement${place}, then move you toward certification.`;
+  }
+  if (props.intent === "quote") {
+    return `Leave your email and we will help you get a realistic ISO ${props.standard} cost picture for your organization${place}.`;
+  }
+  return `Leave your email and we will connect you with an accredited certification partner for ISO ${props.standard}${place}.`;
+});
+
+const intentIcon = computed(() => {
+  if (props.intent === "consultant") return "fa-solid fa-user-tie";
+  if (props.intent === "quote") return "fa-solid fa-calculator";
+  return "fa-solid fa-certificate";
+});
 
 function close() {
   emit("update:modelValue", false);
@@ -127,9 +157,12 @@ async function handleSubmit() {
         email: email.value,
         standard: props.standard,
         city: props.city || null,
-        source: props.city
-          ? `iso-${props.standard}/${props.city}`
-          : `iso-${props.standard}`,
+        intent: props.intent,
+        source:
+          props.source ||
+          (props.city
+            ? `iso-${props.standard}/${props.city}`
+            : `iso-${props.standard}`),
       },
     });
 

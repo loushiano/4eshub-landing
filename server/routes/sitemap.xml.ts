@@ -1,4 +1,5 @@
 import { getAllIsoCityPagePaths } from "../../utils/isoCities";
+import { getAllSeoPagePaths } from "../../utils/isoSeoPages";
 
 const routes = [
   {
@@ -21,6 +22,11 @@ const routes = [
     priority: "0.9",
     changefreq: "monthly",
   },
+  ...getAllSeoPagePaths().map((path) => ({
+    path,
+    priority: "0.85",
+    changefreq: "monthly",
+  })),
   {
     path: "/are-you-ready-for-iso-certification",
     priority: "0.9",
