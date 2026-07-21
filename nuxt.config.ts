@@ -14,6 +14,9 @@ export default defineNuxtConfig({
     analyticsS3Key: process.env.ANALYTICS_S3_KEY || "analytics/visits.jsonl",
     analyticsChecklistS3Key:
       process.env.ANALYTICS_CHECKLIST_S3_KEY || "analytics/checklist.jsonl",
+    apiBaseUrl: process.env.API_BASE_URL || "",
+    apiClientId: process.env.API_CLIENT_ID || "",
+    apiClientSecret: process.env.API_CLIENT_SECRET || "",
     public: {
       siteUrl: process.env.NUXT_PUBLIC_SITE_URL || "https://4eshub.com",
     },

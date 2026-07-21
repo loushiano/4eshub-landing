@@ -22,6 +22,21 @@ const routes = [
     priority: "0.9",
     changefreq: "monthly",
   },
+  {
+    path: "/iso-9001-checklist",
+    priority: "0.85",
+    changefreq: "monthly",
+  },
+  {
+    path: "/iso-14001-checklist",
+    priority: "0.85",
+    changefreq: "monthly",
+  },
+  {
+    path: "/iso-45001-checklist",
+    priority: "0.85",
+    changefreq: "monthly",
+  },
   ...getAllSeoPagePaths().map((path) => ({
     path,
     priority: "0.85",

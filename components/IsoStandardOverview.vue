@@ -66,6 +66,9 @@
                 Take the readiness questionnaire
                 <i class="fa-solid fa-arrow-right ml-2"></i>
               </NuxtLink>
+              <NuxtLink :to="checklistPath" class="btn-secondary">
+                View clause checklist
+              </NuxtLink>
               <button
                 type="button"
                 class="btn-secondary"
@@ -259,6 +262,7 @@ const content = getStandardContent(props.standard);
 const seo = getOverviewSeo(props.standard, props.variant);
 const overviewPath = `/iso-${props.standard}`;
 const readinessPath = `/are-you-ready-for-iso-${props.standard}-certification`;
+const checklistPath = `/iso-${props.standard}-checklist`;
 const pageUrl = `${siteUrl}${seo.path}`;
 const cities = ISO_CITIES;
 const inquirySource = computed(() =>
