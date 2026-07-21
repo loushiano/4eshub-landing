@@ -8,7 +8,8 @@
       >
         <div class="absolute inset-0 bg-black/50 backdrop-blur-sm" />
         <div
-          class="relative bg-white rounded-2xl shadow-2xl max-w-md w-full p-8"
+          ref="modalPanel"
+          class="relative bg-white rounded-2xl shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto p-8"
           role="dialog"
           aria-modal="true"
           aria-labelledby="tracker-modal-title"
@@ -48,7 +49,7 @@
                   ? 'bg-primary-600 text-white'
                   : 'text-gray-600 hover:bg-gray-50'
               "
-              @click="tab = 'start'"
+              @click="switchTab('start')"
             >
               Get started
             </button>
@@ -60,7 +61,7 @@
                   ? 'bg-primary-600 text-white'
                   : 'text-gray-600 hover:bg-gray-50'
               "
-              @click="tab = 'continue'"
+              @click="switchTab('continue')"
             >
               Continue
             </button>
@@ -76,8 +77,10 @@
                   v-model="email"
                   type="email"
                   required
+                  :readonly="needsCode"
                   placeholder="your@email.com"
                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                  :class="{ 'bg-neutral-50': needsCode }"
                 />
               </div>
 
@@ -90,8 +93,10 @@
                     v-model="companyName"
                     type="text"
                     required
+                    :readonly="needsCode"
                     placeholder="Acme Ltd"
                     class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                    :class="{ 'bg-neutral-50': needsCode }"
                   />
                 </div>
                 <div>
@@ -102,8 +107,10 @@
                     v-model="description"
                     required
                     rows="3"
+                    :readonly="needsCode"
                     placeholder="Briefly describe your products or services"
                     class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                    :class="{ 'bg-neutral-50': needsCode }"
                   />
                 </div>
               </template>
@@ -131,11 +138,37 @@
                   v-model="pin"
                   type="password"
                   required
+                  :readonly="needsCode"
                   minlength="4"
                   maxlength="12"
                   placeholder="4–12 characters"
                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                  :class="{ 'bg-neutral-50': needsCode }"
                 />
+              </div>
+
+              <div v-if="needsCode">
+                <label class="block text-sm font-medium text-gray-700 mb-2">
+                  Code
+                </label>
+                <input
+                  v-model="code"
+                  type="text"
+                  required
+                  inputmode="numeric"
+                  autocomplete="one-time-code"
+                  maxlength="8"
+                  placeholder="Enter the code from your email"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                />
+                <button
+                  type="button"
+                  class="mt-2 text-sm font-semibold text-primary-600 hover:text-primary-700 disabled:opacity-50"
+                  :disabled="isSubmitting || resending"
+                  @click="sendCode"
+                >
+                  {{ resending ? "Resending..." : "Resend code" }}
+                </button>
               </div>
             </div>
 
@@ -179,35 +212,123 @@ const emit = defineEmits<{
   unlocked: [payload: { id: string; email: string; pin: string; tracker: any }];
 }>();
 
+const modalPanel = ref<HTMLElement | null>(null);
 const tab = ref<"start" | "continue">("start");
 const email = ref("");
 const companyName = ref("");
 const description = ref("");
 const pin = ref("");
+const code = ref("");
 const needsPin = ref(false);
+const needsCode = ref(false);
 const isSubmitting = ref(false);
+const resending = ref(false);
 const status = reactive({ success: false, message: "" });
 
 const submitLabel = computed(() => {
   if (tab.value === "continue" || needsPin.value) {
     return "Unlock tracker";
   }
+  if (needsCode.value) {
+    return "Verify & start tracking";
+  }
   return "Start tracking";
 });
+
+const scrollModalToBottom = async () => {
+  await nextTick();
+  modalPanel.value?.scrollTo({
+    top: modalPanel.value.scrollHeight,
+    behavior: "smooth",
+  });
+};
+
+const resetTransientState = () => {
+  status.message = "";
+  status.success = false;
+  needsPin.value = false;
+  needsCode.value = false;
+  code.value = "";
+  isSubmitting.value = false;
+  resending.value = false;
+};
 
 watch(
   () => props.modelValue,
   (open) => {
     if (!open) {
-      status.message = "";
-      status.success = false;
-      needsPin.value = false;
-      isSubmitting.value = false;
+      resetTransientState();
     }
   },
 );
 
+watch(needsCode, (value) => {
+  if (value) {
+    scrollModalToBottom();
+  }
+});
+
+const switchTab = (next: "start" | "continue") => {
+  tab.value = next;
+  needsPin.value = false;
+  needsCode.value = false;
+  code.value = "";
+  status.message = "";
+  status.success = false;
+};
+
 const close = () => emit("update:modelValue", false);
+
+const extractErrorCode = (error: any) =>
+  error?.data?.code ||
+  error?.data?.data?.code ||
+  error?.data?.message?.code;
+
+const requestVerificationCode = async () => {
+  await $fetch<any>("/api/trackers/send-code", {
+    method: "POST",
+    body: {
+      email: email.value,
+      standard: props.standard,
+    },
+  });
+  needsCode.value = true;
+  status.success = true;
+  status.message = `We sent a verification code to ${email.value.trim().toLowerCase()}.`;
+};
+
+const handleEmailExists = () => {
+  needsPin.value = true;
+  needsCode.value = false;
+  pin.value = "";
+  status.success = false;
+  status.message =
+    "This email already has a tracker. Enter your PIN to continue.";
+};
+
+const sendCode = async () => {
+  resending.value = true;
+  status.message = "";
+  status.success = false;
+
+  try {
+    await requestVerificationCode();
+  } catch (error: any) {
+    const errCode = extractErrorCode(error);
+    if (error?.statusCode === 409 || errCode === "EMAIL_EXISTS") {
+      handleEmailExists();
+      return;
+    }
+    status.success = false;
+    status.message =
+      error?.data?.message ||
+      error?.statusMessage ||
+      error?.message ||
+      "Failed to send verification code.";
+  } finally {
+    resending.value = false;
+  }
+};
 
 const handleSubmit = async () => {
   isSubmitting.value = true;
@@ -216,6 +337,25 @@ const handleSubmit = async () => {
 
   try {
     if (tab.value === "start" && !needsPin.value) {
+      if (!needsCode.value) {
+        try {
+          await requestVerificationCode();
+        } catch (error: any) {
+          const errCode = extractErrorCode(error);
+          if (error?.statusCode === 409 || errCode === "EMAIL_EXISTS") {
+            handleEmailExists();
+            return;
+          }
+          status.success = false;
+          status.message =
+            error?.data?.message ||
+            error?.statusMessage ||
+            error?.message ||
+            "Failed to send verification code.";
+        }
+        return;
+      }
+
       try {
         const created = await $fetch<any>("/api/trackers/start", {
           method: "POST",
@@ -225,20 +365,15 @@ const handleSubmit = async () => {
             description: description.value,
             pin: pin.value,
             standard: props.standard,
+            code: code.value,
           },
         });
         finishUnlock(created);
         return;
       } catch (error: any) {
-        const code =
-          error?.data?.code ||
-          error?.data?.data?.code ||
-          error?.data?.message?.code;
-        if (error?.statusCode === 409 || code === "EMAIL_EXISTS") {
-          needsPin.value = true;
-          pin.value = "";
-          status.message =
-            "This email already has a tracker. Enter your PIN to continue.";
+        const errCode = extractErrorCode(error);
+        if (error?.statusCode === 409 || errCode === "EMAIL_EXISTS") {
+          handleEmailExists();
           return;
         }
         throw error;
