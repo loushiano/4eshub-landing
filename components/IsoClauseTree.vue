@@ -1,61 +1,46 @@
 <template>
   <div>
     <div v-for="clause in clauses" :key="clause.id">
-      <div
-        class="flex items-center justify-between border-b border-neutral-100 cursor-pointer transition-colors"
-        :class="
-          selectedClauseId === clause.id ? 'bg-gray-200' : 'hover:bg-gray-100'
-        "
-        :style="{
+      <div class="flex items-center justify-between border-b border-neutral-100 cursor-pointer transition-colors"
+        :class="selectedClauseId === clause.id ? 'bg-gray-200' : 'hover:bg-gray-100'
+          " :style="{
           paddingLeft: `${Math.min(depth + 1, 4) * 0.75}rem`,
           paddingRight: '1rem',
           paddingTop: '0.75rem',
           paddingBottom: '0.75rem',
-        }"
-        @click="handleClick(clause)"
-      >
+        }" @click="handleClick(clause)">
         <div class="min-w-0 flex-1">
           <div class="text-sm font-medium text-neutral-900 truncate">
             <span class="text-neutral-500 mr-2">{{ clause.id }}</span>
             {{ clause.title }}
           </div>
-          <span
-            v-if="!clause.subclauses?.length"
+          <span v-if="!clause.subclauses?.length"
             class="text-[10px] font-bold px-1.5 py-0.5 rounded-full uppercase mt-1 inline-block"
-            :class="statusClass(clause.id)"
-          >
+            :class="statusClass(clause.id)">
             {{ statusLabel(clause.id) }}
           </span>
         </div>
         <div class="flex items-center gap-2 shrink-0 ml-2">
           <span v-if="clause.subclauses?.length">
-            <i
-              class="fa-solid text-xs ml-2"
-              :class="expanded[clause.id] ? 'fa-chevron-down' : 'fa-chevron-right'"
-            />
+            <span v-if="expanded[clause.id]">
+              <i class="fa-solid fa-chevron-down text-xs"></i>
+            </span>
+            <span v-else>
+              <i class="fa-solid fa-chevron-right text-xs"></i>
+            </span>
           </span>
           <span v-else>
-            <i
-              class="fa-solid fa-arrow-right text-xs ml-2"
-              :class="
-                selectedClauseId === clause.id
-                  ? 'text-primary-600'
-                  : 'text-neutral-300'
-              "
-            />
+            <i class="fa-solid fa-arrow-right text-xs ml-2" :class="selectedClauseId === clause.id
+                ? 'text-primary-600'
+                : 'text-neutral-300'
+              " />
           </span>
         </div>
       </div>
 
-      <IsoClauseTree
-        v-if="clause.subclauses?.length && expanded[clause.id]"
-        :clauses="clause.subclauses"
-        :selected-clause-id="selectedClauseId"
-        :progress-by-clause="progressByClause"
-        :expanded-state="expanded"
-        :depth="depth + 1"
-        @select="$emit('select', $event)"
-      />
+      <IsoClauseTree v-if="clause.subclauses?.length && expanded[clause.id]" :clauses="clause.subclauses"
+        :selected-clause-id="selectedClauseId" :progress-by-clause="progressByClause" :expanded-state="expanded"
+        :depth="depth + 1" @select="$emit('select', $event)" />
     </div>
   </div>
 </template>
