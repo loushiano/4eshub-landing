@@ -78,6 +78,51 @@ const routes = [
     changefreq: "monthly",
   },
   {
+    path: "/blog/what-is-iso-9001",
+    priority: "0.8",
+    changefreq: "monthly",
+  },
+  {
+    path: "/blog/why-iso-9001",
+    priority: "0.8",
+    changefreq: "monthly",
+  },
+  {
+    path: "/blog/should-i-get-iso-9001",
+    priority: "0.8",
+    changefreq: "monthly",
+  },
+  {
+    path: "/blog/what-is-iso-14001",
+    priority: "0.8",
+    changefreq: "monthly",
+  },
+  {
+    path: "/blog/why-iso-14001",
+    priority: "0.8",
+    changefreq: "monthly",
+  },
+  {
+    path: "/blog/should-i-get-iso-14001",
+    priority: "0.8",
+    changefreq: "monthly",
+  },
+  {
+    path: "/blog/what-is-iso-45001",
+    priority: "0.8",
+    changefreq: "monthly",
+  },
+  {
+    path: "/blog/why-iso-45001",
+    priority: "0.8",
+    changefreq: "monthly",
+  },
+  {
+    path: "/blog/should-i-get-iso-45001",
+    priority: "0.8",
+    changefreq: "monthly",
+  },
+  {
     path: "/blog/iso-9001-14001-still-matter-age-of-ai",
     priority: "0.8",
     changefreq: "monthly",

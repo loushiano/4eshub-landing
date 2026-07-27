@@ -9,6 +9,87 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "what-is-iso-9001",
+    title: "What is ISO 9001? Definition, QMS requirements & certification",
+    excerpt:
+      "ISO 9001 is the international standard for quality management systems (QMS). Get a clear definition, how certification works, and how 4ES Hub handles implementation.",
+    category: "ISO 9001",
+    readTime: "7 min read",
+    published: "2026-07-27",
+  },
+  {
+    slug: "why-iso-9001",
+    title: "Why ISO 9001? 5 business benefits of quality certification",
+    excerpt:
+      "Why get ISO 9001? Contract access, fewer defects, stronger customer trust, and clearer processes—plus how 4ES Hub handles QMS implementation.",
+    category: "ISO 9001",
+    readTime: "7 min read",
+    published: "2026-07-27",
+  },
+  {
+    slug: "should-i-get-iso-9001",
+    title: "Should I get ISO 9001 certification? Yes/no decision guide",
+    excerpt:
+      "Should you get ISO 9001? Use this honest yes/no checklist for SMEs and growing companies—and see how 4ES Hub handles implementation when you proceed.",
+    category: "ISO 9001",
+    readTime: "8 min read",
+    published: "2026-07-27",
+  },
+  {
+    slug: "what-is-iso-14001",
+    title: "What is ISO 14001? EMS definition, aspects & certification",
+    excerpt:
+      "ISO 14001 is the international EMS standard. Learn the definition, aspects and impacts, certification basics, and how 4ES Hub handles implementation.",
+    category: "ISO 14001",
+    readTime: "7 min read",
+    published: "2026-07-27",
+  },
+  {
+    slug: "why-iso-14001",
+    title: "Why ISO 14001? 5 key benefits of EMS certification",
+    excerpt:
+      "Why get ISO 14001? Regulatory readiness, cost savings, risk reduction, tender access, and ESG credibility—plus how 4ES Hub handles EMS implementation.",
+    category: "ISO 14001",
+    readTime: "7 min read",
+    published: "2026-07-27",
+  },
+  {
+    slug: "should-i-get-iso-14001",
+    title: "Should I get ISO 14001 certification? Decision checklist",
+    excerpt:
+      "Should you get ISO 14001? Use decision questions for market access, risk, and resources—then let 4ES Hub handle EMS implementation if you proceed.",
+    category: "ISO 14001",
+    readTime: "8 min read",
+    published: "2026-07-27",
+  },
+  {
+    slug: "what-is-iso-45001",
+    title: "What is ISO 45001? OH&S management system explained",
+    excerpt:
+      "ISO 45001 is the international OH&S management system standard. Clear definition, how it differs from local safety law, and how 4ES Hub handles implementation.",
+    category: "ISO 45001",
+    readTime: "7 min read",
+    published: "2026-07-27",
+  },
+  {
+    slug: "why-iso-45001",
+    title: "Why ISO 45001? 5 benefits of OH&S certification",
+    excerpt:
+      "Why get ISO 45001? Fewer incidents, compliance support, lower insurance risk, and tender access—plus how 4ES Hub handles OH&S implementation.",
+    category: "ISO 45001",
+    readTime: "7 min read",
+    published: "2026-07-27",
+  },
+  {
+    slug: "should-i-get-iso-45001",
+    title: "Should I get ISO 45001 certification? Who needs it",
+    excerpt:
+      "Should you get ISO 45001? Learn who needs it, who can wait, readiness signs, and how 4ES Hub handles OH&S management system implementation.",
+    category: "ISO 45001",
+    readTime: "8 min read",
+    published: "2026-07-27",
+  },
+  {
     slug: "iso-9001-14001-still-matter-age-of-ai",
     title:
       "Why ISO 9001 and ISO 14001 still matter in the age of AI",
