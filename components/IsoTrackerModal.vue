@@ -33,10 +33,10 @@
               id="tracker-modal-title"
               class="text-2xl font-semibold text-gray-900 mb-2"
             >
-              Track your {{ standard }} progress
+              {{ modalTitle }}
             </h2>
             <p class="text-gray-600 text-sm">
-              Save clause notes, uploads, and out-of-scope decisions with a PIN.
+              {{ modalDescription }}
             </p>
           </div>
 
@@ -51,7 +51,7 @@
               "
               @click="switchTab('start')"
             >
-              Get started
+              Create account
             </button>
             <button
               type="button"
@@ -63,7 +63,7 @@
               "
               @click="switchTab('continue')"
             >
-              Continue
+              Load data
             </button>
           </div>
 
@@ -202,10 +202,20 @@
 import type { TrackerFramework } from "~/utils/isoTrackerStorage";
 import { saveTrackerSession } from "~/utils/isoTrackerStorage";
 
-const props = defineProps<{
-  modelValue: boolean;
-  standard: TrackerFramework;
-}>();
+const props = withDefaults(
+  defineProps<{
+    modelValue: boolean;
+    standard: TrackerFramework;
+    /** Which tab to open when the modal becomes visible */
+    initialTab?: "start" | "continue";
+    /** Controls copy for save/create vs load existing data */
+    intent?: "save" | "load";
+  }>(),
+  {
+    initialTab: "start",
+    intent: "save",
+  },
+);
 
 const emit = defineEmits<{
   "update:modelValue": [value: boolean];
@@ -225,14 +235,28 @@ const isSubmitting = ref(false);
 const resending = ref(false);
 const status = reactive({ success: false, message: "" });
 
+const modalTitle = computed(() => {
+  if (props.intent === "load") {
+    return `Load your ${props.standard} data`;
+  }
+  return `Create an account to save`;
+});
+
+const modalDescription = computed(() => {
+  if (props.intent === "load") {
+    return "Sign in with your email and PIN to restore notes, uploads, and progress.";
+  }
+  return "Create a free tracker (or continue with an existing one) to save notes and evidence files.";
+});
+
 const submitLabel = computed(() => {
   if (tab.value === "continue" || needsPin.value) {
-    return "Unlock tracker";
+    return props.intent === "load" ? "Load tracked data" : "Continue with PIN";
   }
   if (needsCode.value) {
-    return "Verify & start tracking";
+    return "Verify & create account";
   }
-  return "Start tracking";
+  return "Create account";
 });
 
 const scrollModalToBottom = async () => {
@@ -256,7 +280,10 @@ const resetTransientState = () => {
 watch(
   () => props.modelValue,
   (open) => {
-    if (!open) {
+    if (open) {
+      tab.value = props.initialTab;
+      resetTransientState();
+    } else {
       resetTransientState();
     }
   },

@@ -14,12 +14,12 @@
             {{ modeLabel }}
           </span>
           <button
-            v-if="!useMode"
+            v-if="!isAuthenticated"
             type="button"
-            class="btn-primary !py-2.5 !px-5 !text-sm"
-            @click="showModal = true"
+            class="btn-secondary !py-2.5 !px-5 !text-sm"
+            @click="openLoadModal"
           >
-            Track my progress
+            Load tracked data
           </button>
           <button
             v-else
@@ -49,8 +49,9 @@
               {{ framework?.name || standard }} checklist
             </h1>
             <p class="mt-2 text-[#6e6e73] max-w-2xl">
-              Browse every clause requirement. Unlock tracking to mark clauses
-              out of scope, add notes, and upload evidence files.
+              Browse every clause requirement, add notes, and mark clauses out
+              of scope. Create an account when you save or upload — or load
+              tracked data if you already have one.
             </p>
           </div>
           <div
@@ -167,7 +168,7 @@
           </div>
 
           <div
-            v-if="useMode && isLeafClause"
+            v-if="isLeafClause"
             class="bg-white p-6 rounded-xl border border-neutral-200 shadow-sm space-y-6"
           >
             <div class="flex flex-wrap items-center justify-between gap-3">
@@ -178,8 +179,11 @@
                   Clause actions
                 </p>
                 <p class="text-sm text-neutral-600 mt-1">
-                  Changes are saved when you click Save progress, or immediately
-                  after a file upload.
+                  {{
+                    isAuthenticated
+                      ? "Changes are saved when you click Save, or immediately after a file upload."
+                      : "You can draft notes freely. Saving or uploading will ask you to create an account."
+                  }}
                 </p>
               </div>
               <button
@@ -212,6 +216,16 @@
                 class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 disabled:bg-neutral-50"
                 @change="persistNotesLocally"
               />
+              <div class="mt-3 flex justify-end">
+                <button
+                  type="button"
+                  class="btn-primary !py-2 !px-4 !text-sm"
+                  :disabled="currentProgress.outOfScope || saving"
+                  @click="onSaveNotes"
+                >
+                  {{ saving ? "Saving..." : "Save notes" }}
+                </button>
+              </div>
             </div>
 
             <div>
@@ -251,7 +265,7 @@
                   <button
                     type="button"
                     class="shrink-0 text-primary-600 hover:text-primary-700 text-xs font-semibold"
-                    :disabled="downloadingUrl === file.url"
+                    :disabled="!isAuthenticated || downloadingUrl === file.url"
                     @click="downloadFile(file.url)"
                   >
                     {{
@@ -265,26 +279,6 @@
               </p>
             </div>
           </div>
-
-          <div
-            v-else-if="!useMode && isLeafClause"
-            class="bg-primary-50 border border-primary-100 rounded-xl p-6"
-          >
-            <p class="text-primary-900 font-medium mb-2">
-              Want to track this clause?
-            </p>
-            <p class="text-sm text-primary-800 mb-4">
-              Unlock use mode to mark out-of-scope clauses, write notes, and
-              upload evidence.
-            </p>
-            <button
-              type="button"
-              class="btn-primary !py-2.5 !px-5 !text-sm"
-              @click="showModal = true"
-            >
-              Track my progress
-            </button>
-          </div>
         </template>
       </section>
     </div>
@@ -292,6 +286,8 @@
     <IsoTrackerModal
       v-model="showModal"
       :standard="standard"
+      :initial-tab="modalInitialTab"
+      :intent="modalIntent"
       @unlocked="onUnlocked"
     />
   </div>
@@ -321,14 +317,18 @@ const framework = ref<any>(null);
 const selectedClauseId = ref<string | null>(null);
 const selectedClause = ref<ChecklistClause | null>(null);
 const showModal = ref(false);
-const useMode = ref(false);
+const isAuthenticated = ref(false);
 const trackerId = ref<string | null>(null);
 const pin = ref("");
 const progressByClause = reactive<Record<string, ClauseProgress>>({});
 const notesDraft = ref("");
+const modalInitialTab = ref<"start" | "continue">("start");
+const modalIntent = ref<"save" | "load">("save");
+const pendingAction = ref<"save" | "upload" | null>(null);
+const pendingUploadFile = ref<File | null>(null);
 
 const modeLabel = computed(() =>
-  useMode.value ? "Use mode" : "View checklist",
+  isAuthenticated.value ? "Tracking saved" : "Drafting locally",
 );
 
 const isLeafClause = computed(
@@ -396,7 +396,7 @@ const selectClause = (clause: ChecklistClause) => {
 };
 
 const persistNotesLocally = () => {
-  if (!selectedClauseId.value || !useMode.value) return;
+  if (!selectedClauseId.value) return;
   progressByClause[selectedClauseId.value] = {
     ...(progressByClause[selectedClauseId.value] || {}),
     notes: notesDraft.value,
@@ -404,7 +404,7 @@ const persistNotesLocally = () => {
 };
 
 const toggleOutOfScope = () => {
-  if (!selectedClauseId.value || !useMode.value) return;
+  if (!selectedClauseId.value) return;
   const current = progressByClause[selectedClauseId.value] || {};
   progressByClause[selectedClauseId.value] = {
     ...current,
@@ -422,20 +422,89 @@ const applyTrackerData = (tracker: { clauses?: Record<string, ClauseProgress> })
   }
 };
 
-const onUnlocked = (payload: {
+const openAuthModal = (options: {
+  intent: "save" | "load";
+  initialTab: "start" | "continue";
+  pending?: "save" | "upload" | null;
+}) => {
+  modalIntent.value = options.intent;
+  modalInitialTab.value = options.initialTab;
+  pendingAction.value = options.pending ?? null;
+  showModal.value = true;
+};
+
+const openLoadModal = () => {
+  pendingUploadFile.value = null;
+  openAuthModal({ intent: "load", initialTab: "continue", pending: null });
+};
+
+const requireAuthOr = async (action: "save" | "upload") => {
+  if (isAuthenticated.value && trackerId.value && pin.value) {
+    return true;
+  }
+  openAuthModal({
+    intent: "save",
+    initialTab: "start",
+    pending: action,
+  });
+  return false;
+};
+
+const onUnlocked = async (payload: {
   id: string;
   email: string;
   pin: string;
   tracker: any;
 }) => {
+  const action = pendingAction.value;
+  const fileToUpload = pendingUploadFile.value;
+  pendingAction.value = null;
+  pendingUploadFile.value = null;
+
   trackerId.value = payload.id;
   pin.value = payload.pin;
-  useMode.value = true;
-  applyTrackerData(payload.tracker || { clauses: {} });
+  isAuthenticated.value = true;
+
+  // After save/upload auth: keep local drafts and merge onto remote tracker data.
+  if (action === "save" || action === "upload") {
+    const localSnapshot = JSON.parse(
+      JSON.stringify(progressByClause),
+    ) as Record<string, ClauseProgress>;
+    applyTrackerData(payload.tracker || { clauses: {} });
+    Object.entries(localSnapshot).forEach(([clauseId, local]) => {
+      const remote = progressByClause[clauseId] || {};
+      progressByClause[clauseId] = {
+        ...remote,
+        notes: local.notes?.trim() ? local.notes : remote.notes,
+        outOfScope: local.outOfScope ?? remote.outOfScope,
+        files: remote.files?.length ? remote.files : local.files,
+      };
+    });
+    if (selectedClauseId.value) {
+      notesDraft.value = progressByClause[selectedClauseId.value]?.notes || "";
+    }
+  } else {
+    applyTrackerData(payload.tracker || { clauses: {} });
+  }
+
+  if (action === "save") {
+    await saveProgress();
+  } else if (action === "upload" && fileToUpload && selectedClauseId.value) {
+    await uploadFile(fileToUpload);
+  }
 };
 
+watch(showModal, (open) => {
+  if (!open && !isAuthenticated.value) {
+    pendingAction.value = null;
+    pendingUploadFile.value = null;
+  }
+});
+
 const saveProgress = async () => {
+  if (!(await requireAuthOr("save"))) return;
   if (!trackerId.value || !pin.value) return;
+
   persistNotesLocally();
   saving.value = true;
   try {
@@ -452,6 +521,11 @@ const saveProgress = async () => {
   } finally {
     saving.value = false;
   }
+};
+
+const onSaveNotes = async () => {
+  persistNotesLocally();
+  await saveProgress();
 };
 
 const downloadFile = async (fileUrl: string) => {
@@ -480,12 +554,8 @@ const downloadFile = async (fileUrl: string) => {
   }
 };
 
-const onFileSelected = async (event: Event) => {
-  const input = event.target as HTMLInputElement;
-  const file = input.files?.[0];
-  if (!file || !trackerId.value || !selectedClauseId.value || !pin.value) {
-    return;
-  }
+const uploadFile = async (file: File) => {
+  if (!trackerId.value || !selectedClauseId.value || !pin.value) return;
 
   uploading.value = true;
   try {
@@ -508,8 +578,24 @@ const onFileSelected = async (event: Event) => {
       err?.data?.message || err?.statusMessage || "Failed to upload file";
   } finally {
     uploading.value = false;
-    input.value = "";
   }
+};
+
+const onFileSelected = async (event: Event) => {
+  const input = event.target as HTMLInputElement;
+  const file = input.files?.[0];
+  if (!file || !selectedClauseId.value) {
+    return;
+  }
+
+  if (!(await requireAuthOr("upload"))) {
+    pendingUploadFile.value = file;
+    input.value = "";
+    return;
+  }
+
+  await uploadFile(file);
+  input.value = "";
 };
 
 const restoreSession = async () => {
@@ -527,7 +613,7 @@ const restoreSession = async () => {
     });
     trackerId.value = loaded.id;
     pin.value = session.pin;
-    useMode.value = true;
+    isAuthenticated.value = true;
     applyTrackerData(loaded.tracker || { clauses: {} });
   } catch {
     clearTrackerSession(props.standard);
@@ -560,6 +646,6 @@ useSeoMeta({
   title: `${props.standard} Clause Checklist`,
   description: `Browse the ${props.standard} clause hierarchy, mark progress, add notes, and upload evidence with 4ES Hub.`,
   ogTitle: `${props.standard} Clause Checklist | 4ES Hub`,
-  ogDescription: `Interactive ${props.standard} checklist with view and track modes.`,
+  ogDescription: `Interactive ${props.standard} checklist — draft notes freely, then save or load tracked data.`,
 });
 </script>
