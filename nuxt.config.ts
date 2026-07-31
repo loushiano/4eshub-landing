@@ -17,8 +17,14 @@ export default defineNuxtConfig({
     apiBaseUrl: process.env.API_BASE_URL || "",
     apiClientId: process.env.API_CLIENT_ID || "",
     apiClientSecret: process.env.API_CLIENT_SECRET || "",
+    lmsApiBaseUrl: process.env.LMS_API_BASE_URL || "",
+    lmsAuthBaseUrl:
+      process.env.LMS_AUTH_BASE_URL || process.env.API_BASE_URL || "",
+    lmsClientId: process.env.LMS_CLIENT_ID || "",
+    lmsClientSecret: process.env.LMS_CLIENT_SECRET || "",
     public: {
       siteUrl: process.env.NUXT_PUBLIC_SITE_URL || "https://4eshub.com",
+      lmsUrl: process.env.NUXT_PUBLIC_LMS_URL || "https://lms.4eshub.com",
     },
   },
   devServer: {

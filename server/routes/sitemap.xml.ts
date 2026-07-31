@@ -1,5 +1,7 @@
 import { getAllIsoCityPagePaths } from "../../utils/isoCities";
 import { getAllSeoPagePaths } from "../../utils/isoSeoPages";
+import { lmsFetch } from "../utils/lmsApi";
+import type { CatalogCourseList } from "../../utils/catalogCourse";
 
 const routes = [
   {
@@ -182,12 +184,40 @@ const escapeXml = (value: string) =>
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&apos;");
 
-export default defineEventHandler((event) => {
+export default defineEventHandler(async (event) => {
   const config = useRuntimeConfig(event);
   const siteUrl = config.public.siteUrl.replace(/\/$/, "");
   const today = new Date().toISOString().split("T")[0];
 
-  const urls = routes
+  const dynamicRoutes = [...routes];
+
+  try {
+    const catalog = await lmsFetch<CatalogCourseList>("/lms/catalog/courses", {
+      query: { page: 1, perPage: 200 },
+    });
+    dynamicRoutes.push({
+      path: "/courses",
+      priority: "0.85",
+      changefreq: "weekly",
+    });
+    for (const course of catalog?.data || []) {
+      if (course.slug) {
+        dynamicRoutes.push({
+          path: `/courses/${course.slug}`,
+          priority: "0.8",
+          changefreq: "weekly",
+        });
+      }
+    }
+  } catch {
+    dynamicRoutes.push({
+      path: "/courses",
+      priority: "0.85",
+      changefreq: "weekly",
+    });
+  }
+
+  const urls = dynamicRoutes
     .map(
       (route) => `
   <url>

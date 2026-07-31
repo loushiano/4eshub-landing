@@ -63,6 +63,11 @@
                   class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600"
                   >Blog</NuxtLink
                 >
+                <NuxtLink
+                  to="/courses"
+                  class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600"
+                  >Courses</NuxtLink
+                >
               </div>
             </div>
           </div>
@@ -153,6 +158,11 @@
             to="/blog"
             class="text-gray-700 hover:text-primary-600 py-2"
             >Blog</NuxtLink
+          >
+          <NuxtLink
+            to="/courses"
+            class="text-gray-700 hover:text-primary-600 py-2"
+            >Courses</NuxtLink
           >
           <NuxtLink
             to="/partners"
@@ -1154,6 +1164,13 @@
                     to="/blog"
                     class="hover:text-white transition-colors"
                     >Blog</NuxtLink
+                  >
+                </li>
+                <li>
+                  <NuxtLink
+                    to="/courses"
+                    class="hover:text-white transition-colors"
+                    >Courses</NuxtLink
                   >
                 </li>
               </ul>
