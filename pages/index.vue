@@ -1151,6 +1151,13 @@
               <ul class="space-y-3 text-sm">
                 <li>
                   <NuxtLink
+                    to="/iso-9001-explained"
+                    class="hover:text-white transition-colors"
+                    >ISO 9001 Explained</NuxtLink
+                  >
+                </li>
+                <li>
+                  <NuxtLink
                     to="/blog"
                     class="hover:text-white transition-colors"
                     >Blog</NuxtLink

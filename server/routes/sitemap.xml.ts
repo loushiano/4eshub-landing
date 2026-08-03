@@ -13,6 +13,11 @@ const routes = [
     changefreq: "monthly",
   },
   {
+    path: "/iso-9001-explained",
+    priority: "0.9",
+    changefreq: "monthly",
+  },
+  {
     path: "/iso-14001",
     priority: "0.9",
     changefreq: "monthly",
