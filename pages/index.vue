@@ -581,13 +581,64 @@
               <h3 class="text-xl font-bold text-gray-900 mb-2">
                 Full platform
               </h3>
-              <p class="text-gray-600 text-sm mb-6">
+              <p class="text-gray-600 text-sm mb-4">
                 Every module, AI included, with support and ongoing enhancements.
               </p>
-              <div class="mb-2">
-                <span class="text-4xl font-bold text-gray-900">$799</span>
-                <span class="text-gray-600"> / month</span>
+              <div
+                class="inline-flex self-start items-center rounded-full bg-gray-100 p-1 mb-5"
+                role="group"
+                aria-label="Billing period"
+              >
+                <button
+                  type="button"
+                  class="px-3.5 py-1.5 text-xs font-semibold rounded-full transition-colors"
+                  :class="
+                    pricingPeriod === 'monthly'
+                      ? 'bg-white text-gray-900 shadow-sm'
+                      : 'text-gray-500 hover:text-gray-700'
+                  "
+                  :aria-pressed="pricingPeriod === 'monthly'"
+                  @click="pricingPeriod = 'monthly'"
+                >
+                  Monthly
+                </button>
+                <button
+                  type="button"
+                  class="px-3.5 py-1.5 text-xs font-semibold rounded-full transition-colors"
+                  :class="
+                    pricingPeriod === 'yearly'
+                      ? 'bg-white text-gray-900 shadow-sm'
+                      : 'text-gray-500 hover:text-gray-700'
+                  "
+                  :aria-pressed="pricingPeriod === 'yearly'"
+                  @click="pricingPeriod = 'yearly'"
+                >
+                  Yearly
+                </button>
               </div>
+              <div class="mb-2">
+                <span class="text-4xl font-bold text-gray-900">{{
+                  pricingPeriod === "yearly" ? "$3,000" : "$299"
+                }}</span>
+                <span class="text-gray-600">{{
+                  pricingPeriod === "yearly" ? " / year" : " / month"
+                }}</span>
+              </div>
+              <p
+                v-if="pricingPeriod === 'yearly'"
+                class="text-sm text-primary-700 font-medium mb-4"
+              >
+                Save vs monthly billing
+              </p>
+              <p class="text-sm text-gray-600 mb-2">
+                Includes up to
+                <strong class="text-gray-800">50 modifying users</strong>.
+              </p>
+              <p class="text-sm text-gray-600 mb-4">
+                Extra seats:
+                <strong class="text-gray-800">$50 / month</strong>
+                per additional 10 users.
+              </p>
               <p class="text-sm text-gray-600 mb-6">
                 AI usage included up to
                 <strong class="text-gray-800">10M tokens</strong>
@@ -601,6 +652,12 @@
                     class="fa-solid fa-check text-primary-600 mt-0.5 flex-shrink-0"
                   ></i>
                   <span>All modules and AI features</span>
+                </li>
+                <li class="flex gap-2">
+                  <i
+                    class="fa-solid fa-check text-primary-600 mt-0.5 flex-shrink-0"
+                  ></i>
+                  <span>Up to 50 modifying users</span>
                 </li>
                 <li class="flex gap-2">
                   <i
@@ -643,7 +700,7 @@
                   <i
                     class="fa-solid fa-check text-primary-600 mt-0.5 flex-shrink-0"
                   ></i>
-                  <span>Everything in the $799 / mo plan</span>
+                  <span>Everything in the Full platform plan</span>
                 </li>
                 <li class="flex gap-2">
                   <i
@@ -1242,6 +1299,7 @@ const recentBlogPosts = getRecentBlogPosts(3);
 
 const mobileMenuOpen = ref(false);
 const activeModuleId = ref("documents");
+const pricingPeriod = ref("monthly");
 
 const toggleModule = (id) => {
   activeModuleId.value = activeModuleId.value === id ? null : id;
