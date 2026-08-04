@@ -18,6 +18,11 @@ const routes = [
     changefreq: "monthly",
   },
   {
+    path: "/training-tracking",
+    priority: "0.9",
+    changefreq: "monthly",
+  },
+  {
     path: "/iso-14001",
     priority: "0.9",
     changefreq: "monthly",

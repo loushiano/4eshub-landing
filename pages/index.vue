@@ -350,6 +350,14 @@
                           }}</span>
                         </li>
                       </ul>
+                      <NuxtLink
+                        v-if="module.learnMore"
+                        :to="module.learnMore.to"
+                        class="inline-flex items-center mt-5 text-primary-600 hover:text-primary-700 text-sm font-semibold"
+                      >
+                        {{ module.learnMore.label }}
+                        <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                      </NuxtLink>
                     </div>
                   </div>
                 </div>
@@ -1395,6 +1403,10 @@ const platformModules = [
       "Automatic retraining prompts when controlled documents revise",
       "Evaluation and authorization records auditors expect to see",
     ],
+    learnMore: {
+      to: "/training-tracking",
+      label: "Explore training tracking by competency",
+    },
   },
   {
     id: "surveys",

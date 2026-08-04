@@ -337,6 +337,14 @@
               <ul class="text-sm space-y-2 list-none pl-0 mb-0">
                 <li>
                   <NuxtLink
+                    to="/training-tracking"
+                    class="text-primary-600 hover:text-primary-700 font-medium"
+                  >
+                    Employee training tracking by competency
+                  </NuxtLink>
+                </li>
+                <li>
+                  <NuxtLink
                     to="/blog/what-is-iso-9001"
                     class="text-primary-600 hover:text-primary-700 font-medium"
                   >
