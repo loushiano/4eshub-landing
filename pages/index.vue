@@ -508,7 +508,7 @@
                 Pay per module—core QMS workflows without AI.
               </p>
               <div class="mb-6">
-                <span class="text-4xl font-bold text-gray-900">$100</span>
+                <span class="text-4xl font-bold text-gray-900">$50</span>
                 <span class="text-gray-600"> / module</span>
               </div>
               <p class="text-sm text-gray-500 mb-4">
@@ -626,7 +626,7 @@
               </div>
               <div class="mb-2">
                 <span class="text-4xl font-bold text-gray-900">{{
-                  pricingPeriod === "yearly" ? "$3,000" : "$299"
+                  pricingPeriod === "yearly" ? "$4,000" : "$399"
                 }}</span>
                 <span class="text-gray-600">{{
                   pricingPeriod === "yearly" ? " / year" : " / month"
