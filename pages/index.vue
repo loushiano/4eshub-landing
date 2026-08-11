@@ -101,7 +101,7 @@
         <div class="flex items-center gap-4">
           <NuxtLink
             to="/are-you-ready-for-iso-certification"
-            class="hidden md:inline-flex btn-primary !py-2.5 !px-5 !text-sm"
+            class="hidden md:inline-flex text-gray-700 hover:text-primary-600 text-sm font-normal tracking-snug py-2"
           >
             Ready for certification?
           </NuxtLink>
@@ -109,9 +109,9 @@
             href="https://app.4eshub.com"
             target="_blank"
             rel="noopener noreferrer"
-            class="hidden md:inline-flex text-gray-700 hover:text-primary-600 text-sm font-normal tracking-snug py-2"
+            class="hidden md:inline-flex btn-primary !py-2.5 !px-5 !text-sm"
           >
-            Login
+            Try free
           </a>
   
           <!-- Mobile menu button -->
@@ -171,7 +171,7 @@
           >
           <NuxtLink
             to="/are-you-ready-for-iso-certification"
-            class="text-primary-600 font-medium py-2"
+            class="text-gray-700 hover:text-primary-600 py-2"
             @click="mobileMenuOpen = false"
           >
             Ready for certification?
@@ -180,8 +180,8 @@
             href="https://app.4eshub.com"
             target="_blank"
             rel="noopener noreferrer"
-            class="text-gray-700 hover:text-primary-600 py-2"
-            >Login</a
+            class="text-primary-600 font-medium py-2"
+            >Try free</a
           >
     
         </nav>
@@ -210,22 +210,25 @@
                 4ES Hub helps you build your management system in software,
                 connect with certification and consultant partners, achieve ISO
                 certification, and maintain audit-ready compliance long after the
-                certificate is issued.
+                certificate is issued. Start right away—try it free, no appointment
+                needed.
               </p>
               <div class="flex flex-wrap gap-4">
-                <NuxtLink
-                  to="/are-you-ready-for-iso-certification"
+                <a
+                  href="https://app.4eshub.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   class="btn-primary"
                 >
-                  Ready for certification?
+                  Try free — start now
                   <i class="fa-solid fa-arrow-right ml-2"></i>
-                </NuxtLink>
-                <a
-                  href="#contact-section"
+                </a>
+                <NuxtLink
+                  to="/are-you-ready-for-iso-certification"
                   class="btn-secondary"
                 >
-                  Book a free demo
-                </a>
+                  Ready for certification?
+                </NuxtLink>
                 <NuxtLink
                   to="/partners"
                   class="btn-secondary"
@@ -492,8 +495,8 @@
               Plans that scale with your compliance program
             </h2>
             <p class="text-lg text-[#6e6e73] tracking-snug">
-              Start with the modules you need, or unlock the full platform with
-              AI and premium support.
+              Try free and start right away—then pick the modules you need, or
+              unlock the full platform with AI and premium support.
             </p>
           </div>
           <div
@@ -571,10 +574,12 @@
                 </li>
               </ul>
               <a
-                href="#contact-section"
+                href="https://app.4eshub.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 class="btn-secondary w-full"
               >
-                Get started
+                Try free
               </a>
             </div>
 
@@ -681,10 +686,12 @@
                 </li>
               </ul>
               <a
-                href="#contact-section"
+                href="https://app.4eshub.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 class="btn-primary w-full"
               >
-                Book a demo
+                Try free — start now
               </a>
             </div>
 
@@ -866,10 +873,12 @@
               </ul>
               <div class="flex flex-wrap gap-4">
                 <a
-                  href="#contact-section"
+                  href="https://app.4eshub.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   class="btn-primary"
                 >
-                  Start your certification journey
+                  Try free — start now
                   <i class="fa-solid fa-arrow-right ml-2"></i>
                 </a>
                 <NuxtLink
@@ -986,17 +995,20 @@
       <section class="py-20 md:py-28 bg-primary-600">
         <div class="container mx-auto px-6 text-center">
           <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
-            Ready to start your certification journey?
+            Ready to start? Try 4ES Hub free.
           </h2>
           <p class="text-lg text-primary-100 mb-8 max-w-2xl mx-auto">
-            Book a free consultation and see how 4ES Hub can help you build your
-            QMS, connect with experts, and prepare for ISO certification.
+            Jump into the product right away—no appointment needed. Build your
+            QMS, connect with experts when you want, and prepare for ISO
+            certification at your own pace.
           </p>
           <a
-            href="#contact-section"
+            href="https://app.4eshub.com"
+            target="_blank"
+            rel="noopener noreferrer"
             class="btn-primary !bg-white !text-primary-600 hover:!bg-gray-50"
           >
-            Start your certification path
+            Try free — start now
             <i class="fa-solid fa-arrow-right ml-2"></i>
           </a>
         </div>
@@ -1012,11 +1024,19 @@
               Contact Us
             </span>
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-[#1d1d1f] mb-4">
-              Talk to us about ISO certification
+              Questions? We're here to help
             </h2>
             <p class="text-lg text-[#6e6e73] tracking-snug">
-              Tell us where you are today, and we will help map the path from
-              QMS implementation to certification readiness.
+              Prefer to explore on your own?
+              <a
+                href="https://app.4eshub.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-primary-600 hover:text-primary-700 font-medium"
+                >Try 4ES Hub free</a
+              >
+              anytime. Or reach out and we'll help map the path from QMS
+              implementation to certification readiness.
             </p>
           </div>
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
@@ -1041,10 +1061,10 @@
                   </div>
                   <div>
                     <h4 class="font-semibold text-gray-900 mb-1">
-                      Schedule a Call
+                      Prefer a walkthrough?
                     </h4>
                     <p class="text-gray-600">
-                      Book a free 30-minute consultation
+                      Optional—most teams start free in the app
                     </p>
                   </div>
                 </div>

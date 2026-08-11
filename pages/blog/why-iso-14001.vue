@@ -5,12 +5,14 @@
         <NuxtLink to="/" class="flex items-center cursor-pointer">
           <img src="/4es-logo.png" alt="4ES Hub" class="h-14" />
         </NuxtLink>
-        <NuxtLink
-          to="/#contact-section"
+        <a
+          href="https://app.4eshub.com"
+          target="_blank"
+          rel="noopener noreferrer"
           class="hidden md:inline-flex items-center bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg px-6 py-2.5 transition-all duration-200"
         >
-          Book a free demo
-        </NuxtLink>
+          Try free
+        </a>
       </div>
     </header>
 
@@ -154,17 +156,19 @@
               <div class="bg-primary-50 border border-primary-100 rounded-2xl p-8 mt-10">
                 <h2 class="mt-0">Put ISO 14001 benefits to work</h2>
                 <p>
-                  Book a demo to see how 4ES Hub implements environmental
+                  Try 4ES Hub free and see how it implements environmental
                   workflows that support compliance, efficiency, and audit
-                  readiness.
+                  readiness—start right away, no appointment needed.
                 </p>
-                <NuxtLink
-                  to="/#contact-section"
+                <a
+                  href="https://app.4eshub.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   class="inline-flex items-center bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg px-6 py-3 transition-all duration-200 mt-2"
                 >
-                  Book a free demo
+                  Try free — start now
                   <i class="fa-solid fa-arrow-right ml-2"></i>
-                </NuxtLink>
+                </a>
               </div>
             </div>
           </div>

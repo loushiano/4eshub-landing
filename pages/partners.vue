@@ -31,12 +31,14 @@
             Contact
           </NuxtLink>
         </nav>
-        <NuxtLink
-          to="/#contact-section"
+        <a
+          href="https://app.4eshub.com"
+          target="_blank"
+          rel="noopener noreferrer"
           class="hidden md:inline-flex btn-primary !py-2.5 !px-5 !text-sm"
         >
-          Book a free demo
-        </NuxtLink>
+          Try free
+        </a>
       </div>
     </header>
 

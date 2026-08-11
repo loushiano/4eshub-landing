@@ -25,12 +25,14 @@
             Contact
           </NuxtLink>
         </nav>
-        <NuxtLink
-          to="/#contact-section"
+        <a
+          href="https://app.4eshub.com"
+          target="_blank"
+          rel="noopener noreferrer"
           class="hidden md:inline-flex items-center bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg px-6 py-2.5 transition-all duration-200"
         >
-          Book a free demo
-        </NuxtLink>
+          Try free
+        </a>
       </div>
     </header>
 
@@ -375,17 +377,20 @@
                 Ready to implement ISO 9001 without the chaos?
               </h2>
               <p class="text-gray-600 mb-6 max-w-xl mx-auto">
-                Book a free demo and see how 4ES Hub turns ISO 9001 clauses into
+                Try 4ES Hub free and see how it turns ISO 9001 clauses into
                 owned workflows, evidence, and continuous improvement—not a
-                binder that gathers dust after the audit.
+                binder that gathers dust after the audit. Start right away—no
+                appointment needed.
               </p>
-              <NuxtLink
-                to="/#contact-section"
+              <a
+                href="https://app.4eshub.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 class="inline-flex items-center bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg px-6 py-3 transition-all duration-200"
               >
-                Book a free demo
+                Try free — start now
                 <i class="fa-solid fa-arrow-right ml-2"></i>
-              </NuxtLink>
+              </a>
             </div>
           </div>
         </div>

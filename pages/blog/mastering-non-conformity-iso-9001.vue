@@ -5,12 +5,14 @@
         <NuxtLink to="/" class="flex items-center cursor-pointer">
           <img src="/4es-logo.png" alt="4ES Hub" class="h-14" />
         </NuxtLink>
-        <NuxtLink
-          to="/#contact-section"
+        <a
+          href="https://app.4eshub.com"
+          target="_blank"
+          rel="noopener noreferrer"
           class="hidden md:inline-flex items-center bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg px-6 py-2.5 transition-all duration-200"
         >
-          Book a free demo
-        </NuxtLink>
+          Try free
+        </a>
       </div>
     </header>
 
@@ -186,13 +188,15 @@
                   connected to the rest of your QMS—we would love to show you
                   how 4ES Hub fits your team.
                 </p>
-                <NuxtLink
-                  to="/#contact-section"
+                <a
+                  href="https://app.4eshub.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   class="inline-flex items-center bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg px-6 py-3 transition-all duration-200 mt-2"
                 >
-                  Book a free demo
+                  Try free — start now
                   <i class="fa-solid fa-arrow-right ml-2"></i>
-                </NuxtLink>
+                </a>
               </div>
             </div>
           </div>
