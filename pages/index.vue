@@ -198,20 +198,23 @@
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div class="max-w-xl">
               <span class="section-label mb-5">
-                Certification &amp; compliance platform
+                ISO implementation platform
               </span>
               <h1
                 class="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-[#1d1d1f] mb-6 leading-[1.05]"
               >
-                Get to certification.
-                <span class="text-primary-600">Stay certified every day.</span>
+                Run your ISO system from day one.
+                <span class="text-primary-600"
+                  >Stay with it through every audit.</span
+                >
               </h1>
               <p class="text-lg md:text-xl text-[#6e6e73] mb-8 leading-relaxed tracking-snug">
-                4ES Hub helps you build your management system in software,
-                connect with certification and consultant partners, achieve ISO
-                certification, and maintain audit-ready compliance long after the
-                certificate is issued. Start right away—try it free, no appointment
-                needed.
+                4ES Hub is the platform that manages your ISO standard
+                implementation—documents, audits, training, risks,
+                nonconformities, and management review in one place. Start from
+                scratch or replace folder chaos. Use it to get certified, then
+                keep it as your system of record for every surveillance audit
+                after.
               </p>
               <div class="flex flex-wrap gap-4">
                 <a
@@ -227,29 +230,23 @@
                   to="/are-you-ready-for-iso-certification"
                   class="btn-secondary"
                 >
-                  Ready for certification?
-                </NuxtLink>
-                <NuxtLink
-                  to="/partners"
-                  class="btn-secondary"
-                >
-                  Browse certification partners
+                  Check certification readiness
                 </NuxtLink>
               </div>
               <div
                 class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm text-gray-700"
               >
                 <div class="bg-white border border-gray-200 rounded-xl p-4 shadow-sm">
-                  <i class="fa-solid fa-user-tie text-primary-600 mb-2"></i>
-                  <p class="font-semibold">Consultant support</p>
+                  <i class="fa-solid fa-folder-open text-primary-600 mb-2"></i>
+                  <p class="font-semibold">Implement your ISO standard</p>
                 </div>
                 <div class="bg-white border border-gray-200 rounded-xl p-4 shadow-sm">
                   <i class="fa-solid fa-certificate text-primary-600 mb-2"></i>
-                  <p class="font-semibold">Certification body access</p>
+                  <p class="font-semibold">Get certification-ready</p>
                 </div>
                 <div class="bg-white border border-gray-200 rounded-xl p-4 shadow-sm">
-                  <i class="fa-solid fa-list-check text-purple-600 mb-2"></i>
-                  <p class="font-semibold">System built in 4ES Hub</p>
+                  <i class="fa-solid fa-shield-halved text-purple-600 mb-2"></i>
+                  <p class="font-semibold">Stay audit-ready daily</p>
                 </div>
               </div>
             </div>
@@ -1492,18 +1489,18 @@ const siteUrl = useRuntimeConfig().public.siteUrl.replace(/\/$/, "");
 const homeUrl = `${siteUrl}/`;
 
 useSeoMeta({
-  title: "ISO Certification & Compliance Software | 4ES Hub",
+  title: "ISO Implementation Platform | 4ES Hub",
   description:
-    "4ES Hub helps organizations achieve ISO certification and maintain compliance with management system software, audit-ready workflows, and certification partner introductions.",
-  ogTitle: "4ES Hub | Get Certified. Stay Certified.",
+    "4ES Hub manages your ISO standard implementation end to end—documents, audits, training, risks, nonconformities, and management review. Get certified and stay audit-ready.",
+  ogTitle: "4ES Hub | Run your ISO system. Stay audit-ready.",
   ogDescription:
-    "Build your management system in software, connect with certification partners, achieve ISO certification, and maintain audit-ready compliance every day.",
+    "The platform that manages ISO implementation from day one through certification and every surveillance audit after.",
   ogUrl: homeUrl,
   ogImage: `${siteUrl}/4es-logo.png`,
   twitterCard: "summary_large_image",
-  twitterTitle: "4ES Hub | ISO Certification & Compliance Software",
+  twitterTitle: "4ES Hub | ISO Implementation Platform",
   twitterDescription:
-    "Software and partner support to achieve certification and maintain it long term.",
+    "Manage ISO implementation in one system of record—from first setup through every audit.",
   twitterImage: `${siteUrl}/4es-logo.png`,
 });
 
@@ -1519,7 +1516,7 @@ useHead({
         url: homeUrl,
         logo: `${siteUrl}/4es-logo.png`,
         description:
-          "4ES Hub provides management system software and partner introductions for organizations working toward ISO certification and ongoing compliance.",
+          "4ES Hub is an ISO implementation platform that helps organizations build, run, and maintain management systems from first setup through certification and ongoing audits.",
         sameAs: [
           "https://www.linkedin.com/company/4es-hub",
         ],
@@ -1533,7 +1530,7 @@ useHead({
         name: "4ES Hub",
         url: homeUrl,
         description:
-          "ISO certification help, QMS implementation software, and audit readiness workflows for growing organizations.",
+          "ISO implementation platform for growing organizations—manage documents, audits, training, risks, and management review in one system through certification and beyond.",
       }),
     },
   ],
