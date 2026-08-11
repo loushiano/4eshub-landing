@@ -9,6 +9,16 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "qms-implementation-challenges",
+    title:
+      "3 QMS implementation challenges that stall ISO 9001—and how to get past them",
+    excerpt:
+      "Weak leadership, employee resistance, and unused documentation stall most QMS rollouts. Learn practical fixes—including how to run management review when leaders disengage—and how 4ES Hub keeps the system audit-ready.",
+    category: "QMS Implementation",
+    readTime: "9 min read",
+    published: "2026-08-10",
+  },
+  {
     slug: "what-is-iso-9001",
     title: "What is ISO 9001? Definition, QMS requirements & certification",
     excerpt:

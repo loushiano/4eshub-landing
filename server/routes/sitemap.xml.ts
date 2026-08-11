@@ -88,6 +88,11 @@ const routes = [
     changefreq: "monthly",
   },
   {
+    path: "/blog/qms-implementation-challenges",
+    priority: "0.8",
+    changefreq: "monthly",
+  },
+  {
     path: "/blog/what-is-iso-9001",
     priority: "0.8",
     changefreq: "monthly",
