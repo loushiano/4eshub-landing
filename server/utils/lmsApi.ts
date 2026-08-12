@@ -110,12 +110,13 @@ export async function authApiFetch<T>(
   }
 }
 
-/** Public auth endpoints (login) — no API token. */
+/** Public auth endpoints (login, password reset) — no API token. */
 export async function publicAuthFetch<T>(
   path: string,
   options: {
     method?: "GET" | "POST" | "PUT" | "DELETE" | "PATCH";
     body?: any;
+    query?: Record<string, string | number | undefined>;
   } = {},
 ): Promise<T> {
   const { authBaseUrl } = getLmsConfig();
@@ -127,6 +128,7 @@ export async function publicAuthFetch<T>(
       headers: {
         "Content-Type": "application/json",
       },
+      query: options.query,
       body: options.body,
     })) as T;
   } catch (error: any) {

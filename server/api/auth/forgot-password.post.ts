@@ -1,4 +1,4 @@
-import { authApiFetch } from "../../utils/lmsApi";
+import { publicAuthFetch } from "../../utils/lmsApi";
 
 export default defineEventHandler(async (event) => {
   const body = await readBody(event);
@@ -13,9 +13,9 @@ export default defineEventHandler(async (event) => {
     });
   }
 
-  await authApiFetch("/users/request-client-user-password-reset", {
-    method: "POST",
-    body: { email },
+  await publicAuthFetch("/auth/code", {
+    method: "GET",
+    query: { email },
   });
 
   return { email };

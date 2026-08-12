@@ -1,5 +1,4 @@
 import {
-  authApiFetch,
   buildLmsHandoffUrl,
   publicAuthFetch,
 } from "../../utils/lmsApi";
@@ -37,9 +36,10 @@ export default defineEventHandler(async (event) => {
     });
   }
 
-  await authApiFetch("/users/reset-client-user-password", {
+  await publicAuthFetch("/auth/password/reset", {
     method: "POST",
-    body: { email, code, password },
+    query: { code },
+    body: { email, password },
   });
 
   const login = await publicAuthFetch<LoginResponse>("/auth/login", {

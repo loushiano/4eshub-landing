@@ -189,7 +189,8 @@
                 class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all tracking-widest text-center text-lg"
               />
               <p class="mt-1.5 text-xs text-gray-500">
-                Sent to {{ form.email }}. Code expires in 15 minutes.
+                Sent to {{ form.email }}. Code expires in
+                {{ mode === "reset" ? "5 minutes" : "15 minutes" }}.
               </p>
             </div>
 
@@ -415,7 +416,7 @@ async function handleSubmit() {
       form.password = "";
       mode.value = "reset";
       infoMessage.value =
-        "If an account exists for that email, we sent a reset code. Enter it below with your new password.";
+        "We sent a reset code to your email. Enter it below with your new password.";
       isSubmitting.value = false;
       return;
     }
