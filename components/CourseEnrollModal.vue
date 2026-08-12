@@ -29,9 +29,11 @@
               <i
                 :class="[
                   'text-primary-600 text-2xl',
-                  mode === 'verify'
+                  mode === 'verify' || mode === 'reset'
                     ? 'fa-solid fa-envelope-open-text'
-                    : 'fa-solid fa-graduation-cap',
+                    : mode === 'forgot'
+                      ? 'fa-solid fa-key'
+                      : 'fa-solid fa-graduation-cap',
                 ]"
               ></i>
             </div>
@@ -47,7 +49,7 @@
           </div>
 
           <div
-            v-if="mode !== 'verify'"
+            v-if="mode === 'login' || mode === 'register'"
             class="flex rounded-lg border border-gray-200 p-1 mb-6"
           >
             <button
@@ -114,7 +116,7 @@
               </div>
             </template>
 
-            <div v-if="mode !== 'verify'">
+            <div v-if="showsEmailField">
               <label
                 for="enroll-email"
                 class="block text-sm font-medium text-gray-700 mb-1.5"
@@ -131,7 +133,7 @@
               />
             </div>
 
-            <div v-if="mode !== 'verify'">
+            <div v-if="mode === 'login' || mode === 'register'">
               <label
                 for="enroll-password"
                 class="block text-sm font-medium text-gray-700 mb-1.5"
@@ -156,7 +158,18 @@
               </p>
             </div>
 
-            <div v-if="mode === 'verify'">
+            <div v-if="mode === 'login'" class="text-right -mt-2">
+              <button
+                type="button"
+                class="text-sm text-primary-600 hover:text-primary-700 font-medium"
+                :disabled="isSubmitting"
+                @click="startPasswordReset"
+              >
+                Forgot password?
+              </button>
+            </div>
+
+            <div v-if="showsCodeField">
               <label
                 for="enroll-code"
                 class="block text-sm font-medium text-gray-700 mb-1.5"
@@ -177,6 +190,26 @@
               />
               <p class="mt-1.5 text-xs text-gray-500">
                 Sent to {{ form.email }}. Code expires in 15 minutes.
+              </p>
+            </div>
+
+            <div v-if="mode === 'reset'">
+              <label
+                for="enroll-new-password"
+                class="block text-sm font-medium text-gray-700 mb-1.5"
+              >
+                New password
+              </label>
+              <input
+                id="enroll-new-password"
+                v-model="form.password"
+                type="password"
+                required
+                autocomplete="new-password"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all"
+              />
+              <p class="mt-1.5 text-xs text-gray-500">
+                8+ characters with upper, lower, number, and special character.
               </p>
             </div>
 
@@ -211,6 +244,16 @@
             >
               Back to registration
             </button>
+
+            <button
+              v-if="mode === 'forgot' || mode === 'reset'"
+              type="button"
+              class="w-full text-sm text-gray-500 hover:text-gray-700"
+              :disabled="isSubmitting"
+              @click="backToLogin"
+            >
+              Back to sign in
+            </button>
           </form>
         </div>
       </div>
@@ -229,7 +272,9 @@ const emit = defineEmits<{
   "update:modelValue": [value: boolean];
 }>();
 
-const mode = ref<"login" | "register" | "verify">("login");
+type EnrollMode = "login" | "register" | "verify" | "forgot" | "reset";
+
+const mode = ref<EnrollMode>("login");
 const isSubmitting = ref(false);
 const errorMessage = ref("");
 const infoMessage = ref("");
@@ -241,8 +286,20 @@ const form = reactive({
   code: "",
 });
 
+const showsEmailField = computed(
+  () =>
+    mode.value === "login" ||
+    mode.value === "register" ||
+    mode.value === "forgot",
+);
+const showsCodeField = computed(
+  () => mode.value === "verify" || mode.value === "reset",
+);
+
 const title = computed(() => {
   if (mode.value === "verify") return "Check your email";
+  if (mode.value === "forgot") return "Reset your password";
+  if (mode.value === "reset") return "Set a new password";
   if (mode.value === "login") return "Sign in to enroll";
   return "Create your account";
 });
@@ -250,6 +307,12 @@ const title = computed(() => {
 const subtitle = computed(() => {
   if (mode.value === "verify") {
     return "Enter the verification code we sent you to finish signing up.";
+  }
+  if (mode.value === "forgot") {
+    return "Enter your email and we’ll send you a reset code.";
+  }
+  if (mode.value === "reset") {
+    return "Enter the code from your email and choose a new password.";
   }
   if (mode.value === "login") {
     return `Sign in to continue to “${props.courseTitle}” in the LMS.`;
@@ -261,10 +324,14 @@ const submitLabel = computed(() => {
   if (isSubmitting.value) {
     if (mode.value === "login") return "Signing in…";
     if (mode.value === "verify") return "Verifying…";
+    if (mode.value === "forgot") return "Sending code…";
+    if (mode.value === "reset") return "Resetting password…";
     return "Creating account…";
   }
   if (mode.value === "login") return "Sign in & continue";
   if (mode.value === "verify") return "Verify & continue";
+  if (mode.value === "forgot") return "Send reset code";
+  if (mode.value === "reset") return "Reset password & continue";
   return "Register";
 });
 
@@ -281,6 +348,38 @@ function resetForm() {
   errorMessage.value = "";
   infoMessage.value = "";
   isSubmitting.value = false;
+}
+
+function startPasswordReset() {
+  errorMessage.value = "";
+  infoMessage.value = "";
+  form.password = "";
+  form.code = "";
+  mode.value = "forgot";
+}
+
+function backToLogin() {
+  errorMessage.value = "";
+  infoMessage.value = "";
+  form.password = "";
+  form.code = "";
+  mode.value = "login";
+}
+
+function fallbackErrorMessage() {
+  if (mode.value === "login") {
+    return "Sign in failed. Check your email and password.";
+  }
+  if (mode.value === "verify") {
+    return "Invalid or expired code. Please try again.";
+  }
+  if (mode.value === "forgot") {
+    return "Could not send a reset code. Please try again.";
+  }
+  if (mode.value === "reset") {
+    return "Invalid or expired code. Please try again.";
+  }
+  return "Registration failed. Please try again.";
 }
 
 async function handleSubmit() {
@@ -307,8 +406,26 @@ async function handleSubmit() {
       return;
     }
 
+    if (mode.value === "forgot") {
+      await $fetch("/api/auth/forgot-password", {
+        method: "POST",
+        body: { email: form.email },
+      });
+      form.code = "";
+      form.password = "";
+      mode.value = "reset";
+      infoMessage.value =
+        "If an account exists for that email, we sent a reset code. Enter it below with your new password.";
+      isSubmitting.value = false;
+      return;
+    }
+
     const endpoint =
-      mode.value === "login" ? "/api/auth/login" : "/api/auth/verify";
+      mode.value === "login"
+        ? "/api/auth/login"
+        : mode.value === "reset"
+          ? "/api/auth/reset-password"
+          : "/api/auth/verify";
     const body =
       mode.value === "login"
         ? {
@@ -338,11 +455,7 @@ async function handleSubmit() {
       error?.data?.message ||
       error?.statusMessage ||
       error?.message ||
-      (mode.value === "login"
-        ? "Sign in failed. Check your email and password."
-        : mode.value === "verify"
-          ? "Invalid or expired code. Please try again."
-          : "Registration failed. Please try again.");
+      fallbackErrorMessage();
     isSubmitting.value = false;
   }
 }
