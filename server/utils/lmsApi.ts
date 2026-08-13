@@ -152,7 +152,7 @@ export function buildLmsHandoffUrl(accessToken: string, courseId: string) {
   const rawToken = accessToken.startsWith("Bearer ")
     ? accessToken.slice(7)
     : accessToken;
-  const redirect = `/do/lms/catalog/${courseId}`;
+  const redirect = `/do/lms/take/${courseId}`;
   const params = new URLSearchParams({
     token: rawToken,
     redirect,
