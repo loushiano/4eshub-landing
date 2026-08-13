@@ -260,10 +260,11 @@
 
               <p>
                 If your search started with "ISO 9001 certification help,"
-                "ISO 9001 consultant," "ISO 9001 certification body," "QMS
-                implementation," or "ISO 9001 software," the practical next step
-                is to align expert guidance with the system where your team will
-                run quality every day.
+                "ISO 9001 consultant," "ISO 9001 certification body,"
+                "ISO 9001 certification companies," "QMS implementation," or
+                "ISO 9001 software," the practical next step is to align expert
+                guidance with the system where your team will run quality every
+                day.
               </p>
 
               <h2 id="faq">Frequently asked questions</h2>
@@ -303,13 +304,21 @@
                   your team the QMS software foundation to move from planning to
                   audit-ready execution.
                 </p>
-                <NuxtLink
-                  to="/#contact-section"
-                  class="inline-flex items-center bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg px-6 py-3 transition-all duration-200 mt-2"
-                >
-                  Talk to 4ES Hub
-                  <i class="fa-solid fa-arrow-right ml-2"></i>
-                </NuxtLink>
+                <div class="flex flex-wrap gap-3 mt-2">
+                  <NuxtLink
+                    to="/blog/iso-9001-certification-companies"
+                    class="inline-flex items-center bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg px-6 py-3 transition-all duration-200"
+                  >
+                    Meet our certification partner SMG
+                    <i class="fa-solid fa-arrow-right ml-2"></i>
+                  </NuxtLink>
+                  <NuxtLink
+                    to="/#contact-section"
+                    class="inline-flex items-center bg-white border border-primary-200 hover:border-primary-400 text-primary-700 font-semibold rounded-lg px-6 py-3 transition-all duration-200"
+                  >
+                    Talk to 4ES Hub
+                  </NuxtLink>
+                </div>
               </div>
             </div>
           </div>

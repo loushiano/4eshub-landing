@@ -85,6 +85,31 @@ const routes = [
     changefreq: "weekly",
   },
   {
+    path: "/blog/iso-9001-certification-companies",
+    priority: "0.8",
+    changefreq: "monthly",
+  },
+  {
+    path: "/blog/eqms-software-ai-compliance",
+    priority: "0.8",
+    changefreq: "monthly",
+  },
+  {
+    path: "/blog/what-is-eqms",
+    priority: "0.8",
+    changefreq: "monthly",
+  },
+  {
+    path: "/blog/why-eqms-software",
+    priority: "0.8",
+    changefreq: "monthly",
+  },
+  {
+    path: "/blog/how-to-choose-eqms-software",
+    priority: "0.8",
+    changefreq: "monthly",
+  },
+  {
     path: "/partners",
     priority: "0.9",
     changefreq: "monthly",

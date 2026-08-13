@@ -96,7 +96,7 @@ const siteUrl = useRuntimeConfig().public.siteUrl.replace(/\/$/, "");
 const pageUrl = `${siteUrl}/blog`;
 const title = "Blog | Practical compliance advice for audit-ready teams";
 const description =
-  "Articles on ISO quality management, risk management, audit readiness, training, and how 4ES Hub helps teams stay compliant without the complexity.";
+  "Articles on eQMS software, ISO quality management, risk management, audit readiness, training, and how 4ES Hub helps teams stay compliant without the complexity.";
 
 const sortedPosts: BlogPost[] = [...blogPosts].sort((a, b) =>
   b.published.localeCompare(a.published),

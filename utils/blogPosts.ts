@@ -9,6 +9,51 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "iso-9001-certification-companies",
+    title: "ISO 9001 certification companies: how to choose a certification body",
+    excerpt:
+      "Looking for ISO 9001 certification companies? Learn how certification bodies differ from consultants, then leave your email so 4ES Hub can introduce you to our partner SMG.",
+    category: "ISO 9001 Certification",
+    readTime: "8 min read",
+    published: "2026-08-12",
+  },
+  {
+    slug: "eqms-software-ai-compliance",
+    title: "#1 eQMS Software | Ensure Compliance With AI",
+    excerpt:
+      "4ES Hub is eQMS software that ensures ISO compliance with AI—connected documents, audits, training, CAPA, and management review in one audit-ready platform.",
+    category: "eQMS & AI",
+    readTime: "9 min read",
+    published: "2026-08-12",
+  },
+  {
+    slug: "what-is-eqms",
+    title: "What is an eQMS? Electronic quality management systems explained",
+    excerpt:
+      "An eQMS is software that centralizes quality processes, audit trails, and ISO evidence. Get a clear definition, how it differs from a paper QMS, and how 4ES Hub implements it.",
+    category: "eQMS",
+    readTime: "8 min read",
+    published: "2026-08-12",
+  },
+  {
+    slug: "why-eqms-software",
+    title: "Why eQMS software beats paper, SharePoint, and spreadsheets",
+    excerpt:
+      "Paper, email, and shared drives cannot keep a QMS audit-ready. Learn why eQMS software wins on version control, training, CAPA, and retrieval—and how 4ES Hub replaces the patchwork.",
+    category: "eQMS",
+    readTime: "8 min read",
+    published: "2026-08-12",
+  },
+  {
+    slug: "how-to-choose-eqms-software",
+    title: "How to choose eQMS software in 2026",
+    excerpt:
+      "A practical checklist for choosing eQMS software: linked ISO workflows, adoption, go-live speed, honest pricing, and responsible AI—plus how 4ES Hub fits.",
+    category: "eQMS",
+    readTime: "9 min read",
+    published: "2026-08-12",
+  },
+  {
     slug: "qms-implementation-challenges",
     title:
       "3 QMS implementation challenges that stall ISO 9001—and how to get past them",
