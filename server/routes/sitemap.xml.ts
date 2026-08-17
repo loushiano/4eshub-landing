@@ -85,6 +85,11 @@ const routes = [
     changefreq: "weekly",
   },
   {
+    path: "/blog/iso-9001-internal-external-issues",
+    priority: "0.8",
+    changefreq: "monthly",
+  },
+  {
     path: "/blog/iso-9001-certification-companies",
     priority: "0.8",
     changefreq: "monthly",
