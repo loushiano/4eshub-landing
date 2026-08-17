@@ -59,7 +59,8 @@
                 staff are trained, records look complete—then the auditor says:
                 “Walk me through how you identified your internal and external
                 issues.” Silence is one of the most common audit gaps. Here is
-                how to close it.
+                how to close it—and how 4ES Hub AI helps you draft that
+                analysis instead of starting from a blank page.
               </p>
             </div>
           </div>
@@ -85,9 +86,11 @@
                   external issues that affect your quality management system.
                   Auditors do not need a specific template. They need evidence
                   that you identified relevant factors, keep them current, and
-                  feed them into risk planning and quality objectives. Since
-                  February 2024, that analysis must also include an explicit
-                  decision on whether climate change is relevant.
+                  feed them into risk planning and quality objectives. 4ES Hub
+                  can help: describe your business, and AI drafts candidate
+                  internal and external issues for your team to review, save,
+                  and link to risks—so Clause 4.1 is a working register, not a
+                  last-minute scramble.
                 </p>
               </section>
 
@@ -129,7 +132,7 @@
                   </li>
                   <li>
                     <a href="#4es-hub" class="text-primary-600 hover:text-primary-700">
-                      How 4ES Hub supports Clause 4.1
+                      How 4ES Hub AI helps with Clause 4.1
                     </a>
                   </li>
                   <li>
@@ -376,7 +379,13 @@
               <p>
                 Record findings in a version-controlled place you can open during
                 an audit. A simple table works: issue, category (internal or
-                external), relevance to the QMS, and planned response.
+                external), relevance to the QMS, and planned response. In 4ES
+                Hub you do not have to type that register from scratch: describe
+                the business, and AI proposes distinct issues—names,
+                descriptions, internal or external type, and a context origin—
+                using your existing catalogs so drafts fit your QMS instead of a
+                generic template. You still review and save; the record stays
+                yours.
               </p>
               <p>
                 One clarification is worth knowing: Clause 4.1 does not require
@@ -485,18 +494,34 @@
                 is incomplete. Record the decision even when the answer is no.
               </p>
 
-              <h2 id="4es-hub">How 4ES Hub supports Clause 4.1</h2>
+              <h2 id="4es-hub">How 4ES Hub AI helps with Clause 4.1</h2>
               <p>
-                4ES Hub treats internal and external issues as part of context of
-                the organization—not a side spreadsheet. You record each issue
-                with a type (internal or external by default), an optional
-                context origin such as people, legal, market, or environmental,
-                and a status so the register stays current.
+                The hard part of Clause 4.1 is not knowing that you need a list.
+                It is getting a relevant, current set of issues out of people’s
+                heads and into a register auditors can follow. 4ES Hub is built
+                for that: context of the organization lives in the QMS, and AI
+                takes the first pass so you are not staring at a blank form.
+              </p>
+              <p>
+                Tell the assistant how your business actually works—markets,
+                sites, suppliers, workforce, regulations, known pain points. It
+                drafts candidate issues from that description: a concise name, a
+                practical description, internal or external type, and a context
+                origin from your catalog (or a suggested new origin if none
+                fit). If you describe several distinct factors, it returns
+                several issues, and it avoids duplicating names you already
+                have. You review, edit, and save. AI does not publish controlled
+                records on its own.
+              </p>
+              <p>
+                Once the issues are in the register, the rest of the QMS can use
+                them. That is what turns a SWOT workshop into audit-ready
+                evidence:
               </p>
               <ul class="list-disc pl-6 space-y-2 mb-6 text-gray-600">
                 <li>
-                  Keep a living issues register instead of a static SWOT file
-                  that only appears at certification
+                  Classify each issue as internal or external and attach a
+                  context origin such as people, legal, market, or environmental
                 </li>
                 <li>
                   Link each issue to a risk assessment or an opportunity for
@@ -507,17 +532,20 @@
                   so context is re-checked, not assumed
                 </li>
                 <li>
-                  Scope issues to the teams they affect, then show auditors how
-                  the analysis was done and who owns the follow-up
+                  Scope issues to the teams they affect, then walk the auditor
+                  from the identified issue to the owner, the action, and the
+                  last review date
                 </li>
               </ul>
               <p>
                 That is the difference between answering “we have a list” and
-                walking the auditor from an identified issue to the risk, the
-                action, and the last review date. If you are still choosing
-                software,
+                showing a living register that AI helped you start and your team
+                keeps current. For how AI sits inside the wider eQMS—not as a
+                chatbot bolted onto a binder—see
+                <NuxtLink to="/blog/eqms-software-ai-compliance" class="text-primary-600 hover:text-primary-700 font-medium">how 4ES Hub uses AI for compliance</NuxtLink>.
+                If you are still choosing software,
                 <NuxtLink to="/blog/how-to-choose-eqms-software" class="text-primary-600 hover:text-primary-700 font-medium">how to choose eQMS software</NuxtLink>
-                is a practical next read before you start the context work.
+                is a practical next read.
               </p>
               <p>
                 According to the ISO Survey 2024, published by ISO with the
@@ -561,6 +589,14 @@
                   </li>
                   <li>
                     <NuxtLink
+                      to="/blog/eqms-software-ai-compliance"
+                      class="text-primary-600 hover:text-primary-700 font-medium"
+                    >
+                      #1 eQMS software | ensure compliance with AI
+                    </NuxtLink>
+                  </li>
+                  <li>
+                    <NuxtLink
                       to="/blog/enterprise-risk-management-software"
                       class="text-primary-600 hover:text-primary-700 font-medium"
                     >
@@ -579,11 +615,12 @@
               </aside>
 
               <div class="bg-primary-50 border border-primary-100 rounded-2xl p-8 mt-10">
-                <h2 class="mt-0">Keep Clause 4.1 connected to the rest of your QMS</h2>
+                <h2 class="mt-0">Let AI help you build Clause 4.1—then keep it audit-ready</h2>
                 <p>
-                  See how 4ES Hub turns internal and external issues into a
-                  living register—linked to risks, opportunities, reviews, and
-                  audit-ready evidence.
+                  Describe your organization in 4ES Hub. AI drafts internal and
+                  external issues for your team to review, then you link them to
+                  risks, opportunities, and scheduled reviews so the auditor
+                  never gets silence.
                 </p>
                 <a
                   href="https://app.4eshub.com"
@@ -607,7 +644,7 @@
 const headline =
   "ISO 9001 internal and external issues: how to satisfy Clause 4.1 before the auditor asks";
 const description =
-  "ISO 9001 Clause 4.1 requires you to identify internal and external issues that affect your QMS. Get examples, a documentation method, the 2024 climate change amendment, and how 4ES Hub keeps context analysis audit-ready.";
+  "ISO 9001 Clause 4.1 requires you to identify internal and external issues that affect your QMS. Get examples, a documentation method, and how 4ES Hub AI drafts that analysis so you can review, link it to risks, and stay audit-ready.";
 
 const { faqItems } = useBlogArticleSeo({
   slug: "iso-9001-internal-external-issues",
@@ -624,6 +661,7 @@ const { faqItems } = useBlogArticleSeo({
     "ISO 9001 climate change amendment",
     "PESTLE ISO 9001",
     "SWOT ISO 9001",
+    "ISO 9001 AI",
     "4ES Hub",
   ],
   published: "2026-08-17",
@@ -678,9 +716,14 @@ const { faqItems } = useBlogArticleSeo({
         "Yes. Amendment 1:2024, effective February 2024, added a requirement that the organization shall determine whether climate change is a relevant issue. You must make and be able to demonstrate that decision even if you conclude it is not relevant.",
     },
     {
+      question: "Can AI identify ISO 9001 internal and external issues for us?",
+      answer:
+        "Yes, as a first pass. In 4ES Hub you describe your organization and AI drafts candidate Clause 4.1 issues—internal or external, with names, descriptions, and context origins from your catalogs. Your team still reviews, edits, and saves. Auditors expect people who can explain the analysis; AI speeds the draft, it does not replace ownership.",
+    },
+    {
       question: "How does 4ES Hub help with ISO 9001 Clause 4.1?",
       answer:
-        "4ES Hub keeps internal and external issues in a living register under context of the organization. You classify issues, attach context origins, review them on a schedule, and link each one to a risk assessment or opportunity for improvement so auditors can trace Clause 4.1 into Clause 6.1.",
+        "4ES Hub keeps internal and external issues in a living register under context of the organization. AI drafts candidate issues from a description of your business—name, description, internal or external type, and context origin—using your existing catalogs and avoiding duplicates. You review and save, then classify, schedule reviews, and link each issue to a risk assessment or opportunity for improvement so auditors can trace Clause 4.1 into Clause 6.1.",
     },
   ],
 });

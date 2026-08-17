@@ -13,7 +13,7 @@ export const blogPosts: BlogPost[] = [
     title:
       "ISO 9001 internal and external issues: how to satisfy Clause 4.1 before the auditor asks",
     excerpt:
-      "Clause 4.1 is one of the most common ISO 9001 audit gaps. Learn what internal and external issues mean, see practical examples, and keep context analysis connected to risks in 4ES Hub.",
+      "Clause 4.1 is one of the most common ISO 9001 audit gaps. Learn what internal and external issues mean, see practical examples, and how 4ES Hub AI drafts that analysis so you can link it to risks and stay audit-ready.",
     category: "ISO 9001",
     readTime: "12 min read",
     published: "2026-08-17",
