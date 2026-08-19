@@ -350,7 +350,7 @@ export const ISO_STANDARD_CONTENT: Record<IsoStandardSlug, IsoStandardContent> =
       "During your certification audit, auditors evaluate how your QMS addresses the core requirements of ISO 9001. Your certification partner prepares you for each of these areas:",
     auditAreas: iso9001AuditAreas,
     platformNote:
-      "After certification, many teams use 4ES Hub to keep the QMS audit-ready—documents, training, internal audits, and non-conformities in one place.",
+      "4ES Hub AI helps you implement ISO 9001 from $399/month—draft documents, keep training, internal audits, and nonconformities in one place, then stay audit-ready after the certificate.",
     partnerSectionHeading: "Accredited certification partners",
     partnerSectionBody:
       "We work with vetted, accredited certification bodies and ISO 9001 consultants who guide organizations from initial assessment through certification. Leave your email and we will connect you with the right partner for your industry and location.",
@@ -445,7 +445,7 @@ export const ISO_STANDARD_CONTENT: Record<IsoStandardSlug, IsoStandardContent> =
       "During your certification audit, auditors evaluate how your EMS addresses the core requirements of ISO 14001. Your certification partner prepares you for each of these areas:",
     auditAreas: iso14001AuditAreas,
     platformNote:
-      "After certification, many teams use 4ES Hub to keep the EMS audit-ready—aspects, compliance obligations, incidents, and audits in one place.",
+      "4ES Hub AI helps you implement ISO 14001 from $399/month—keep aspects, compliance obligations, incidents, and audits in one system instead of paying a consultant to babysit folders.",
     partnerSectionHeading: "Accredited certification partners",
     partnerSectionBody:
       "We work with vetted, accredited certification bodies and ISO 14001 consultants who guide organizations from initial assessment through certification. Leave your email and we will connect you with the right partner for your industry and location.",
@@ -540,7 +540,7 @@ export const ISO_STANDARD_CONTENT: Record<IsoStandardSlug, IsoStandardContent> =
       "During your certification audit, auditors evaluate how your OH&S management system addresses the core requirements of ISO 45001. Your certification partner prepares you for each of these areas:",
     auditAreas: iso45001AuditAreas,
     platformNote:
-      "After certification, many teams use 4ES Hub to keep OH&S audit-ready—hazards, training, incidents, and audits in one place.",
+      "4ES Hub AI helps you implement ISO 45001 from $399/month—keep hazards, training, incidents, and audits in one system so staying certified is cheaper than a yearly consulting retainer.",
     partnerSectionHeading: "Accredited certification partners",
     partnerSectionBody:
       "We work with vetted, accredited certification bodies and ISO 45001 consultants who guide organizations from initial assessment through certification. Leave your email and we will connect you with the right partner for your industry and location.",

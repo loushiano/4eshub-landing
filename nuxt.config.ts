@@ -36,19 +36,19 @@ export default defineNuxtConfig({
         lang: "en",
       },
       titleTemplate: "%s | 4ES Hub",
-      title: "Your ISO Certification Partner",
+      title: "AI ISO Implementation Software",
       meta: [
         { charset: "utf-8" },
         { name: "viewport", content: "width=device-width, initial-scale=1" },
         {
           name: "description",
           content:
-            "4ES Hub helps teams centralize compliance documentation, manage ISO readiness, and stay audit-ready every day.",
+            "Use AI to implement ISO 9001, 14001, and 45001. Affordable eQMS software from $399/month to get certified and stay audit-ready.",
         },
         {
           name: "keywords",
           content:
-            "ISO certification software, compliance management, audit readiness, QMS software, supplier quality management, document control",
+            "AI ISO implementation, cheap ISO certification, ISO 9001 software, affordable QMS, ISO 14001, ISO 45001, eQMS, audit readiness, document control",
         },
         { name: "author", content: "4ES Hub" },
         {

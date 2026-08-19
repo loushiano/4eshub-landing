@@ -33,11 +33,12 @@
               Blog
             </span>
             <h1 class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6">
-              Practical compliance advice for audit-ready teams
+              ISO certification questions, answered
             </h1>
             <p class="text-xl text-gray-600 leading-relaxed">
-              Field notes on simplifying documentation, quality workflows, risk
-              management, and certification readiness.
+              Cost, timeline, Stage 1 vs Stage 2, documents, small-business
+              ISO, and how AI keeps compliance cheap—practical guides for
+              teams in Canada and the US.
             </p>
           </div>
         </div>
@@ -94,9 +95,9 @@ import {
 
 const siteUrl = useRuntimeConfig().public.siteUrl.replace(/\/$/, "");
 const pageUrl = `${siteUrl}/blog`;
-const title = "Blog | Practical compliance advice for audit-ready teams";
+const title = "ISO Blog | Cost, Timeline, AI Implementation | 4ES Hub";
 const description =
-  "Articles on eQMS software, ISO quality management, risk management, audit readiness, training, and how 4ES Hub helps teams stay compliant without the complexity.";
+  "Answers to the most searched ISO questions: certification cost, how long it takes, Stage 1 vs Stage 2, mandatory documents, small-business ISO, and implementing ISO with AI.";
 
 const sortedPosts: BlogPost[] = [...blogPosts].sort((a, b) =>
   b.published.localeCompare(a.published),

@@ -247,6 +247,86 @@ export const ISO_CITIES: IsoCity[] = [
     intro:
       "Miami organizations in international trade, hospitality, and healthcare implement ISO standards to compete in Latin American markets and meet buyer audits.",
   },
+  {
+    slug: "washington-dc",
+    name: "Washington, DC",
+    country: "United States",
+    region: "District of Columbia",
+    intro:
+      "Washington, DC contractors and professional firms pursue ISO certification to meet federal procurement requirements and demonstrate operational control to government customers.",
+  },
+  {
+    slug: "detroit",
+    name: "Detroit",
+    country: "United States",
+    region: "Michigan",
+    intro:
+      "Detroit's automotive, mobility, and manufacturing suppliers use ISO standards to satisfy OEM quality, environmental, and safety audits across the Great Lakes supply chain.",
+  },
+  {
+    slug: "minneapolis",
+    name: "Minneapolis",
+    country: "United States",
+    region: "Minnesota",
+    intro:
+      "Minneapolis organizations in medical devices, food processing, and professional services implement ISO management systems to support regulated customers and export markets.",
+  },
+  {
+    slug: "portland",
+    name: "Portland",
+    country: "United States",
+    region: "Oregon",
+    intro:
+      "Portland companies in technology, apparel, and sustainable manufacturing pursue ISO certification to formalize quality and environmental performance for West Coast buyers.",
+  },
+  {
+    slug: "nashville",
+    name: "Nashville",
+    country: "United States",
+    region: "Tennessee",
+    intro:
+      "Nashville's healthcare, logistics, and manufacturing firms use ISO standards to scale operations while remaining audit-ready for enterprise and public-sector customers.",
+  },
+  {
+    slug: "tampa",
+    name: "Tampa",
+    country: "United States",
+    region: "Florida",
+    intro:
+      "Tampa organizations in finance, defense support, and logistics implement ISO management systems to compete for contracts and keep distributed teams consistent.",
+  },
+  {
+    slug: "pittsburgh",
+    name: "Pittsburgh",
+    country: "United States",
+    region: "Pennsylvania",
+    intro:
+      "Pittsburgh's advanced manufacturing, energy, and robotics companies rely on ISO certification to control quality and safety as industrial operations modernize.",
+  },
+  {
+    slug: "london",
+    name: "London",
+    country: "Canada",
+    region: "Ontario",
+    intro:
+      "London, Ontario manufacturers and health-sector suppliers pursue ISO certification to serve Southwestern Ontario OEMs and meet Canadian and US customer audit programs.",
+  },
+  {
+    slug: "kitchener",
+    name: "Kitchener",
+    country: "Canada",
+    region: "Ontario",
+    intro:
+      "Kitchener-Waterloo technology, insurance, and advanced manufacturing firms use ISO standards to formalize processes as they scale from startup to enterprise supplier.",
+  },
+  {
+    slug: "hamilton",
+    name: "Hamilton",
+    country: "Canada",
+    region: "Ontario",
+    intro:
+      "Hamilton's steel, fabrication, and logistics organizations implement ISO management systems to strengthen quality, environmental, and safety performance for industrial buyers.",
+  },
 ];
 
 export const ISO_STANDARD_SLUGS = ["9001", "14001", "45001"] as const;

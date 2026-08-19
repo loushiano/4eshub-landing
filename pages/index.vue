@@ -208,23 +208,22 @@
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div class="max-w-xl">
               <span class="section-label mb-5">
-                ISO implementation platform
+                AI-powered ISO implementation
               </span>
               <h1
                 class="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-[#1d1d1f] mb-6 leading-[1.05]"
               >
-                Run your ISO system from day one.
+                Use AI to implement your ISO standard.
                 <span class="text-primary-600"
-                  >Stay with it through every audit.</span
+                  >Stay compliant without consultant prices.</span
                 >
               </h1>
               <p class="text-lg md:text-xl text-[#6e6e73] mb-8 leading-relaxed tracking-snug">
-                4ES Hub is the platform that manages your ISO standard
-                implementation—documents, audits, training, risks,
-                nonconformities, and management review in one place. Start from
-                scratch or replace folder chaos. Use it to get certified, then
-                keep it as your system of record for every surveillance audit
-                after.
+                4ES Hub AI drafts your procedures, context, risks, and audit
+                evidence. Your team reviews and runs the system. Full platform
+                from $399/month—so teams across Canada and the US can get ISO
+                9001, 14001, or 45001 certified and stay audit-ready without a
+                $15,000+ consulting project.
               </p>
               <div class="flex flex-wrap gap-4">
                 <a
@@ -233,7 +232,7 @@
                   rel="noopener noreferrer"
                   class="btn-primary"
                 >
-                  Try free — start now
+                  Try free — start with AI
                   <i class="fa-solid fa-arrow-right ml-2"></i>
                 </a>
                 <NuxtLink
@@ -247,24 +246,114 @@
                 class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm text-gray-700"
               >
                 <div class="bg-white border border-gray-200 rounded-xl p-4 shadow-sm">
-                  <i class="fa-solid fa-folder-open text-primary-600 mb-2"></i>
-                  <p class="font-semibold">Implement your ISO standard</p>
+                  <i class="fa-solid fa-robot text-primary-600 mb-2"></i>
+                  <p class="font-semibold">AI drafts your QMS</p>
                 </div>
                 <div class="bg-white border border-gray-200 rounded-xl p-4 shadow-sm">
-                  <i class="fa-solid fa-certificate text-primary-600 mb-2"></i>
-                  <p class="font-semibold">Get certification-ready</p>
+                  <i class="fa-solid fa-tags text-primary-600 mb-2"></i>
+                  <p class="font-semibold">From $399 / month</p>
                 </div>
                 <div class="bg-white border border-gray-200 rounded-xl p-4 shadow-sm">
-                  <i class="fa-solid fa-shield-halved text-purple-600 mb-2"></i>
+                  <i class="fa-solid fa-shield-halved text-primary-600 mb-2"></i>
                   <p class="font-semibold">Stay audit-ready daily</p>
                 </div>
               </div>
             </div>
             <div class="relative hidden lg:block">
-            
-             <img src="/screen.png" alt="4ES Hub" class="w-full h-full" />
+              <img
+                src="/screen.png"
+                alt="4ES Hub AI ISO implementation software dashboard"
+                class="w-full h-full"
+              />
             </div>
           </div>
+        </div>
+      </section>
+
+      <section id="ai-implementation-section" class="py-20 md:py-28 bg-white">
+        <div class="container mx-auto px-6">
+          <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="section-label mb-4">How the AI works</span>
+            <h2
+              class="text-3xl md:text-4xl font-semibold tracking-tight text-[#1d1d1f] mb-4"
+            >
+              AI helps you implement ISO. You stay in control.
+            </h2>
+            <p class="text-lg text-[#6e6e73] tracking-snug">
+              Consultants bill by the day to write what your team already knows.
+              4ES Hub turns that knowledge into an audit-ready management system
+              with AI drafts, human approval, and linked evidence.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6">
+              <div
+                class="w-10 h-10 rounded-lg bg-primary-100 text-primary-700 font-semibold flex items-center justify-center mb-4"
+              >
+                1
+              </div>
+              <h3 class="text-lg font-semibold text-gray-900 mb-2">
+                Describe your organization
+              </h3>
+              <p class="text-sm text-gray-600 leading-relaxed">
+                Tell the platform what you do, where you operate, and which ISO
+                standard you need—9001, 14001, 45001, or an integrated system.
+              </p>
+            </div>
+            <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6">
+              <div
+                class="w-10 h-10 rounded-lg bg-primary-100 text-primary-700 font-semibold flex items-center justify-center mb-4"
+              >
+                2
+              </div>
+              <h3 class="text-lg font-semibold text-gray-900 mb-2">
+                AI drafts the system
+              </h3>
+              <p class="text-sm text-gray-600 leading-relaxed">
+                AI proposes procedures, context issues, risks, and follow-up
+                actions from your description—not a generic binder template.
+              </p>
+            </div>
+            <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6">
+              <div
+                class="w-10 h-10 rounded-lg bg-primary-100 text-primary-700 font-semibold flex items-center justify-center mb-4"
+              >
+                3
+              </div>
+              <h3 class="text-lg font-semibold text-gray-900 mb-2">
+                Your team reviews
+              </h3>
+              <p class="text-sm text-gray-600 leading-relaxed">
+                Process owners edit and approve. Auditors still expect people who
+                can explain the system. AI never publishes controlled records
+                alone.
+              </p>
+            </div>
+            <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6">
+              <div
+                class="w-10 h-10 rounded-lg bg-primary-100 text-primary-700 font-semibold flex items-center justify-center mb-4"
+              >
+                4
+              </div>
+              <h3 class="text-lg font-semibold text-gray-900 mb-2">
+                Stay cheap to keep certified
+              </h3>
+              <p class="text-sm text-gray-600 leading-relaxed">
+                Documents, training, audits, CAPA, and management review stay
+                linked. Surveillance audits stop being a scramble—and you are not
+                paying a consultant every year to babysit folders.
+              </p>
+            </div>
+          </div>
+          <p class="text-center mt-10">
+            <NuxtLink
+              to="/blog/implement-iso-with-ai"
+              class="inline-flex items-center text-primary-600 hover:text-primary-700 font-semibold"
+            >
+              How AI ISO implementation works
+              <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+            </NuxtLink>
+          </p>
         </div>
       </section>
 
@@ -390,12 +479,13 @@
                 Why 4ES Hub
               </span>
               <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-[#1d1d1f] mb-6">
-                Make your quality unbeatable. Win projects over your biggest
-                competitors.
+                Affordable ISO compliance that actually gets used
               </h2>
               <p class="text-lg text-[#6e6e73] tracking-snug mb-8">
-                Compliance without the complexity. Unify quality and supplier
-                performance with one platform.
+                Traditional ISO projects buy a consultant, a pile of templates,
+                and a certificate that expires into folder chaos. 4ES Hub is the
+                cheaper path: AI-assisted implementation, then a system of
+                record your team can run between audits.
               </p>
               <ul class="space-y-4">
                 <li class="flex items-start gap-3">
@@ -405,8 +495,7 @@
                     <i class="fa-solid fa-check text-primary-600 text-xs"></i>
                   </div>
                   <span class="text-gray-700"
-                    >Centralized compliance management across all
-                    standards</span
+                    >AI-assisted ISO 9001, 14001, and 45001 implementation</span
                   >
                 </li>
                 <li class="flex items-start gap-3">
@@ -499,11 +588,13 @@
               Pricing
             </span>
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-[#1d1d1f] mb-4">
-              Plans that scale with your compliance program
+              Cheap ISO software compared with consultants
             </h2>
             <p class="text-lg text-[#6e6e73] tracking-snug">
-              Try free and start right away—then pick the modules you need, or
-              unlock the full platform with AI and premium support.
+              A typical small-business ISO consultant engagement costs
+              $8,000–$35,000 in year one. 4ES Hub full platform is $399/month
+              with AI included—try free, then keep the system you certified
+              against.
             </p>
           </div>
           <div
@@ -1506,18 +1597,21 @@ const siteUrl = useRuntimeConfig().public.siteUrl.replace(/\/$/, "");
 const homeUrl = `${siteUrl}/`;
 
 useSeoMeta({
-  title: "ISO Implementation Platform | 4ES Hub",
+  title:
+    "AI ISO Implementation Software | Affordable ISO 9001, 14001, 45001",
   description:
-    "4ES Hub manages your ISO standard implementation end to end—documents, audits, training, risks, nonconformities, and management review. Get certified and stay audit-ready.",
-  ogTitle: "4ES Hub | Run your ISO system. Stay audit-ready.",
+    "Use AI to implement ISO 9001, 14001, and 45001. 4ES Hub drafts your QMS, keeps evidence audit-ready, and costs from $399/month—far less than a consultant. For teams in Canada and the US.",
+  keywords:
+    "AI ISO implementation, cheap ISO 9001 certification, affordable ISO software, ISO 9001 cost, ISO certification software, ISO 14001, ISO 45001, QMS software, eQMS AI, stay ISO compliant",
+  ogTitle: "4ES Hub | Implement ISO with AI. Stay compliant for $399/month.",
   ogDescription:
-    "The platform that manages ISO implementation from day one through certification and every surveillance audit after.",
+    "AI-powered ISO implementation for quality, environment, and safety. Draft the system, get certified, and stay audit-ready without consultant prices.",
   ogUrl: homeUrl,
   ogImage: `${siteUrl}/4es-logo.png`,
   twitterCard: "summary_large_image",
-  twitterTitle: "4ES Hub | ISO Implementation Platform",
+  twitterTitle: "4ES Hub | AI ISO Implementation Software",
   twitterDescription:
-    "Manage ISO implementation in one system of record—from first setup through every audit.",
+    "Use AI to implement ISO 9001, 14001, and 45001. Full platform from $399/month.",
   twitterImage: `${siteUrl}/4es-logo.png`,
 });
 
@@ -1533,9 +1627,44 @@ useHead({
         url: homeUrl,
         logo: `${siteUrl}/4es-logo.png`,
         description:
-          "4ES Hub is an ISO implementation platform that helps organizations build, run, and maintain management systems from first setup through certification and ongoing audits.",
-        sameAs: [
-          "https://www.linkedin.com/company/4es-hub",
+          "4ES Hub is AI-powered ISO implementation software that helps organizations build, run, and maintain ISO 9001, 14001, and 45001 management systems at a fraction of consultant cost.",
+        areaServed: [
+          { "@type": "Country", name: "Canada" },
+          { "@type": "Country", name: "United States" },
+        ],
+        sameAs: ["https://www.linkedin.com/company/4es-hub"],
+      }),
+    },
+    {
+      type: "application/ld+json",
+      innerHTML: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        name: "4ES Hub",
+        applicationCategory: "BusinessApplication",
+        operatingSystem: "Web",
+        url: homeUrl,
+        description:
+          "AI ISO implementation software for ISO 9001, ISO 14001, and ISO 45001. Draft documents, risks, audits, and training in one affordable eQMS.",
+        offers: {
+          "@type": "Offer",
+          price: "399",
+          priceCurrency: "USD",
+          priceSpecification: {
+            "@type": "UnitPriceSpecification",
+            price: "399",
+            priceCurrency: "USD",
+            unitText: "MONTH",
+          },
+        },
+        featureList: [
+          "AI-assisted ISO implementation",
+          "Document control",
+          "Audit management",
+          "Training records",
+          "Risk management",
+          "Nonconformity and CAPA",
+          "Management review",
         ],
       }),
     },
@@ -1547,7 +1676,40 @@ useHead({
         name: "4ES Hub",
         url: homeUrl,
         description:
-          "ISO implementation platform for growing organizations—manage documents, audits, training, risks, and management review in one system through certification and beyond.",
+          "Affordable AI ISO implementation software for growing organizations in Canada and the United States.",
+      }),
+    },
+    {
+      type: "application/ld+json",
+      innerHTML: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: [
+          {
+            "@type": "Question",
+            name: "How does AI help implement an ISO standard?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "4ES Hub AI drafts procedures, context of the organization, risks, and follow-up actions from a description of your business. Your team reviews and approves every controlled record. Auditors still expect people who can explain the system; AI speeds implementation instead of replacing ownership.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "How much does it cost to stay ISO compliant with 4ES Hub?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "The full 4ES Hub platform is $399 per month (or $4,000 per year) and includes AI up to 10 million tokens. Module-only access starts at $50 per module. That is typically far less than a first-year ISO consultant engagement of $8,000–$35,000 for a small organization.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Can a small business get ISO 9001 without a consultant?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes. ISO 9001 does not require a consultant. Small businesses can implement with internal owners plus software that drafts and organizes evidence. 4ES Hub is built for that path: AI-assisted implementation, then a live QMS for Stage 1, Stage 2, and surveillance audits.",
+            },
+          },
+        ],
       }),
     },
   ],

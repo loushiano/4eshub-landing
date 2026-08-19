@@ -9,6 +9,78 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "implement-iso-with-ai",
+    title: "Implement ISO with AI: how to get certified without a $15k consultant",
+    excerpt:
+      "AI can draft your ISO 9001, 14001, or 45001 system in days instead of months. See what AI should (and should not) do, and how 4ES Hub keeps implementation cheap and audit-ready from $399/month.",
+    category: "ISO & AI",
+    readTime: "9 min read",
+    published: "2026-08-19",
+  },
+  {
+    slug: "how-much-does-iso-9001-certification-cost",
+    title: "How much does ISO 9001 certification cost in 2026?",
+    excerpt:
+      "ISO 9001 first-year cost for a small business is usually $8,000–$35,000 if you hire a consultant. See the real breakdown—audit fees vs implementation—and the cheaper AI software path.",
+    category: "ISO 9001 Cost",
+    readTime: "10 min read",
+    published: "2026-08-19",
+  },
+  {
+    slug: "how-long-does-iso-certification-take",
+    title: "How long does ISO certification take? Realistic 2026 timelines",
+    excerpt:
+      "Most organizations take 4–8 months to get ISO 9001 certified. Learn what actually drives the timeline, why Stage 2 cannot be rushed, and how AI implementation software shortens the busywork.",
+    category: "ISO Certification",
+    readTime: "8 min read",
+    published: "2026-08-19",
+  },
+  {
+    slug: "iso-9001-certification-process",
+    title: "ISO 9001 certification process: Stage 1, Stage 2, and what happens after",
+    excerpt:
+      "The ISO 9001 certification process is gap analysis, implementation, internal audit, management review, then Stage 1 and Stage 2. Here is each step in plain language for Canada and US teams.",
+    category: "ISO 9001 Certification",
+    readTime: "9 min read",
+    published: "2026-08-19",
+  },
+  {
+    slug: "iso-9001-mandatory-documents",
+    title: "ISO 9001 mandatory documents: what you actually need in 2026",
+    excerpt:
+      "ISO 9001:2015 does not require six named procedures. It requires documented information that proves your QMS works. See the must-haves, common extras, and how AI drafts them without template bloat.",
+    category: "ISO 9001",
+    readTime: "9 min read",
+    published: "2026-08-19",
+  },
+  {
+    slug: "iso-9001-for-small-business",
+    title: "ISO 9001 for small business: can a 10-person company get certified?",
+    excerpt:
+      "Yes. ISO 9001 scales to small businesses. Learn what a 5–50 person company actually needs, what to skip, typical cost, and how AI software replaces a full-time quality manager.",
+    category: "ISO 9001",
+    readTime: "8 min read",
+    published: "2026-08-19",
+  },
+  {
+    slug: "iso-9001-without-a-consultant",
+    title: "Can you get ISO 9001 without a consultant? A practical DIY guide",
+    excerpt:
+      "ISO 9001 does not require a consultant. See when DIY works, where teams get stuck, and how AI-powered QMS software lets small teams implement without a $15,000 engagement.",
+    category: "ISO 9001 Help",
+    readTime: "8 min read",
+    published: "2026-08-19",
+  },
+  {
+    slug: "iso-gap-analysis",
+    title: "ISO gap analysis: how to find what is missing before the auditor does",
+    excerpt:
+      "An ISO gap analysis compares your current practices to ISO 9001, 14001, or 45001 clause by clause. Learn how to run one, what to score, and how 4ES Hub AI turns gaps into an implementation plan.",
+    category: "QMS Implementation",
+    readTime: "8 min read",
+    published: "2026-08-19",
+  },
+  {
     slug: "iso-9001-internal-external-issues",
     title:
       "ISO 9001 internal and external issues: how to satisfy Clause 4.1 before the auditor asks",

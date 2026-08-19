@@ -81,6 +81,22 @@
               Not sure if you are audit-ready? Start with the questionnaire—it
               takes a few minutes.
             </p>
+            <div
+              v-if="variant === 'cheap' || variant === 'low-cost'"
+              class="mt-8 bg-white border border-primary-100 rounded-2xl p-6 text-left"
+            >
+              <p class="text-xs font-semibold uppercase tracking-wide text-primary-700 mb-2">
+                Cheaper than a consultant
+              </p>
+              <p class="text-gray-700 leading-relaxed mb-0">
+                Implementation is what makes ISO expensive. 4ES Hub AI drafts
+                your ISO {{ standard }} system from
+                <strong>$399/month</strong> so small teams across Canada and
+                the US can get certified and stay compliant without a
+                $15,000 writing project. The certification body still charges
+                for the audit—you just stop paying someone to type the QMS.
+              </p>
+            </div>
           </div>
         </div>
       </section>

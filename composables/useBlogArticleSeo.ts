@@ -108,6 +108,10 @@ export function useBlogArticleSeo(options: BlogArticleSeoOptions) {
             "@type": "Thing",
             name,
           })),
+          speakable: {
+            "@type": "SpeakableSpecification",
+            cssSelector: ["h1", "#key-takeaway", "#quick-answer"],
+          },
           mentions: [
             {
               "@type": "Organization",
