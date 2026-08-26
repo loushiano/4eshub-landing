@@ -1341,6 +1341,13 @@
                 </li>
                 <li>
                   <NuxtLink
+                    to="/iso-45001-explained"
+                    class="hover:text-white transition-colors"
+                    >ISO 45001 Explained</NuxtLink
+                  >
+                </li>
+                <li>
+                  <NuxtLink
                     to="/blog"
                     class="hover:text-white transition-colors"
                     >Blog</NuxtLink

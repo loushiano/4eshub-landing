@@ -137,6 +137,11 @@
                 <p class="text-sm font-semibold text-gray-900 mb-3">Related reading</p>
                 <ul class="text-sm space-y-2 list-none pl-0 mb-0">
                   <li>
+                    <NuxtLink to="/iso-45001-explained" class="text-primary-600 hover:text-primary-700 font-medium">
+                      Health and safety management with ISO 45001
+                    </NuxtLink>
+                  </li>
+                  <li>
                     <NuxtLink to="/blog/what-is-iso-45001" class="text-primary-600 hover:text-primary-700 font-medium">
                       What is ISO 45001?
                     </NuxtLink>
