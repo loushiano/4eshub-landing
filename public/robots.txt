@@ -1,4 +1,31 @@
 User-Agent: *
-Disallow:
+Disallow: /admin
+
+User-Agent: GPTBot
+Allow: /
+
+User-Agent: ChatGPT-User
+Allow: /
+
+User-Agent: OAI-SearchBot
+Allow: /
+
+User-Agent: ClaudeBot
+Allow: /
+
+User-Agent: Claude-User
+Allow: /
+
+User-Agent: Claude-SearchBot
+Allow: /
+
+User-Agent: anthropic-ai
+Allow: /
+
+User-Agent: Applebot-Extended
+Allow: /
 
 Sitemap: https://4eshub.com/sitemap.xml
+# LLM index: https://4eshub.com/llms.txt
+# LLM full summary: https://4eshub.com/llms-full.txt
+

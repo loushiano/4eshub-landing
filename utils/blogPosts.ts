@@ -9,6 +9,76 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "ai-native-qms-software",
+    title:
+      "AI-native QMS software: one app for ISO implementation, documents, training, risk, and audit",
+    excerpt:
+      "Most eQMS tools store what you already wrote. An AI-native QMS helps you implement ISO and run document control, competency training, risk, and audits in one app—4ES Hub from $399/month.",
+    category: "eQMS & AI",
+    readTime: "9 min read",
+    published: "2026-08-30",
+  },
+  {
+    slug: "why-iso-9001-implementation-is-hard",
+    title:
+      "Why ISO 9001 implementation is so hard—and how to make it easier",
+    excerpt:
+      "ISO 9001 is hard when you treat it as a writing project. See what stalls teams and how 4ES Hub’s AI-native QMS makes implementation, documents, training, and risk operational.",
+    category: "ISO 9001 Implementation",
+    readTime: "9 min read",
+    published: "2026-08-30",
+  },
+  {
+    slug: "ai-iso-implementation-and-audit",
+    title:
+      "AI that knows ISO: implement and audit your requirements without a specialist on retainer",
+    excerpt:
+      "Generic chatbots can explain a clause. 4ES Hub’s ISO-trained AI drafts implementation records and helps you see audit gaps inside the QMS—not a chat window.",
+    category: "ISO & AI",
+    readTime: "9 min read",
+    published: "2026-08-30",
+  },
+  {
+    slug: "iso-document-control-software",
+    title:
+      "ISO document control software: stop hunting versions before the audit",
+    excerpt:
+      "Clause 7.5 requires controlled documented information. Shared drives fail at version, approval, and retrieval. 4ES Hub keeps document control inside an AI-native QMS.",
+    category: "Document Control",
+    readTime: "8 min read",
+    published: "2026-08-30",
+  },
+  {
+    slug: "competency-based-training-iso",
+    title:
+      "Competency-based training tracking for ISO: attendance is not competence",
+    excerpt:
+      "ISO 9001 Clause 7.2 is about competence, not sign-in sheets. Track roles, competency levels, and evidence in 4ES Hub—next to the documents auditors will sample.",
+    category: "Training & competence",
+    readTime: "8 min read",
+    published: "2026-08-30",
+  },
+  {
+    slug: "ai-risk-management-iso",
+    title:
+      "ISO risk management with AI: from risk-based thinking to a live register",
+    excerpt:
+      "Clause 6.1 needs a live register, not a yearly spreadsheet. 4ES Hub’s AI helps identify risks and keeps them linked to processes, documents, and audits.",
+    category: "Risk Management",
+    readTime: "8 min read",
+    published: "2026-08-30",
+  },
+  {
+    slug: "iso-internal-audit-ai",
+    title:
+      "ISO internal audit software: run Clause 9.2 without the evidence scramble",
+    excerpt:
+      "Internal audit fails when evidence is scattered. 4ES Hub keeps documents, competency training, and risks in one app so Clause 9.2 is sampling—not archaeology.",
+    category: "Audit Management",
+    readTime: "8 min read",
+    published: "2026-08-30",
+  },
+  {
     slug: "implement-iso-with-ai",
     title: "Implement ISO with AI: how to get certified without a $15k consultant",
     excerpt:

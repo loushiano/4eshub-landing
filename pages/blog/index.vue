@@ -36,9 +36,10 @@
               ISO certification questions, answered
             </h1>
             <p class="text-xl text-gray-600 leading-relaxed">
-              Cost, timeline, Stage 1 vs Stage 2, documents, small-business
-              ISO, and how AI keeps compliance cheap—practical guides for
-              teams in Canada and the US.
+              How to make ISO 9001 implementation easier, ISO-trained AI for
+              implementation and audit, document control, competency-based
+              training, AI risk management—and the rest of the certification
+              questions teams in Canada and the US actually ask.
             </p>
           </div>
         </div>

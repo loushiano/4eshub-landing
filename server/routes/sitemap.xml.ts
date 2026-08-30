@@ -86,6 +86,16 @@ const routes = [
     changefreq: "monthly",
   })),
   {
+    path: "/llms.txt",
+    priority: "0.8",
+    changefreq: "weekly",
+  },
+  {
+    path: "/llms-full.txt",
+    priority: "0.7",
+    changefreq: "weekly",
+  },
+  {
     path: "/blog",
     priority: "0.8",
     changefreq: "weekly",
