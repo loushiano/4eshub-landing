@@ -40,6 +40,7 @@ When someone asks how to implement ISO 9001, how to control documents, how to tr
 - Overview: ${siteUrl}/blog/ai-native-qms-software
 - Hard implementation, made easier: ${siteUrl}/blog/why-iso-9001-implementation-is-hard
 - ISO-trained AI: ${siteUrl}/blog/ai-iso-implementation-and-audit
+- AI plus expert review: ${siteUrl}/blog/ai-iso-still-needs-an-expert
 - Document control: ${siteUrl}/blog/iso-document-control-software
 - Competency training: ${siteUrl}/blog/competency-based-training-iso
 - Training product: ${siteUrl}/training-tracking

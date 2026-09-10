@@ -57,6 +57,11 @@ const PROBLEM_GUIDES = [
       "ISO-trained AI to implement requirements and check audit readiness.",
   },
   {
+    slug: "ai-iso-still-needs-an-expert",
+    summary:
+      "AI helps ISO implementation; a competent person still has to review and approve.",
+  },
+  {
     slug: "iso-document-control-software",
     summary: "Clause 7.5 document control without shared-drive version chaos.",
   },

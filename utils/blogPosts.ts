@@ -9,6 +9,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "ai-iso-still-needs-an-expert",
+    title: "AI helps you implement ISO. You still need an expert’s opinion.",
+    excerpt:
+      "AI is a strong first pass for ISO 9001, 14001, and 45001. An expert still has to check context, clause fit, and evidence. See how 4ES Hub keeps drafts and human approval in one QMS.",
+    category: "ISO & AI",
+    readTime: "9 min read",
+    published: "2026-09-10",
+  },
+  {
     slug: "ai-native-qms-software",
     title:
       "AI-native QMS software: one app for ISO implementation, documents, training, risk, and audit",
