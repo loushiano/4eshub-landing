@@ -82,19 +82,23 @@
               takes a few minutes.
             </p>
             <div
-              v-if="variant === 'cheap' || variant === 'low-cost'"
+              v-if="isCheapPath"
               class="mt-8 bg-white border border-primary-100 rounded-2xl p-6 text-left"
             >
               <p class="text-xs font-semibold uppercase tracking-wide text-primary-700 mb-2">
-                Cheaper than a consultant
+                Teach a team to fish
               </p>
+              <blockquote class="cheap-quote">
+                Give a man a fish, and you feed him for a day. Teach a man to
+                fish, and you feed him for a lifetime.
+              </blockquote>
               <p class="text-gray-700 leading-relaxed mb-0">
-                Implementation is what makes ISO expensive. 4ES Hub AI drafts
-                your ISO {{ standard }} system from
-                <strong>$399/month</strong> so small teams across Canada and
-                the US can get certified and stay compliant without a
-                $15,000 writing project. The certification body still charges
-                for the audit—you just stop paying someone to type the QMS.
+                Paying a consultant to write your ISO {{ standard }} system is
+                the fish: you get documents for a while, then you are hungry
+                again at the next audit. 4ES Hub uses AI so your team
+                implements the system themselves. Bring a consultant in for a
+                few hours of review—not weeks of writing—because the AI
+                already did the heavy lift.
               </p>
             </div>
           </div>
@@ -105,8 +109,12 @@
         <div class="container mx-auto px-6">
           <div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-4">
             <a href="#cost" class="quick-link">
-              <span class="quick-link-label">Cost</span>
-              <span class="quick-link-text">What certification usually costs</span>
+              <span class="quick-link-label">{{ isCheapPath ? "Approach" : "Cost" }}</span>
+              <span class="quick-link-text">{{
+                isCheapPath
+                  ? "AI first, then a few consultant hours"
+                  : "What certification usually costs"
+              }}</span>
             </a>
             <a href="#effort" class="quick-link">
               <span class="quick-link-label">Effort</span>
@@ -123,29 +131,71 @@
       <section id="cost" class="py-16">
         <div class="container mx-auto px-6">
           <div class="max-w-3xl mx-auto">
-            <h2 class="section-title">{{ content.costHeading }}</h2>
-            <p class="section-body">{{ content.costIntro }}</p>
-            <div class="info-panel mb-8">
-              <p class="info-panel-label">{{ content.costRangeLabel }}</p>
-              <p class="info-panel-body">{{ content.costRangeBody }}</p>
-            </div>
-            <div class="space-y-4">
-              <div
-                v-for="factor in content.costFactors"
-                :key="factor.title"
-                class="detail-row"
-              >
-                <h3>{{ factor.title }}</h3>
-                <p>{{ factor.description }}</p>
+            <template v-if="isCheapPath">
+              <h2 class="section-title">
+                Don't buy the fish. Learn to run the system.
+              </h2>
+              <p class="section-body">
+                Traditional ISO {{ standard }} consulting sells you hours: someone
+                else writes the procedures, you pay for the project, and your
+                team still cannot run the system a year later. The cheaper
+                path is to implement with AI, then use a consultant only where
+                an expert still matters—review, gaps, and audit coaching—in a
+                few hours, not a full writing engagement.
+              </p>
+              <div class="info-panel mb-8">
+                <p class="info-panel-label">Give a man a fish…</p>
+                <p class="info-panel-body">
+                  Give a man a fish, and you feed him for a day. Teach a man
+                  to fish, and you feed him for a lifetime. 4ES Hub AI is the
+                  fishing lesson: your people draft, own, and operate ISO
+                  {{ standard }}. A consultant still helps—just not as the
+                  person who types every document.
+                </p>
               </div>
-            </div>
-            <button
-              type="button"
-              class="btn-secondary mt-8"
-              @click="openInquiry('quote')"
-            >
-              Get a cost estimate for your organization
-            </button>
+              <div class="space-y-4">
+                <div
+                  v-for="factor in cheapPathFactors"
+                  :key="factor.title"
+                  class="detail-row"
+                >
+                  <h3>{{ factor.title }}</h3>
+                  <p>{{ factor.description }}</p>
+                </div>
+              </div>
+              <button
+                type="button"
+                class="btn-secondary mt-8"
+                @click="openInquiry('consultant')"
+              >
+                Ask about a few hours of consultant review
+              </button>
+            </template>
+            <template v-else>
+              <h2 class="section-title">{{ content.costHeading }}</h2>
+              <p class="section-body">{{ content.costIntro }}</p>
+              <div class="info-panel mb-8">
+                <p class="info-panel-label">{{ content.costRangeLabel }}</p>
+                <p class="info-panel-body">{{ content.costRangeBody }}</p>
+              </div>
+              <div class="space-y-4">
+                <div
+                  v-for="factor in content.costFactors"
+                  :key="factor.title"
+                  class="detail-row"
+                >
+                  <h3>{{ factor.title }}</h3>
+                  <p>{{ factor.description }}</p>
+                </div>
+              </div>
+              <button
+                type="button"
+                class="btn-secondary mt-8"
+                @click="openInquiry('quote')"
+              >
+                Get a cost estimate for your organization
+              </button>
+            </template>
           </div>
         </div>
       </section>
@@ -176,7 +226,7 @@
             <p class="section-body">{{ content.nextStepsIntro }}</p>
 
             <div
-              v-for="step in content.nextSteps"
+              v-for="step in nextSteps"
               :key="step.step"
               class="step-block"
             >
@@ -189,7 +239,7 @@
 
             <div class="cta-box">
               <h2>{{ content.ctaHeading }}</h2>
-              <p>{{ content.ctaBody }}</p>
+              <p>{{ ctaBody }}</p>
               <div class="flex flex-wrap justify-center gap-3">
                 <NuxtLink :to="readinessPath" class="btn-primary">
                   Start the readiness questionnaire
@@ -205,7 +255,7 @@
               </div>
             </div>
 
-            <p class="platform-note">{{ content.platformNote }}</p>
+            <p class="platform-note">{{ platformNote }}</p>
           </div>
         </div>
       </section>
@@ -281,11 +331,49 @@ const readinessPath = `/are-you-ready-for-iso-${props.standard}-certification`;
 const checklistPath = `/iso-${props.standard}-checklist`;
 const pageUrl = `${siteUrl}${seo.path}`;
 const cities = ISO_CITIES;
+const isCheapPath = computed(
+  () => props.variant === "cheap" || props.variant === "low-cost",
+);
 const inquirySource = computed(() =>
   props.variant === "default"
     ? `iso-${props.standard}`
     : `${props.variant}-iso-${props.standard}`,
 );
+const cheapPathFactors = [
+  {
+    title: "AI implements the system",
+    description: `4ES Hub drafts and structures your ISO ${props.standard} documented information so your team is building a working system—not waiting on a binder from a consultant.`,
+  },
+  {
+    title: "Consultants in hours, not a writing project",
+    description:
+      "You still want an expert to review context, clause fit, and evidence. That is a few focused hours because the first draft already exists—not weeks of paid writing.",
+  },
+  {
+    title: "The certification body still audits",
+    description:
+      "An accredited body still runs Stage 1 and Stage 2. You are not buying a cheap certificate. You are stopping the expensive part: paying someone else to type the management system.",
+  },
+];
+const nextSteps = computed(() => {
+  if (!isCheapPath.value) return content.nextSteps;
+  return content.nextSteps.map((step) => {
+    if (step.step !== "3") return step;
+    return {
+      ...step,
+      title: "If you are not ready → AI first, then a few consultant hours",
+      description: `Use 4ES Hub AI to implement your ISO ${props.standard} system. Bring a consultant in only to review and close gaps—then we introduce the certification body for the official audit.`,
+    };
+  });
+});
+const platformNote = computed(() => {
+  if (!isCheapPath.value) return content.platformNote;
+  return `4ES Hub AI helps your team implement ISO ${props.standard} and keep it running. Use a consultant for a few hours of review instead of a long writing engagement, then stay audit-ready after the certificate.`;
+});
+const ctaBody = computed(() => {
+  if (!isCheapPath.value) return content.ctaBody;
+  return "Take the free questionnaire. If you are audit-ready, we introduce a certification body. If not, implement with AI first, use a consultant for a few hours of review, then we introduce the certification body.";
+});
 
 function openInquiry(intent: InquiryIntent) {
   inquiryIntent.value = intent;
@@ -465,6 +553,16 @@ useHead({
   margin-top: 2rem;
   color: #6b7280;
   font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.cheap-quote {
+  margin: 0 0 1rem;
+  padding: 0 0 0 1rem;
+  border-left: 3px solid #253fa2;
+  color: #1f2937;
+  font-size: 1.05rem;
+  font-style: italic;
   line-height: 1.7;
 }
 

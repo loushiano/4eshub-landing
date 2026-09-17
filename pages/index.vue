@@ -206,7 +206,7 @@
       >
         <div class="container mx-auto px-6">
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div class="max-w-xl">
+            <div class="max-w-xl order-2 lg:order-1">
               <span class="section-label mb-5">
                 AI-powered ISO implementation
               </span>
@@ -259,12 +259,55 @@
                 </div>
               </div>
             </div>
-            <div class="relative hidden lg:block">
-              <img
-                src="/screen.png"
-                alt="4ES Hub AI ISO implementation software dashboard"
-                class="w-full h-full"
-              />
+            <div class="relative order-1 lg:order-2">
+              <div
+                class="relative overflow-hidden rounded-2xl border border-gray-200 shadow-xl bg-[#0f172a]"
+              >
+                <video
+                  ref="heroDemoVideo"
+                  class="w-full h-auto aspect-video object-cover"
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  preload="auto"
+                  poster="/product-demo-poster.png"
+                  aria-label="4ES Hub product demo"
+                  @canplay="playHeroDemo"
+                >
+                  <source src="/product-demo.mp4" type="video/mp4" />
+                </video>
+                <div class="absolute bottom-3 right-3 flex items-center gap-2">
+                  <button
+                    type="button"
+                    class="w-10 h-10 rounded-full bg-black/60 text-white hover:bg-black/80 transition-colors flex items-center justify-center"
+                    :aria-label="heroDemoPaused ? 'Play product demo' : 'Pause product demo'"
+                    @click="toggleHeroDemoPlayback"
+                  >
+                    <i
+                      :class="
+                        heroDemoPaused
+                          ? 'fa-solid fa-play text-sm ml-0.5'
+                          : 'fa-solid fa-pause text-sm'
+                      "
+                    ></i>
+                  </button>
+                  <button
+                    type="button"
+                    class="w-10 h-10 rounded-full bg-black/60 text-white hover:bg-black/80 transition-colors flex items-center justify-center"
+                    :aria-label="heroDemoMuted ? 'Unmute product demo' : 'Mute product demo'"
+                    @click="toggleHeroDemoMute"
+                  >
+                    <i
+                      :class="
+                        heroDemoMuted
+                          ? 'fa-solid fa-volume-xmark text-sm'
+                          : 'fa-solid fa-volume-high text-sm'
+                      "
+                    ></i>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1440,6 +1483,63 @@ const recentBlogPosts = getRecentBlogPosts(3);
 const mobileMenuOpen = ref(false);
 const activeModuleId = ref("documents");
 const pricingPeriod = ref("monthly");
+const heroDemoVideo = ref(null);
+const heroDemoMuted = ref(true);
+const heroDemoPaused = ref(false);
+let heroDemoAutoplayStarted = false;
+
+const prefersReducedMotion = () =>
+  typeof window !== "undefined" &&
+  window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+const playHeroDemo = async () => {
+  const video = heroDemoVideo.value;
+  if (!video || heroDemoAutoplayStarted) return;
+
+  if (prefersReducedMotion()) {
+    heroDemoPaused.value = true;
+    return;
+  }
+
+  video.muted = true;
+  heroDemoMuted.value = true;
+
+  try {
+    await video.play();
+    heroDemoAutoplayStarted = true;
+    heroDemoPaused.value = false;
+  } catch {
+    heroDemoPaused.value = true;
+  }
+};
+
+const toggleHeroDemoPlayback = () => {
+  const video = heroDemoVideo.value;
+  if (!video) return;
+
+  if (video.paused) {
+    video
+      .play()
+      .then(() => {
+        heroDemoPaused.value = false;
+      })
+      .catch(() => {
+        heroDemoPaused.value = true;
+      });
+    return;
+  }
+
+  video.pause();
+  heroDemoPaused.value = true;
+};
+
+const toggleHeroDemoMute = () => {
+  const video = heroDemoVideo.value;
+  if (!video) return;
+
+  video.muted = !video.muted;
+  heroDemoMuted.value = video.muted;
+};
 
 const toggleModule = (id) => {
   activeModuleId.value = activeModuleId.value === id ? null : id;
@@ -1761,6 +1861,8 @@ const handleSubmit = async () => {
 };
 
 onMounted(() => {
+  playHeroDemo();
+
   if (window.location.hash) {
     const element = document.querySelector(window.location.hash);
     if (element) {
