@@ -106,7 +106,7 @@
             Ready for certification?
           </NuxtLink>
           <a
-            href="https://app.4eshub.com"
+            href="https://app.4eshub.com/register"
             target="_blank"
             rel="noopener noreferrer"
             class="hidden md:inline-flex btn-primary !py-2.5 !px-5 !text-sm"
@@ -177,7 +177,7 @@
             Ready for certification?
           </NuxtLink>
           <a
-            href="https://app.4eshub.com"
+            href="https://app.4eshub.com/register"
             target="_blank"
             rel="noopener noreferrer"
             class="text-primary-600 font-medium py-2"
@@ -252,7 +252,7 @@
 
             <div class="flex flex-wrap justify-center gap-4">
               <a
-                href="https://app.4eshub.com"
+                href="https://app.4eshub.com/register"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="btn-primary"
@@ -579,7 +579,7 @@
                 </li>
               </ul>
               <a
-                href="https://app.4eshub.com"
+                href="https://app.4eshub.com/register"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="btn-primary mt-8"
@@ -739,7 +739,7 @@
               </ul>
               <div class="flex flex-wrap gap-4">
                 <a
-                  href="https://app.4eshub.com"
+                  href="https://app.4eshub.com/register"
                   target="_blank"
                   rel="noopener noreferrer"
                   class="btn-primary"
@@ -828,7 +828,7 @@
             verify.
           </p>
           <a
-            href="https://app.4eshub.com"
+            href="https://app.4eshub.com/register"
             target="_blank"
             rel="noopener noreferrer"
             class="btn-primary !bg-white !text-primary-600 hover:!bg-gray-50"
@@ -854,7 +854,7 @@
             <p class="text-lg text-[#6e6e73] tracking-snug">
               Most teams start by
               <a
-                href="https://app.4eshub.com"
+                href="https://app.4eshub.com/register"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="text-primary-600 hover:text-primary-700 font-medium"
