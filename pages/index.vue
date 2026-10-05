@@ -265,8 +265,8 @@
               class="max-w-3xl mx-auto text-sm md:text-base text-[#1d1d1f] leading-relaxed tracking-snug mb-8 rounded-xl bg-primary-50 border border-primary-100 px-5 py-4"
             >
               <span class="font-semibold">5 consultation hours, free</span>
-              when you implement ISO 9001 or ISO 45001. Use them to see where
-              you stand and to start the work with us.
+              when you use the software for ISO 9001 or ISO 45001. Use them to
+              see where you stand and to start the work with us.
             </p>
 
             <div class="flex flex-wrap justify-center gap-4">
@@ -576,8 +576,8 @@
                     <i class="fa-solid fa-check text-primary-600 text-xs"></i>
                   </div>
                   <span class="text-[#1d1d1f]">
-                    ISO 9001 and ISO 45001 include 5 consultation hours at no
-                    charge
+                    5 consultation hours, free, when you use the software for
+                    ISO 9001 or ISO 45001
                   </span>
                 </li>
               </ul>
@@ -589,13 +589,13 @@
             <div class="relative">
               <div class="bg-primary-600 rounded-2xl p-8 text-white">
                 <p class="text-sm font-medium text-primary-100 mb-2">
-                  Included with ISO 9001 and ISO 45001
+                  When you use the software
                 </p>
                 <p class="text-3xl font-semibold mb-3">5 hours, free</p>
                 <p class="text-primary-50 leading-relaxed mb-6">
-                  Five consultation hours at no charge. Use them on the first
-                  call and the first gaps we find, then keep implementing in
-                  the software.
+                  ISO 9001 and ISO 45001 include 5 consultation hours at no
+                  charge when you use 4ES Hub. Use them on the first call and
+                  the first gaps we find.
                 </p>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div
@@ -845,7 +845,8 @@
           </h2>
           <p class="text-lg text-primary-100 mb-8 max-w-2xl mx-auto">
             Then we implement and maintain ISO 9001, 14001, or 45001 with you.
-            ISO 9001 and ISO 45001 include 5 consultation hours at no charge.
+            When you use the software for ISO 9001 or ISO 45001, 5 consultation
+            hours are included.
           </p>
           <a href="#contact-section" class="btn-primary !bg-white !text-primary-600 hover:!bg-gray-50">
             Book a call
@@ -869,8 +870,8 @@
             <p class="text-lg text-[#6e6e73] tracking-snug">
               Tell us the standard and where you think you stand. We will use
               the call to confirm the gaps, then implement and maintain the
-              system with you. ISO 9001 and ISO 45001 include 5 consultation
-              hours at no charge.
+              system with you. When you use the software for ISO 9001 or ISO
+              45001, 5 consultation hours are included.
             </p>
           </div>
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
@@ -997,7 +998,7 @@
                       rows="4"
                       v-model="form.message"
                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all"
-                      placeholder="Tell us the standard, where you stand today, and whether you want the 5 free consultation hours for ISO 9001 or 45001"
+                      placeholder="Tell us the standard and where you stand. The 5 free consultation hours come when you use the software for ISO 9001 or 45001"
                       required
                     ></textarea>
                   </div>
@@ -1234,11 +1235,11 @@ const valueDetails = [
 const consultationOffers = [
   {
     title: "ISO 9001",
-    body: "Quality management. 5 consultation hours included.",
+    body: "Quality management. 5 consultation hours free when you use the software.",
   },
   {
     title: "ISO 45001",
-    body: "Health and safety. 5 consultation hours included.",
+    body: "Health and safety. 5 consultation hours free when you use the software.",
   },
   {
     title: "ISO 14001",
@@ -1490,18 +1491,18 @@ useSeoMeta({
   title:
     "4ES Hub | Implement ISO 9001, 14001, or 45001 with less consulting",
   description:
-    "Lower consultation cost with straight implementation instructions and document templates. Stay audit-ready in 4ES Hub. ISO 9001 and ISO 45001 include 5 free consultation hours.",
+    "Lower consultation cost with straight implementation instructions and document templates. Stay audit-ready in 4ES Hub. 5 free consultation hours when you use the software for ISO 9001 or ISO 45001.",
   keywords:
     "ISO 9001, ISO 14001, ISO 45001, ISO implementation, ISO document templates, ISO consultation, audit ready, 4ES Hub",
   ogTitle: "4ES Hub | Implement ISO with less consulting",
   ogDescription:
-    "Instructions, document templates, and a system that stays audit-ready. Book a call. ISO 9001 and ISO 45001 include 5 free consultation hours.",
+    "Instructions, document templates, and a system that stays audit-ready. Book a call. 5 free consultation hours when you use the software for ISO 9001 or ISO 45001.",
   ogUrl: homeUrl,
   ogImage: `${siteUrl}/4es-logo.png`,
   twitterCard: "summary_large_image",
   twitterTitle: "4ES Hub | Implement ISO with less consulting",
   twitterDescription:
-    "Straight implementation instructions, document templates, and a system that stays audit-ready. 5 free consultation hours for ISO 9001 and ISO 45001.",
+    "Straight implementation instructions, document templates, and a system that stays audit-ready. 5 free consultation hours when you use the software for ISO 9001 or ISO 45001.",
   twitterImage: `${siteUrl}/4es-logo.png`,
 });
 
@@ -1535,7 +1536,7 @@ useHead({
         operatingSystem: "Web",
         url: homeUrl,
         description:
-          "4ES Hub is the management system for implementing ISO 9001, ISO 14001, and ISO 45001: instructions, document templates, and audit-ready records. ISO 9001 and ISO 45001 include 5 free consultation hours.",
+          "4ES Hub is the management system for implementing ISO 9001, ISO 14001, and ISO 45001: instructions, document templates, and audit-ready records. 5 free consultation hours when you use the software for ISO 9001 or ISO 45001.",
         featureList: [
           "Implementation instructions",
           "Document templates",
@@ -1570,7 +1571,7 @@ useHead({
             name: "How do we start an ISO implementation with 4ES Hub?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Book a call. We figure out where you stand, then implement and maintain the standard with you using implementation instructions and document templates in 4ES Hub. ISO 9001 and ISO 45001 include 5 consultation hours at no charge.",
+              text: "Book a call. We figure out where you stand, then implement and maintain the standard with you using implementation instructions and document templates in 4ES Hub. When you use the software for ISO 9001 or ISO 45001, 5 consultation hours are included at no charge.",
             },
           },
           {
