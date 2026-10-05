@@ -1,9 +1,9 @@
 <template>
-  <div id="page-container" class="theme-ocean min-h-screen flex flex-col">
+  <div id="page-container" class="min-h-screen flex flex-col bg-white">
     <!-- Header/Navigation -->
     <header
       id="header"
-      class="sticky top-0 bg-[#f1faee]/90 backdrop-blur-xl border-b border-[#a8dadc]/70 z-50"
+      class="sticky top-0 bg-white/80 backdrop-blur-xl border-b border-gray-200/70 z-50"
     >
       <div
         class="container mx-auto flex items-center justify-between px-6 py-4"
@@ -192,14 +192,11 @@
           <div class="max-w-4xl mx-auto text-center mb-10 md:mb-12">
             <p class="section-label mb-6">ISO 9001, 14001, and 45001</p>
             <h1
-              class="text-4xl md:text-5xl lg:text-[3.25rem] font-semibold tracking-tight text-[#1a2332] mb-6 leading-[1.08]"
+              class="text-4xl md:text-5xl lg:text-[3.25rem] font-semibold tracking-tight text-[#1d1d1f] mb-6 leading-[1.15]"
             >
-              Implement
+              <span class="block">Implement</span>
               <span class="sr-only">ISO 9001, 14001, or 45001</span>
-              <span
-                class="hero-iso-slot relative inline-flex items-baseline align-bottom"
-                aria-hidden="true"
-              >
+              <span class="hero-iso-slot" aria-hidden="true">
                 <Transition name="iso-swap" mode="out-in">
                   <span
                     :key="currentStandard"
@@ -209,10 +206,10 @@
                   </span>
                 </Transition>
               </span>
-              with less consulting
+              <span class="block">with less consulting</span>
             </h1>
             <p
-              class="max-w-3xl mx-auto text-base md:text-lg text-[#3d4c5c] leading-relaxed tracking-snug mb-10"
+              class="max-w-3xl mx-auto text-base md:text-lg text-[#6e6e73] leading-relaxed tracking-snug mb-10"
             >
               Lower the consultation bill. Follow straight implementation
               instructions and use the document templates in the system. Stay
@@ -226,12 +223,12 @@
               <li
                 v-for="value in valuePillars"
                 :key="value.title"
-                class="rounded-xl border border-[#a8dadc] bg-white p-5"
+                class="rounded-xl border border-gray-200 bg-gray-50 p-5"
               >
-                <p class="font-semibold text-[#1a2332] mb-1">
+                <p class="font-semibold text-[#1d1d1f] mb-1">
                   {{ value.title }}
                 </p>
-                <p class="text-sm text-[#3d4c5c] leading-relaxed">
+                <p class="text-sm text-[#6e6e73] leading-relaxed">
                   {{ value.body }}
                 </p>
               </li>
@@ -253,10 +250,10 @@
                     {{ index + 1 }}
                   </span>
                   <div>
-                    <p class="font-semibold text-[#1a2332] mb-1">
+                    <p class="font-semibold text-[#1d1d1f] mb-1">
                       {{ step.title }}
                     </p>
-                    <p class="text-sm text-[#3d4c5c] leading-relaxed tracking-snug">
+                    <p class="text-sm text-[#6e6e73] leading-relaxed tracking-snug">
                       {{ step.body }}
                     </p>
                   </div>
@@ -265,7 +262,7 @@
             </ol>
 
             <p
-              class="max-w-3xl mx-auto text-sm md:text-base text-[#1a2332] leading-relaxed tracking-snug mb-8 rounded-xl bg-white border border-[#a8dadc] px-5 py-4"
+              class="max-w-3xl mx-auto text-sm md:text-base text-[#1d1d1f] leading-relaxed tracking-snug mb-8 rounded-xl bg-primary-50 border border-primary-100 px-5 py-4"
             >
               <span class="font-semibold">5 consultation hours, free</span>
               when you implement ISO 9001 or ISO 45001. Use them to see where
@@ -374,11 +371,11 @@
           <div class="text-center max-w-3xl mx-auto mb-16">
             <span class="section-label mb-4">What you get</span>
             <h2
-              class="text-3xl md:text-4xl font-semibold tracking-tight text-[#1a2332] mb-4"
+              class="text-3xl md:text-4xl font-semibold tracking-tight text-[#1d1d1f] mb-4"
             >
               The work a consultant usually writes, already in the system
             </h2>
-            <p class="text-lg text-[#3d4c5c] tracking-snug">
+            <p class="text-lg text-[#6e6e73] tracking-snug">
               Most of the cost in an ISO project is someone turning how you
               work into documents, risks, and evidence. 4ES Hub holds that
               work: the instructions, the templates, and the records an auditor
@@ -389,17 +386,17 @@
             <article
               v-for="item in valueDetails"
               :key="item.title"
-              class="bg-[#f1faee] border border-[#a8dadc] rounded-2xl p-6"
+              class="bg-gray-50 border border-gray-200 rounded-2xl p-6"
             >
               <div
                 class="w-10 h-10 rounded-lg bg-white text-primary-700 flex items-center justify-center mb-4"
               >
                 <i :class="['fa-solid', item.icon]"></i>
               </div>
-              <h3 class="text-lg font-semibold text-[#1a2332] mb-2">
+              <h3 class="text-lg font-semibold text-[#1d1d1f] mb-2">
                 {{ item.title }}
               </h3>
-              <p class="text-sm text-[#3d4c5c] leading-relaxed">
+              <p class="text-sm text-[#6e6e73] leading-relaxed">
                 {{ item.body }}
               </p>
             </article>
@@ -415,10 +412,10 @@
             >
               The software
             </span>
-            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-[#1a2332] mb-4">
+            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-[#1d1d1f] mb-4">
               Instructions, templates, and the records you are audited on
             </h2>
-            <p class="text-lg text-[#3d4c5c] tracking-snug">
+            <p class="text-lg text-[#6e6e73] tracking-snug">
               Each part of the standard has a place in 4ES Hub: what to write,
               which template to use, and where the evidence stays. You maintain
               it there, so the next audit is not a separate project.
@@ -529,10 +526,10 @@
               >
                 How we start
               </span>
-              <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-[#1a2332] mb-6">
+              <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-[#1d1d1f] mb-6">
                 A call, then we implement and maintain it with you
               </h2>
-              <p class="text-lg text-[#3d4c5c] tracking-snug mb-8">
+              <p class="text-lg text-[#6e6e73] tracking-snug mb-8">
                 We start by finding out where you stand. Then we implement the
                 standard in 4ES Hub and keep it current with you, so
                 consultation time goes to judgment and gaps, not to writing the
@@ -545,7 +542,7 @@
                   >
                     <i class="fa-solid fa-check text-primary-600 text-xs"></i>
                   </div>
-                  <span class="text-[#1a2332]">
+                  <span class="text-[#1d1d1f]">
                     The call is to locate the gaps, not to scope a year of
                     document writing
                   </span>
@@ -556,7 +553,7 @@
                   >
                     <i class="fa-solid fa-check text-primary-600 text-xs"></i>
                   </div>
-                  <span class="text-[#1a2332]">
+                  <span class="text-[#1d1d1f]">
                     Implementation follows the instructions and templates
                     already in the software
                   </span>
@@ -567,7 +564,7 @@
                   >
                     <i class="fa-solid fa-check text-primary-600 text-xs"></i>
                   </div>
-                  <span class="text-[#1a2332]">
+                  <span class="text-[#1d1d1f]">
                     Maintenance stays with us, so the next surveillance audit
                     is not a scramble
                   </span>
@@ -578,7 +575,7 @@
                   >
                     <i class="fa-solid fa-check text-primary-600 text-xs"></i>
                   </div>
-                  <span class="text-[#1a2332]">
+                  <span class="text-[#1d1d1f]">
                     ISO 9001 and ISO 45001 include 5 consultation hours at no
                     charge
                   </span>
@@ -590,12 +587,12 @@
               </a>
             </div>
             <div class="relative">
-              <div class="bg-[#1a2332] rounded-2xl p-8 text-[#f1faee]">
-                <p class="text-sm font-medium text-[#a8dadc] mb-2">
+              <div class="bg-primary-600 rounded-2xl p-8 text-white">
+                <p class="text-sm font-medium text-primary-100 mb-2">
                   Included with ISO 9001 and ISO 45001
                 </p>
                 <p class="text-3xl font-semibold mb-3">5 hours, free</p>
-                <p class="text-[#d7ebe8] leading-relaxed mb-6">
+                <p class="text-primary-50 leading-relaxed mb-6">
                   Five consultation hours at no charge. Use them on the first
                   call and the first gaps we find, then keep implementing in
                   the software.
@@ -604,12 +601,12 @@
                   <div
                     v-for="offer in consultationOffers"
                     :key="offer.title"
-                    class="bg-white/5 p-4 rounded-xl border border-[#a8dadc]/30"
+                    class="bg-white/10 p-4 rounded-xl border border-white/20"
                   >
                     <p class="font-semibold text-white mb-1">
                       {{ offer.title }}
                     </p>
-                    <p class="text-sm text-[#d7ebe8]">{{ offer.body }}</p>
+                    <p class="text-sm text-primary-50">{{ offer.body }}</p>
                   </div>
                 </div>
               </div>
@@ -627,10 +624,10 @@
             >
               Blog
             </span>
-            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-[#1a2332] mb-4">
+            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-[#1d1d1f] mb-4">
               How teams get to certification with less writing
             </h2>
-            <p class="text-lg text-[#3d4c5c] tracking-snug">
+            <p class="text-lg text-[#6e6e73] tracking-snug">
               Notes on implementing the standard in a live system, then using a
               consultant to check the gaps before the external audit.
             </p>
@@ -690,10 +687,10 @@
               >
                 After the system is in place
               </span>
-              <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-[#1a2332] mb-6">
+              <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-[#1d1d1f] mb-6">
                 A consultant checks the gaps. A certification body audits.
               </h2>
-              <p class="text-lg text-[#3d4c5c] tracking-snug mb-6">
+              <p class="text-lg text-[#6e6e73] tracking-snug mb-6">
                 Once the instructions, templates, and records are in 4ES Hub,
                 a consultant reviews what is still missing. They are not
                 starting a writing project. A certification body partner then
@@ -820,15 +817,15 @@
       <section id="ai-section" class="py-16 md:py-20">
         <div class="container mx-auto px-6">
           <div
-            class="max-w-3xl mx-auto rounded-2xl border border-[#a8dadc] bg-white px-6 py-8 md:px-10 md:py-10"
+            class="max-w-3xl mx-auto rounded-2xl border border-gray-200 bg-gray-50 px-6 py-8 md:px-10 md:py-10"
           >
             <span class="section-label mb-4">Later, if you want it</span>
             <h2
-              class="text-2xl md:text-3xl font-semibold tracking-tight text-[#1a2332] mb-3"
+              class="text-2xl md:text-3xl font-semibold tracking-tight text-[#1d1d1f] mb-3"
             >
               AI agents can help with the writing
             </h2>
-            <p class="text-[#3d4c5c] leading-relaxed">
+            <p class="text-[#6e6e73] leading-relaxed">
               After you know where you stand, AI agents in 4ES Hub can draft
               from your answers, ask for missing evidence, and keep records
               moving. You still review and approve every controlled document.
@@ -850,7 +847,7 @@
             Then we implement and maintain ISO 9001, 14001, or 45001 with you.
             ISO 9001 and ISO 45001 include 5 consultation hours at no charge.
           </p>
-          <a href="#contact-section" class="btn-primary !bg-white !text-primary-700 hover:!bg-[#f1faee]">
+          <a href="#contact-section" class="btn-primary !bg-white !text-primary-600 hover:!bg-gray-50">
             Book a call
             <i class="fa-solid fa-arrow-right ml-2"></i>
           </a>
@@ -866,10 +863,10 @@
             >
               Contact Us
             </span>
-            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-[#1a2332] mb-4">
+            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-[#1d1d1f] mb-4">
               Book a call
             </h2>
-            <p class="text-lg text-[#3d4c5c] tracking-snug">
+            <p class="text-lg text-[#6e6e73] tracking-snug">
               Tell us the standard and where you think you stand. We will use
               the call to confirm the gaps, then implement and maintain the
               system with you. ISO 9001 and ISO 45001 include 5 consultation
@@ -1656,71 +1653,7 @@ onBeforeUnmount(() => {
 });
 </script>
 
-<style>
-@font-face {
-  font-family: "DejaVu Sans";
-  src: url("https://cdn.jsdelivr.net/npm/@fontsource/dejavu-sans@5.2.5/files/dejavu-sans-latin-400-normal.woff2")
-    format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "DejaVu Sans";
-  src: url("https://cdn.jsdelivr.net/npm/@fontsource/dejavu-sans@5.2.5/files/dejavu-sans-latin-700-normal.woff2")
-    format("woff2");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "DejaVu Sans";
-  src: url("https://cdn.jsdelivr.net/npm/@fontsource/dejavu-sans@5.2.5/files/dejavu-sans-latin-700-normal.woff2")
-    format("woff2");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-</style>
-
 <style scoped>
-#page-container {
-  --color-brand: #1f6a6a;
-  --color-brand-hover: #1a2332;
-  --color-brand-light: #d7efed;
-  --color-text: #1a2332;
-  --color-text-secondary: #3d4c5c;
-  --color-primary: #2d8b8b;
-  --color-primary-50: #f1faee;
-  --color-primary-100: #d7efed;
-  --color-primary-200: #a8dadc;
-  --color-primary-300: #7ec8c6;
-  --color-primary-400: #4aa3a1;
-  --color-primary-500: #2d8b8b;
-  --color-primary-600: #1f6a6a;
-  --color-primary-700: #185454;
-  --color-primary-800: #1a2332;
-  --color-primary-900: #121821;
-  --color-primary-focus: #185454;
-  --color-primary-content: #f1faee;
-  background-color: #f1faee;
-  color: #1a2332;
-}
-
-#page-container :deep(*:not(.fa):not(.fa-solid):not(.fa-regular):not(.fa-brands):not(svg)) {
-  font-family: "DejaVu Sans", "Liberation Sans", Arial, sans-serif;
-}
-
-#page-container :deep(.bg-gray-50) {
-  background-color: #e7f5f3;
-}
-
-#page-container :deep(.bg-gray-900),
-#page-container :deep(footer) {
-  background-color: #1a2332;
-}
 @keyframes scroll {
   0% {
     transform: translateX(0);
@@ -1735,7 +1668,9 @@ onBeforeUnmount(() => {
 }
 
 .hero-iso-slot {
-  min-width: 11.5ch;
+  display: block;
+  min-height: 1.2em;
+  line-height: 1.15;
 }
 
 .iso-swap-enter-active,
