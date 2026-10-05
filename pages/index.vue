@@ -1,9 +1,9 @@
 <template>
-  <div id="page-container" class="min-h-screen flex flex-col bg-white">
+  <div id="page-container" class="theme-ocean min-h-screen flex flex-col">
     <!-- Header/Navigation -->
     <header
       id="header"
-      class="sticky top-0 bg-white/80 backdrop-blur-xl border-b border-gray-200/70 z-50"
+      class="sticky top-0 bg-[#f1faee]/90 backdrop-blur-xl border-b border-[#a8dadc]/70 z-50"
     >
       <div
         class="container mx-auto flex items-center justify-between px-6 py-4"
@@ -106,12 +106,10 @@
             Ready for certification?
           </NuxtLink>
           <a
-            href="https://app.4eshub.com/register"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#contact-section"
             class="hidden md:inline-flex btn-primary !py-2.5 !px-5 !text-sm"
           >
-            Set up 4ES Hub Agent
+            Book a call
           </a>
   
           <!-- Mobile menu button -->
@@ -177,11 +175,10 @@
             Ready for certification?
           </NuxtLink>
           <a
-            href="https://app.4eshub.com/register"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#contact-section"
             class="text-primary-600 font-medium py-2"
-            >Ask 4ES Hub Agent</a
+            @click="mobileMenuOpen = false"
+            >Book a call</a
           >
     
         </nav>
@@ -190,13 +187,14 @@
 
     <main id="main-content">
       <!-- Hero Section -->
-      <section id="hero-section" class="relative bg-white pt-12 pb-16 md:pt-16 md:pb-20">
+      <section id="hero-section" class="relative pt-12 pb-16 md:pt-16 md:pb-20">
         <div class="container mx-auto px-6">
           <div class="max-w-4xl mx-auto text-center mb-10 md:mb-12">
+            <p class="section-label mb-6">ISO 9001, 14001, and 45001</p>
             <h1
-              class="text-4xl md:text-5xl lg:text-[3.25rem] font-semibold tracking-tight text-[#1d1d1f] mb-8 leading-[1.08]"
+              class="text-4xl md:text-5xl lg:text-[3.25rem] font-semibold tracking-tight text-[#1a2332] mb-6 leading-[1.08]"
             >
-              How do I start with
+              Implement
               <span class="sr-only">ISO 9001, 14001, or 45001</span>
               <span
                 class="hero-iso-slot relative inline-flex items-baseline align-bottom"
@@ -210,8 +208,34 @@
                     ISO {{ currentStandard }}
                   </span>
                 </Transition>
-              </span>?
+              </span>
+              with less consulting
             </h1>
+            <p
+              class="max-w-3xl mx-auto text-base md:text-lg text-[#3d4c5c] leading-relaxed tracking-snug mb-10"
+            >
+              Lower the consultation bill. Follow straight implementation
+              instructions and use the document templates in the system. Stay
+              audit-ready all year, instead of spending months assembling a
+              file before the auditor arrives.
+            </p>
+
+            <ul
+              class="grid grid-cols-1 md:grid-cols-3 gap-4 text-left mb-10"
+            >
+              <li
+                v-for="value in valuePillars"
+                :key="value.title"
+                class="rounded-xl border border-[#a8dadc] bg-white p-5"
+              >
+                <p class="font-semibold text-[#1a2332] mb-1">
+                  {{ value.title }}
+                </p>
+                <p class="text-sm text-[#3d4c5c] leading-relaxed">
+                  {{ value.body }}
+                </p>
+              </li>
+            </ul>
 
             <ol
               class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 text-left mb-8"
@@ -229,10 +253,10 @@
                     {{ index + 1 }}
                   </span>
                   <div>
-                    <p class="font-semibold text-[#1d1d1f] mb-1">
+                    <p class="font-semibold text-[#1a2332] mb-1">
                       {{ step.title }}
                     </p>
-                    <p class="text-sm text-[#6e6e73] leading-relaxed tracking-snug">
+                    <p class="text-sm text-[#3d4c5c] leading-relaxed tracking-snug">
                       {{ step.body }}
                     </p>
                   </div>
@@ -241,23 +265,16 @@
             </ol>
 
             <p
-              class="max-w-3xl mx-auto text-base md:text-lg text-black/55 leading-relaxed tracking-snug mb-8"
+              class="max-w-3xl mx-auto text-sm md:text-base text-[#1a2332] leading-relaxed tracking-snug mb-8 rounded-xl bg-white border border-[#a8dadc] px-5 py-4"
             >
-              You do not need a big consultation project, you can do this
-              yourself. Set up 4ES Hub Agent as your quality manager, health
-              and safety manager, or whichever role you need. It starts
-              implementing: it asks you questions, asks for evidence, and
-              creates the controls.
+              <span class="font-semibold">5 consultation hours, free</span>
+              when you implement ISO 9001 or ISO 45001. Use them to see where
+              you stand and to start the work with us.
             </p>
 
             <div class="flex flex-wrap justify-center gap-4">
-              <a
-                href="https://app.4eshub.com/register"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn-primary"
-                >
-                  Ask 4ESHub agent to start implementing
+              <a href="#contact-section" class="btn-primary">
+                Book a call
                 <i class="fa-solid fa-arrow-right ml-2"></i>
               </a>
               <NuxtLink to="/partners" class="btn-secondary">
@@ -286,7 +303,7 @@
                   aria-hidden="true"
                 ></span>
                 <p class="ml-2 text-xs text-gray-500 truncate">
-                  4ES Hub — asking 4ES Hub Agent how to implement ISO
+                  4ES Hub — the system you implement and keep audit-ready
                 </p>
               </div>
               <div class="relative bg-[#f5f5f7]">
@@ -299,7 +316,7 @@
                   playsinline
                   preload="auto"
                   poster="/product-demo-poster.png"
-                  aria-label="Screen recording of asking 4ES Hub Agent how to implement an ISO standard"
+                  aria-label="Screen recording of implementing an ISO standard in 4ES Hub"
                   @canplay="playHeroDemo"
                 >
                   <source src="/product-demo.mp4" type="video/mp4" />
@@ -345,77 +362,66 @@
               </div>
             </div>
             <figcaption class="sr-only">
-              A walkthrough of asking 4ES Hub Agent how to implement an ISO
-              management system inside the app.
+              A walkthrough of the 4ES Hub management system used to implement
+              and maintain an ISO standard.
             </figcaption>
           </figure>
         </div>
       </section>
 
-      <section id="agent-section" class="py-20 md:py-28 bg-gray-50">
+      <section id="value-section" class="py-20 md:py-28 bg-white">
         <div class="container mx-auto px-6">
           <div class="text-center max-w-3xl mx-auto mb-16">
-            <span class="section-label mb-4">How 4ES Hub Agent works</span>
+            <span class="section-label mb-4">What you get</span>
             <h2
-              class="text-3xl md:text-4xl font-semibold tracking-tight text-[#1d1d1f] mb-4"
+              class="text-3xl md:text-4xl font-semibold tracking-tight text-[#1a2332] mb-4"
             >
-              Give it a manager role. It starts implementing.
+              The work a consultant usually writes, already in the system
             </h2>
-            <p class="text-lg text-[#6e6e73] tracking-snug">
-              You do not hire a team to write a binder. You set up 4ES Hub Agent
-              as the manager for the system you need. It interviews you, asks
-              for evidence, and builds the records in the same platform a
-              consultant or auditor will later review.
+            <p class="text-lg text-[#3d4c5c] tracking-snug">
+              Most of the cost in an ISO project is someone turning how you
+              work into documents, risks, and evidence. 4ES Hub holds that
+              work: the instructions, the templates, and the records an auditor
+              opens.
             </p>
           </div>
-          <div
-            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto"
-          >
-            <div
-              v-for="(step, index) in agentLoop"
-              :key="step.title"
-              class="bg-white border border-gray-200 rounded-2xl p-6"
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            <article
+              v-for="item in valueDetails"
+              :key="item.title"
+              class="bg-[#f1faee] border border-[#a8dadc] rounded-2xl p-6"
             >
               <div
-                class="w-10 h-10 rounded-lg bg-primary-100 text-primary-700 font-semibold flex items-center justify-center mb-4"
+                class="w-10 h-10 rounded-lg bg-white text-primary-700 flex items-center justify-center mb-4"
               >
-                {{ index + 1 }}
+                <i :class="['fa-solid', item.icon]"></i>
               </div>
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">
-                {{ step.title }}
+              <h3 class="text-lg font-semibold text-[#1a2332] mb-2">
+                {{ item.title }}
               </h3>
-              <p class="text-sm text-gray-600 leading-relaxed">
-                {{ step.body }}
+              <p class="text-sm text-[#3d4c5c] leading-relaxed">
+                {{ item.body }}
               </p>
-            </div>
+            </article>
           </div>
-          <p class="text-center mt-10">
-            <NuxtLink
-              to="/blog/implement-iso-with-ai"
-              class="inline-flex items-center text-primary-600 hover:text-primary-700 font-semibold"
-            >
-              See how implementation works
-              <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
-            </NuxtLink>
-          </p>
         </div>
       </section>
 
-      <section id="modules-section" class="py-20 md:py-28 bg-white">
+      <section id="modules-section" class="py-20 md:py-28">
         <div class="container mx-auto px-6">
           <div class="text-center max-w-3xl mx-auto mb-16">
             <span
               class="section-label mb-4"
             >
-              Where the work lives
+              The software
             </span>
-            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-[#1d1d1f] mb-4">
-              The agent builds in the system you will be audited on
+            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-[#1a2332] mb-4">
+              Instructions, templates, and the records you are audited on
             </h2>
-            <p class="text-lg text-[#6e6e73] tracking-snug">
-              4ES Hub Agent does not write a separate report. It creates
-              documents, risks, controls, training, and audit evidence in the
-              live management system.
+            <p class="text-lg text-[#3d4c5c] tracking-snug">
+              Each part of the standard has a place in 4ES Hub: what to write,
+              which template to use, and where the evidence stays. You maintain
+              it there, so the next audit is not a separate project.
             </p>
           </div>
 
@@ -512,7 +518,7 @@
       </section>
 
       <!-- Value Proposition Section -->
-      <section id="features-section" class="py-20 md:py-28 bg-gray-50">
+      <section id="features-section" class="py-20 md:py-28 bg-white">
         <div class="container mx-auto px-6">
           <div
             class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto"
@@ -521,17 +527,16 @@
               <span
                 class="section-label mb-4"
               >
-                Why 4ES Hub Agent
+                How we start
               </span>
-              <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-[#1d1d1f] mb-6">
-                Skip the big consultation project
+              <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-[#1a2332] mb-6">
+                A call, then we implement and maintain it with you
               </h2>
-              <p class="text-lg text-[#6e6e73] tracking-snug mb-8">
-                You should not pay someone to write what your team already
-                knows. Set up 4ES Hub Agent as the manager. It asks the
-                questions, collects the evidence, and creates the controls. A
-                consultant comes in later to verify—not to implement from
-                scratch.
+              <p class="text-lg text-[#3d4c5c] tracking-snug mb-8">
+                We start by finding out where you stand. Then we implement the
+                standard in 4ES Hub and keep it current with you, so
+                consultation time goes to judgment and gaps, not to writing the
+                system from a blank page.
               </p>
               <ul class="space-y-4">
                 <li class="flex items-start gap-3">
@@ -540,10 +545,10 @@
                   >
                     <i class="fa-solid fa-check text-primary-600 text-xs"></i>
                   </div>
-                  <span class="text-gray-700"
-                    >Set the agent up as quality, health and safety, or
-                    environmental manager</span
-                  >
+                  <span class="text-[#1a2332]">
+                    The call is to locate the gaps, not to scope a year of
+                    document writing
+                  </span>
                 </li>
                 <li class="flex items-start gap-3">
                   <div
@@ -551,9 +556,10 @@
                   >
                     <i class="fa-solid fa-check text-primary-600 text-xs"></i>
                   </div>
-                  <span class="text-gray-700"
-                    >It asks questions and requests evidence as it implements</span
-                  >
+                  <span class="text-[#1a2332]">
+                    Implementation follows the instructions and templates
+                    already in the software
+                  </span>
                 </li>
                 <li class="flex items-start gap-3">
                   <div
@@ -561,10 +567,10 @@
                   >
                     <i class="fa-solid fa-check text-primary-600 text-xs"></i>
                   </div>
-                  <span class="text-gray-700"
-                    >It creates procedures, risks, and operational controls in
-                    the live system</span
-                  >
+                  <span class="text-[#1a2332]">
+                    Maintenance stays with us, so the next surveillance audit
+                    is not a scramble
+                  </span>
                 </li>
                 <li class="flex items-start gap-3">
                   <div
@@ -572,37 +578,38 @@
                   >
                     <i class="fa-solid fa-check text-primary-600 text-xs"></i>
                   </div>
-                  <span class="text-gray-700"
-                    >You review and approve. Then a consultant and a
-                    certification body finish the path</span
-                  >
+                  <span class="text-[#1a2332]">
+                    ISO 9001 and ISO 45001 include 5 consultation hours at no
+                    charge
+                  </span>
                 </li>
               </ul>
-              <a
-                href="https://app.4eshub.com/register"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn-primary mt-8"
-              >
-                Set up 4ES Hub Agent
+              <a href="#contact-section" class="btn-primary mt-8">
+                Book a call
                 <i class="fa-solid fa-arrow-right ml-2"></i>
               </a>
             </div>
             <div class="relative">
-              <div class="bg-white rounded-2xl p-8 border border-gray-200">
-                <p class="text-sm font-medium text-gray-500 mb-4">
-                  Give the agent the role you need
+              <div class="bg-[#1a2332] rounded-2xl p-8 text-[#f1faee]">
+                <p class="text-sm font-medium text-[#a8dadc] mb-2">
+                  Included with ISO 9001 and ISO 45001
+                </p>
+                <p class="text-3xl font-semibold mb-3">5 hours, free</p>
+                <p class="text-[#d7ebe8] leading-relaxed mb-6">
+                  Five consultation hours at no charge. Use them on the first
+                  call and the first gaps we find, then keep implementing in
+                  the software.
                 </p>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div
-                    v-for="role in agentRoles"
-                    :key="role.title"
-                    class="bg-gray-50 p-4 rounded-xl border border-gray-100"
+                    v-for="offer in consultationOffers"
+                    :key="offer.title"
+                    class="bg-white/5 p-4 rounded-xl border border-[#a8dadc]/30"
                   >
-                    <p class="font-semibold text-gray-900 mb-1">
-                      {{ role.title }}
+                    <p class="font-semibold text-white mb-1">
+                      {{ offer.title }}
                     </p>
-                    <p class="text-sm text-gray-600">{{ role.body }}</p>
+                    <p class="text-sm text-[#d7ebe8]">{{ offer.body }}</p>
                   </div>
                 </div>
               </div>
@@ -612,7 +619,7 @@
       </section>
 
       <!-- Blog Section -->
-      <section id="blog-section" class="py-20 md:py-28 bg-white">
+      <section id="blog-section" class="py-20 md:py-28">
         <div class="container mx-auto px-6">
           <div class="text-center max-w-3xl mx-auto mb-16">
             <span
@@ -620,12 +627,12 @@
             >
               Blog
             </span>
-            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-[#1d1d1f] mb-4">
-              How teams implement ISO without a writing project
+            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-[#1a2332] mb-4">
+              How teams get to certification with less writing
             </h2>
-            <p class="text-lg text-[#6e6e73] tracking-snug">
-              Notes on letting 4ES Hub Agent implement the system, then using a
-              consultant only to verify before the external audit.
+            <p class="text-lg text-[#3d4c5c] tracking-snug">
+              Notes on implementing the standard in a live system, then using a
+              consultant to check the gaps before the external audit.
             </p>
           </div>
           <div class="max-w-4xl mx-auto space-y-8">
@@ -681,16 +688,16 @@
               <span
                 class="section-label mb-4"
               >
-                After the agent
+                After the system is in place
               </span>
-              <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-[#1d1d1f] mb-6">
-                A consultant verifies. A certification body audits.
+              <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-[#1a2332] mb-6">
+                A consultant checks the gaps. A certification body audits.
               </h2>
-              <p class="text-lg text-[#6e6e73] tracking-snug mb-6">
-                When 4ES Hub Agent has implemented the system with you, bring in
-                a person to check the work—not to write it. We introduce
-                consultant partners to verify the implementation, then
-                certification body partners for the external audit.
+              <p class="text-lg text-[#3d4c5c] tracking-snug mb-6">
+                Once the instructions, templates, and records are in 4ES Hub,
+                a consultant reviews what is still missing. They are not
+                starting a writing project. A certification body partner then
+                runs the external audit.
               </p>
               <ul class="space-y-4 mb-8">
                 <li class="flex items-start gap-3">
@@ -700,8 +707,8 @@
                     <i class="fa-solid fa-check text-primary-600 text-xs"></i>
                   </div>
                   <span class="text-gray-700"
-                    >The agent has already asked the questions and created the
-                    controls</span
+                    >The system already holds the documents, risks, controls,
+                    and evidence</span
                   >
                 </li>
                 <li class="flex items-start gap-3">
@@ -738,13 +745,8 @@
                 </li>
               </ul>
               <div class="flex flex-wrap gap-4">
-                <a
-                  href="https://app.4eshub.com/register"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="btn-primary"
-                >
-                  Start with 4ES Hub Agent
+                <a href="#contact-section" class="btn-primary">
+                  Book a call
                   <i class="fa-solid fa-arrow-right ml-2"></i>
                 </a>
                 <NuxtLink
@@ -778,7 +780,7 @@
                     The path
                   </h3>
                   <p class="text-gray-600 text-sm">
-                    Implement yourself, then verify, then sit the audit
+                    Call, implement, maintain, then sit the audit
                   </p>
                 </div>
                 <div class="space-y-4">
@@ -815,25 +817,41 @@
         </div>
       </section>
 
+      <section id="ai-section" class="py-16 md:py-20">
+        <div class="container mx-auto px-6">
+          <div
+            class="max-w-3xl mx-auto rounded-2xl border border-[#a8dadc] bg-white px-6 py-8 md:px-10 md:py-10"
+          >
+            <span class="section-label mb-4">Later, if you want it</span>
+            <h2
+              class="text-2xl md:text-3xl font-semibold tracking-tight text-[#1a2332] mb-3"
+            >
+              AI agents can help with the writing
+            </h2>
+            <p class="text-[#3d4c5c] leading-relaxed">
+              After you know where you stand, AI agents in 4ES Hub can draft
+              from your answers, ask for missing evidence, and keep records
+              moving. You still review and approve every controlled document.
+              The agents do not certify you, and they are not the reason to
+              buy the software. The reason is a cheaper implementation that
+              stays audit-ready.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <!-- CTA Section -->
       <section class="py-20 md:py-28 bg-primary-600">
         <div class="container mx-auto px-6 text-center">
           <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
-            Set up 4ES Hub Agent and start implementing.
+            Book a call. We will tell you where you stand.
           </h2>
           <p class="text-lg text-primary-100 mb-8 max-w-2xl mx-auto">
-            Give it the role of quality manager, health and safety manager, or
-            environmental manager. It asks questions, asks for evidence, and
-            creates the controls. Bring a consultant in when you are ready to
-            verify.
+            Then we implement and maintain ISO 9001, 14001, or 45001 with you.
+            ISO 9001 and ISO 45001 include 5 consultation hours at no charge.
           </p>
-          <a
-            href="https://app.4eshub.com/register"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn-primary !bg-white !text-primary-600 hover:!bg-gray-50"
-          >
-            Ask 4ES Hub Agent how to implement
+          <a href="#contact-section" class="btn-primary !bg-white !text-primary-700 hover:!bg-[#f1faee]">
+            Book a call
             <i class="fa-solid fa-arrow-right ml-2"></i>
           </a>
         </div>
@@ -848,20 +866,14 @@
             >
               Contact Us
             </span>
-            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-[#1d1d1f] mb-4">
-              Questions? We're here to help
+            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-[#1a2332] mb-4">
+              Book a call
             </h2>
-            <p class="text-lg text-[#6e6e73] tracking-snug">
-              Most teams start by
-              <a
-                href="https://app.4eshub.com/register"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-primary-600 hover:text-primary-700 font-medium"
-                >setting up 4ES Hub Agent</a
-              >.
-              Or tell us the standard you want and whether you need a consultant
-              or a certification body after the agent has implemented.
+            <p class="text-lg text-[#3d4c5c] tracking-snug">
+              Tell us the standard and where you think you stand. We will use
+              the call to confirm the gaps, then implement and maintain the
+              system with you. ISO 9001 and ISO 45001 include 5 consultation
+              hours at no charge.
             </p>
           </div>
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
@@ -886,10 +898,11 @@
                   </div>
                   <div>
                     <h4 class="font-semibold text-gray-900 mb-1">
-                      Prefer a walkthrough?
+                      Book a call
                     </h4>
                     <p class="text-gray-600">
-                      Optional—most teams start with 4ES Hub Agent
+                      We figure out where you stand, then implement and
+                      maintain the standard with you
                     </p>
                   </div>
                 </div>
@@ -987,7 +1000,7 @@
                       rows="4"
                       v-model="form.message"
                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all"
-                      placeholder="Tell us the standard, the role you want the agent to take, and whether you need a consultant or certification body after implementation"
+                      placeholder="Tell us the standard, where you stand today, and whether you want the 5 free consultation hours for ISO 9001 or 45001"
                       required
                     ></textarea>
                   </div>
@@ -1007,7 +1020,7 @@
                     class="btn-primary w-full"
                     :disabled="isSubmitting"
                   >
-                    {{ isSubmitting ? "Sending..." : "Send Message" }}
+                    {{ isSubmitting ? "Sending..." : "Request a call" }}
                   </button>
                 </div>
               </form>
@@ -1027,9 +1040,9 @@
                 class="h-10 mb-4 brightness-200"
               />
               <p class="text-sm leading-relaxed">
-                Set up 4ES Hub Agent as your quality, health and safety, or
-                environmental manager. It implements. Consultants verify.
-                Certification bodies audit.
+                Implement ISO 9001, 14001, and 45001 with less consulting.
+                Straight instructions, document templates, and a system that
+                stays audit-ready.
               </p>
             </div>
             <div>
@@ -1175,73 +1188,87 @@ const currentStandard = computed(
 
 const startSteps = [
   {
-    title: "Set up 4ES Hub Agent",
-    body: "Set it up as your quality, health and safety, or environmental manager. It asks questions, asks for evidence, and creates the controls.",
+    title: "Get a call with us",
+    body: "We figure out where you stand against the standard, and what is already in place.",
   },
   {
-    title: "Verify agents actions with an expert",
-    body: "After you are done, get in contact with an expert (we are partnered with a selection of experts) to verify your implementation.",
+    title: "Implement with us",
+    body: "Follow the instructions and fill the document templates in 4ES Hub, with us beside you.",
   },
   {
-    title: "Get certified",
-    body: "Finally, get in contact with one of our certification body partners to do an external audit and award you the certificate if you pass.",
-  },
-];
-
-const agentLoop = [
-  {
-    title: "Give it a role",
-    body: "Set 4ES Hub Agent up as your quality manager, health and safety manager, environmental manager, or whichever role you need.",
-  },
-  {
-    title: "It asks questions",
-    body: "The agent interviews you about how you actually work—not a generic binder template.",
-  },
-  {
-    title: "It asks for evidence",
-    body: "It tells you what records and proof the system still needs, and where they belong.",
-  },
-  {
-    title: "It creates the controls",
-    body: "It drafts procedures, risks, and operational controls in the live system. You review before anything is published.",
+    title: "Maintain it with us",
+    body: "Keep the records current so the next audit is not months of preparation.",
   },
 ];
 
-const agentRoles = [
+const valuePillars = [
   {
-    title: "Quality manager",
-    body: "ISO 9001 — processes, documents, and customer quality.",
+    title: "Less consultation cost",
+    body: "You pay for judgment and gaps, not for someone to write the whole system from scratch.",
   },
   {
-    title: "Environmental manager",
-    body: "ISO 14001 — aspects, impacts, and environmental controls.",
+    title: "Instructions and templates",
+    body: "Each requirement comes with what to do and a document template to use.",
   },
   {
-    title: "Health and safety manager",
-    body: "ISO 45001 — hazards, incidents, and operational controls.",
+    title: "Always audit-ready",
+    body: "Evidence stays in the system, so you are not rebuilding a file before every visit.",
+  },
+];
+
+const valueDetails = [
+  {
+    title: "Spend less on consultants",
+    icon: "fa-sack-dollar",
+    body: "A typical project bills heavily for drafting policies, registers, and evidence lists. Those start from templates in 4ES Hub. Consultant time is for reviewing what is specific to your operation.",
+  },
+  {
+    title: "Know the next step",
+    icon: "fa-list-ol",
+    body: "Implementation instructions tell you what the clause needs, which template to open, and what evidence belongs with it. You are not interpreting the standard alone.",
+  },
+  {
+    title: "Stay ready between audits",
+    icon: "fa-clipboard-check",
+    body: "Documents, risks, controls, training, and findings live in one system. Surveillance audits open the same records you already maintain.",
+  },
+];
+
+const consultationOffers = [
+  {
+    title: "ISO 9001",
+    body: "Quality management. 5 consultation hours included.",
+  },
+  {
+    title: "ISO 45001",
+    body: "Health and safety. 5 consultation hours included.",
+  },
+  {
+    title: "ISO 14001",
+    body: "Environmental management. Same software and path. Ask us about hours.",
   },
   {
     title: "You stay the owner",
-    body: "Approve every record. The agent implements. It does not certify you.",
+    body: "We implement and maintain it with you. A certification body still decides the certificate.",
   },
 ];
 
 const pathSteps = [
   {
-    title: "Implement with 4ES Hub Agent",
-    body: "It asks questions, requests evidence, and creates the controls",
+    title: "Get a call",
+    body: "We figure out where you stand",
   },
   {
-    title: "A consultant verifies",
-    body: "Review gaps. Do not restart a writing project",
+    title: "Implement and maintain",
+    body: "Instructions, templates, and records in 4ES Hub",
   },
   {
-    title: "A certification body audits",
-    body: "Stage 1 and Stage 2 against the live system",
+    title: "A consultant checks gaps",
+    body: "Review what is missing. Do not restart a writing project",
   },
   {
     title: "Certificate if you pass",
-    body: "The certification body awards it independently",
+    body: "A certification body audits and awards it independently",
     highlight: true,
     icon: "fa-trophy",
   },
@@ -1312,12 +1339,12 @@ const platformModules = [
     iconBg: "bg-primary-100",
     iconColor: "text-primary-600",
     description:
-      "4ES Hub Agent drafts policies, procedures, and work instructions from the answers you give. You keep owners, versions, and approvals in one controlled library.",
+      "Policies, procedures, and work instructions start from templates for the standard you are implementing. Instructions say what each document must cover. You keep owners, versions, and approvals in one library.",
     points: [
-      "The agent drafts from how you work, not a generic template pack",
+      "A template for the document, plus what it has to contain",
       "You review and approve before a document is published",
       "Version history and audit trails stay with the record",
-      "Link documents to processes, training, and the standard you are implementing",
+      "Link documents to processes, training, and the clause they support",
     ],
   },
   {
@@ -1327,9 +1354,9 @@ const platformModules = [
     iconBg: "bg-orange-100",
     iconColor: "text-orange-600",
     description:
-      "The agent asks what can go wrong in your processes, then writes risks into the register so they sit next to owners, treatments, and controls.",
+      "Risks sit next to the processes they belong to, with owners, treatments, and controls. You are not rebuilding a spreadsheet the month before the audit.",
     points: [
-      "Questions about real activities, not a copied risk list",
+      "A register for real activities, with what each entry needs",
       "Owners, treatments, and residual levels stay on the record",
       "Connect risks to audits, nonconformities, and objectives",
       "Works across quality, environment, and health and safety",
@@ -1342,12 +1369,12 @@ const platformModules = [
     iconBg: "bg-emerald-100",
     iconColor: "text-emerald-600",
     description:
-      "This is the work the agent is hired to do: create the operational controls, then ask you for the evidence that they are running.",
+      "Operational controls linked to risks, clauses, and the teams who run them, with the evidence an auditor will ask to see.",
     points: [
       "Controls linked to risks, clauses, and the teams who run them",
-      "The agent asks what proof you already have",
+      "A clear place for the proof you already have",
       "Monitoring cadence and follow-up stay on the record",
-      "Visibility by site or department so nothing is only in a chat",
+      "Visibility by site or department so nothing lives only in email",
     ],
   },
   {
@@ -1357,10 +1384,10 @@ const platformModules = [
     iconBg: "bg-primary-100",
     iconColor: "text-primary-600",
     description:
-      "After the agent has implemented, use the same system for internal audits. Findings and evidence stay attached so a consultant or certification body is not hunting folders.",
+      "Internal audits use the same system as the documents and controls. Findings and evidence stay attached, so a consultant or certification body is not hunting folders.",
     points: [
       "Audit programs with schedules, scopes, and assigned auditors",
-      "Checklists linked to requirements the agent already mapped",
+      "Checklists linked to the requirements you already mapped",
       "Finding capture with severity, evidence, and follow-up tasks",
       "History for Stage 1, Stage 2, and surveillance visits",
     ],
@@ -1372,7 +1399,7 @@ const platformModules = [
     iconBg: "bg-sky-100",
     iconColor: "text-sky-600",
     description:
-      "The agent can turn implementation questions into reusable checklists for inspections and internal audits.",
+      "Reusable checklists for inspections and internal audits, built from the same requirements as the implementation.",
     points: [
       "Reusable templates with sections and questions",
       "Versioned so auditors work from the latest set",
@@ -1387,7 +1414,7 @@ const platformModules = [
     iconBg: "bg-purple-100",
     iconColor: "text-purple-600",
     description:
-      "When the agent creates or revises a procedure, competence still has to be proven. Training records stay next to the documents people must follow.",
+      "When a procedure is created or revised, competence still has to be proven. Training records stay next to the documents people must follow.",
     points: [
       "Role-based competence requirements",
       "Sessions, rosters, and completion records",
@@ -1406,7 +1433,7 @@ const platformModules = [
     iconBg: "bg-teal-100",
     iconColor: "text-teal-600",
     description:
-      "The agent can ask for customer and employee feedback as evidence, then file the results into management review instead of a side inbox.",
+      "Customer and employee feedback is filed with the rest of the system, so management review is not a side inbox.",
     points: [
       "Customer and employee survey templates",
       "Themes that feed objectives and actions",
@@ -1421,7 +1448,7 @@ const platformModules = [
     iconBg: "bg-red-100",
     iconColor: "text-red-600",
     description:
-      "When something is wrong, the agent helps log it, ask for evidence, and track the corrective action in the same system it implemented.",
+      "When something is wrong, log it, attach the evidence, and track the corrective action in the same system you are audited on.",
     points: [
       "Identification through closure in one workflow",
       "Root cause, actions, and effectiveness checks",
@@ -1436,7 +1463,7 @@ const platformModules = [
     iconBg: "bg-indigo-100",
     iconColor: "text-indigo-600",
     description:
-      "The agent asks what you already measure, then sets up indicators so leadership and later auditors can see whether the system is working.",
+      "Indicators for what you already measure, so leadership and later auditors can see whether the system is working.",
     points: [
       "Indicators tied to processes and objectives",
       "Targets, periodic capture, and trends",
@@ -1464,20 +1491,20 @@ const homeUrl = `${siteUrl}/`;
 
 useSeoMeta({
   title:
-    "4ES Hub Agent | Implement ISO 9001, 14001, or 45001 without a consulting project",
+    "4ES Hub | Implement ISO 9001, 14001, or 45001 with less consulting",
   description:
-    "Set up 4ES Hub Agent as your quality, health and safety, or environmental manager. It asks questions, asks for evidence, and creates the controls. Then a consultant verifies and a certification body audits.",
+    "Lower consultation cost with straight implementation instructions and document templates. Stay audit-ready in 4ES Hub. ISO 9001 and ISO 45001 include 5 free consultation hours.",
   keywords:
-    "4ES Hub Agent, ISO 9001, ISO 14001, ISO 45001, ISO implementation, quality manager, health and safety manager, certification body, ISO consultant",
-  ogTitle: "4ES Hub Agent | How to start with ISO 9001, 14001, or 45001",
+    "ISO 9001, ISO 14001, ISO 45001, ISO implementation, ISO document templates, ISO consultation, audit ready, 4ES Hub",
+  ogTitle: "4ES Hub | Implement ISO with less consulting",
   ogDescription:
-    "Give 4ES Hub Agent a manager role. It implements with you, then a consultant verifies and a certification body partner runs the external audit.",
+    "Instructions, document templates, and a system that stays audit-ready. Book a call. ISO 9001 and ISO 45001 include 5 free consultation hours.",
   ogUrl: homeUrl,
   ogImage: `${siteUrl}/4es-logo.png`,
   twitterCard: "summary_large_image",
-  twitterTitle: "4ES Hub Agent | Implement ISO without a writing project",
+  twitterTitle: "4ES Hub | Implement ISO with less consulting",
   twitterDescription:
-    "Set up 4ES Hub Agent as your quality, health and safety, or environmental manager. It asks questions, requests evidence, and creates the controls.",
+    "Straight implementation instructions, document templates, and a system that stays audit-ready. 5 free consultation hours for ISO 9001 and ISO 45001.",
   twitterImage: `${siteUrl}/4es-logo.png`,
 });
 
@@ -1493,7 +1520,7 @@ useHead({
         url: homeUrl,
         logo: `${siteUrl}/4es-logo.png`,
         description:
-          "4ES Hub Agent implements ISO 9001, 14001, and 45001 with your team: it asks questions, requests evidence, and creates controls in a live management system.",
+          "4ES Hub helps organizations implement and maintain ISO 9001, 14001, and 45001 with implementation instructions, document templates, and a system that stays audit-ready.",
         areaServed: [
           { "@type": "Country", name: "Canada" },
           { "@type": "Country", name: "United States" },
@@ -1511,15 +1538,16 @@ useHead({
         operatingSystem: "Web",
         url: homeUrl,
         description:
-          "4ES Hub Agent implements ISO 9001, ISO 14001, and ISO 45001 in one management system. Give it a manager role; it asks questions, requests evidence, and creates controls.",
+          "4ES Hub is the management system for implementing ISO 9001, ISO 14001, and ISO 45001: instructions, document templates, and audit-ready records. ISO 9001 and ISO 45001 include 5 free consultation hours.",
         featureList: [
-          "4ES Hub Agent as quality, health and safety, or environmental manager",
-          "Questions, evidence requests, and control creation",
+          "Implementation instructions",
+          "Document templates",
           "Document control",
           "Audit management",
           "Training records",
           "Risk management",
           "Nonconformity and CAPA",
+          "Optional AI drafting assistance",
         ],
       }),
     },
@@ -1531,7 +1559,7 @@ useHead({
         name: "4ES Hub",
         url: homeUrl,
         description:
-          "4ES Hub Agent implements ISO management systems for organizations in Canada and the United States. Consultants verify. Certification bodies audit.",
+          "4ES Hub helps organizations in Canada and the United States implement and maintain ISO management systems with less consulting, and stay audit-ready.",
       }),
     },
     {
@@ -1542,10 +1570,10 @@ useHead({
         mainEntity: [
           {
             "@type": "Question",
-            name: "How does 4ES Hub Agent implement an ISO standard?",
+            name: "How do we start an ISO implementation with 4ES Hub?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "You set up 4ES Hub Agent as your quality manager, health and safety manager, environmental manager, or another role. It asks you questions, asks for evidence, and creates the controls in the live system. Your team reviews and approves every controlled record.",
+              text: "Book a call. We figure out where you stand, then implement and maintain the standard with you using implementation instructions and document templates in 4ES Hub. ISO 9001 and ISO 45001 include 5 consultation hours at no charge.",
             },
           },
           {
@@ -1553,7 +1581,7 @@ useHead({
             name: "Do I still need a consultant or a certification body?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "You do not need a full consultation project to write the system. After the agent has implemented with you, a consultant can verify the work. A certification body partner then runs the external audit and awards the certificate if you pass. 4ES Hub does not issue certificates.",
+              text: "You need less consulting because the instructions, templates, and records are already in the system. A consultant can review gaps. A certification body partner then runs the external audit and awards the certificate if you pass. 4ES Hub does not issue certificates.",
             },
           },
         ],
@@ -1628,7 +1656,71 @@ onBeforeUnmount(() => {
 });
 </script>
 
+<style>
+@font-face {
+  font-family: "DejaVu Sans";
+  src: url("https://cdn.jsdelivr.net/npm/@fontsource/dejavu-sans@5.2.5/files/dejavu-sans-latin-400-normal.woff2")
+    format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DejaVu Sans";
+  src: url("https://cdn.jsdelivr.net/npm/@fontsource/dejavu-sans@5.2.5/files/dejavu-sans-latin-700-normal.woff2")
+    format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DejaVu Sans";
+  src: url("https://cdn.jsdelivr.net/npm/@fontsource/dejavu-sans@5.2.5/files/dejavu-sans-latin-700-normal.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+</style>
+
 <style scoped>
+#page-container {
+  --color-brand: #1f6a6a;
+  --color-brand-hover: #1a2332;
+  --color-brand-light: #d7efed;
+  --color-text: #1a2332;
+  --color-text-secondary: #3d4c5c;
+  --color-primary: #2d8b8b;
+  --color-primary-50: #f1faee;
+  --color-primary-100: #d7efed;
+  --color-primary-200: #a8dadc;
+  --color-primary-300: #7ec8c6;
+  --color-primary-400: #4aa3a1;
+  --color-primary-500: #2d8b8b;
+  --color-primary-600: #1f6a6a;
+  --color-primary-700: #185454;
+  --color-primary-800: #1a2332;
+  --color-primary-900: #121821;
+  --color-primary-focus: #185454;
+  --color-primary-content: #f1faee;
+  background-color: #f1faee;
+  color: #1a2332;
+}
+
+#page-container :deep(*:not(.fa):not(.fa-solid):not(.fa-regular):not(.fa-brands):not(svg)) {
+  font-family: "DejaVu Sans", "Liberation Sans", Arial, sans-serif;
+}
+
+#page-container :deep(.bg-gray-50) {
+  background-color: #e7f5f3;
+}
+
+#page-container :deep(.bg-gray-900),
+#page-container :deep(footer) {
+  background-color: #1a2332;
+}
 @keyframes scroll {
   0% {
     transform: translateX(0);
