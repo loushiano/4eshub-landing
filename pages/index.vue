@@ -262,7 +262,7 @@
             </ol>
 
             <p
-              class="max-w-3xl mx-auto text-sm md:text-base text-[#1d1d1f] leading-relaxed tracking-snug mb-8 rounded-xl bg-primary-50 border border-primary-100 px-5 py-4"
+              class="max-w-3xl mx-auto text-sm md:text-base text-[#1d1d1f] leading-relaxed tracking-snug mb-8 rounded-xl bg-primary border border-primary px-5 py-4"
             >
               <span class="font-semibold">5 consultation hours, free</span>
               when you use the software for ISO 9001 or ISO 45001. Use them to
