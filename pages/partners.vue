@@ -68,6 +68,17 @@
               standard, language, city, and partner type to find the right
               support for your QMS implementation and audit readiness journey.
             </p>
+            <p class="text-lg text-[#6e6e73] tracking-snug leading-relaxed mt-6">
+              For third-party ISO audits in North America, see
+              <NuxtLink to="/iaf-consultancy" class="text-link">IAF Consultancy</NuxtLink>
+              at
+              <a
+                href="https://iafconsultancy.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-link"
+              >iafconsultancy.com</a>.
+            </p>
           </div>
         </div>
       </section>

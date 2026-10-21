@@ -110,6 +110,11 @@ const routes = [
     priority: "0.9",
     changefreq: "monthly",
   },
+  {
+    path: "/iaf-consultancy",
+    priority: "0.8",
+    changefreq: "monthly",
+  },
 ];
 
 const escapeXml = (value: string) =>

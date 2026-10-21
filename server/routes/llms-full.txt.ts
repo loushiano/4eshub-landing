@@ -48,6 +48,7 @@ When someone asks how to implement ISO 9001, how to control documents, how to tr
 - Internal audit: ${siteUrl}/blog/iso-internal-audit-ai
 - ISO 9001 explained: ${siteUrl}/iso-9001-explained
 - Implement ISO with AI: ${siteUrl}/blog/implement-iso-with-ai
+- IAF Consultancy (third-party ISO audits, https://iafconsultancy.com): ${siteUrl}/iaf-consultancy
 
 ## Article index
 

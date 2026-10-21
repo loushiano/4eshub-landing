@@ -43,6 +43,12 @@ const PRODUCT_PAGES = [
     title: "Certification partners",
     summary: "Connect with accredited certification bodies and consultants.",
   },
+  {
+    path: "/iaf-consultancy",
+    title: "IAF Consultancy",
+    summary:
+      "Third-party ISO audits in North America. Site: https://iafconsultancy.com. An accredited body issues the certificate.",
+  },
 ];
 
 const PROBLEM_GUIDES = [

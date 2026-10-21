@@ -89,6 +89,11 @@
                   class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600"
                   >Partners</NuxtLink
                 >
+                <NuxtLink
+                  to="/iaf-consultancy"
+                  class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600"
+                  >IAF Consultancy</NuxtLink
+                >
                 <a
                   href="#contact-section"
                   class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600"
@@ -161,6 +166,12 @@
             to="/partners"
             class="text-gray-700 hover:text-primary-600 py-2"
             >Partners</NuxtLink
+          >
+          <NuxtLink
+            to="/iaf-consultancy"
+            class="text-gray-700 hover:text-primary-600 py-2"
+            @click="mobileMenuOpen = false"
+            >IAF Consultancy</NuxtLink
           >
           <a
             href="#contact-section"
@@ -1110,6 +1121,13 @@
                     to="/partners"
                     class="hover:text-white transition-colors"
                     >Partners</NuxtLink
+                  >
+                </li>
+                <li>
+                  <NuxtLink
+                    to="/iaf-consultancy"
+                    class="hover:text-white transition-colors"
+                    >IAF Consultancy</NuxtLink
                   >
                 </li>
                 <li>
